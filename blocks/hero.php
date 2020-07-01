@@ -137,7 +137,8 @@ $id = 'hero-' . $block['id'];
         <div class="image_wrap">
 
             <?php 
-            $images = get_field('image');
+            $images = get_field('image'); 
+            
             if( $images ): 
                 if( count($images) === 1 ) { 
 
