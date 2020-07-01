@@ -1,0 +1,105 @@
+/*! Hashmuseum v1.0.0 | (c) 2020 Sjoerd Koelewijn | MIT License |  */
+/* Box sizing rules */
+/* line 4, src/sass/reset.scss */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove default padding */
+/* line 11, src/sass/reset.scss */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+/* line 17, src/sass/reset.scss */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+/* line 35, src/sass/reset.scss */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+/* line 43, src/sass/reset.scss */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+/* line 49, src/sass/reset.scss */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+/* line 54, src/sass/reset.scss */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+/* line 60, src/sass/reset.scss */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* line 67, src/sass/reset.scss */
+button {
+  border: 0;
+}
+
+/* line 71, src/sass/reset.scss */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 76, src/sass/reset.scss */
+li {
+  margin: 0;
+  list-style-type: none;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  /* line 83, src/sass/reset.scss */
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

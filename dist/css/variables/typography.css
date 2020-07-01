@@ -1,0 +1,113 @@
+/*! Hashmuseum v1.0.0 | (c) 2020 Sjoerd Koelewijn | MIT License |  */
+/* line 14, src/sass/variables/colors.scss */
+::-moz-selection {
+  color: #ffffff;
+  background: #FF4025;
+}
+::selection {
+  color: #ffffff;
+  background: #FF4025;
+}
+
+/* line 19, src/sass/variables/colors.scss */
+html {
+  color: #000000;
+  background: #F6F6F6;
+}
+
+/* line 24, src/sass/variables/colors.scss */
+a {
+  color: #000000;
+  -webkit-transition: color .5s ease;
+  transition: color .5s ease;
+}
+
+/* line 28, src/sass/variables/colors.scss */
+a:hover {
+  -webkit-transition: color .5s ease;
+  transition: color .5s ease;
+  color: #FF4025;
+}
+
+/* line 33, src/sass/variables/colors.scss */
+a:visited {
+  color: #000000;
+}
+
+/* line 20, src/sass/variables/typography.scss */
+html {
+  font-family: "Lato", sans-serif;
+}
+
+/* line 24, src/sass/variables/typography.scss */
+input, textarea, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+input, textarea, input::-moz-placeholder, textarea::-moz-placeholder {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+input, textarea, input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+input, textarea, input::-ms-input-placeholder, textarea::-ms-input-placeholder {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+input, textarea, input::placeholder, textarea::placeholder {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+
+/* line 29, src/sass/variables/typography.scss */
+button {
+  font-family: "Lato", sans-serif;
+}
+
+/* line 33, src/sass/variables/typography.scss */
+strong {
+  font-weight: 700;
+}
+
+/* line 37, src/sass/variables/typography.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Prata", serif;
+}
+
+/* line 41, src/sass/variables/typography.scss */
+h1 {
+  font-weight: 400;
+  line-height: 140%;
+  font-size: 3vw;
+  margin-bottom: 30px;
+}
+
+/* line 49, src/sass/variables/typography.scss */
+h2 {
+  font-weight: 400;
+  line-height: 150%;
+  font-size: 2vw;
+  margin-bottom: 30px;
+}
+
+/* line 56, src/sass/variables/typography.scss */
+h1 + h2 {
+  margin-top: -15px;
+}
+
+/* line 60, src/sass/variables/typography.scss */
+h3 {
+  font-weight: 400;
+  line-height: 150%;
+  font-size: 1.5vw;
+}
+
+/* line 66, src/sass/variables/typography.scss */
+p {
+  line-height: 160%;
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
