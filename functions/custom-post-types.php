@@ -169,10 +169,10 @@ add_action( 'init', 'custom_collection_pages', 1 );
 function cpt_cannabisinfo() {
 
 	$labels = array(
-			'name'                  => _x( 'Cannabis Info', 'Post Type General Name', 'hashmuseum' ),
-			'singular_name'         => _x( 'Cannabis Info', 'Post Type Singular Name', 'hashmuseum' ),
-			'menu_name'             => __( 'Cannabis Info', 'hashmuseum' ),
-			'name_admin_bar'        => __( 'Cannabis Info Item', 'hashmuseum' ),
+			'name'                  => _x( 'Cannabis Knowledge', 'Post Type General Name', 'hashmuseum' ),
+			'singular_name'         => _x( 'Cannabis Knowledge', 'Post Type Singular Name', 'hashmuseum' ),
+			'menu_name'             => __( 'Knowledgebase', 'hashmuseum' ),
+			'name_admin_bar'        => __( 'Cannabis Knowledge Item', 'hashmuseum' ),
 			'archives'              => __( 'Item Archives', 'hashmuseum' ),
 			'attributes'            => __( 'Item Attributes', 'hashmuseum' ),
 			'parent_item_colon'     => __( 'Parent Item:', 'hashmuseum' ),
