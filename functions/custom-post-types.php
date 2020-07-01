@@ -198,14 +198,14 @@ function cpt_cannabisinfo() {
 			'filter_items_list'     => __( 'Filter items list', 'hashmuseum' ),
 	);
 	$rewrite = array(
-			'slug'                  => __( 'cannabis-info', 'hashmuseum' ) . '/%info_categories%',
+			'slug'                  => __( 'cannabis-knowledge', 'hashmuseum' ) . '/%info_categories%',
 			'with_front'            => true,
 			'pages'                 => true,
 			'feeds'                 => true,
 	);
 	$args = array(
-			'label'                 => __( 'Cannabis Info', 'hashmuseum' ),
-			'description'           => __( 'Cannabis information', 'hashmuseum' ),
+			'label'                 => __( 'Cannabis Knowledge', 'hashmuseum' ),
+			'description'           => __( 'Cannabis Knowledge', 'hashmuseum' ),
 			'labels'                => $labels,
 			'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', ),
 			'hierarchical'          => false,
@@ -254,7 +254,7 @@ function cpt_cannabisinfo_taxonomy() {
 		'show_ui' 			=> true,
 		'show_admin_column' => true,
 		'query_var' 		=> true,
-		'rewrite' 			=> array( 'slug' => 'cannabis-info' ),
+		'rewrite' 			=> array( 'slug' => 'cannabis-knowledge' ),
 	  ));
 	 
 }
@@ -348,7 +348,7 @@ function cpt_newsexhibitions() {
 			'archives'              => __( 'Item Archives', 'hashmuseum' ),
 			'attributes'            => __( 'Item Attributes', 'hashmuseum' ),
 			'parent_item_colon'     => __( 'Parent Item:', 'hashmuseum' ),
-			'all_items'             => __( 'Info Items', 'hashmuseum' ),
+			'all_items'             => __( 'Agenda Items', 'hashmuseum' ),
 			'add_new_item'          => __( 'Add New Info Item', 'hashmuseum' ),
 			'add_new'               => __( 'Add New', 'hashmuseum' ),
 			'new_item'              => __( 'New Item', 'hashmuseum' ),
