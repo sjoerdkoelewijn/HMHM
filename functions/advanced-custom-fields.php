@@ -1,4 +1,5 @@
 <?php
+
 if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array(
@@ -264,7 +265,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'choices' => array(
                     'normal' => 'Normal Hero',
                     'collection_item' => 'Collection Item Hero',
-                    'exhibition' => 'Exhibition Hero',
+                    'exhibition' => 'Exhibition Hero ( Only use in exhibition category )',
                 ),
                 'allow_null' => 0,
                 'other_choice' => 0,
@@ -382,6 +383,58 @@ if( function_exists('acf_add_local_field_group') ):
                     'param' => 'block',
                     'operator' => '==',
                     'value' => 'acf/hero',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+    ));
+    
+    acf_add_local_field_group(array(
+        'key' => 'group_5efda92a8e06d',
+        'title' => 'Image Slider',
+        'fields' => array(
+            array(
+                'key' => 'field_5efda96b3e14e',
+                'label' => 'Images',
+                'name' => 'images',
+                'type' => 'gallery',
+                'instructions' => '',
+                'required' => 1,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'array',
+                'preview_size' => 'medium',
+                'insert' => 'append',
+                'library' => 'all',
+                'min' => 2,
+                'max' => '',
+                'min_width' => '',
+                'min_height' => '',
+                'min_size' => '',
+                'max_width' => '',
+                'max_height' => '',
+                'max_size' => '',
+                'mime_types' => '',
+                'translations' => 'sync',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'block',
+                    'operator' => '==',
+                    'value' => 'acf/image-slider',
                 ),
             ),
         ),
