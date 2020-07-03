@@ -25,6 +25,15 @@
         </a>
 
         <div class="menu_buttons_wrap">
+       
+            <!-- Edit button for logged in users -->
+            <?php if ( current_user_can( 'edit_post', $post->ID ) ) { ?>
+
+            <a href="/wp-admin/post.php?post=<?php echo get_the_ID() ?>&action=edit" class="admin_edit_btn" >
+                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/edit.svg"); ?>
+            </a>
+
+            <?php } ?> 
 
             <button class="language_menu_toggle" data-language-menu-toggle>
                 <?php _e( 'Select Language', 'hashmuseum' ) ?>
@@ -32,7 +41,7 @@
 
             <button class="main_menu_toggle" data-main-menu-toggle>
                 <?php _e( 'menu', 'hashmuseum' ) ?>
-            </button>
+            </button>            
 
         </div>
 

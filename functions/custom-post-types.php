@@ -89,6 +89,7 @@ function cpt_collection_taxonomy() {
 		'show_ui' 			=> true,
 		'show_admin_column' => true,
 		'query_var' 		=> true,
+		'show_in_rest'      => true,
 		'rewrite' 			=> array( 'slug' => 'collection' ),
 	  ));
 	 
@@ -254,6 +255,7 @@ function cpt_cannabisinfo_taxonomy() {
 		'show_ui' 			=> true,
 		'show_admin_column' => true,
 		'query_var' 		=> true,
+		'show_in_rest'      => true,
 		'rewrite' 			=> array( 'slug' => 'cannabis-knowledge' ),
 	  ));
 	 
@@ -428,6 +430,7 @@ function cpt_newsexhibitions_taxonomy() {
 		'show_ui' 			=> true,
 		'show_admin_column' => true,
 		'query_var' 		=> true,
+		'show_in_rest'      => true,
 		'rewrite' 			=> array( 'slug' => 'whats-on' ),
 	  ));
 	 

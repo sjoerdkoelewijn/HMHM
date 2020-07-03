@@ -4,43 +4,12 @@
 @import "./variables/spacing";
 @import "./variables/breakpoints";
 @import "./variables/animations";
-
-
-@mixin readMoreLink {
-    text-decoration: none;
-    font-size: $small-btn;
-    text-transform:uppercase;
-    font-weight:600;
-    background:none;
-    transition:color .5s ease;
-
-    svg {
-        width:13px;
-        height:13px;
-        margin-right:10px;                
-
-        path {
-            fill:$black;
-            transition:fill .5s ease;
-        }
-    }
-
-    &:hover {
-        color:$action;
-        transition:color .5s ease;
-        cursor: pointer;
-
-        svg path {
-            fill:$action;
-            transition:fill .5s ease;
-        }
-    }
-}
+@import "./variables/mixins";
 
 
 html {
     overflow-x:hidden;
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
 }
 
 .btn {
@@ -101,9 +70,6 @@ html {
 }
 
 
-
-
-
 /* ------------- Logo ----------------------------------------------------------------------------------------------------------- */
 
 .logo {
@@ -139,6 +105,35 @@ html {
 }
 
 /* ------------- Language Menu ---------------- */
+
+.admin_edit_btn {
+    background:rgba($black, .2);
+    color:$white;
+    text-transform: uppercase;
+    font-size:$small-btn;
+    padding:20px 30px;
+    cursor: pointer;
+    transition: background .5s ease;
+
+    svg {
+        path {
+            fill:$black;
+            transition: fill .5s ease;
+        }
+    }
+
+    &:hover {
+        background:rgba($black, .6);
+        transition: background .5s ease;
+
+        svg {
+            path {
+                fill:$white;
+                transition: fill .5s ease;
+            }
+        }
+    }
+}
 
 .language_menu_toggle {
     background:$black;
@@ -358,7 +353,6 @@ html {
 
 }
 
-
 /* ------------- Custom Gutenberg Blocks ----------------------------------------------------------------------------------------------------------- */
 
 /* ------------- Hero Block ---------------- */
@@ -396,9 +390,24 @@ html {
        width:33vw;
        padding:20vh $horizontal 0 $horizontal;
        
-
        .read_more_link {
-           @include readMoreLink;
+           @include textLink;
+       }
+
+       .back_link {
+            @include textLink;
+            margin-bottom:20px;
+            display:inline-block;
+       }
+
+       .taxonomy_link {
+            @include textLink;
+       }
+
+       .license_message {
+           font-size:var(--small-p);
+           position:absolute;
+           bottom:20px;
        }
    }
 
@@ -459,6 +468,78 @@ html {
    }
 }
 
+/* ------------- Image Slider ---------------- */
+
+.horizontal_slider {
+    //width:100vw;
+    height:100vh;
+    display: flex;
+    position: relative;
+    overflow-x: auto;
+    overflow-y:hidden;
+    scroll-behavior: smooth;
+
+    img {
+        height:100vh;
+        object-fit: cover;         
+    } 
+
+}
+
+.horizontal_slider_btn_wrap {
+        
+    .slider_button {
+        background:$action-gradient;           
+        width:80px;
+        height:80px;
+        position: absolute;
+        margin-top:-50vh;
+        padding:0;        
+        z-index:100;
+        cursor: pointer;
+        overflow:hidden;
+        transition: opacity 1s ease ;
+                   
+        .background_wrap {
+             width:80px;
+             height:80px;
+             padding-top:27px;
+             background-color:rgba($black, 1);
+             transition:background .5s ease;
+        }
+
+        &:hover {
+            .background_wrap {
+                 background-color:rgba($black, 0);
+                 transition:background-color .5s ease;
+            }
+             
+        }
+    }
+
+    .slider_button.left {
+        left:$horizontal;
+    }
+
+    .slider_button.right {
+         right:$horizontal;
+    }
+
+    .slider_button.hidden {
+        opacity:0;
+        transition: opacity 1s ease ;
+    }
+
+}
+
+.horizontal_slider::-webkit-scrollbar {
+    height: 0;
+  }
+
+.horizontal_slider {
+scrollbar-width: none;
+border: 0;
+}
 
 /* ------------- Related Posts Block ---------------- */
 
@@ -506,7 +587,7 @@ html {
             }
 
             .read_more {
-                @include readMoreLink;
+                @include textLink;
             }
 
         }
@@ -548,8 +629,6 @@ html {
         right:$horizontal;
     }
 }
-
-
 
 /* ------------- Promotional Block ---------------- */
 
@@ -644,6 +723,7 @@ html {
          }    
  
     }
+
  }
 
  /* ------------- Image sidebar ---------------- */
@@ -697,44 +777,53 @@ html {
             font-size:$small-p;
         }
 
-    }          
-
+    }    
 
 }
 
 /* ------------- Main Content on detail pages ----------------------------------------------------------------------------------------------------------- */
 
-    .wp-block-group__inner-container {        
-        display:flex;        
+.wp-block-group__inner-container {     
+    display:flex;    
+    
+    .wp-block-group {
+        width:66vw;
+        padding:$horizontal;
+        
+        h2 {
+            margin-top:$vertical-l;
+        }
 
-        .wp-block-group {
-            width:66vw;
-            padding:$horizontal;
-            
-            h2 {
-                margin-top:$vertical-l;
-            }
+        h2:first-of-type {
+            font-size:$normal-title;
+            margin-top:20px;
+        }
 
-            h2:first-of-type {
-                font-size:$normal-title;
-                margin-top:20px;
-            }
+        h3:first-of-type {
+            margin:$vertical 0 20px 0;
+            color:$mediumgrey;
+        }
 
-            h3:first-of-type {
-                margin:$vertical 0 20px 0;
-                color:$mediumgrey;
-            }
+        p, h2, h3 {
+            width:80%;
+        } 
 
-            p, h2, h3 {
-                width:80%;
-            } 
-
-            .wp-block-group__inner-container {
-                display:inline-block;
-            }
+        .wp-block-group__inner-container {
+            display:inline-block;
         }
     }
+}
 
+.wp-block-group {
+    .wp-block-image {
+        height:100vh;
+
+        img {
+            height:100vh;
+            object-fit: cover; 
+        }
+    }
+}
 
 
 /* ------------- Sub section ---------------- */

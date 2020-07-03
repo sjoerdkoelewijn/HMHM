@@ -3,6 +3,8 @@
 include 'translations/polylang_translations.php';
 include 'functions/custom-post-types.php';
 include 'functions/advanced-custom-fields.php';
+include 'functions/gutenberg-blocks.php';
+include 'functions/enqueue.php';
 
 add_theme_support( 'title-tag' );
 add_theme_support( 'menus' );
@@ -26,61 +28,7 @@ register_nav_menus( array(
 
 
 
-/*************************** Enqueue Styles **********************************/
 
-function hashmuseum_styles() {
-
-	$filename = get_stylesheet_directory() . '/dist/css/style.min.css';
-	$timestamp = filemtime($filename);
-
-	wp_enqueue_style('hashmuseum-styles', get_template_directory_uri() . '/dist/css/style.min.css', NULL, $timestamp, 'all' );
-
-	if ( is_home() ) {
-		// Add styles for homepage
-	}
-
-	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Prata&display=swap', NULL, NULL, 'all' );
-
-
-}
-add_action( 'wp_enqueue_scripts', 'hashmuseum_styles', 99 );
-
-
-function admin_styles() {
-
-	$filename = get_stylesheet_directory() . '/dist/css/admin.min.css';
-	$timestamp = filemtime($filename);
-	wp_enqueue_style('admin-styles', get_template_directory_uri() . '/dist/css/admin.min.css', NULL, $timestamp, 'all' );
-
-}
-
-add_action('admin_enqueue_scripts', 'admin_styles');
-
-
-
-/*************************** Enqueue Scripts **********************************/
-
-function hashmuseum_scripts() {
-
-	$filename = get_stylesheet_directory() . '/dist/js/app.min.js';
-	$timestamp = filemtime($filename);
-
-	if (!is_admin()) {
-		wp_deregister_script('jquery');
-	}
-
-	wp_enqueue_script('logo-color-switch', get_template_directory_uri() . '/dist/js/background-check.min.js', NULL, $timestamp, FALSE);
-	wp_enqueue_script('slider', get_template_directory_uri() . '/libs/siema.min.js', NULL, $timestamp, FALSE);
-
-	wp_enqueue_script('hashmuseum-app', get_template_directory_uri() . '/dist/js/app.min.js', NULL, $timestamp, TRUE);
-
-
-	if ( is_home() ) {
-/*		wp_enqueue_script('fullpage-js', get_template_directory_uri() . '/js/jquery.fullpage.min.js', NULL, NULL, FALSE);*/
-	}
-
-}
-add_action( 'wp_enqueue_scripts', 'hashmuseum_scripts', 99 );
 
 
 
@@ -212,135 +160,8 @@ function sk_frontpages_notice() { ?>
 <?php }
 
 
-/***************************  Custom Gutenberg Blocks **********************************/
-
-function sk_acf_block_render_callback( $block ) {
-	
-	// convert name ("acf/testimonial") into path friendly slug ("testimonial")
-	$slug = str_replace('acf/', '', $block['name']);
-	
-	// include a template part from within the "blocks" folder
-	if( file_exists( get_theme_file_path("/blocks/{$slug}.php") ) ) {
-		include( get_theme_file_path("/blocks/{$slug}.php") );
-	}
-}
-
-/*** Hero Block ***/
-
-add_action('acf/init', 'my_acf_init');
-function my_acf_init() {
-	
-	// check function exists
-	if( function_exists('acf_register_block') ) {
-		
-		// register the hero block
-		acf_register_block(array(
-			'name'				=> 'hero',
-			'title'				=> __('Hero Block'),
-			'description'		=> __('The hero block for the top of the page'),
-			'render_callback'	=> 'sk_acf_block_render_callback',
-			'category'			=> 'common',
-			'icon'				=> 'laptop',
-			'mode'				=> 'edit', // start in edit mode
-			'keywords'			=> array( 'hero', 'image' ),
-		));
-
-		// register the hero block
-		acf_register_block(array(
-			'name'				=> 'image_slider',
-			'title'				=> __('Image Slider'),
-			'description'		=> __('A horizontal image slider that spans the whole width of page.'),
-			'render_callback'	=> 'sk_acf_block_render_callback',
-			'category'			=> 'common',
-			'icon'				=> 'images-alt2',
-			'mode'				=> 'edit', // start in edit mode
-			'keywords'			=> array( 'slider', 'image' ),
-		));
-
-		// register the hero block
-		acf_register_block(array(
-			'name'				=> 'sidebar',
-			'title'				=> __('Sidebar Images'),
-			'description'		=> __('A sidebar for images and an optional quote'),
-			'render_callback'	=> 'sk_acf_block_render_callback',
-			'category'			=> 'common',
-			'icon'				=> 'index-card',
-			'mode'				=> 'edit', // start in edit mode
-			'keywords'			=> array( 'sidebar', 'image', 'quote' ),
-		));
-
-		// register the hero block
-		acf_register_block(array(
-			'name'				=> 'related-posts',
-			'title'				=> __('Related Posts'),
-			'description'		=> __('A slider with related posts.'),
-			'render_callback'	=> 'sk_acf_block_render_callback',
-			'category'			=> 'common',
-			'icon'				=> 'slides',
-			'mode'				=> 'edit', // start in edit mode
-			'keywords'			=> array( 'slider', 'related' ),
-		));
-
-		// register the hero block
-		acf_register_block(array(
-			'name'				=> 'promo',
-			'title'				=> __('Promo Block'),
-			'description'		=> __('A section to promote the museum'),
-			'render_callback'	=> 'sk_acf_block_render_callback',
-			'category'			=> 'common',
-			'icon'				=> 'visibility',
-			'mode'				=> 'edit', // start in edit mode
-			'keywords'			=> array( 'promo', 'image' ),
-		));
-
-	}
-}
 
 
-
-
-
-
-
-
-/*************************** Restrict gutenberg blocks *********************************/
-
-
-function restrict_blocks( $allowed_blocks, $post ) {
-	
-	if( is_user_logged_in() ) {
-		
-		$user = wp_get_current_user();
-		$roles = ( array ) $user->roles;
-	
-		if( in_array( strtolower('Administrator'), $roles ) )
-		// if( in_array( strtolower('Editor'), $roles ) )
-			$allowed_blocks = array(
-				'core/heading',
-				'core/image',
-				'core/paragraph',
-				'core/quote',
-				'core/embedyoutube',
-				'acf/hero',
-				'acf/textimage',
-				'acf/kaart',
-				'acf/googlemap',
-				'acf/nieuwsbrief',
-				'acf/latestpost',
-				'acf/fullimage',
-				'acf/vrijecontent',
-				'acf/blockslider',
-				'acf/form',
-				'acf/footer',
-				'acf/button'
-
-			);
-			return $allowed_blocks;
-		}
-
-	}	
-	
-	// add_filter( 'allowed_block_types', 'restrict_blocks', 10, 2); 
 
 
 
@@ -394,4 +215,46 @@ if( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'general-settings',
 	));
 	
+}
+
+
+
+
+/*************************** Add ACF Option page *********************************/
+
+function sk_taxonomy_terms() {
+
+	// Get post by post ID.
+    if ( ! $post = get_post() ) {
+        return '';
+    }
+ 
+    // Get post type by post.
+    $post_type = $post->post_type;
+ 
+    // Get post type taxonomies.
+	$taxonomies = get_object_taxonomies( $post_type, 'objects' );
+	$exclude = array( 'language' );
+ 
+    $out = array();
+ 
+    foreach ( $taxonomies as $taxonomy_slug => $taxonomy ){
+
+		if( in_array( $taxonomy->name, $exclude ) ) {
+            continue;
+        }
+ 
+        // Get the terms related to post.
+        $terms = get_the_terms( $post->ID, $taxonomy_slug );
+ 
+        if ( ! empty( $terms ) ) {
+            foreach ( $terms as $term ) {
+                $out[] = sprintf( '<a class="taxonomy_link" href="%1$s">'. file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"). '%2$s</a>',
+                    esc_url( get_term_link( $term->slug, $taxonomy_slug ) ),
+                    esc_html( $term->name )
+                );
+            }
+        }
+    }
+    return implode( '', $out );
 }
