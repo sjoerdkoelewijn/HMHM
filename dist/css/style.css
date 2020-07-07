@@ -1504,11 +1504,21 @@ html {
 }
 
 /* line 740, src/sass/style.scss */
+.related_posts .related_posts_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* line 745, src/sass/style.scss */
 .related_posts .post {
   width: 33vw;
 }
 
-/* line 745, src/sass/style.scss */
+/* line 750, src/sass/style.scss */
 .related_posts .post .image_wrap img {
   min-width: 100%;
   height: 45vh;
@@ -1516,17 +1526,17 @@ html {
      object-fit: cover;
 }
 
-/* line 753, src/sass/style.scss */
+/* line 758, src/sass/style.scss */
 .related_posts .post .text_wrap {
   padding: 2vw 3vw;
 }
 
-/* line 756, src/sass/style.scss */
+/* line 761, src/sass/style.scss */
 .related_posts .post .text_wrap .title {
   text-decoration: none;
 }
 
-/* line 760, src/sass/style.scss */
+/* line 765, src/sass/style.scss */
 .related_posts .post .text_wrap .read_more {
   padding: 0;
   text-decoration: none;
@@ -1567,7 +1577,7 @@ html {
   transition: fill .5s ease;
 }
 
-/* line 767, src/sass/style.scss */
+/* line 772, src/sass/style.scss */
 .related_posts .slider_button {
   background: linear-gradient(217.1deg, #FF2A42 33.82%, #FF5509 84.93%), #FF5C00;
   width: 80px;
@@ -1580,7 +1590,7 @@ html {
   overflow: hidden;
 }
 
-/* line 778, src/sass/style.scss */
+/* line 783, src/sass/style.scss */
 .related_posts .slider_button .background_wrap {
   width: 80px;
   height: 80px;
@@ -1590,25 +1600,25 @@ html {
   transition: background .5s ease;
 }
 
-/* line 787, src/sass/style.scss */
+/* line 792, src/sass/style.scss */
 .related_posts .slider_button:hover .background_wrap {
   background-color: rgba(0, 0, 0, 0);
   -webkit-transition: background-color .5s ease;
   transition: background-color .5s ease;
 }
 
-/* line 795, src/sass/style.scss */
+/* line 800, src/sass/style.scss */
 .related_posts .slider_button.left {
   left: 3vw;
 }
 
-/* line 799, src/sass/style.scss */
+/* line 804, src/sass/style.scss */
 .related_posts .slider_button.right {
   right: 3vw;
 }
 
 /* ------------- Promotional Block ---------------- */
-/* line 806, src/sass/style.scss */
+/* line 811, src/sass/style.scss */
 .promo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1623,41 +1633,41 @@ html {
           align-items: center;
 }
 
-/* line 815, src/sass/style.scss */
+/* line 820, src/sass/style.scss */
 .promo .text_wrap {
   width: 33vw;
   padding: 0 6vw 0 6vw;
 }
 
-/* line 819, src/sass/style.scss */
+/* line 824, src/sass/style.scss */
 .promo .text_wrap .header {
   font-size: 2vw;
   margin-top: 4vw;
 }
 
-/* line 824, src/sass/style.scss */
+/* line 829, src/sass/style.scss */
 .promo .text_wrap .subheader {
   font-size: 1.5vw;
 }
 
-/* line 828, src/sass/style.scss */
+/* line 833, src/sass/style.scss */
 .promo .text_wrap svg {
   width: 143px;
   height: 142px;
 }
 
-/* line 832, src/sass/style.scss */
+/* line 837, src/sass/style.scss */
 .promo .text_wrap svg path {
   fill: #ffffff;
 }
 
-/* line 841, src/sass/style.scss */
+/* line 846, src/sass/style.scss */
 .promo .image_wrap {
   width: 66vw;
   position: relative;
 }
 
-/* line 845, src/sass/style.scss */
+/* line 850, src/sass/style.scss */
 .promo .image_wrap img {
   min-width: 100%;
   height: 100vh;
@@ -1665,7 +1675,7 @@ html {
      object-fit: cover;
 }
 
-/* line 851, src/sass/style.scss */
+/* line 856, src/sass/style.scss */
 .promo .image_wrap .slider_button {
   background: linear-gradient(217.1deg, #FF2A42 33.82%, #FF5509 84.93%), #FF5C00;
   width: 80px;
@@ -1678,7 +1688,7 @@ html {
   overflow: hidden;
 }
 
-/* line 862, src/sass/style.scss */
+/* line 867, src/sass/style.scss */
 .promo .image_wrap .slider_button .background_wrap {
   width: 80px;
   height: 80px;
@@ -1688,24 +1698,24 @@ html {
   transition: background .5s ease;
 }
 
-/* line 871, src/sass/style.scss */
+/* line 876, src/sass/style.scss */
 .promo .image_wrap .slider_button:hover .background_wrap {
   background-color: rgba(0, 0, 0, 0);
   -webkit-transition: background-color .5s ease;
   transition: background-color .5s ease;
 }
 
-/* line 879, src/sass/style.scss */
+/* line 884, src/sass/style.scss */
 .promo .image_wrap .slider_button.left {
   left: 3vw;
 }
 
-/* line 883, src/sass/style.scss */
+/* line 888, src/sass/style.scss */
 .promo .image_wrap .slider_button.right {
   right: 3vw;
 }
 
-/* line 887, src/sass/style.scss */
+/* line 892, src/sass/style.scss */
 .promo .image_wrap .caption {
   margin-top: -80px;
   margin-left: 3vw;
@@ -1716,25 +1726,25 @@ html {
 }
 
 /* ------------- Image sidebar ---------------- */
-/* line 902, src/sass/style.scss */
+/* line 907, src/sass/style.scss */
 .image_sidebar {
   display: inline-block;
   width: 33vw;
 }
 
-/* line 906, src/sass/style.scss */
+/* line 911, src/sass/style.scss */
 .image_sidebar .image_wrap {
   position: relative;
 }
 
-/* line 909, src/sass/style.scss */
+/* line 914, src/sass/style.scss */
 .image_sidebar .image_wrap img {
   height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-/* line 914, src/sass/style.scss */
+/* line 919, src/sass/style.scss */
 .image_sidebar .image_wrap .caption {
   position: absolute;
   color: #ffffff;
@@ -1746,31 +1756,31 @@ html {
   bottom: 0;
 }
 
-/* line 927, src/sass/style.scss */
+/* line 932, src/sass/style.scss */
 .image_sidebar .quote {
   background: #000000;
   color: #ffffff;
   padding: 2vw 3vw;
 }
 
-/* line 932, src/sass/style.scss */
+/* line 937, src/sass/style.scss */
 .image_sidebar .quote .quote_text {
   margin-top: 2vw;
   font-family: "Prata", serif;
   font-size: 2rem;
 }
 
-/* line 938, src/sass/style.scss */
+/* line 943, src/sass/style.scss */
 .image_sidebar .quote .quote_text.medium {
   font-size: 2vw;
 }
 
-/* line 942, src/sass/style.scss */
+/* line 947, src/sass/style.scss */
 .image_sidebar .quote .quote_text.large {
   font-size: 3vw;
 }
 
-/* line 946, src/sass/style.scss */
+/* line 951, src/sass/style.scss */
 .image_sidebar .quote .quote_author {
   font-family: "Lato", sans-serif;
   font-size: 1rem;

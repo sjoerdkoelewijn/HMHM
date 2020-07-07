@@ -737,6 +737,11 @@ border: 0;
         
     }
 
+    .related_posts_inner {
+        display:flex;
+        justify-content: center;
+    }
+
     .post {
         width:33vw;
 
