@@ -1,581 +1,1369 @@
 <?php
 
-function cpt_collection() {
-
-	$labels = array(
-			'name'                  => _x( 'The Collection', 'Post Type General Name', 'hashmuseum' ),
-			'singular_name'         => _x( 'The Collection', 'Post Type Singular Name', 'hashmuseum' ),
-			'menu_name'             => __( 'The Collection', 'hashmuseum' ),
-			'name_admin_bar'        => __( 'Collection Item', 'hashmuseum' ),
-			'archives'              => __( 'Item Archives', 'hashmuseum' ),
-			'attributes'            => __( 'Item Attributes', 'hashmuseum' ),
-			'parent_item_colon'     => __( 'Parent Item:', 'hashmuseum' ),
-			'all_items'             => __( 'Collection Items', 'hashmuseum' ),
-			'add_new_item'          => __( 'Add New Collection Item', 'hashmuseum' ),
-			'add_new'               => __( 'Add New', 'hashmuseum' ),
-			'new_item'              => __( 'New Item', 'hashmuseum' ),
-			'edit_item'             => __( 'Edit Item', 'hashmuseum' ),
-			'update_item'           => __( 'Update Item', 'hashmuseum' ),
-			'view_item'             => __( 'View Item', 'hashmuseum' ),
-			'view_items'            => __( 'View Items', 'hashmuseum' ),
-			'search_items'          => __( 'Search Item', 'hashmuseum' ),
-			'not_found'             => __( 'Not found', 'hashmuseum' ),
-			'not_found_in_trash'    => __( 'Not found in Trash', 'hashmuseum' ),
-			'featured_image'        => __( 'Featured Image', 'hashmuseum' ),
-			'set_featured_image'    => __( 'Set featured image', 'hashmuseum' ),
-			'remove_featured_image' => __( 'Remove featured image', 'hashmuseum' ),
-			'use_featured_image'    => __( 'Use as featured image', 'hashmuseum' ),
-			'insert_into_item'      => __( 'Insert into item', 'hashmuseum' ),
-			'uploaded_to_this_item' => __( 'Uploaded to this item', 'hashmuseum' ),
-			'items_list'            => __( 'Items list', 'hashmuseum' ),
-			'items_list_navigation' => __( 'Items list navigation', 'hashmuseum' ),
-			'filter_items_list'     => __( 'Filter items list', 'hashmuseum' ),
-	);
-	$rewrite = array(
-			'slug'                  => __( 'collection', 'hashmuseum' ) . '/%collection_themes%',
-			'with_front'            => true,
-			'pages'                 => true,
-			'feeds'                 => true,
-	);
-	$args = array(
-			'label'                 => __( 'Collection', 'hashmuseum' ),
-			'description'           => __( 'The Hashmuseum Collection', 'hashmuseum' ),
-			'labels'                => $labels,
-			'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', ),
-			//'taxonomies'            => array( 'collection' ),
-			'hierarchical'          => false,
-			'public'                => true,
-			'show_ui'               => true,
-			'show_in_menu'          => true,
-			'menu_position'         => 3,
-			'menu_icon'             => 'dashicons-images-alt',
-			'show_in_admin_bar'     => true,
-			'show_in_nav_menus'     => true,
-			'can_export'            => true,
-			'has_archive'           => 'collection',
-			'exclude_from_search'   => false,
-			'publicly_queryable'    => true,
-			'rewrite'               => $rewrite,
-			'capability_type'       => 'post',
-			'show_in_rest'          => true,
-			"query_var"           	=> true,
-	);
-	register_post_type( 'collection', $args );
-
-}
-add_action( 'init', 'cpt_collection', 0 );
-
-
-function cpt_collection_taxonomy() { 
- 
-	  $labels = array(
-		'name' => _x( 'Collection Themes', 'taxonomy general name', 'hashmuseum' ),
-		'singular_name' => _x( 'Collection Theme', 'taxonomy singular name', 'hashmuseum' ),
-		'search_items' =>  __( 'Search Themes', 'hashmuseum' ),
-		'all_items' => __( 'All Themes', 'hashmuseum' ),
-		'parent_item' => __( 'Parent Theme', 'hashmuseum' ),
-		'parent_item_colon' => __( 'Parent Theme:', 'hashmuseum' ),
-		'edit_item' => __( 'Edit Theme', 'hashmuseum' ), 
-		'update_item' => __( 'Update Theme', 'hashmuseum' ),
-		'add_new_item' => __( 'Add New Theme', 'hashmuseum' ),
-		'new_item_name' => __( 'New Theme Name', 'hashmuseum' ),
-		'menu_name' => __( 'Themes', 'hashmuseum' ),
-	  );    
-	  
-	  register_taxonomy('collection_themes', array('collection'), array(
-		'hierarchical' 		=> true,
-		"public"        	=> true,
-		'labels' 			=> $labels,
-		'show_ui' 			=> true,
-		'show_admin_column' => true,
-		'query_var' 		=> true,
-		'show_in_rest'      => true,
-		'rewrite' 			=> array( 'slug' => 'collection' ),
-	  ));
-	 
-}
-add_action( 'init', 'cpt_collection_taxonomy', 0 );
-
-
-
-function custom_collection_pages() {
-
-	$labels = array(
-			'name'                  => _x( 'Frontpages', 'Post Type General Name', 'hashmuseum' ),
-			'singular_name'         => _x( 'Frontpage', 'Post Type Singular Name', 'hashmuseum' ),
-			'menu_name'             => __( 'Frontpages', 'hashmuseum' ),
-			'name_admin_bar'        => __( 'Collection Frontpage', 'hashmuseum' ),
-			'archives'              => __( 'Page Archives', 'hashmuseum' ),
-			'attributes'            => __( 'Page Attributes', 'hashmuseum' ),
-			'parent_item_colon'     => __( 'Parent Page:', 'hashmuseum' ),
-			'all_items'             => __( 'Frontpages', 'hashmuseum' ),
-			'add_new_item'          => __( 'Add New Page', 'hashmuseum' ),
-			'add_new'               => __( 'Add New', 'hashmuseum' ),
-			'new_item'              => __( 'New Page', 'hashmuseum' ),
-			'edit_item'             => __( 'Edit Page', 'hashmuseum' ),
-			'update_item'           => __( 'Update Page', 'hashmuseum' ),
-			'view_item'             => __( 'View Page', 'hashmuseum' ),
-			'view_items'            => __( 'View Pages', 'hashmuseum' ),
-			'search_items'          => __( 'Search Page', 'hashmuseum' ),
-			'not_found'             => __( 'Not found', 'hashmuseum' ),
-			'not_found_in_trash'    => __( 'Not found in Trash', 'hashmuseum' ),
-			'featured_image'        => __( 'Featured Image', 'hashmuseum' ),
-			'set_featured_image'    => __( 'Set featured image', 'hashmuseum' ),
-			'remove_featured_image' => __( 'Remove featured image', 'hashmuseum' ),
-			'use_featured_image'    => __( 'Use as featured image', 'hashmuseum' ),
-			'insert_into_item'      => __( 'Insert into item', 'hashmuseum' ),
-			'uploaded_to_this_item' => __( 'Uploaded to this item', 'hashmuseum' ),
-			'items_list'            => __( 'Items list', 'hashmuseum' ),
-			'items_list_navigation' => __( 'Items list navigation', 'hashmuseum' ),
-			'filter_items_list'     => __( 'Filter items list', 'hashmuseum' ),
-	);
-	$rewrite = array(
-			'slug'                  => 'collectionpage', 
-			'with_front'            => false,
-
-	);
-	$args = array(
-			'label'                 => __( 'Collection Front Pages', 'hashmuseum' ),
-			'description'           => __( 'Custom front pages for the collection post type.', 'hashmuseum' ),
-			'labels'                => $labels,
-			'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields',),
-			'hierarchical'          => false,
-			'public'                => true,
-			'show_ui'               => true,
-			'show_in_menu'          => 'edit.php?post_type=collection',
-			'menu_position'         => 3,
-			'menu_icon'             => 'dashicons-images-alt',
-			'show_in_admin_bar'     => false,
-			'show_in_nav_menus'     => false,
-			'can_export'            => true,
-			'has_archive'           => false,
-			'exclude_from_search'   => false,
-			'publicly_queryable'    => true,
-			'rewrite'               => $rewrite,
-			'capability_type'       => 'page',
-			'show_in_rest'          => true, // false will enable classic editor.
-			"query_var"           	=> true,
-	);
-	register_post_type( 'collection_pages', $args );
-
-}
-add_action( 'init', 'custom_collection_pages', 1 );
-
-
-
-
-
-/* ----------  Cannabis Info ------------------- */
-
-function cpt_cannabisinfo() {
-
-	$labels = array(
-			'name'                  => _x( 'Cannabis Knowledge', 'Post Type General Name', 'hashmuseum' ),
-			'singular_name'         => _x( 'Cannabis Knowledge', 'Post Type Singular Name', 'hashmuseum' ),
-			'menu_name'             => __( 'Knowledgebase', 'hashmuseum' ),
-			'name_admin_bar'        => __( 'Cannabis Knowledge Item', 'hashmuseum' ),
-			'archives'              => __( 'Item Archives', 'hashmuseum' ),
-			'attributes'            => __( 'Item Attributes', 'hashmuseum' ),
-			'parent_item_colon'     => __( 'Parent Item:', 'hashmuseum' ),
-			'all_items'             => __( 'Info Items', 'hashmuseum' ),
-			'add_new_item'          => __( 'Add New Info Item', 'hashmuseum' ),
-			'add_new'               => __( 'Add New', 'hashmuseum' ),
-			'new_item'              => __( 'New Item', 'hashmuseum' ),
-			'edit_item'             => __( 'Edit Item', 'hashmuseum' ),
-			'update_item'           => __( 'Update Item', 'hashmuseum' ),
-			'view_item'             => __( 'View Item', 'hashmuseum' ),
-			'view_items'            => __( 'View Items', 'hashmuseum' ),
-			'search_items'          => __( 'Search Item', 'hashmuseum' ),
-			'not_found'             => __( 'Not found', 'hashmuseum' ),
-			'not_found_in_trash'    => __( 'Not found in Trash', 'hashmuseum' ),
-			'featured_image'        => __( 'Featured Image', 'hashmuseum' ),
-			'set_featured_image'    => __( 'Set featured image', 'hashmuseum' ),
-			'remove_featured_image' => __( 'Remove featured image', 'hashmuseum' ),
-			'use_featured_image'    => __( 'Use as featured image', 'hashmuseum' ),
-			'insert_into_item'      => __( 'Insert into item', 'hashmuseum' ),
-			'uploaded_to_this_item' => __( 'Uploaded to this item', 'hashmuseum' ),
-			'items_list'            => __( 'Items list', 'hashmuseum' ),
-			'items_list_navigation' => __( 'Items list navigation', 'hashmuseum' ),
-			'filter_items_list'     => __( 'Filter items list', 'hashmuseum' ),
-	);
-	$rewrite = array(
-			'slug'                  => __( 'cannabis-knowledge', 'hashmuseum' ) . '/%info_categories%',
-			'with_front'            => true,
-			'pages'                 => true,
-			'feeds'                 => true,
-	);
-	$args = array(
-			'label'                 => __( 'Cannabis Knowledge', 'hashmuseum' ),
-			'description'           => __( 'Cannabis Knowledge', 'hashmuseum' ),
-			'labels'                => $labels,
-			'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', ),
-			'hierarchical'          => false,
-			'public'                => true,
-			'show_ui'               => true,
-			'show_in_menu'          => true,
-			'menu_position'         => 2,
-			'menu_icon'             => 'dashicons-info',
-			'show_in_admin_bar'     => true,
-			'show_in_nav_menus'     => true,
-			'can_export'            => true,
-			'has_archive'           => 'cannabis-info',
-			'exclude_from_search'   => false,
-			'publicly_queryable'    => true,
-			'rewrite'               => $rewrite,
-			'capability_type'       => 'post',
-			'show_in_rest'          => true,
-			"query_var"           	=> true,
-	);
-	register_post_type( 'cannabisinfo', $args );
-
-}
-add_action( 'init', 'cpt_cannabisinfo', 3 );
-
-
-function cpt_cannabisinfo_taxonomy() { 
- 
-	  $labels = array(
-		'name' => _x( 'Cannabis Info categories', 'taxonomy general name', 'hashmuseum' ),
-		'singular_name' => _x( 'Cannabis Info Category', 'taxonomy singular name', 'hashmuseum' ),
-		'search_items' =>  __( 'Search Categories', 'hashmuseum' ),
-		'all_items' => __( 'All Categories', 'hashmuseum' ),
-		'parent_item' => __( 'Parent Category', 'hashmuseum' ),
-		'parent_item_colon' => __( 'Parent Category:', 'hashmuseum' ),
-		'edit_item' => __( 'Edit Category', 'hashmuseum' ), 
-		'update_item' => __( 'Update Category', 'hashmuseum' ),
-		'add_new_item' => __( 'Add New Category', 'hashmuseum' ),
-		'new_item_name' => __( 'New Category Name', 'hashmuseum' ),
-		'menu_name' => __( 'Categories', 'hashmuseum' ),
-	  );    
-	  
-	  register_taxonomy('info_categories', array('cannabisinfo'), array(
-		'hierarchical' 		=> true,
-		"public"        	=> true,
-		'labels' 			=> $labels,
-		'show_ui' 			=> true,
-		'show_admin_column' => true,
-		'query_var' 		=> true,
-		'show_in_rest'      => true,
-		'rewrite' 			=> array( 'slug' => 'cannabis-knowledge' ),
-	  ));
-	 
-}
-add_action( 'init', 'cpt_cannabisinfo_taxonomy', 0 );
-
-function custom_cannabisinfo_pages() {
-
-	$labels = array(
-			'name'                  => _x( 'Frontpages', 'Post Type General Name', 'hashmuseum' ),
-			'singular_name'         => _x( 'Frontpage', 'Post Type Singular Name', 'hashmuseum' ),
-			'menu_name'             => __( 'Frontpages', 'hashmuseum' ),
-			'name_admin_bar'        => __( 'Cannabis Info Frontpage', 'hashmuseum' ),
-			'archives'              => __( 'Page Archives', 'hashmuseum' ),
-			'attributes'            => __( 'Page Attributes', 'hashmuseum' ),
-			'parent_item_colon'     => __( 'Parent Page:', 'hashmuseum' ),
-			'all_items'             => __( 'Frontpages', 'hashmuseum' ),
-			'add_new_item'          => __( 'Add New Page', 'hashmuseum' ),
-			'add_new'               => __( 'Add New', 'hashmuseum' ),
-			'new_item'              => __( 'New Page', 'hashmuseum' ),
-			'edit_item'             => __( 'Edit Page', 'hashmuseum' ),
-			'update_item'           => __( 'Update Page', 'hashmuseum' ),
-			'view_item'             => __( 'View Page', 'hashmuseum' ),
-			'view_items'            => __( 'View Pages', 'hashmuseum' ),
-			'search_items'          => __( 'Search Page', 'hashmuseum' ),
-			'not_found'             => __( 'Not found', 'hashmuseum' ),
-			'not_found_in_trash'    => __( 'Not found in Trash', 'hashmuseum' ),
-			'featured_image'        => __( 'Featured Image', 'hashmuseum' ),
-			'set_featured_image'    => __( 'Set featured image', 'hashmuseum' ),
-			'remove_featured_image' => __( 'Remove featured image', 'hashmuseum' ),
-			'use_featured_image'    => __( 'Use as featured image', 'hashmuseum' ),
-			'insert_into_item'      => __( 'Insert into item', 'hashmuseum' ),
-			'uploaded_to_this_item' => __( 'Uploaded to this item', 'hashmuseum' ),
-			'items_list'            => __( 'Items list', 'hashmuseum' ),
-			'items_list_navigation' => __( 'Items list navigation', 'hashmuseum' ),
-			'filter_items_list'     => __( 'Filter items list', 'hashmuseum' ),
-	);
-	$rewrite = array(
-			'slug'                  => 'cannabisinfopage', 
-			'with_front'            => false,
-
-	);
-	$args = array(
-			'label'                 => __( 'Cannabis Info Front Pages', 'hashmuseum' ),
-			'description'           => __( 'Custom front pages for the cannabis info post type.', 'hashmuseum' ),
-			'labels'                => $labels,
-			'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields',),
-			'hierarchical'          => false,
-			'public'                => true,
-			'show_ui'               => true,
-			'show_in_menu'          => 'edit.php?post_type=cannabisinfo',
-			'menu_position'         => 3,
-			'menu_icon'             => 'dashicons-images-alt',
-			'show_in_admin_bar'     => false,
-			'show_in_nav_menus'     => false,
-			'can_export'            => true,
-			'has_archive'           => false,
-			'exclude_from_search'   => false,
-			'publicly_queryable'    => true,
-			'rewrite'               => $rewrite,
-			'capability_type'       => 'page',
-			'show_in_rest'          => true, // false will enable classic editor.
-			"query_var"           	=> true,
-	);
-	register_post_type( 'cannabisinfo_pages', $args );
-
-}
-add_action( 'init', 'custom_cannabisinfo_pages', 1 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ----------  News & Exhibitions ------------------- */
-
-function cpt_newsexhibitions() {
-
-	$labels = array(
-			'name'                  => _x( 'News & Exhibitions', 'Post Type General Name', 'hashmuseum' ),
-			'singular_name'         => _x( 'News & Exhibitions', 'Post Type Singular Name', 'hashmuseum' ),
-			'menu_name'             => __( 'News & Exhibitions', 'hashmuseum' ),
-			'name_admin_bar'        => __( 'News & Exhibitions Item', 'hashmuseum' ),
-			'archives'              => __( 'Item Archives', 'hashmuseum' ),
-			'attributes'            => __( 'Item Attributes', 'hashmuseum' ),
-			'parent_item_colon'     => __( 'Parent Item:', 'hashmuseum' ),
-			'all_items'             => __( 'Agenda Items', 'hashmuseum' ),
-			'add_new_item'          => __( 'Add New Info Item', 'hashmuseum' ),
-			'add_new'               => __( 'Add New', 'hashmuseum' ),
-			'new_item'              => __( 'New Item', 'hashmuseum' ),
-			'edit_item'             => __( 'Edit Item', 'hashmuseum' ),
-			'update_item'           => __( 'Update Item', 'hashmuseum' ),
-			'view_item'             => __( 'View Item', 'hashmuseum' ),
-			'view_items'            => __( 'View Items', 'hashmuseum' ),
-			'search_items'          => __( 'Search Item', 'hashmuseum' ),
-			'not_found'             => __( 'Not found', 'hashmuseum' ),
-			'not_found_in_trash'    => __( 'Not found in Trash', 'hashmuseum' ),
-			'featured_image'        => __( 'Featured Image', 'hashmuseum' ),
-			'set_featured_image'    => __( 'Set featured image', 'hashmuseum' ),
-			'remove_featured_image' => __( 'Remove featured image', 'hashmuseum' ),
-			'use_featured_image'    => __( 'Use as featured image', 'hashmuseum' ),
-			'insert_into_item'      => __( 'Insert into item', 'hashmuseum' ),
-			'uploaded_to_this_item' => __( 'Uploaded to this item', 'hashmuseum' ),
-			'items_list'            => __( 'Items list', 'hashmuseum' ),
-			'items_list_navigation' => __( 'Items list navigation', 'hashmuseum' ),
-			'filter_items_list'     => __( 'Filter items list', 'hashmuseum' ),
-	);
-
-	$rewrite = array(
-			'slug'                  => __( 'whats-on', 'hashmuseum' ) . '/%news_exhibitions%',
-			'with_front'            => true,
-			'pages'                 => true,
-			'feeds'                 => true,
-	);
-
-	$args = array(
-			'label'                 => __( 'News & Exhibitions', 'hashmuseum' ),
-			'description'           => __( 'News & Exhibitions', 'hashmuseum' ),
-			'labels'                => $labels,
-			'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', ),
-			'hierarchical'          => false,
-			'public'                => true,
-			'show_ui'               => true,
-			'show_in_menu'          => true,
-			'menu_position'         => 2,
-			'menu_icon'             => 'dashicons-megaphone',
-			'show_in_admin_bar'     => true,
-			'show_in_nav_menus'     => true,
-			'can_export'            => true,
-			'has_archive'           => 'news',
-			'exclude_from_search'   => false,
-			'publicly_queryable'    => true,
-			'rewrite'               => $rewrite,
-			'capability_type'       => 'post',
-			'show_in_rest'          => true,
-			"query_var"           	=> true,
-	);
-	register_post_type( 'newsexhibitions', $args );
-
-}
-add_action( 'init', 'cpt_newsexhibitions', 3 );
-
-
-function cpt_newsexhibitions_taxonomy() { 
- 
-	  $labels = array(
-		'name' => _x( 'News & Exhibitions categories', 'taxonomy general name', 'hashmuseum' ),
-		'singular_name' => _x( 'News & Exhibitions Category', 'taxonomy singular name', 'hashmuseum' ),
-		'search_items' =>  __( 'Search Categories', 'hashmuseum' ),
-		'all_items' => __( 'All Categories', 'hashmuseum' ),
-		'parent_item' => __( 'Parent Category', 'hashmuseum' ),
-		'parent_item_colon' => __( 'Parent Category:', 'hashmuseum' ),
-		'edit_item' => __( 'Edit Category', 'hashmuseum' ), 
-		'update_item' => __( 'Update Category', 'hashmuseum' ),
-		'add_new_item' => __( 'Add New Category', 'hashmuseum' ),
-		'new_item_name' => __( 'New Category Name', 'hashmuseum' ),
-		'menu_name' => __( 'Categories', 'hashmuseum' ),
-	  );    
-	  
-	  register_taxonomy('news_exhibitions', array('newsexhibitions'), array(
-		'hierarchical' 		=> true,
-		"public"        	=> true,
-		'labels' 			=> $labels,
-		'show_ui' 			=> true,
-		'show_admin_column' => true,
-		'query_var' 		=> true,
-		'show_in_rest'      => true,
-		'rewrite' 			=> array( 'slug' => 'whats-on' ),
-	  ));
-	 
-}
-add_action( 'init', 'cpt_newsexhibitions_taxonomy', 0 );
-
-
-
-
-
-
-
-
-/* ----------  Visitor information (vreemde talen) ------------------- */
-
-function cpt_visitorinfo() {
-
-	$labels = array(
-			'name'                  => _x( 'Visitor information', 'Post Type General Name', 'hashmuseum' ),
-			'singular_name'         => _x( 'Visitor information', 'Post Type Singular Name', 'hashmuseum' ),
-			'menu_name'             => __( 'Visitor information', 'hashmuseum' ),
-			'name_admin_bar'        => __( 'Visitor information Item', 'hashmuseum' ),
-			'archives'              => __( 'Item Archives', 'hashmuseum' ),
-			'attributes'            => __( 'Item Attributes', 'hashmuseum' ),
-			'parent_item_colon'     => __( 'Parent Item:', 'hashmuseum' ),
-			'all_items'             => __( 'Info Items', 'hashmuseum' ),
-			'add_new_item'          => __( 'Add New Item', 'hashmuseum' ),
-			'add_new'               => __( 'Add New', 'hashmuseum' ),
-			'new_item'              => __( 'New Item', 'hashmuseum' ),
-			'edit_item'             => __( 'Edit Item', 'hashmuseum' ),
-			'update_item'           => __( 'Update Item', 'hashmuseum' ),
-			'view_item'             => __( 'View Item', 'hashmuseum' ),
-			'view_items'            => __( 'View Items', 'hashmuseum' ),
-			'search_items'          => __( 'Search Item', 'hashmuseum' ),
-			'not_found'             => __( 'Not found', 'hashmuseum' ),
-			'not_found_in_trash'    => __( 'Not found in Trash', 'hashmuseum' ),
-			'featured_image'        => __( 'Featured Image', 'hashmuseum' ),
-			'set_featured_image'    => __( 'Set featured image', 'hashmuseum' ),
-			'remove_featured_image' => __( 'Remove featured image', 'hashmuseum' ),
-			'use_featured_image'    => __( 'Use as featured image', 'hashmuseum' ),
-			'insert_into_item'      => __( 'Insert into item', 'hashmuseum' ),
-			'uploaded_to_this_item' => __( 'Uploaded to this item', 'hashmuseum' ),
-			'items_list'            => __( 'Items list', 'hashmuseum' ),
-			'items_list_navigation' => __( 'Items list navigation', 'hashmuseum' ),
-			'filter_items_list'     => __( 'Filter items list', 'hashmuseum' ),
-	);
-
-	$args = array(
-			'label'                 => __( 'Visitor Info', 'hashmuseum' ),
-			'description'           => __( 'Visitor Info for exotic languages', 'hashmuseum' ),
-			'labels'                => $labels,
-			'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', ),
-			'hierarchical'          => false,
-			'public'                => true,
-			'show_ui'               => true,
-			'show_in_menu'          => true,
-			'menu_position'         => 4,
-			'menu_icon'             => 'dashicons-admin-site-alt',
-			'show_in_admin_bar'     => true,
-			'show_in_nav_menus'     => true,
-			'can_export'            => true,
-			//'has_archive'           => 'news',
-			'exclude_from_search'   => false,
-			'publicly_queryable'    => true,
-			'rewrite'               => true,
-			'capability_type'       => 'page',
-			'show_in_rest'          => true,
-			"query_var"           	=> true,
-	);
-	register_post_type( 'visitorinfo', $args );
-
-}
-add_action( 'init', 'cpt_visitorinfo', 3 );
-
-
-function visitorinfo_remove_cpt_slug( $post_link, $post ) {
-    if ( 'visitorinfo' === $post->post_type && 'publish' === $post->post_status ) {
-        $post_link = str_replace( '/' . $post->post_type . '/', '/', $post_link );
-    }
-    return $post_link;
-}
-add_filter( 'post_type_link', 'visitorinfo_remove_cpt_slug', 10, 2 );
-
-
-
-function visitorinfo_add_cpt_post_names_to_main_query( $query ) {
-    // Return if this is not the main query.
-    if ( ! $query->is_main_query() ) {
-        return;
-    }
-    // Return if this query doesn't match our very specific rewrite rule.
-    if ( ! isset( $query->query['page'] ) || 2 !== count( $query->query ) ) {
-        return;
-    }
-    // Return if we're not querying based on the post name.
-    if ( empty( $query->query['name'] ) ) {
-        return;
-    }
-    // Add CPT to the list of post types WP will include when it queries based on the post name.
-    $query->set( 'post_type', array( 'visitorinfo' ) );
-}
-add_action( 'pre_get_posts', 'visitorinfo_add_cpt_post_names_to_main_query' );
-
-
-
-
-
-// Adds the current category in the URL.
-
-add_filter('post_type_link', 'sk_update_permalink_structure', 10, 2);
-
-function sk_update_permalink_structure( $post_link, $post )
-{
-    if ( false !== strpos( $post_link, '%collection_themes%' ) ) {
-
-		$taxonomy_terms = get_the_terms( $post->ID, 'collection_themes' );
-		
-        foreach ((array) $taxonomy_terms as $term ) { 
-            if ( ! $term->parent ) {
-                $post_link = str_replace( '%collection_themes%', $term->slug, $post_link );
-            }
-        } 
-	}
-
-	if ( false !== strpos( $post_link, '%info_categories%' ) ) {
-
-		$taxonomy_terms = get_the_terms( $post->ID, 'info_categories' );
-		
-        foreach ((array) $taxonomy_terms as $term ) { 
-            if ( ! $term->parent ) {
-                $post_link = str_replace( '%info_categories%', $term->slug, $post_link );
-            }
-        } 
-	}
-
-	if ( false !== strpos( $post_link, '%news_exhibitions%' ) ) {
-
-		$taxonomy_terms = get_the_terms( $post->ID, 'news_exhibitions' );
-		
-        foreach ((array) $taxonomy_terms as $term ) { 
-            if ( ! $term->parent ) {
-                $post_link = str_replace( '%news_exhibitions%', $term->slug, $post_link );
-            }
-        } 
-	}
+if( function_exists('acf_add_local_field_group') ):
+
+	acf_add_local_field_group(array(
+		'key' => 'group_5efc47426f6a9',
+		'title' => 'Collection Item Details',
+		'fields' => array(
+			array(
+				'key' => 'field_5efc475f65078',
+				'label' => 'Location',
+				'name' => 'location',
+				'type' => 'checkbox',
+				'instructions' => '',
+				'required' => 1,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => array(
+					'ams' => 'Amsterdam',
+					'bcn' => 'Barcelona',
+				),
+				'allow_custom' => 0,
+				'default_value' => array(
+				),
+				'layout' => 'vertical',
+				'toggle' => 0,
+				'return_format' => 'value',
+				'translations' => 'sync',
+				'save_custom' => 0,
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'collection',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'side',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
 	
-    return $post_link;
-}
+	acf_add_local_field_group(array(
+		'key' => 'group_5ef9cb5ee8172',
+		'title' => 'Collection Themes',
+		'fields' => array(
+			array(
+				'key' => 'field_5ef9cb6e4c4c9',
+				'label' => 'Featured Image',
+				'name' => 'featured_image',
+				'type' => 'image',
+				'instructions' => '',
+				'required' => 1,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'array',
+				'preview_size' => 'medium',
+				'library' => 'all',
+				'min_width' => '',
+				'min_height' => '',
+				'min_size' => '',
+				'max_width' => '',
+				'max_height' => '',
+				'max_size' => '',
+				'mime_types' => '',
+				'translations' => 'sync',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'taxonomy',
+					'operator' => '==',
+					'value' => 'collection_themes',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+	
+	acf_add_local_field_group(array(
+		'key' => 'group_5ef759a558571',
+		'title' => 'Hero Block',
+		'fields' => array(
+			array(
+				'key' => 'field_5efa0fd248b46',
+				'label' => 'Hero Type',
+				'name' => 'hero_type',
+				'type' => 'radio',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '50',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => array(
+					'normal' => 'Normal Hero',
+					'collection_item' => 'Collection Item Hero',
+					'exhibition' => 'Exhibition Hero ( Only use in exhibition category )',
+				),
+				'allow_null' => 0,
+				'other_choice' => 0,
+				'default_value' => 'normal',
+				'layout' => 'vertical',
+				'return_format' => 'value',
+				'translations' => 'sync',
+				'save_other_choice' => 0,
+			),
+			array(
+				'key' => 'field_5ef766fca8abb',
+				'label' => 'Image Position',
+				'name' => 'image_position',
+				'type' => 'radio',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '50',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => array(
+					'left' => 'Image Left',
+					'right' => 'Image Right',
+				),
+				'allow_null' => 0,
+				'other_choice' => 0,
+				'default_value' => 'right',
+				'layout' => 'vertical',
+				'return_format' => 'value',
+				'translations' => 'sync',
+				'save_other_choice' => 0,
+			),
+			array(
+				'key' => 'field_5ef759b654ae8',
+				'label' => 'Subheader',
+				'name' => 'subheader',
+				'type' => 'text',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5efa0fd248b46',
+							'operator' => '==',
+							'value' => 'normal',
+						),
+					),
+					array(
+						array(
+							'field' => 'field_5efa0fd248b46',
+							'operator' => '==',
+							'value' => 'exhibition',
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+				'translations' => 'translate',
+			),
+			array(
+				'key' => 'field_5ef759ce54ae9',
+				'label' => 'Description',
+				'name' => 'description',
+				'type' => 'wysiwyg',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5efa0fd248b46',
+							'operator' => '==',
+							'value' => 'normal',
+						),
+					),
+					array(
+						array(
+							'field' => 'field_5efa0fd248b46',
+							'operator' => '==',
+							'value' => 'collection_item',
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'tabs' => 'all',
+				'toolbar' => 'basic',
+				'media_upload' => 0,
+				'delay' => 0,
+				'translations' => 'translate',
+			),
+			array(
+				'key' => 'field_5f0335133ebda',
+				'label' => 'Start Date',
+				'name' => 'start_date',
+				'type' => 'date_picker',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5efa0fd248b46',
+							'operator' => '==',
+							'value' => 'exhibition',
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '50',
+					'class' => '',
+					'id' => '',
+				),
+				'display_format' => 'd/m/Y',
+				'return_format' => 'Ymd',
+				'first_day' => 1,
+				'translations' => 'sync',
+			),
+			array(
+				'key' => 'field_5f03353a3ebdb',
+				'label' => 'End Date',
+				'name' => 'end_date',
+				'type' => 'date_picker',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5efa0fd248b46',
+							'operator' => '==',
+							'value' => 'exhibition',
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '50',
+					'class' => '',
+					'id' => '',
+				),
+				'display_format' => 'd/m/Y',
+				'return_format' => 'Ymd',
+				'first_day' => 1,
+				'translations' => 'sync',
+			),
+			array(
+				'key' => 'field_5f0335523ebdc',
+				'label' => 'Location',
+				'name' => 'location',
+				'type' => 'radio',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5efa0fd248b46',
+							'operator' => '==',
+							'value' => 'exhibition',
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '50',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => array(
+					'Amsterdam' => 'Amsterdam',
+					'Barcelona' => 'Barcelona',
+				),
+				'allow_null' => 0,
+				'other_choice' => 0,
+				'default_value' => '',
+				'layout' => 'vertical',
+				'return_format' => 'value',
+				'translations' => 'sync',
+				'save_other_choice' => 0,
+			),
+			array(
+				'key' => 'field_5f045dbdbb6a1',
+				'label' => 'Free entry',
+				'name' => 'free_entry',
+				'type' => 'radio',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5efa0fd248b46',
+							'operator' => '==',
+							'value' => 'exhibition',
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '50',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => array(
+					'paid' => 'Paid event / expo',
+					'free' => 'Free event / expo',
+				),
+				'allow_null' => 0,
+				'other_choice' => 0,
+				'default_value' => 'paid',
+				'layout' => 'vertical',
+				'return_format' => 'value',
+				'translations' => 'sync',
+				'save_other_choice' => 0,
+			),
+			array(
+				'key' => 'field_5f0335883ebdd',
+				'label' => 'Opening hours',
+				'name' => 'opening_hours_toggle',
+				'type' => 'radio',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5efa0fd248b46',
+							'operator' => '==',
+							'value' => 'exhibition',
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '50',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => array(
+					'same' => 'Exhibition has standard opening hours',
+					'different' => 'Exhibition has different opening hours',
+				),
+				'allow_null' => 0,
+				'other_choice' => 0,
+				'default_value' => 'same',
+				'layout' => 'vertical',
+				'return_format' => 'value',
+				'translations' => 'sync',
+				'save_other_choice' => 0,
+			),
+			array(
+				'key' => 'field_5f0335c43ebde',
+				'label' => 'Exhibition specific opening hours',
+				'name' => 'exhibition_specific_opening_hours',
+				'type' => 'textarea',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5efa0fd248b46',
+							'operator' => '==',
+							'value' => 'exhibition',
+						),
+						array(
+							'field' => 'field_5f0335883ebdd',
+							'operator' => '==',
+							'value' => 'different',
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '50',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => 'Monday - Friday : 10:00 - 22:00
+	Saturday & Sunday : 10:00 - 20:00',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => 3,
+				'new_lines' => 'br',
+				'translations' => 'translate',
+			),
+			array(
+				'key' => 'field_5ef759e954aea',
+				'label' => 'image',
+				'name' => 'image',
+				'type' => 'gallery',
+				'instructions' => '',
+				'required' => 1,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'array',
+				'preview_size' => 'medium',
+				'insert' => 'append',
+				'library' => 'all',
+				'min' => '',
+				'max' => '',
+				'min_width' => '',
+				'min_height' => '',
+				'min_size' => '',
+				'max_width' => '',
+				'max_height' => '',
+				'max_size' => '',
+				'mime_types' => '',
+				'translations' => 'sync',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'block',
+					'operator' => '==',
+					'value' => 'acf/hero',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+	
+	acf_add_local_field_group(array(
+		'key' => 'group_5efda92a8e06d',
+		'title' => 'Image Slider',
+		'fields' => array(
+			array(
+				'key' => 'field_5efda96b3e14e',
+				'label' => 'Images',
+				'name' => 'images',
+				'type' => 'gallery',
+				'instructions' => '',
+				'required' => 1,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'array',
+				'preview_size' => 'medium',
+				'insert' => 'append',
+				'library' => 'all',
+				'min' => 2,
+				'max' => '',
+				'min_width' => '',
+				'min_height' => '',
+				'min_size' => '',
+				'max_width' => '',
+				'max_height' => '',
+				'max_size' => '',
+				'mime_types' => '',
+				'translations' => 'sync',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'block',
+					'operator' => '==',
+					'value' => 'acf/image-slider',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+	
+	acf_add_local_field_group(array(
+		'key' => 'group_5ef9df5645e75',
+		'title' => 'Promo Block',
+		'fields' => array(
+			array(
+				'key' => 'field_5ef9df69feacc',
+				'label' => 'Header',
+				'name' => 'header',
+				'type' => 'text',
+				'instructions' => '',
+				'required' => 1,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+				'translations' => 'translate',
+			),
+			array(
+				'key' => 'field_5ef9df56685d6',
+				'label' => 'Subheader',
+				'name' => 'subheader',
+				'type' => 'text',
+				'instructions' => '',
+				'required' => 1,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+				'translations' => 'translate',
+			),
+			array(
+				'key' => 'field_5ef9df56689d1',
+				'label' => 'Description',
+				'name' => 'description',
+				'type' => 'wysiwyg',
+				'instructions' => '',
+				'required' => 1,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'tabs' => 'all',
+				'toolbar' => 'basic',
+				'media_upload' => 0,
+				'delay' => 0,
+				'translations' => 'translate',
+			),
+			array(
+				'key' => 'field_5ef9df5668dc1',
+				'label' => 'Image Position',
+				'name' => 'image_position',
+				'type' => 'select',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => array(
+					'left' => 'Image Left',
+					'right' => 'Image Right',
+				),
+				'default_value' => 'right',
+				'allow_null' => 0,
+				'multiple' => 0,
+				'ui' => 0,
+				'return_format' => 'value',
+				'translations' => 'sync',
+				'ajax' => 0,
+				'placeholder' => '',
+			),
+			array(
+				'key' => 'field_5ef9df5669181',
+				'label' => 'image',
+				'name' => 'image',
+				'type' => 'gallery',
+				'instructions' => '',
+				'required' => 1,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'array',
+				'preview_size' => 'medium',
+				'insert' => 'append',
+				'library' => 'all',
+				'min' => '',
+				'max' => '',
+				'min_width' => '',
+				'min_height' => '',
+				'min_size' => '',
+				'max_width' => '',
+				'max_height' => '',
+				'max_size' => '',
+				'mime_types' => '',
+				'translations' => 'sync',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'block',
+					'operator' => '==',
+					'value' => 'acf/promo',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+	
+	acf_add_local_field_group(array(
+		'key' => 'group_5ef99c7e484e7',
+		'title' => 'Related Posts',
+		'fields' => array(
+			array(
+				'key' => 'field_5ef9cae1eca4c',
+				'label' => 'Header',
+				'name' => 'header',
+				'type' => 'text',
+				'instructions' => '',
+				'required' => 1,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+				'translations' => 'translate',
+			),
+			array(
+				'key' => 'field_5ef9caf7eca4d',
+				'label' => 'Description',
+				'name' => 'description',
+				'type' => 'text',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+				'translations' => 'translate',
+			),
+			array(
+				'key' => 'field_5ef99d784a139',
+				'label' => 'Posts',
+				'name' => 'posts',
+				'type' => 'relationship',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'post_type' => array(
+					0 => 'collection',
+					1 => 'newsexhibitions',
+					2 => 'cannabisinfo',
+					3 => 'page',
+				),
+				'taxonomy' => '',
+				'filters' => array(
+					0 => 'search',
+					1 => 'post_type',
+					2 => 'taxonomy',
+				),
+				'elements' => array(
+					0 => 'featured_image',
+				),
+				'min' => 3,
+				'max' => '',
+				'return_format' => 'object',
+				'translations' => 'sync',
+			),
+			array(
+				'key' => 'field_5ef9be11d6aa8',
+				'label' => 'Collection Themes',
+				'name' => 'collection_themes',
+				'type' => 'taxonomy',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'taxonomy' => 'collection_themes',
+				'field_type' => 'multi_select',
+				'allow_null' => 0,
+				'add_term' => 0,
+				'save_terms' => 0,
+				'load_terms' => 1,
+				'return_format' => 'id',
+				'translations' => 'sync',
+				'multiple' => 0,
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'block',
+					'operator' => '==',
+					'value' => 'acf/related-posts',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+	
+	acf_add_local_field_group(array(
+		'key' => 'group_5efa219195264',
+		'title' => 'Settings (Catalan)',
+		'fields' => array(
+			array(
+				'key' => 'field_5efa2191b4b78',
+				'label' => 'Amsterdam Opening Hours',
+				'name' => 'amsterdam_opening_hours_ca',
+				'type' => 'textarea',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => 3,
+				'new_lines' => 'br',
+				'translations' => 'copy_once',
+			),
+			array(
+				'key' => 'field_5efa2191b4f2c',
+				'label' => 'Barcelona Opening Hours',
+				'name' => 'barcelona_opening_hours_ca',
+				'type' => 'textarea',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => 3,
+				'new_lines' => 'br',
+				'translations' => 'copy_once',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'options_page',
+					'operator' => '==',
+					'value' => 'acf-options-catalan',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+	
+	acf_add_local_field_group(array(
+		'key' => 'group_5efa219866e2f',
+		'title' => 'Settings (Dutch)',
+		'fields' => array(
+			array(
+				'key' => 'field_5efa21988ff3a',
+				'label' => 'Amsterdam Opening Hours',
+				'name' => 'amsterdam_opening_hours_nl',
+				'type' => 'textarea',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => 3,
+				'new_lines' => 'br',
+				'translations' => 'copy_once',
+			),
+			array(
+				'key' => 'field_5efa219890320',
+				'label' => 'Barcelona Opening Hours',
+				'name' => 'barcelona_opening_hours_nl',
+				'type' => 'textarea',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => 3,
+				'new_lines' => 'br',
+				'translations' => 'copy_once',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'options_page',
+					'operator' => '==',
+					'value' => 'acf-options-dutch',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+	
+	acf_add_local_field_group(array(
+		'key' => 'group_5efa1c5f813c8',
+		'title' => 'Settings (English)',
+		'fields' => array(
+			array(
+				'key' => 'field_5efa1c796afa9',
+				'label' => 'Amsterdam Opening Hours',
+				'name' => 'amsterdam_opening_hours_en',
+				'type' => 'textarea',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => 3,
+				'new_lines' => 'br',
+				'translations' => 'copy_once',
+			),
+			array(
+				'key' => 'field_5efa1ca86afaa',
+				'label' => 'Barcelona Opening Hours',
+				'name' => 'barcelona_opening_hours_en',
+				'type' => 'textarea',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => 3,
+				'new_lines' => 'br',
+				'translations' => 'copy_once',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'options_page',
+					'operator' => '==',
+					'value' => 'english-settings',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+	
+	acf_add_local_field_group(array(
+		'key' => 'group_5efa219f65f48',
+		'title' => 'Settings (French)',
+		'fields' => array(
+			array(
+				'key' => 'field_5efa219f875c0',
+				'label' => 'Amsterdam Opening Hours',
+				'name' => 'amsterdam_opening_hours_fr',
+				'type' => 'textarea',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => 3,
+				'new_lines' => 'br',
+				'translations' => 'copy_once',
+			),
+			array(
+				'key' => 'field_5efa219f87971',
+				'label' => 'Barcelona Opening Hours',
+				'name' => 'barcelona_opening_hours_fr',
+				'type' => 'textarea',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => 3,
+				'new_lines' => 'br',
+				'translations' => 'copy_once',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'options_page',
+					'operator' => '==',
+					'value' => 'acf-options-french',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+	
+	acf_add_local_field_group(array(
+		'key' => 'group_5efa219be134d',
+		'title' => 'Settings (German)',
+		'fields' => array(
+			array(
+				'key' => 'field_5efa219c1732b',
+				'label' => 'Amsterdam Opening Hours',
+				'name' => 'amsterdam_opening_hours_de',
+				'type' => 'textarea',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => 3,
+				'new_lines' => 'br',
+				'translations' => 'copy_once',
+			),
+			array(
+				'key' => 'field_5efa219c17715',
+				'label' => 'Barcelona Opening Hours',
+				'name' => 'barcelona_opening_hours_de',
+				'type' => 'textarea',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => 3,
+				'new_lines' => 'br',
+				'translations' => 'copy_once',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'options_page',
+					'operator' => '==',
+					'value' => 'acf-options-german',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+	
+	acf_add_local_field_group(array(
+		'key' => 'group_5efa204532a93',
+		'title' => 'Settings (Non-language Specific)',
+		'fields' => array(
+			array(
+				'key' => 'field_5efa205870087',
+				'label' => 'Amount of visitors',
+				'name' => 'amount_of_visitors',
+				'type' => 'number',
+				'instructions' => '',
+				'required' => 1,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'min' => '',
+				'max' => '',
+				'step' => '',
+				'translations' => 'sync',
+			),
+			array(
+				'key' => 'field_5efa208570088',
+				'label' => 'Visitor Count Date',
+				'name' => 'visitor_count_date',
+				'type' => 'date_picker',
+				'instructions' => '',
+				'required' => 1,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'display_format' => 'd/m/Y',
+				'return_format' => 'd/m/Y',
+				'first_day' => 1,
+				'translations' => 'sync',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'options_page',
+					'operator' => '==',
+					'value' => 'general-settings',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+	
+	acf_add_local_field_group(array(
+		'key' => 'group_5efa21952e0ad',
+		'title' => 'Settings (Spanish)',
+		'fields' => array(
+			array(
+				'key' => 'field_5efa21954fd53',
+				'label' => 'Amsterdam Opening Hours',
+				'name' => 'amsterdam_opening_hours_es',
+				'type' => 'textarea',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => 3,
+				'new_lines' => 'br',
+				'translations' => 'copy_once',
+			),
+			array(
+				'key' => 'field_5efa21955011f',
+				'label' => 'Barcelona Opening Hours',
+				'name' => 'barcelona_opening_hours_es',
+				'type' => 'textarea',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => 3,
+				'new_lines' => 'br',
+				'translations' => 'copy_once',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'options_page',
+					'operator' => '==',
+					'value' => 'acf-options-spanish',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+	
+	acf_add_local_field_group(array(
+		'key' => 'group_5ef8a7afdd057',
+		'title' => 'Sidebar',
+		'fields' => array(
+			array(
+				'key' => 'field_5ef8a7c31765f',
+				'label' => 'Quote Toggle',
+				'name' => 'quote_toggle',
+				'type' => 'select',
+				'instructions' => 'Would you like to add a quote to the sidebar?',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => array(
+					'no_quote' => 'No quote',
+					'top_quote' => 'Yes, at the top',
+					'bottom_quote' => 'Yes, at the bottom',
+				),
+				'default_value' => 'no_quote',
+				'allow_null' => 0,
+				'multiple' => 0,
+				'ui' => 0,
+				'return_format' => 'value',
+				'translations' => 'sync',
+				'ajax' => 0,
+				'placeholder' => '',
+			),
+			array(
+				'key' => 'field_5ef8a87afe09d',
+				'label' => 'Quote',
+				'name' => 'quote',
+				'type' => 'text',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5ef8a7c31765f',
+							'operator' => '==',
+							'value' => 'top_quote',
+						),
+					),
+					array(
+						array(
+							'field' => 'field_5ef8a7c31765f',
+							'operator' => '==',
+							'value' => 'bottom_quote',
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+				'translations' => 'translate',
+			),
+			array(
+				'key' => 'field_5ef8a8bcfe09f',
+				'label' => 'Quote Author',
+				'name' => 'quote_author',
+				'type' => 'text',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5ef8a7c31765f',
+							'operator' => '==',
+							'value' => 'top_quote',
+						),
+					),
+					array(
+						array(
+							'field' => 'field_5ef8a7c31765f',
+							'operator' => '==',
+							'value' => 'bottom_quote',
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+				'translations' => 'translate',
+			),
+			array(
+				'key' => 'field_5ef8a8cf08459',
+				'label' => 'images',
+				'name' => 'images',
+				'type' => 'gallery',
+				'instructions' => '',
+				'required' => 1,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'array',
+				'preview_size' => 'medium',
+				'insert' => 'append',
+				'library' => 'all',
+				'min' => 1,
+				'max' => 3,
+				'min_width' => '',
+				'min_height' => '',
+				'min_size' => '',
+				'max_width' => '',
+				'max_height' => '',
+				'max_size' => '',
+				'mime_types' => '',
+				'translations' => 'sync',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'block',
+					'operator' => '==',
+					'value' => 'acf/sidebar',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+	
+	endif;
