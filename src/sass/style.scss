@@ -32,10 +32,24 @@ html {
     text-shadow: 2px 2px 1px rgba(139, 24, 17, 0.25);
     transition: background-color .6s ease, color .3s ease;
 
+    &:visited {
+        color:$white;
+    }
+
     &:hover {
         background:$white;
         color:$black;
         text-shadow: none;
+        transition: background-color .6s ease, color .3s ease;
+    }
+}
+
+.action_btn.black {
+    transition: background-color .6s ease, color .3s ease;
+
+    &:hover {
+        background:$black;
+        color:$white;
         transition: background-color .6s ease, color .3s ease;
     }
 }
@@ -68,6 +82,89 @@ html {
         transition: background-color .6s ease, color .3s ease;
     }
 }
+
+/* ------------- Default Wordpress Blocks ----------------------------------------------------------------------------------------------------------- */
+
+.wp-block-group__inner-container {     
+    display:flex;    
+    
+    .wp-block-group {
+        width:66vw;
+        padding:$horizontal;
+        
+        h2 {
+            margin-top:$vertical-l;
+        }
+
+        h2:first-of-type {
+            font-size:$normal-title;
+            margin-top:20px;
+        }
+
+        h3:first-of-type {
+            margin:$vertical 0 20px 0;
+            color:$mediumgrey;
+        }
+
+        p, h2, h3 {
+            width:80%;
+        } 
+
+        .wp-block-group__inner-container {
+            display:inline-block;
+        }
+    }
+}
+
+.wp-block-group {
+
+    .wp-block-image {
+        height:100vh;
+
+        img {
+            height:100vh;
+            object-fit: cover; 
+        }
+    }
+
+    .wp-block-quote {
+        background:$black;
+        color:$white;
+        padding:$vertical $horizontal;
+        margin-bottom:$vertical;
+        width:70%;
+    
+        p {
+            margin-top:$vertical;
+            font-family: $header-font;
+            font-size:$large-p;
+            width:100%;
+        }
+    
+        cite {
+            font-family: $body-font;
+            font-size:$small-p;
+            font-style: normal;
+            margin-bottom:$vertical;
+            display: inline-block;
+        }
+    }
+    
+    .wp-block-quote.is-style-large {
+    
+        p{
+            font-size:$normal-subtitle;
+        }
+    
+    }
+
+    .wp-block-image {
+        margin-bottom: $vertical;
+
+    }
+}
+
+
 
 
 /* ------------- Logo ----------------------------------------------------------------------------------------------------------- */
@@ -411,6 +508,47 @@ html {
        }
    }
 
+   .text_wrap.expo {
+
+        .btn {
+            margin-bottom:40px;
+        }
+
+        .date {
+            display:flex;            
+
+            p {
+                font-weight:600;
+                font-size:var(--medium-p);
+                margin-left:20px;
+            }
+
+        }
+
+        .opening_hours {
+            display:flex;
+
+            p {
+                font-weight:300;
+                font-size:var(--medium-p);
+                margin-left:20px;
+            }
+
+        }
+
+        .location {
+            display:flex;
+
+            p {
+                font-weight:300;
+                font-size:var(--medium-p);
+                margin-left:20px;
+            }
+
+        }
+
+   }
+
    .image_wrap {
        width:66vw;
        position:relative;
@@ -466,6 +604,8 @@ html {
         }    
 
    }
+
+
 }
 
 /* ------------- Image Slider ---------------- */
@@ -780,53 +920,6 @@ border: 0;
     }    
 
 }
-
-/* ------------- Main Content on detail pages ----------------------------------------------------------------------------------------------------------- */
-
-.wp-block-group__inner-container {     
-    display:flex;    
-    
-    .wp-block-group {
-        width:66vw;
-        padding:$horizontal;
-        
-        h2 {
-            margin-top:$vertical-l;
-        }
-
-        h2:first-of-type {
-            font-size:$normal-title;
-            margin-top:20px;
-        }
-
-        h3:first-of-type {
-            margin:$vertical 0 20px 0;
-            color:$mediumgrey;
-        }
-
-        p, h2, h3 {
-            width:80%;
-        } 
-
-        .wp-block-group__inner-container {
-            display:inline-block;
-        }
-    }
-}
-
-.wp-block-group {
-    .wp-block-image {
-        height:100vh;
-
-        img {
-            height:100vh;
-            object-fit: cover; 
-        }
-    }
-}
-
-
-/* ------------- Sub section ---------------- */
 
 
 

@@ -57,7 +57,25 @@ $id = 'hero-' . $block['id'];
 
     <article id="<?php echo $id; ?>" class="hero">
 
-        <?php include('parts/hero/hero-text-normal.php'); ?>    
+    <?php
+
+        $HeroType = get_field('hero_type');
+
+        switch ($HeroType) {
+        case 'normal':
+            include('parts/hero/hero-text-normal.php');
+            break;
+        case 'collection_item':
+            include('parts/hero/hero-text-collection.php');
+            break;
+        case 'exhibition':
+            include('parts/hero/hero-text-exhibition.php');
+            break;
+        default:
+            include('parts/hero/hero-text-normal.php');
+        }
+
+        ?>  
 
         <div class="image_wrap">
 

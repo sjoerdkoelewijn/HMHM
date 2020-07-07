@@ -26,7 +26,7 @@ $id = 'image-sidebar-' . $block['id'];
                 <?php if( $quoteauthor ): ?>
 
                     <p class="quote_author">
-                        - <?php echo $quoteauthor; ?>
+                        <?php echo $quoteauthor; ?>
                     </p>
 
                 <?php endif; ?>

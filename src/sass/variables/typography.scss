@@ -17,6 +17,25 @@ $body-font:'Lato', sans-serif;
 $header-font:'Prata', serif;
 
 
+:root {
+
+    --normal-title:3vw;
+    --small-title:2vw;
+
+    --normal-subtitle:2vw;
+    --small-subtitle:1.5vw;
+
+    --x-large-p:2rem;
+    --large-p:1.5rem;
+    --medium-p:1.3rem;
+    --small-p:1rem;
+
+    --small-btn:0.9rem;
+    --body-font:'Lato', sans-serif;
+    --header-font:'Prata', serif;
+
+}
+
 html {
     font-family: $body-font; 
 }

@@ -22,7 +22,7 @@
     <?php echo sk_taxonomy_terms(); ?>
     
     <p class="license_message">
-        Copyright <?php echo date("Y");?> Hashmuseum. Please <a href="mailto:info@hashmusuem.com">contact us</a> for licensing options.
+        Copyright <?php echo date("Y");?> Hashmuseum. Please <a href="mailto:info@hashmuseum.com">contact us</a> for licensing options.
     </p>
 
 </div>

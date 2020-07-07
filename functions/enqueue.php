@@ -1,5 +1,16 @@
 <?php
 
+/*************************** Dequeue Default Block Styles **********************************/
+
+function sk_dequeue_block_styles(){
+	wp_dequeue_style( 'wp-block-library' );
+	wp_dequeue_style( 'wp-block-library-theme' );
+   }
+
+   if (!is_admin()) {
+   	add_action( 'wp_enqueue_scripts', 'sk_dequeue_block_styles', 99 );
+   }
+
 /*************************** Enqueue Styles **********************************/
 
 function hashmuseum_styles() {

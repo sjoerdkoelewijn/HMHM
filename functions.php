@@ -2,9 +2,12 @@
 
 include 'translations/polylang_translations.php';
 include 'functions/custom-post-types.php';
-include 'functions/advanced-custom-fields.php';
 include 'functions/gutenberg-blocks.php';
 include 'functions/enqueue.php';
+
+/* ACF should be set to disabled on dev env */
+//include 'functions/advanced-custom-fields.php';
+
 
 add_theme_support( 'title-tag' );
 add_theme_support( 'menus' );
@@ -257,4 +260,48 @@ function sk_taxonomy_terms() {
         }
     }
     return implode( '', $out );
+}
+
+
+/*************************** Ticket URL *********************************/
+
+function sk_get_ticket_url($location) {
+
+	if($location = 'Barcelona') {
+		echo 'https://tickets.hashmuseum.com/' . pll_current_language() . '/barcelona';
+	} else if ($location = 'Amsterdam'){
+		echo 'https://tickets.hashmuseum.com/' . pll_current_language() . '/tickets';
+	}
+
+}
+
+/*************************** Get language specific option *********************************/
+
+function sk_lang_specific_option($key) {
+
+	$current_language = pll_current_language();
+
+	switch ($current_language) {
+	case 'en':
+		get_field($key, 'acf-options-english');
+		break;
+	case 'ca':
+		get_field($key, 'acf-options-catalan');
+		break;
+	case 'es':
+		get_field($key, 'acf-options-spanish');
+		break;
+	case 'fr':
+		get_field($key, 'acf-options-french');
+		break;
+	case 'nl':
+		get_field($key, 'acf-options-dutch');
+		break;			
+	case 'de':
+		get_field($key, 'acf-options-german');
+		break;			
+	default:
+		get_field($key, 'acf-options-english');
+	}
+
 }

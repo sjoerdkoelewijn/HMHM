@@ -48,7 +48,7 @@ function my_acf_init() {
 		// register the hero block
 		acf_register_block(array(
 			'name'				=> 'sidebar',
-			'title'				=> __('Sidebar Images'),
+			'title'				=> __('Sidebar Images & Quote'),
 			'description'		=> __('A sidebar for images and an optional quote'),
 			'render_callback'	=> 'sk_acf_block_render_callback',
 			'category'			=> 'common',
