@@ -6,7 +6,7 @@ include 'functions/gutenberg-blocks.php';
 include 'functions/enqueue.php';
 
 /* ACF should be set to disabled on dev env */
-include 'functions/advanced-custom-fields.php';
+//include 'functions/advanced-custom-fields.php';
 
 
 add_theme_support( 'title-tag' );
@@ -172,54 +172,67 @@ function sk_frontpages_notice() { ?>
 
 /*************************** Add ACF Option page *********************************/
 
-if( function_exists('acf_add_options_page') ) {
-	
-	acf_add_options_page(array(
-		'page_title' 	=> 'General Settings (non-language specific)',
-		'menu_title'	=> 'General Settings',
-		'menu_slug' 	=> 'general-settings',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false
-	));
-	
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'English',
-		'menu_title'	=> 'English',
-		'menu_slug' 	=> 'english-settings',
-		'parent_slug'	=> 'general-settings',
-	));
+add_action('acf/init', 'sk_acf_options_init', 95);
 
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Catalan',
-		'menu_title'	=> 'Catalan',
-		'parent_slug'	=> 'general-settings',
-	));
+function sk_acf_options_init() {
+
+	if( function_exists('acf_add_options_page') ) {
 	
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Spanish',
-		'menu_title'	=> 'Spanish',
-		'parent_slug'	=> 'general-settings',
-	));
-
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'French',
-		'menu_title'	=> 'French',
-		'parent_slug'	=> 'general-settings',
-	));
-
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Dutch',
-		'menu_title'	=> 'Dutch',
-		'parent_slug'	=> 'general-settings',
-	));
-
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'German',
-		'menu_title'	=> 'German',
-		'parent_slug'	=> 'general-settings',
-	));
+		acf_add_options_page(array(
+			'page_title' 	=> 'General Settings (non-language specific)',
+			'menu_title'	=> 'General Settings',
+			'menu_slug' 	=> 'general-settings',
+			'capability'	=> 'edit_posts',
+			'redirect'		=> false
+		));
+		
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'English',
+			'menu_title'	=> 'English',
+			'menu_slug' 	=> 'english-settings',
+			'parent_slug'	=> 'general-settings',
+		));
 	
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Catalan',
+			'menu_title'	=> 'Catalan',
+			'menu_slug' 	=> 'catalan-settings',
+			'parent_slug'	=> 'general-settings',
+		));
+		
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Spanish',
+			'menu_title'	=> 'Spanish',
+			'menu_slug' 	=> 'spanish-settings',
+			'parent_slug'	=> 'general-settings',
+		));
+	
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'French',
+			'menu_title'	=> 'French',
+			'menu_slug' 	=> 'french-settings',
+			'parent_slug'	=> 'general-settings',
+		));
+	
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Dutch',
+			'menu_title'	=> 'Dutch',
+			'menu_slug' 	=> 'dutch-settings',
+			'parent_slug'	=> 'general-settings',
+		));
+	
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'German',
+			'menu_title'	=> 'German',
+			'menu_slug' 	=> 'german-settings',
+			'parent_slug'	=> 'general-settings',
+		));
+		
+	}
+
 }
+
+
 
 
 
@@ -284,25 +297,25 @@ function sk_lang_specific_option($key) {
 
 	switch ($current_language) {
 	case 'en':
-		get_field($key, 'acf-options-english');
+		the_field($key . '_' . $current_language, 'option');
 		break;
 	case 'ca':
-		get_field($key, 'acf-options-catalan');
+		the_field($key . '_' . $current_language, 'option');
 		break;
 	case 'es':
-		get_field($key, 'acf-options-spanish');
+		the_field($key . '_' . $current_language, 'option');
 		break;
 	case 'fr':
-		get_field($key, 'acf-options-french');
+		the_field($key . '_' . $current_language, 'option');
 		break;
 	case 'nl':
-		get_field($key, 'acf-options-dutch');
+		the_field($key . '_' . $current_language, 'option');
 		break;			
 	case 'de':
-		get_field($key, 'acf-options-german');
+		the_field($key . '_' . $current_language, 'option');
 		break;			
 	default:
-		get_field($key, 'acf-options-english');
+		the_field($key . '_' . $current_language, 'option');
 	}
 
 }
