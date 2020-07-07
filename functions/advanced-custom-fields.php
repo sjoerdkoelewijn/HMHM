@@ -1,5 +1,4 @@
 <?php
-
 if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array(
@@ -743,7 +742,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa2191b4b78',
                 'label' => 'Amsterdam Opening Hours',
-                'name' => 'amsterdam_opening_hours',
+                'name' => 'amsterdam_opening_hours_ca',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
@@ -763,7 +762,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa2191b4f2c',
                 'label' => 'Barcelona Opening Hours',
-                'name' => 'barcelona_opening_hours',
+                'name' => 'barcelona_opening_hours_ca',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
@@ -807,7 +806,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa21988ff3a',
                 'label' => 'Amsterdam Opening Hours',
-                'name' => 'amsterdam_opening_hours',
+                'name' => 'amsterdam_opening_hours_nl',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
@@ -827,7 +826,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa219890320',
                 'label' => 'Barcelona Opening Hours',
-                'name' => 'barcelona_opening_hours',
+                'name' => 'barcelona_opening_hours_nl',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
@@ -935,7 +934,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa219f875c0',
                 'label' => 'Amsterdam Opening Hours',
-                'name' => 'amsterdam_opening_hours',
+                'name' => 'amsterdam_opening_hours_fr',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
@@ -955,7 +954,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa219f87971',
                 'label' => 'Barcelona Opening Hours',
-                'name' => 'barcelona_opening_hours',
+                'name' => 'barcelona_opening_hours_fr',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
@@ -999,7 +998,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa219c1732b',
                 'label' => 'Amsterdam Opening Hours',
-                'name' => 'amsterdam_opening_hours',
+                'name' => 'amsterdam_opening_hours_de',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
@@ -1019,7 +1018,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa219c17715',
                 'label' => 'Barcelona Opening Hours',
-                'name' => 'barcelona_opening_hours',
+                'name' => 'barcelona_opening_hours_de',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
@@ -1127,7 +1126,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa21954fd53',
                 'label' => 'Amsterdam Opening Hours',
-                'name' => 'amsterdam_opening_hours',
+                'name' => 'amsterdam_opening_hours_es',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
@@ -1147,7 +1146,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa21955011f',
                 'label' => 'Barcelona Opening Hours',
-                'name' => 'barcelona_opening_hours',
+                'name' => 'barcelona_opening_hours_es',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
