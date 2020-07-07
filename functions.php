@@ -6,7 +6,7 @@ include 'functions/gutenberg-blocks.php';
 include 'functions/enqueue.php';
 
 /* ACF should be set to disabled on dev env */
-// include 'functions/advanced-custom-fields.php';
+include 'functions/advanced-custom-fields.php';
 
 
 add_theme_support( 'title-tag' );
