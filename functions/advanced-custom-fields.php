@@ -102,150 +102,6 @@ if( function_exists('acf_add_local_field_group') ):
     ));
     
     acf_add_local_field_group(array(
-        'key' => 'group_5efa177022ebd',
-        'title' => 'Exhibition Details',
-        'fields' => array(
-            array(
-                'key' => 'field_5efa17c02119d',
-                'label' => 'Start Date',
-                'name' => 'start_date',
-                'type' => 'date_picker',
-                'instructions' => '',
-                'required' => 1,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '50',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'display_format' => 'd/m/Y',
-                'return_format' => 'd/m/Y',
-                'first_day' => 1,
-                'translations' => 'sync',
-            ),
-            array(
-                'key' => 'field_5efa17fa2119e',
-                'label' => 'End Date',
-                'name' => 'end_date',
-                'type' => 'date_picker',
-                'instructions' => '',
-                'required' => 1,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '50',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'display_format' => 'd/m/Y',
-                'return_format' => 'd/m/Y',
-                'first_day' => 1,
-                'translations' => 'sync',
-            ),
-            array(
-                'key' => 'field_5efa18842119f',
-                'label' => 'Location',
-                'name' => 'location',
-                'type' => 'radio',
-                'instructions' => '',
-                'required' => 1,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'choices' => array(
-                    'ams' => 'Amsterdam',
-                    'bcn' => 'Barcelona',
-                ),
-                'allow_null' => 0,
-                'other_choice' => 0,
-                'default_value' => '',
-                'layout' => 'vertical',
-                'return_format' => 'value',
-                'translations' => 'sync',
-                'save_other_choice' => 0,
-            ),
-            array(
-                'key' => 'field_5efa189f211a0',
-                'label' => 'Opening hours',
-                'name' => 'opening_hours_toggle',
-                'type' => 'checkbox',
-                'instructions' => '',
-                'required' => 0,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'choices' => array(
-                    'different' => 'Exhibition hours are different from normal opening hours',
-                ),
-                'allow_custom' => 0,
-                'default_value' => array(
-                ),
-                'layout' => 'vertical',
-                'toggle' => 0,
-                'return_format' => 'value',
-                'translations' => 'sync',
-                'save_custom' => 0,
-            ),
-            array(
-                'key' => 'field_5efa1941211a1',
-                'label' => 'Exhibition specific opening hours',
-                'name' => 'exhibition_specific_opening_hours',
-                'type' => 'textarea',
-                'instructions' => '',
-                'required' => 0,
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_5efa189f211a0',
-                            'operator' => '==',
-                            'value' => 'different',
-                        ),
-                    ),
-                ),
-                'wrapper' => array(
-                    'width' => '50',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'default_value' => 'Monday - Friday : 10:00 - 22:00
-    Saturday & Sunday : 10:00 - 20:00',
-                'placeholder' => '',
-                'maxlength' => '',
-                'rows' => 3,
-                'new_lines' => 'br',
-                'translations' => 'copy_once',
-            ),
-        ),
-        'location' => array(
-            array(
-                array(
-                    'param' => 'post_type',
-                    'operator' => '==',
-                    'value' => 'newsexhibitions',
-                ),
-                array(
-                    'param' => 'post_taxonomy',
-                    'operator' => '==',
-                    'value' => 'news_exhibitions:exhibitions',
-                ),
-            ),
-        ),
-        'menu_order' => 0,
-        'position' => 'acf_after_title',
-        'style' => 'default',
-        'label_placement' => 'top',
-        'instruction_placement' => 'label',
-        'hide_on_screen' => '',
-        'active' => true,
-        'description' => '',
-    ));
-    
-    acf_add_local_field_group(array(
         'key' => 'group_5ef759a558571',
         'title' => 'Hero Block',
         'fields' => array(
@@ -306,13 +162,20 @@ if( function_exists('acf_add_local_field_group') ):
                 'name' => 'subheader',
                 'type' => 'text',
                 'instructions' => '',
-                'required' => 1,
+                'required' => 0,
                 'conditional_logic' => array(
                     array(
                         array(
                             'field' => 'field_5efa0fd248b46',
                             'operator' => '==',
                             'value' => 'normal',
+                        ),
+                    ),
+                    array(
+                        array(
+                            'field' => 'field_5efa0fd248b46',
+                            'operator' => '==',
+                            'value' => 'exhibition',
                         ),
                     ),
                 ),
@@ -334,8 +197,23 @@ if( function_exists('acf_add_local_field_group') ):
                 'name' => 'description',
                 'type' => 'wysiwyg',
                 'instructions' => '',
-                'required' => 1,
-                'conditional_logic' => 0,
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_5efa0fd248b46',
+                            'operator' => '==',
+                            'value' => 'normal',
+                        ),
+                    ),
+                    array(
+                        array(
+                            'field' => 'field_5efa0fd248b46',
+                            'operator' => '==',
+                            'value' => 'collection_item',
+                        ),
+                    ),
+                ),
                 'wrapper' => array(
                     'width' => '',
                     'class' => '',
@@ -346,6 +224,158 @@ if( function_exists('acf_add_local_field_group') ):
                 'toolbar' => 'basic',
                 'media_upload' => 0,
                 'delay' => 0,
+                'translations' => 'translate',
+            ),
+            array(
+                'key' => 'field_5f0335133ebda',
+                'label' => 'Start Date',
+                'name' => 'start_date',
+                'type' => 'date_picker',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_5efa0fd248b46',
+                            'operator' => '==',
+                            'value' => 'exhibition',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '50',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'display_format' => 'd/m/Y',
+                'return_format' => 'Ymd',
+                'first_day' => 1,
+                'translations' => 'sync',
+            ),
+            array(
+                'key' => 'field_5f03353a3ebdb',
+                'label' => 'End Date',
+                'name' => 'end_date',
+                'type' => 'date_picker',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_5efa0fd248b46',
+                            'operator' => '==',
+                            'value' => 'exhibition',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '50',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'display_format' => 'd/m/Y',
+                'return_format' => 'Ymd',
+                'first_day' => 1,
+                'translations' => 'sync',
+            ),
+            array(
+                'key' => 'field_5f0335883ebdd',
+                'label' => 'Opening hours',
+                'name' => 'opening_hours_toggle',
+                'type' => 'radio',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_5efa0fd248b46',
+                            'operator' => '==',
+                            'value' => 'exhibition',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '50',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                    'same' => 'Exhibition has standard opening hours',
+                    'different' => 'Exhibition has different opening hours',
+                ),
+                'allow_null' => 0,
+                'other_choice' => 0,
+                'default_value' => 'same',
+                'layout' => 'vertical',
+                'return_format' => 'value',
+                'translations' => 'sync',
+                'save_other_choice' => 0,
+            ),
+            array(
+                'key' => 'field_5f0335523ebdc',
+                'label' => 'Location',
+                'name' => 'location',
+                'type' => 'radio',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_5efa0fd248b46',
+                            'operator' => '==',
+                            'value' => 'exhibition',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '50',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                    'Amsterdam' => 'Amsterdam',
+                    'Barcelona' => 'Barcelona',
+                ),
+                'allow_null' => 0,
+                'other_choice' => 0,
+                'default_value' => '',
+                'layout' => 'vertical',
+                'return_format' => 'value',
+                'translations' => 'sync',
+                'save_other_choice' => 0,
+            ),
+            array(
+                'key' => 'field_5f0335c43ebde',
+                'label' => 'Exhibition specific opening hours',
+                'name' => 'exhibition_specific_opening_hours',
+                'type' => 'textarea',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_5efa0fd248b46',
+                            'operator' => '==',
+                            'value' => 'exhibition',
+                        ),
+                        array(
+                            'field' => 'field_5f0335883ebdd',
+                            'operator' => '==',
+                            'value' => 'different',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '50',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => 'Monday - Friday : 10:00 - 22:00
+    Saturday & Sunday : 10:00 - 20:00',
+                'placeholder' => '',
+                'maxlength' => '',
+                'rows' => 3,
+                'new_lines' => 'br',
                 'translations' => 'translate',
             ),
             array(
@@ -713,7 +743,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa2191b4b78',
                 'label' => 'Amsterdam Opening Hours',
-                'name' => 'amsterdam_opening_hours_ca',
+                'name' => 'amsterdam_opening_hours',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
@@ -733,7 +763,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa2191b4f2c',
                 'label' => 'Barcelona Opening Hours',
-                'name' => 'Barcelona_opening_hours_ca',
+                'name' => 'barcelona_opening_hours',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
@@ -777,7 +807,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa21988ff3a',
                 'label' => 'Amsterdam Opening Hours',
-                'name' => 'amsterdam_opening_hours_nl',
+                'name' => 'amsterdam_opening_hours',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
@@ -797,7 +827,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa219890320',
                 'label' => 'Barcelona Opening Hours',
-                'name' => 'Barcelona_opening_hours_nl',
+                'name' => 'barcelona_opening_hours',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
@@ -861,7 +891,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa1ca86afaa',
                 'label' => 'Barcelona Opening Hours',
-                'name' => 'Barcelona_opening_hours_en',
+                'name' => 'barcelona_opening_hours_en',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
@@ -905,7 +935,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa219f875c0',
                 'label' => 'Amsterdam Opening Hours',
-                'name' => 'amsterdam_opening_hours_fr',
+                'name' => 'amsterdam_opening_hours',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
@@ -925,7 +955,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa219f87971',
                 'label' => 'Barcelona Opening Hours',
-                'name' => 'Barcelona_opening_hours_fr',
+                'name' => 'barcelona_opening_hours',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
@@ -969,7 +999,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa219c1732b',
                 'label' => 'Amsterdam Opening Hours',
-                'name' => 'amsterdam_opening_hours_de',
+                'name' => 'amsterdam_opening_hours',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
@@ -989,7 +1019,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa219c17715',
                 'label' => 'Barcelona Opening Hours',
-                'name' => 'Barcelona_opening_hours_de',
+                'name' => 'barcelona_opening_hours',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
@@ -1097,7 +1127,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa21954fd53',
                 'label' => 'Amsterdam Opening Hours',
-                'name' => 'amsterdam_opening_hours_es',
+                'name' => 'amsterdam_opening_hours',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
@@ -1117,7 +1147,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_5efa21955011f',
                 'label' => 'Barcelona Opening Hours',
-                'name' => 'Barcelona_opening_hours_es',
+                'name' => 'barcelona_opening_hours',
                 'type' => 'textarea',
                 'instructions' => '',
                 'required' => 0,
