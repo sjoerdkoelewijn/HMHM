@@ -108,19 +108,18 @@ function restrict_blocks( $allowed_blocks, $post ) {
 				'core/image',
 				'core/paragraph',
 				'core/quote',
+				'core/block',
+				'core/list',
+				'core/group',
 				'core/embedyoutube',
+				'core/embedvimeo',
+				'core/embedtwitter',
 				'acf/hero',
-				'acf/textimage',
-				'acf/kaart',
-				'acf/googlemap',
-				'acf/nieuwsbrief',
-				'acf/latestpost',
-				'acf/fullimage',
-				'acf/vrijecontent',
-				'acf/blockslider',
-				'acf/form',
-				'acf/footer',
-				'acf/button'
+				'acf/image_slider',
+				'acf/sidebar',
+				'acf/related-posts',
+				'acf/promo',
+
 
 			);
 			return $allowed_blocks;
@@ -128,4 +127,4 @@ function restrict_blocks( $allowed_blocks, $post ) {
 
 	}	
 	
-	// add_filter( 'allowed_block_types', 'restrict_blocks', 10, 2); 
+	add_filter( 'allowed_block_types', 'restrict_blocks', 10, 2); 
