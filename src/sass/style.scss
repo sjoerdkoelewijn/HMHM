@@ -13,7 +13,7 @@ html {
 }
 
 .btn {
-    padding:12px 65px;
+    padding:10px 44px;
     border-radius: 30px;
     display:inline-block;
     text-decoration: none;
@@ -959,9 +959,129 @@ border: 0;
 
 
 
-/* ------------- Section ----------------------------------------------------------------------------------------------------------- */
+/* ------------- Whats on page ----------------------------------------------------------------------------------------------------------- */
 
-/* ------------- Sub section ---------------- */
+.event {
+    display: flex;
+    height:100vh;
+    align-items: center;
+
+    .info_wrap {
+        width:66.66vw;
+        display: flex;
+        
+        .meta_info {
+            width:40vw;
+            min-height:100vh;
+            padding:30vh var(--horizontal) var(--vertical) var(--horizontal);
+            text-align:right;
+            border-right:1px solid $black;
+
+            .title {
+                text-decoration:none;                
+                
+                h2 {
+                    font-size:var(--small-subtitle);
+                    
+                    margin-bottom:10px;
+                }
+            }
+
+            .date {
+                display:flex;
+                justify-content:flex-end; 
+                
+                svg {
+                    margin-top:8px;
+                    width:20px;
+                }
+    
+                p {
+                    font-weight:400;
+                    font-size:var(--medium-p);
+                    margin-right:20px;
+                    margin-bottom:15px;
+                }
+    
+            }
+    
+            .location {
+                display:flex;
+                justify-content:flex-end;
+    
+                svg {
+                    margin-top:8px;
+                    width:20px;
+                }
+    
+                p {
+                    font-weight:400;
+                    font-size:var(--medium-p);
+                    margin-right:20px;
+                }
+    
+            }
+    
+            .free_entry {
+                display:flex;
+                justify-content:flex-end;
+    
+                svg {
+                    margin-top:8px;
+                    width:20px;
+                }
+    
+                p {
+                    font-weight:300;
+                    font-size:var(--medium-p);
+                    margin-right:20px;
+                }
+    
+            }
+    
+
+        }
+    
+        .description {
+            width:60vw;
+            padding:25vh calc(var(--horizontal) * 2) var(--vertical) 8vw;
+
+            .title {
+                text-decoration:none;                
+                
+                h1 {
+                    font-size:var(--medium-title);
+                    margin-bottom:10px;
+
+                    &:before {
+                        content:'';
+                        border-bottom:1px solid $black;
+                        width:6vw;
+                        height:1px;
+                        display:block;
+                        margin-left:-8vw;
+                        margin-top:70px;
+                        position:absolute;
+                    }
+                }
+            }
+
+        }
+
+    }    
+
+    .image {
+        width:33.33vw;
+
+        img {
+            height:100vh;
+            object-fit: cover; 
+        }
+    }
+}
+
+
+
 
 
 

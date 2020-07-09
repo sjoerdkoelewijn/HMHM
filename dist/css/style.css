@@ -176,9 +176,13 @@ a:visited {
 
 /* line 20, src/sass/variables/typography.scss */
 :root {
-  --normal-title:3vw;
+  --x-large-title:4vw;
+  --large-title:3vw;
+  --medium-title:2.5vw;
   --small-title:2vw;
-  --normal-subtitle:2vw;
+  --x-large-subtitle:3vw;
+  --large-subtitle:2vw;
+  --medium-subtitle:1.75vw;
   --small-subtitle:1.5vw;
   --x-large-p:2rem;
   --large-p:1.5rem;
@@ -189,12 +193,12 @@ a:visited {
   --header-font:'Prata', serif;
 }
 
-/* line 39, src/sass/variables/typography.scss */
+/* line 43, src/sass/variables/typography.scss */
 html {
   font-family: "Lato", sans-serif;
 }
 
-/* line 43, src/sass/variables/typography.scss */
+/* line 47, src/sass/variables/typography.scss */
 input, textarea, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   font-family: "Lato", sans-serif;
   font-weight: 300;
@@ -216,22 +220,22 @@ input, textarea, input::placeholder, textarea::placeholder {
   font-weight: 300;
 }
 
-/* line 48, src/sass/variables/typography.scss */
+/* line 52, src/sass/variables/typography.scss */
 button {
   font-family: "Lato", sans-serif;
 }
 
-/* line 52, src/sass/variables/typography.scss */
+/* line 56, src/sass/variables/typography.scss */
 strong {
   font-weight: 700;
 }
 
-/* line 56, src/sass/variables/typography.scss */
+/* line 60, src/sass/variables/typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Prata", serif;
 }
 
-/* line 60, src/sass/variables/typography.scss */
+/* line 64, src/sass/variables/typography.scss */
 h1 {
   font-weight: 400;
   line-height: 140%;
@@ -239,7 +243,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-/* line 68, src/sass/variables/typography.scss */
+/* line 72, src/sass/variables/typography.scss */
 h2 {
   font-weight: 400;
   line-height: 150%;
@@ -247,24 +251,36 @@ h2 {
   margin-bottom: 30px;
 }
 
-/* line 75, src/sass/variables/typography.scss */
+/* line 79, src/sass/variables/typography.scss */
 h1 + h2 {
   margin-top: -15px;
 }
 
-/* line 79, src/sass/variables/typography.scss */
+/* line 83, src/sass/variables/typography.scss */
 h3 {
   font-weight: 400;
   line-height: 150%;
   font-size: 1.5vw;
 }
 
-/* line 85, src/sass/variables/typography.scss */
+/* line 89, src/sass/variables/typography.scss */
 p {
   line-height: 160%;
   font-weight: 300;
   font-size: 1.5rem;
   margin-bottom: 30px;
+}
+
+/* line 13, src/sass/variables/spacing.scss */
+:root {
+  --horizontal-s:2vw;
+  --horizontal:3vw;
+  --horizontal-l:6vw;
+  --horizontal-xl:10vw;
+  --vertical-s:1vw;
+  --vertical:2vw;
+  --vertical-l:4vw;
+  --vertical-xl:8vw;
 }
 
 @-webkit-keyframes fadeIn {
@@ -565,7 +581,7 @@ html {
 
 /* line 15, src/sass/style.scss */
 .btn {
-  padding: 12px 65px;
+  padding: 10px 44px;
   border-radius: 30px;
   display: inline-block;
   text-decoration: none;
@@ -1786,8 +1802,157 @@ html {
   font-size: 1rem;
 }
 
-/* ------------- Section ----------------------------------------------------------------------------------------------------------- */
-/* ------------- Sub section ---------------- */
+/* ------------- Whats on page ----------------------------------------------------------------------------------------------------------- */
+/* line 964, src/sass/style.scss */
+.event {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 969, src/sass/style.scss */
+.event .info_wrap {
+  width: 66.66vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 973, src/sass/style.scss */
+.event .info_wrap .meta_info {
+  width: 40vw;
+  min-height: 100vh;
+  padding: 30vh var(--horizontal) var(--vertical) var(--horizontal);
+  text-align: right;
+  border-right: 1px solid #000000;
+}
+
+/* line 980, src/sass/style.scss */
+.event .info_wrap .meta_info .title {
+  text-decoration: none;
+}
+
+/* line 983, src/sass/style.scss */
+.event .info_wrap .meta_info .title h2 {
+  font-size: var(--small-subtitle);
+  margin-bottom: 10px;
+}
+
+/* line 990, src/sass/style.scss */
+.event .info_wrap .meta_info .date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+/* line 994, src/sass/style.scss */
+.event .info_wrap .meta_info .date svg {
+  margin-top: 8px;
+  width: 20px;
+}
+
+/* line 999, src/sass/style.scss */
+.event .info_wrap .meta_info .date p {
+  font-weight: 400;
+  font-size: var(--medium-p);
+  margin-right: 20px;
+  margin-bottom: 15px;
+}
+
+/* line 1008, src/sass/style.scss */
+.event .info_wrap .meta_info .location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+/* line 1012, src/sass/style.scss */
+.event .info_wrap .meta_info .location svg {
+  margin-top: 8px;
+  width: 20px;
+}
+
+/* line 1017, src/sass/style.scss */
+.event .info_wrap .meta_info .location p {
+  font-weight: 400;
+  font-size: var(--medium-p);
+  margin-right: 20px;
+}
+
+/* line 1025, src/sass/style.scss */
+.event .info_wrap .meta_info .free_entry {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+/* line 1029, src/sass/style.scss */
+.event .info_wrap .meta_info .free_entry svg {
+  margin-top: 8px;
+  width: 20px;
+}
+
+/* line 1034, src/sass/style.scss */
+.event .info_wrap .meta_info .free_entry p {
+  font-weight: 300;
+  font-size: var(--medium-p);
+  margin-right: 20px;
+}
+
+/* line 1045, src/sass/style.scss */
+.event .info_wrap .description {
+  width: 60vw;
+  padding: 25vh calc(var(--horizontal) * 2) var(--vertical) 8vw;
+}
+
+/* line 1049, src/sass/style.scss */
+.event .info_wrap .description .title {
+  text-decoration: none;
+}
+
+/* line 1052, src/sass/style.scss */
+.event .info_wrap .description .title h1 {
+  font-size: var(--medium-title);
+  margin-bottom: 10px;
+}
+
+/* line 1056, src/sass/style.scss */
+.event .info_wrap .description .title h1:before {
+  content: '';
+  border-bottom: 1px solid #000000;
+  width: 6vw;
+  height: 1px;
+  display: block;
+  margin-left: -8vw;
+  margin-top: 70px;
+  position: absolute;
+}
+
+/* line 1073, src/sass/style.scss */
+.event .image {
+  width: 33.33vw;
+}
+
+/* line 1076, src/sass/style.scss */
+.event .image img {
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 /* ------------- Section ----------------------------------------------------------------------------------------------------------- */
 /* ------------- Sub section ---------------- */
 /* ------------- Section ----------------------------------------------------------------------------------------------------------- */

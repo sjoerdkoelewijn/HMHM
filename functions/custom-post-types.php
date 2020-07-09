@@ -58,7 +58,6 @@ function cpt_collection() {
 			'rewrite'               => $rewrite,
 			'capability_type'       => 'post',
 			'show_in_rest'          => true,
-			"query_var"           	=> true,
 	);
 	register_post_type( 'collection', $args );
 
@@ -154,7 +153,6 @@ function custom_collection_pages() {
 			'rewrite'               => $rewrite,
 			'capability_type'       => 'page',
 			'show_in_rest'          => true, // false will enable classic editor.
-			"query_var"           	=> true,
 	);
 	register_post_type( 'collection_pages', $args );
 
@@ -218,13 +216,12 @@ function cpt_cannabisinfo() {
 			'show_in_admin_bar'     => true,
 			'show_in_nav_menus'     => true,
 			'can_export'            => true,
-			'has_archive'           => 'cannabis-info',
+			'has_archive'           => __( 'cannabis-knowledge', 'hashmuseum' ),
 			'exclude_from_search'   => false,
 			'publicly_queryable'    => true,
 			'rewrite'               => $rewrite,
 			'capability_type'       => 'post',
 			'show_in_rest'          => true,
-			"query_var"           	=> true,
 	);
 	register_post_type( 'cannabisinfo', $args );
 
@@ -318,7 +315,7 @@ function custom_cannabisinfo_pages() {
 			'rewrite'               => $rewrite,
 			'capability_type'       => 'page',
 			'show_in_rest'          => true, // false will enable classic editor.
-			"query_var"           	=> true,
+			'query_var'           	=> true,
 	);
 	register_post_type( 'cannabisinfo_pages', $args );
 
@@ -393,13 +390,13 @@ function cpt_newsexhibitions() {
 			'show_in_admin_bar'     => true,
 			'show_in_nav_menus'     => true,
 			'can_export'            => true,
-			'has_archive'           => 'news',
+			'has_archive'           => __( 'whats-on', 'hashmuseum' ),
 			'exclude_from_search'   => false,
 			'publicly_queryable'    => true,
 			'rewrite'               => $rewrite,
 			'capability_type'       => 'post',
 			'show_in_rest'          => true,
-			"query_var"           	=> true,
+			'query_var'           	=> true,
 	);
 	register_post_type( 'newsexhibitions', $args );
 
