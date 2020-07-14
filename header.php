@@ -29,18 +29,41 @@
             <!-- Edit button for logged in users -->
             <?php if ( current_user_can( 'edit_post', $post->ID ) ) { ?>
 
-            <a href="/wp-admin/post.php?post=<?php echo get_the_ID() ?>&action=edit" class="admin_edit_btn" >
-                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/edit.svg"); ?>
-            </a>
+                <?php if ( is_single() ) { // TODO - Add more conditionals and refactor to switch statement?> 
+
+                <a href="/wp-admin/post.php?post=<?php echo get_the_ID() ?>&action=edit" class="admin_edit_btn" >
+                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/edit.svg"); ?>
+                </a>
+
+                <?php } elseif (is_tax() ) { 
+
+                    $posttype = get_post_type( $post->ID );
+                    $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+                    
+                    if ($posttype === 'cannabisinfo') {
+                        $frontpage = get_page_by_path($term->slug, OBJECT, 'cannabisinfo_pages');
+                    } else if($posttype === 'collection') {
+                        $frontpage = get_page_by_path($term->slug, OBJECT, 'collection_pages');
+                    }
+
+                ?>
+
+                <a href="/wp-admin/post.php?post=<?php echo $frontpage->ID ?>&action=edit" class="admin_edit_btn" >
+                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/edit.svg"); ?>
+                </a>
+
+                <?php } ?>
 
             <?php } ?> 
 
             <button class="language_menu_toggle" data-language-menu-toggle>
+                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/weedleaf-small.svg"); ?>
                 <?php _e( 'Select Language', 'hashmuseum' ) ?>
             </button>
 
             <button class="main_menu_toggle" data-main-menu-toggle>
                 <?php _e( 'menu', 'hashmuseum' ) ?>
+                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/hamburgerIcon.svg"); ?>
             </button>            
 
         </div>

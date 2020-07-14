@@ -18,10 +18,9 @@ function sk_acf_block_render_callback( $block ) {
 add_action('acf/init', 'my_acf_init');
 function my_acf_init() {
 	
-	// check function exists
+	// check acf function exists
 	if( function_exists('acf_register_block') ) {
 		
-		// register the hero block
 		acf_register_block(array(
 			'name'				=> 'hero',
 			'title'				=> __('Hero Block'),
@@ -33,7 +32,6 @@ function my_acf_init() {
 			'keywords'			=> array( 'hero', 'image' ),
 		));
 
-		// register the hero block
 		acf_register_block(array(
 			'name'				=> 'image_slider',
 			'title'				=> __('Image Slider'),
@@ -45,7 +43,6 @@ function my_acf_init() {
 			'keywords'			=> array( 'slider', 'image' ),
 		));
 
-		// register the hero block
 		acf_register_block(array(
 			'name'				=> 'sidebar',
 			'title'				=> __('Sidebar Images & Quote'),
@@ -57,7 +54,6 @@ function my_acf_init() {
 			'keywords'			=> array( 'sidebar', 'image', 'quote' ),
 		));
 
-		// register the hero block
 		acf_register_block(array(
 			'name'				=> 'related-posts',
 			'title'				=> __('Related Posts'),
@@ -69,7 +65,17 @@ function my_acf_init() {
 			'keywords'			=> array( 'slider', 'related' ),
 		));
 
-		// register the hero block
+		acf_register_block(array(
+			'name'				=> 'sub-items',
+			'title'				=> __('Category Sub-items'),
+			'description'		=> __('A slider with the posts of a category'),
+			'render_callback'	=> 'sk_acf_block_render_callback',
+			'category'			=> 'common',
+			'icon'				=> 'slides',
+			'mode'				=> 'edit', // start in edit mode
+			'keywords'			=> array( 'slider', 'category', 'posts' ),
+		));
+
 		acf_register_block(array(
 			'name'				=> 'promo',
 			'title'				=> __('Promo Block'),
@@ -81,13 +87,53 @@ function my_acf_init() {
 			'keywords'			=> array( 'promo', 'image' ),
 		));
 
+		acf_register_block(array(
+			'name'				=> 'info',
+			'title'				=> __('Info Block'),
+			'description'		=> __('A simple information block with slider'),
+			'render_callback'	=> 'sk_acf_block_render_callback',
+			'category'			=> 'common',
+			'icon'				=> 'laptop',
+			'mode'				=> 'edit', // start in edit mode
+			'keywords'			=> array( 'info', 'image' ),
+		));
+
+		acf_register_block(array(
+			'name'				=> 'categories',
+			'title'				=> __('Category Overview'),
+			'description'		=> __('An overview of the sub catgories'),
+			'render_callback'	=> 'sk_acf_block_render_callback',
+			'category'			=> 'common',
+			'icon'				=> 'editor-table',
+			'mode'				=> 'edit', // start in edit mode
+			'keywords'			=> array( 'categories', 'sub' ),
+		));
+
+		
+		acf_register_block(array(
+			'name'				=> 'collection-items',
+			'title'				=> __('Collection Items'),
+			'description'		=> __('An overview of all the collection items'),
+			'render_callback'	=> 'sk_acf_block_render_callback',
+			'category'			=> 'common',
+			'icon'				=> 'slides',
+			'mode'				=> 'edit', // start in edit mode
+			'keywords'			=> array( 'collection', 'items', 'slider' ),
+		));
+
+		acf_register_block(array(
+			'name'				=> 'collection-overview-hero',
+			'title'				=> __('Collection Overview Hero'),
+			'description'		=> __('Used at top of collection page'),
+			'render_callback'	=> 'sk_acf_block_render_callback',
+			'category'			=> 'common',
+			'icon'				=> 'laptop',
+			'mode'				=> 'edit', // start in edit mode
+			'keywords'			=> array( 'collection', 'hero' ),
+		));
+
 	}
 }
-
-
-
-
-
 
 
 
@@ -101,8 +147,7 @@ function restrict_blocks( $allowed_blocks, $post ) {
 		$user = wp_get_current_user();
 		$roles = ( array ) $user->roles;
 	
-		if( in_array( strtolower('Administrator'), $roles ) )
-		// if( in_array( strtolower('Editor'), $roles ) )
+		if( in_array( strtolower('Editor'), $roles ) )
 			$allowed_blocks = array(
 				'core/heading',
 				'core/image',
@@ -119,7 +164,11 @@ function restrict_blocks( $allowed_blocks, $post ) {
 				'acf/sidebar',
 				'acf/related-posts',
 				'acf/promo',
-
+				'acf/sub-items',
+				'acf/info',
+				'acf/categories',
+				'acf/collection-items',
+				'acf/collection-overview-hero',
 
 			);
 			return $allowed_blocks;

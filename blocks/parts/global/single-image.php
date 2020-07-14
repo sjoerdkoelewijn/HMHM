@@ -1,5 +1,15 @@
 <?php /* Part of the hero slider */ ?>
 
+<?php
+
+$HeroType = get_field('hero_type');
+
+if ($HeroType === 'large_text') {?> 
+    <h1 class="header">
+        <?php the_field('header') ?>
+    </h1>
+<?php } ?>
+
 <?php foreach( $images as $image ): ?>
                         
     <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo $image['alt']; ?>" />

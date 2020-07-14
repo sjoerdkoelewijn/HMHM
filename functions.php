@@ -5,8 +5,10 @@ include 'functions/custom-post-types.php';
 include 'functions/gutenberg-blocks.php';
 include 'functions/enqueue.php';
 
-/* ACF should be set to disabled on dev env */
-include 'functions/advanced-custom-fields.php';
+/* ACF php file is not imported on local env */
+if(strpos($_SERVER['REQUEST_URI'], '.local') !== false){
+	include 'functions/advanced-custom-fields.php';
+}
 
 
 add_theme_support( 'title-tag' );
@@ -319,3 +321,47 @@ function sk_lang_specific_option($key) {
 	}
 
 }
+
+
+/*************************** Create frontpage when taxonomy term is created *********************************/
+
+
+function sk_created_collection_theme($taxonomy) {
+
+	$user_id = get_current_user_id();
+	$term = get_term( $taxonomy );
+	$term_slug = $term->slug;
+
+	$frontpage_details 	= array(
+	'post_title'    	=> $term_slug,
+	'post_type'			=> 'collection_pages',
+	'post_status'   	=> 'publish',
+	'post_author'   	=> $user_id,
+	'post_type' 		=> 'collection_pages'
+	);
+
+	wp_insert_post( $frontpage_details );
+
+}
+
+add_action( 'created_collection_themes', 'sk_created_collection_theme', 10, 3 );
+
+
+function sk_created_info_category($taxonomy) {
+
+	$user_id = get_current_user_id();
+	$term = get_term( $taxonomy );
+	$term_slug = $term->slug;
+
+	$frontpage_details 	= array(
+	'post_title'    	=> $term_slug,
+	'post_type'			=> 'cannabisinfo_pages',
+	'post_status'   	=> 'publish',
+	'post_author'   	=> $user_id
+	);
+
+	wp_insert_post( $frontpage_details );
+
+}
+
+add_action( 'created_info_categories', 'sk_created_info_category', 10, 3 );

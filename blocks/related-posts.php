@@ -1,5 +1,5 @@
 <?php
-/* Block Name: Image Sidebar */
+/* Block Name: Related Posts */
 
 // create id attribute for specific styling
 $id = 'related-posts' . $block['id'];

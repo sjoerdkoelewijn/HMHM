@@ -48,17 +48,12 @@ window.onload = function () {
 
 /******************* Hero Read More Button *************************************/
 
-const HorizontalSliderContainer = document.querySelector('[data-horizontal-slider-container]');
 const ReadMoreBtn = document.querySelector('[data-read-more-btn]');
 let pageHeight = window.innerHeight;
 
-if (ReadMoreBtn != null){
-    ReadMoreBtn.addEventListener('click', function(){
-        HorizontalSliderContainer.scrollBy(0, pageHeight);
-    });
-}
-
-
+ReadMoreBtn.addEventListener('click', function(){
+    window.scrollBy(0, pageHeight);
+});
 
 /******************* Image Slider Scroll Right Button *************************************/
 

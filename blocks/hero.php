@@ -10,7 +10,9 @@ $id = 'hero-' . $block['id'];
 
 <?php if ($imageposition === 'left') { ?>
 
-    <article id="<?php echo $id; ?>" class="hero">
+    <?php $HeroType = get_field('hero_type'); ?>
+
+    <article id="<?php echo $id; ?>" class="hero <?php echo $HeroType; ?>">
         
         <div class="image_wrap">
 
@@ -19,11 +21,11 @@ $id = 'hero-' . $block['id'];
             if( $images ): 
                 if( count($images) === 1 ) { ?>
 
-                    <?php include('parts/hero/hero-single-image.php'); ?>
+                    <?php include('parts/global/single-image.php'); ?>
 
                 <?php } else { ?>
 
-                    <?php include('parts/hero/hero-slider.php'); ?>
+                    <?php include('parts/global/slider.php'); ?>
 
                 <?php } ?>        
                 
@@ -32,8 +34,6 @@ $id = 'hero-' . $block['id'];
         </div>
         
         <?php
-
-        $HeroType = get_field('hero_type');
 
         switch ($HeroType) {
         case 'normal':
@@ -45,6 +45,9 @@ $id = 'hero-' . $block['id'];
         case 'exhibition':
             include('parts/hero/hero-text-exhibition.php');
             break;
+        case 'large_text':
+            include('parts/hero/hero-text-largetext.php');
+            break;    
         default:
             include('parts/hero/hero-text-normal.php');
         }
@@ -55,11 +58,11 @@ $id = 'hero-' . $block['id'];
 
 <?php } else { ?> 
 
-    <article id="<?php echo $id; ?>" class="hero">
+    <?php $HeroType = get_field('hero_type'); ?>
 
-    <?php
+    <article id="<?php echo $id; ?>" class="hero <?php echo $HeroType; ?>">
 
-        $HeroType = get_field('hero_type');
+    <?php        
 
         switch ($HeroType) {
         case 'normal':
@@ -71,6 +74,9 @@ $id = 'hero-' . $block['id'];
         case 'exhibition':
             include('parts/hero/hero-text-exhibition.php');
             break;
+        case 'large_text':
+            include('parts/hero/hero-text-largetext.php');
+            break;     
         default:
             include('parts/hero/hero-text-normal.php');
         }
@@ -85,11 +91,11 @@ $id = 'hero-' . $block['id'];
             if( $images ): 
                 if( count($images) === 1 ) { ?>
 
-                    <?php include('parts/hero/hero-single-image.php'); ?>
+                    <?php include('parts/global/single-image.php'); ?>
 
                 <?php } else { ?>
 
-                    <?php include('parts/hero/hero-slider.php'); ?>
+                    <?php include('parts/global/slider.php'); ?>
 
                 <?php } ?>        
                 
