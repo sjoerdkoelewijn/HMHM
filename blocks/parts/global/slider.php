@@ -1,4 +1,4 @@
-<?php /* Part of the hero */ ?>
+<?php /* Part of the hero & promo */ ?>
 
 <div data-siema-hero-slider>
                     
