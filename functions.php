@@ -5,10 +5,14 @@ include 'functions/custom-post-types.php';
 include 'functions/gutenberg-blocks.php';
 include 'functions/enqueue.php';
 
-/* ACF php file is not imported on local env */
+/* ACF php file is not imported on local env 
 if(strpos($_SERVER['REQUEST_URI'], '.local') !== false){
 	include 'functions/advanced-custom-fields.php';
 }
+
+*/
+
+include 'functions/advanced-custom-fields.php';
 
 
 add_theme_support( 'title-tag' );
