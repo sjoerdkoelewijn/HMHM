@@ -384,22 +384,62 @@ html {
     }
 }
 
-.main_close {
-    position: absolute;
-    top:20px;
-    right:20px;
-    padding:20px 25px 18px 25px;
-    cursor: pointer;
-    background:rgba($lightgrey, 0.15);
-    transition: background .5s ease;
-
-    &:hover {
-        background:rgba($lightgrey, 0.2);
-        transition: background .5s ease; 
-    }
-}
-
 .main_menu {
+
+    .menu_top {
+        display:flex;
+        margin-bottom:20px;
+
+        .search_form {
+            position: relative;
+           
+            .search_field{
+                border:0;
+                background:rgba($lightgrey, 0.15);
+                transition: background .5s ease;
+                padding:20px;
+                font-weight:400;
+                color:$white;
+                height:68px;
+                margin:-1px 0 0 0;
+                
+            }
+
+            .search_submit {
+                border:0;
+                background:rgba($lightgrey, 0.15);
+                padding:20px;
+                height:68px;
+                margin:0;
+
+                //padding:23px 25px 18px 25px;
+                cursor: pointer;
+                background:rgba($lightgrey, 0.15);
+                transition: background .5s ease;
+            
+                &:hover {
+                    background:rgba($lightgrey, 0.2);
+                    transition: background .5s ease; 
+                }
+            }
+        }
+
+        .main_close {
+            margin-left:20px;
+            padding:20px 25px 18px 25px;
+            cursor: pointer;
+            background:rgba($lightgrey, 0.15);
+            transition: background .5s ease;
+        
+            &:hover {
+                background:rgba($lightgrey, 0.2);
+                transition: background .5s ease; 
+            }
+        }
+
+    }
+
+    
 
     .menu_background {
         width:100vw;
@@ -719,6 +759,10 @@ html {
             position:absolute;
             bottom:0;
             padding:var(--vertical) var(--horizontal);
+        }
+
+        .caption {
+            display:none;
         }
     }
 

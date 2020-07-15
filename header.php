@@ -25,36 +25,9 @@
         </a>
 
         <div class="menu_buttons_wrap">
-       
+
             <!-- Edit button for logged in users -->
-            <?php if ( current_user_can( 'edit_post', $post->ID ) ) { ?>
-
-                <?php if ( is_single() ) { // TODO - Add more conditionals and refactor to switch statement?> 
-
-                <a href="/wp-admin/post.php?post=<?php echo get_the_ID() ?>&action=edit" class="admin_edit_btn" >
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/edit.svg"); ?>
-                </a>
-
-                <?php } elseif (is_tax() ) { 
-
-                    $posttype = get_post_type( $post->ID );
-                    $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-                    
-                    if ($posttype === 'cannabisinfo') {
-                        $frontpage = get_page_by_path($term->slug, OBJECT, 'cannabisinfo_pages');
-                    } else if($posttype === 'collection') {
-                        $frontpage = get_page_by_path($term->slug, OBJECT, 'collection_pages');
-                    }
-
-                ?>
-
-                <a href="/wp-admin/post.php?post=<?php echo $frontpage->ID ?>&action=edit" class="admin_edit_btn" >
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/edit.svg"); ?>
-                </a>
-
-                <?php } ?>
-
-            <?php } ?> 
+            <?php include('parts/edit-button.php'); ?>
 
             <button class="language_menu_toggle" data-language-menu-toggle>
                 <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/weedleaf-small.svg"); ?>
@@ -68,95 +41,9 @@
 
         </div>
 
-        <div class="main_menu hidden" data-main-menu>
+        <?php include('parts/main-menu.php'); ?>
 
-            <div class="menu_background"></div> 
-
-            <div class="main_menu_wrap">
-
-                <button class="main_close" data-main-close aria-label="<?php echo __( 'Close Menu', 'hashmuseum' ) ?>">
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/closeIcon.svg"); ?>
-                </button>
-
-                <nav id="main-navigation" class="main_navigation" role="navigation">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location'  => 'main-navigation',
-                        'fallback_cb'     => false,
-                        'container'       => false,
-                        'items_wrap'      => '<ul id="%1$s">%3$s</ul>',
-                    ));
-                    ?>
-                </nav>
-
-                <nav class="social amsterdam">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location'  => 'social-menu-ams',
-                        'fallback_cb'     => false,
-                        'container'       => false,
-                        'items_wrap'      => '%3$s',
-                        'walker'          => new Social_Menu_Walker()
-                    ));
-                    ?>
-                </nav>
-
-                <nav class="social barcelona">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location'  => 'social-menu-bcn',
-                        'fallback_cb'     => false,
-                        'container'       => false,
-                        'items_wrap'      => '%3$s',
-                        'walker'          => new Social_Menu_Walker()
-                    ));
-                    ?>
-                </nav>
-
-                <nav id="boring-links" class="Boring_links" role="navigation">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location'  => 'boring-links',
-                        'fallback_cb'     => false,
-                        'container'       => false,
-                        'items_wrap'      => '<ul id="%1$s">%3$s</ul>',
-                    ));
-                    ?>
-                </nav>
-
-            </div>
-
-        </div>
-
-
-        <div class="language_menu hidden" data-language-menu>
-
-            <div class="menu_background"></div> 
-
-            <div class="language_menu_wrap">
-
-                <h2>
-                <?php echo __( 'Select Language', 'hashmuseum' ) ?> 
-                </h2>   
-                
-                <button class="language_close" data-language-close aria-label="<?php echo __( 'Close Menu', 'hashmuseum' ) ?>">
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/closeIcon.svg"); ?>
-                </button>
-
-                <nav id="language-navigation" class="language_navigation" role="navigation">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location'  => 'language-menu',
-                        'fallback_cb'     => false,
-                        'container'       => false,
-                        'items_wrap'      => '<ul id="%1$s">%3$s</ul>',
-                    ));
-                    ?>
-                </nav>
-
-            </div>
-
-        </div>
+        <?php include('parts/language-menu.php'); ?>
 
     </article>
 
