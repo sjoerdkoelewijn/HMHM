@@ -49,14 +49,16 @@ window.onload = function () {
 
 /******************* Hero Read More Button *************************************/
 
-
 const ReadMoreBtn = document.querySelector('[data-read-more-btn]');
 let pageHeight = window.innerHeight;
 
-ReadMoreBtn.addEventListener('click', (function(){
-    window.scrollBy(0, pageHeight);
-}));
+if (ReadMoreBtn != null){
 
+    ReadMoreBtn.addEventListener('click', (function(){
+        window.scrollBy(0, pageHeight);
+    }));
+
+}
 
 /******************* Image Slider Scroll Right Button *************************************/
 
@@ -64,7 +66,7 @@ const HorizontalScrollContainer = document.querySelector('[data-horizontal-slide
 
 function sideScroll(element,direction,speed,distance){
     scrollAmount = 0;
-    step = window.innerWidth;
+    step = window.innerWidth/2;
     var slideTimer = setInterval((function(){
         if(direction == 'left'){
             element.scrollLeft -= step;
@@ -93,7 +95,6 @@ if (HorizontalScrollContainer != null){
         sideScroll(HorizontalScrollContainer, 'left', 25, 100);
         BackgroundCheck.refresh();
     }));
-
 
 }
 
