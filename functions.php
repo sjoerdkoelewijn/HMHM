@@ -14,7 +14,6 @@ if(strpos($_SERVER['REQUEST_URI'], '.local') !== false){
 
 include 'functions/advanced-custom-fields.php';
 
-
 add_theme_support( 'title-tag' );
 add_theme_support( 'menus' );
 add_theme_support( 'automatic-feed-links' );
@@ -23,8 +22,6 @@ add_theme_support( 'responsive-embeds' );
 
 add_post_type_support('page', 'excerpt');
 
-
-
 /** Register menus **/
 register_nav_menus( array(
 	'main-navigation' => __( 'Main Navigation', 'hashmuseum' ),
@@ -32,14 +29,8 @@ register_nav_menus( array(
 	'explore-menu' => __( 'Explore Menu (Footer)', 'hashmuseum' ),
 	'boring-links' => __( 'Boring Links', 'hashmuseum' ),
 	'social-menu-ams' => __( 'Social Menu Amsterdam', 'hashmuseum' ),
-	'social-menu-bcn' => __( 'Social Menu Amsterdam', 'hashmuseum' ),
+	'social-menu-bcn' => __( 'Social Menu Barcelona', 'hashmuseum' ),
 ) );
-
-
-
-
-
-
 
 /*************************** Remove wordpress functionality **********************************/
 
@@ -130,9 +121,11 @@ class Social_Menu_Walker extends Walker_Nav_Menu {
 
 		$title = $item->title;
 		$permalink = $item->url;
+		$socialIcon = file_get_contents(get_template_directory_uri() . "/images/svg/$title.svg");
 
-		$output .= "<div class='" .  implode(" ", $item->classes) . "'>";
+		$output .= "<div class='" . $title . implode(" ", $item->classes) . "'>";
 		$output .= '<a title="' . $title . '" href="' . $permalink . '">';
+		$output .= '<span class="icon">' . $socialIcon . '</span>';  
 		$output .= '</a>';
 		$output .= '</div>';
 

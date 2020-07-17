@@ -25,31 +25,67 @@
                     ?>
                 </nav>
 
-                <nav class="social amsterdam">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location'  => 'social-menu-ams',
-                        'fallback_cb'     => false,
-                        'container'       => false,
-                        'items_wrap'      => '%3$s',
-                        'walker'          => new Social_Menu_Walker()
-                    ));
-                    ?>
-                </nav>
+                <div class="meta">
 
-                <nav class="social barcelona">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location'  => 'social-menu-bcn',
-                        'fallback_cb'     => false,
-                        'container'       => false,
-                        'items_wrap'      => '%3$s',
-                        'walker'          => new Social_Menu_Walker()
-                    ));
-                    ?>
-                </nav>
+                    <h2 class="city_header">
+                        <?php echo __( 'Amsterdam', 'hashmuseum' ) ?>
+                    </h2>
 
-                <nav id="boring-links" class="Boring_links" role="navigation">
+                    <div class="openinghours">
+                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/clockIcon.svg"); ?> 
+                        <p>
+                            <?php sk_lang_specific_option('amsterdam_opening_hours'); ?>
+                        </p>
+                    </div>
+
+                    <nav class="social amsterdam">
+                        <?php
+                        wp_nav_menu(array(
+                            'theme_location'  => 'social-menu-ams',
+                            'fallback_cb'     => false,
+                            'container'       => false,
+                            'items_wrap'      => '%3$s',
+                            'walker'          => new Social_Menu_Walker()
+                        ));
+                        ?>
+                    </nav>
+
+                    <h2 class="city_header">
+                        <?php echo __( 'Barcelona', 'hashmuseum' ) ?>
+                    </h2>
+
+                    <div class="openinghours">
+                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/clockIcon.svg"); ?> 
+                        <p>
+                            <?php sk_lang_specific_option('barcelona_opening_hours'); ?>
+                        </p>
+                    </div>
+
+                    <nav class="social barcelona">
+                        <?php
+                        wp_nav_menu(array(
+                            'theme_location'  => 'social-menu-bcn',
+                            'fallback_cb'     => false,
+                            'container'       => false,
+                            'items_wrap'      => '%3$s',
+                            'walker'          => new Social_Menu_Walker()
+                        ));
+                        ?>
+                    </nav>
+            
+                </div>
+
+                <div class="ticket_buttons">
+                    <a class="action_btn btn" href="#">
+                        <?php _e( 'Get your ticket', 'hashmuseum' ) ?>
+                    </a>
+
+                    <a class="ghost_btn white btn" href="#">
+                        <?php _e( 'Plan your visit', 'hashmuseum' ) ?>
+                    </a>
+                </div>
+                
+                <nav id="boring-links" class="boring_links" role="navigation">
                     <?php
                     wp_nav_menu(array(
                         'theme_location'  => 'boring-links',
