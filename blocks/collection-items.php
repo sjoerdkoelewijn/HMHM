@@ -7,28 +7,27 @@ $id = 'collection-items-' . $block['id'];
 ?>
 
     <div id="<?php echo $id; ?>" class="collection_items " data-horizontal-slider-container>
-        
-        <?php $posts = get_field('items'); ?>
-                
-        <?php global $post;
 
-            foreach( $posts as $post ): ?>
+        <div class="image_wrap">
+            
+            <?php $posts = get_field('items'); ?>
+                    
+            <?php global $post;
 
-            <?php setup_postdata($post); ?>
+                foreach( $posts as $post ): ?>
 
-                <div class="post">
+                <?php setup_postdata($post); ?>
 
-                    <a class="image_wrap" href="<?php the_permalink(); ?>">
-                        <?php echo get_the_post_thumbnail( $post_id, 'large', array( 'class' => 'collection_image', 'loading' => 'lazy' ) ); ?>
+                    <a class="post" href="<?php the_permalink(); ?>">
+                        <?php echo get_the_post_thumbnail( $post_id, 'large', array( 'class' => 'collection_image image', 'loading' => 'lazy' ) ); ?>
                     </a>                     
 
-                </div>                     
+                <?php endforeach; ?>
 
-            <?php endforeach; ?>
+                <?php wp_reset_postdata(); ?>
 
-            <?php wp_reset_postdata(); ?>
+        </div>            
 
-                
     </div>
 
     <div class="collection_items_btn_wrap">

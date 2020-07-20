@@ -560,6 +560,7 @@ html {
 
                     svg {
                         path {
+                            fill:$white;
                             transition: fill .5s ease;
                         }
                     }
@@ -1568,21 +1569,29 @@ border: 0;
 }
 
 
-.collection_items {
-    width:300vw;
-    height:100vh;
-    display: flex;
+.collection_items {   
+    height:100vh; 
     position: relative;
     overflow-x: auto;
-    overflow-y:hidden;
+    overflow-y:none;
     scroll-behavior: smooth;
-    flex-wrap: wrap; 
+    
+    .image_wrap {
+        width:200vw;
+        display: flex;
+        flex-wrap: wrap;
 
-    img {
-        height:50vh;
-        width:auto;
-        object-fit: cover;         
-    } 
+        .post {
+            flex:0 0 auto;
+            
+            img {
+                height:50vh;
+                width:auto;
+                object-fit: cover;
+            }
+        }
+
+    }
 
 }
 
@@ -1640,6 +1649,8 @@ border: 0;
 scrollbar-width: none;
 border: 0;
 }
+
+
 
 
 /* ------------- Whats on page ----------------------------------------------------------------------------------------------------------- */
@@ -1765,13 +1776,193 @@ border: 0;
 }
 
 
+/* ------------- Newsletter Subscribe Section ----------------------------------------------------------------------------------------------------------- */
+
+.newsletter {
+    background:$white;
+    padding:var(--vertical-xl) var(--horizontal);
+    text-align:center;
 
 
 
+}
 
-/* ------------- Section ----------------------------------------------------------------------------------------------------------- */
 
-/* ------------- Sub section ---------------- */
+/* ------------- Footer Section ----------------------------------------------------------------------------------------------------------- */
+
+.footer {
+    padding:var(--vertical-l) var(--horizontal);
+    
+    .header {
+        font-size: var(--small-subtitle);
+        margin-bottom:10px;
+    }
+        
+    .columns {
+        display:flex;
+    }
+
+    .column {
+        width:33%;
+    }
+
+    /* ------------- First Column ---------------- */
+
+    .first {
+
+        .footer_logo {
+            margin-bottom:20px;
+        
+        }
+
+        .header {
+            max-width:20vw;
+        }
+
+        .ticket_buttons {
+            margin-top:var(--vertical);
+            max-width:20vw;
+
+        }
+
+        .sister_companies {
+            
+            p {
+                font-style: italic;
+                font-size: var(--small-p);
+                margin:50px 0 10px 0;
+            }
+
+            .logos {
+                display:flex;
+                align-items:flex-end;
+
+                svg {                
+                    margin-right:20px;
+                }
+            }            
+
+        }
+
+    }
+
+    /* ------------- Second Column ---------------- */
+
+    .second {
+
+        .openinghours, .address, .phonenumber  {
+            display:flex;
+
+            p {
+                font-size:var(--medium-p);
+                margin-bottom:5px;
+            }
+            
+            svg {
+                margin:8px 22px 0 0;
+
+                path {
+                    fill:$black;
+                }
+            }
+        }
+
+        .address {
+            svg {
+                margin:10px 22px 0 6px;
+            }
+        }
+
+        .phonenumber {
+            svg {
+                margin:10px 18px 0 4px;
+            }
+        }
+
+        .moreinfo {
+            display:flex;
+            margin-bottom:var(--vertical);
+            text-decoration: none;
+
+            p {
+                font-size:var(--medium-p);
+                margin-bottom:0;
+            }
+            
+            svg {
+                width:19px;
+                margin:3px 20px 0 0;
+
+                path {
+                    fill:$black;
+                }
+            }
+        }
+
+        .social {
+            display:flex;
+            margin-bottom:var(--vertical-l);
+
+            a {
+                margin-right:30px;
+
+                svg {
+                    path {
+                        fill:$black;
+                        transition: fill .5s ease;
+                    }
+                }
+
+                &:hover {
+                    svg {
+                        path {
+                            fill:$action;
+                            transition: fill .5s ease;
+                        }
+                    }
+                }
+
+                
+            }
+
+            .facebook {
+                svg {
+                    margin-top:-2px;
+                }
+            }
+
+        }    
+
+    }
+
+    /* ------------- Third Column ---------------- */
+
+    .third {
+
+        .header:nth-of-type(2) {
+            margin-top:var(--vertical);
+        }
+
+        a {
+            font-size:var(--medium-p);
+            text-decoration: none;
+            font-weight:300;
+            margin-bottom:8px;
+            display: inline-block;
+        }
+
+    }
+
+
+    .copyright_notice {
+        margin-top:var(--vertical-xl);
+        font-size: var(--small-p);
+        text-align: center;
+    }
+
+}
+
+
 
 
 
