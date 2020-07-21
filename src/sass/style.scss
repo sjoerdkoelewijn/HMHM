@@ -1783,15 +1783,108 @@ border: 0;
     padding:var(--vertical-xl) var(--horizontal);
     text-align:center;
 
+    .header {
+        font-size: var(--large-title);
+        margin-bottom:10px;
+    }
 
+    .subheader {
+        font-size: var(--small-subtitle);
+        color:$mediumgrey;
+        margin-bottom:20px;
+    }
 
+    .form_inner {
+        display:inline-flex;
+        margin:0 auto;
+
+    }
+
+    .input_wrap {
+        display: inline;
+
+        label {
+            display:block;
+            text-align: left;
+            margin-left:10px;
+            color:$black;
+            font-weight: 300;
+        }
+
+        input {
+            border:1px solid rgba($mediumgrey, .4);
+            box-sizing: border-box;
+            border-radius: 2px;
+            padding:10px 20px;
+            margin:5px;
+        }
+
+        input.error {
+            border-color:$action;
+        }   
+        
+        .error-message {
+            text-align: left;
+            font-weight:300;
+            font-size:var(--small-p);
+            margin-left:10px;
+            color:$action;
+        }
+
+    }
+
+    .gdpr_check {
+        margin:20px 0 30px 0;
+        font-size:calc(var(--medium-p) * .9 );
+        font-weight:300;
+        
+        a {
+            font-weight:400;
+            font-size:calc(var(--medium-p) * .8 );
+        }
+
+        .error-message {
+            text-align: center;
+            font-weight:300;
+            font-size:var(--small-p);
+            color:$action;
+            display:inline;
+        }
+
+    }
+   
+
+    .hide_success.hidden {
+        display:none;
+        opacity:0;
+        transition: opacity .5s ease, display 0s ease .5s;
+    }
+
+    .status_message.success-message {
+        margin-top:20px;
+        font-weight: 300;
+        font-size:var(--medium-p);
+        background:$lightgrey;
+        display:inline-block;
+        padding:18px 40px 20px 40px;
+        border-radius: 30px;
+
+    }
+
+    .status_message.error-message {
+        margin-top:20px;
+        font-weight: 300;
+        font-size:var(--medium-p);
+        color:$action;
+    }
+    
 }
 
 
 /* ------------- Footer Section ----------------------------------------------------------------------------------------------------------- */
 
 .footer {
-    padding:var(--vertical-l) var(--horizontal);
+    padding:var(--vertical-xl) var(--horizontal);
     
     .header {
         font-size: var(--small-subtitle);
@@ -1802,13 +1895,12 @@ border: 0;
         display:flex;
     }
 
-    .column {
-        width:33%;
-    }
+
 
     /* ------------- First Column ---------------- */
 
     .first {
+        width:35%;
 
         .footer_logo {
             margin-bottom:20px;
@@ -1849,6 +1941,7 @@ border: 0;
     /* ------------- Second Column ---------------- */
 
     .second {
+        width:40%;
 
         .openinghours, .address, .phonenumber  {
             display:flex;
@@ -1890,11 +1983,21 @@ border: 0;
             }
             
             svg {
-                width:19px;
-                margin:3px 20px 0 0;
+                width:14px;
+                margin:5px 25px 0 3px;
 
                 path {
                     fill:$black;
+                    transition: fill .5s ease;
+                }
+            }
+
+            &:hover {
+                svg {
+                    path {
+                        fill:$action;
+                        transition: fill .5s ease;
+                    }
                 }
             }
         }
@@ -1938,6 +2041,7 @@ border: 0;
     /* ------------- Third Column ---------------- */
 
     .third {
+        width:25%;
 
         .header:nth-of-type(2) {
             margin-top:var(--vertical);

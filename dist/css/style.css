@@ -2852,57 +2852,165 @@ html {
   text-align: center;
 }
 
+/* line 1786, src/sass/style.scss */
+.newsletter .header {
+  font-size: var(--large-title);
+  margin-bottom: 10px;
+}
+
+/* line 1791, src/sass/style.scss */
+.newsletter .subheader {
+  font-size: var(--small-subtitle);
+  color: #828282;
+  margin-bottom: 20px;
+}
+
+/* line 1797, src/sass/style.scss */
+.newsletter .form_inner {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 0 auto;
+}
+
+/* line 1803, src/sass/style.scss */
+.newsletter .input_wrap {
+  display: inline;
+}
+
+/* line 1806, src/sass/style.scss */
+.newsletter .input_wrap label {
+  display: block;
+  text-align: left;
+  margin-left: 10px;
+  color: #000000;
+  font-weight: 300;
+}
+
+/* line 1814, src/sass/style.scss */
+.newsletter .input_wrap input {
+  border: 1px solid rgba(130, 130, 130, 0.4);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 2px;
+  padding: 10px 20px;
+  margin: 5px;
+}
+
+/* line 1822, src/sass/style.scss */
+.newsletter .input_wrap input.error {
+  border-color: #FF4025;
+}
+
+/* line 1826, src/sass/style.scss */
+.newsletter .input_wrap .error-message {
+  text-align: left;
+  font-weight: 300;
+  font-size: var(--small-p);
+  margin-left: 10px;
+  color: #FF4025;
+}
+
+/* line 1836, src/sass/style.scss */
+.newsletter .gdpr_check {
+  margin: 20px 0 30px 0;
+  font-size: calc(var(--medium-p) * .9);
+  font-weight: 300;
+}
+
+/* line 1841, src/sass/style.scss */
+.newsletter .gdpr_check a {
+  font-weight: 400;
+  font-size: calc(var(--medium-p) * .8);
+}
+
+/* line 1846, src/sass/style.scss */
+.newsletter .gdpr_check .error-message {
+  text-align: center;
+  font-weight: 300;
+  font-size: var(--small-p);
+  color: #FF4025;
+  display: inline;
+}
+
+/* line 1857, src/sass/style.scss */
+.newsletter .hide_success.hidden {
+  display: none;
+  opacity: 0;
+  -webkit-transition: opacity .5s ease, display 0s ease .5s;
+  transition: opacity .5s ease, display 0s ease .5s;
+}
+
+/* line 1863, src/sass/style.scss */
+.newsletter .status_message.success-message {
+  margin-top: 20px;
+  font-weight: 300;
+  font-size: var(--medium-p);
+  background: #F6F6F6;
+  display: inline-block;
+  padding: 18px 40px 20px 40px;
+  border-radius: 30px;
+}
+
+/* line 1874, src/sass/style.scss */
+.newsletter .status_message.error-message {
+  margin-top: 20px;
+  font-weight: 300;
+  font-size: var(--medium-p);
+  color: #FF4025;
+}
+
 /* ------------- Footer Section ----------------------------------------------------------------------------------------------------------- */
-/* line 1793, src/sass/style.scss */
+/* line 1886, src/sass/style.scss */
 .footer {
-  padding: var(--vertical-l) var(--horizontal);
+  padding: var(--vertical-xl) var(--horizontal);
   /* ------------- First Column ---------------- */
   /* ------------- Second Column ---------------- */
   /* ------------- Third Column ---------------- */
 }
 
-/* line 1796, src/sass/style.scss */
+/* line 1889, src/sass/style.scss */
 .footer .header {
   font-size: var(--small-subtitle);
   margin-bottom: 10px;
 }
 
-/* line 1801, src/sass/style.scss */
+/* line 1894, src/sass/style.scss */
 .footer .columns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-/* line 1805, src/sass/style.scss */
-.footer .column {
-  width: 33%;
+/* line 1902, src/sass/style.scss */
+.footer .first {
+  width: 35%;
 }
 
-/* line 1813, src/sass/style.scss */
+/* line 1905, src/sass/style.scss */
 .footer .first .footer_logo {
   margin-bottom: 20px;
 }
 
-/* line 1818, src/sass/style.scss */
+/* line 1910, src/sass/style.scss */
 .footer .first .header {
   max-width: 20vw;
 }
 
-/* line 1822, src/sass/style.scss */
+/* line 1914, src/sass/style.scss */
 .footer .first .ticket_buttons {
   margin-top: var(--vertical);
   max-width: 20vw;
 }
 
-/* line 1830, src/sass/style.scss */
+/* line 1922, src/sass/style.scss */
 .footer .first .sister_companies p {
   font-style: italic;
   font-size: var(--small-p);
   margin: 50px 0 10px 0;
 }
 
-/* line 1836, src/sass/style.scss */
+/* line 1928, src/sass/style.scss */
 .footer .first .sister_companies .logos {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2912,45 +3020,50 @@ html {
           align-items: flex-end;
 }
 
-/* line 1840, src/sass/style.scss */
+/* line 1932, src/sass/style.scss */
 .footer .first .sister_companies .logos svg {
   margin-right: 20px;
 }
 
-/* line 1853, src/sass/style.scss */
+/* line 1943, src/sass/style.scss */
+.footer .second {
+  width: 40%;
+}
+
+/* line 1946, src/sass/style.scss */
 .footer .second .openinghours, .footer .second .address, .footer .second .phonenumber {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-/* line 1856, src/sass/style.scss */
+/* line 1949, src/sass/style.scss */
 .footer .second .openinghours p, .footer .second .address p, .footer .second .phonenumber p {
   font-size: var(--medium-p);
   margin-bottom: 5px;
 }
 
-/* line 1861, src/sass/style.scss */
+/* line 1954, src/sass/style.scss */
 .footer .second .openinghours svg, .footer .second .address svg, .footer .second .phonenumber svg {
   margin: 8px 22px 0 0;
 }
 
-/* line 1864, src/sass/style.scss */
+/* line 1957, src/sass/style.scss */
 .footer .second .openinghours svg path, .footer .second .address svg path, .footer .second .phonenumber svg path {
   fill: #000000;
 }
 
-/* line 1871, src/sass/style.scss */
+/* line 1964, src/sass/style.scss */
 .footer .second .address svg {
   margin: 10px 22px 0 6px;
 }
 
-/* line 1877, src/sass/style.scss */
+/* line 1970, src/sass/style.scss */
 .footer .second .phonenumber svg {
   margin: 10px 18px 0 4px;
 }
 
-/* line 1882, src/sass/style.scss */
+/* line 1975, src/sass/style.scss */
 .footer .second .moreinfo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2959,24 +3072,33 @@ html {
   text-decoration: none;
 }
 
-/* line 1887, src/sass/style.scss */
+/* line 1980, src/sass/style.scss */
 .footer .second .moreinfo p {
   font-size: var(--medium-p);
   margin-bottom: 0;
 }
 
-/* line 1892, src/sass/style.scss */
+/* line 1985, src/sass/style.scss */
 .footer .second .moreinfo svg {
-  width: 19px;
-  margin: 3px 20px 0 0;
+  width: 14px;
+  margin: 5px 25px 0 3px;
 }
 
-/* line 1896, src/sass/style.scss */
+/* line 1989, src/sass/style.scss */
 .footer .second .moreinfo svg path {
   fill: #000000;
+  -webkit-transition: fill .5s ease;
+  transition: fill .5s ease;
 }
 
-/* line 1902, src/sass/style.scss */
+/* line 1997, src/sass/style.scss */
+.footer .second .moreinfo:hover svg path {
+  fill: #FF4025;
+  -webkit-transition: fill .5s ease;
+  transition: fill .5s ease;
+}
+
+/* line 2005, src/sass/style.scss */
 .footer .second .social {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2984,36 +3106,41 @@ html {
   margin-bottom: var(--vertical-l);
 }
 
-/* line 1906, src/sass/style.scss */
+/* line 2009, src/sass/style.scss */
 .footer .second .social a {
   margin-right: 30px;
 }
 
-/* line 1910, src/sass/style.scss */
+/* line 2013, src/sass/style.scss */
 .footer .second .social a svg path {
   fill: #000000;
   -webkit-transition: fill .5s ease;
   transition: fill .5s ease;
 }
 
-/* line 1918, src/sass/style.scss */
+/* line 2021, src/sass/style.scss */
 .footer .second .social a:hover svg path {
   fill: #FF4025;
   -webkit-transition: fill .5s ease;
   transition: fill .5s ease;
 }
 
-/* line 1929, src/sass/style.scss */
+/* line 2032, src/sass/style.scss */
 .footer .second .social .facebook svg {
   margin-top: -2px;
 }
 
-/* line 1942, src/sass/style.scss */
+/* line 2043, src/sass/style.scss */
+.footer .third {
+  width: 25%;
+}
+
+/* line 2046, src/sass/style.scss */
 .footer .third .header:nth-of-type(2) {
   margin-top: var(--vertical);
 }
 
-/* line 1946, src/sass/style.scss */
+/* line 2050, src/sass/style.scss */
 .footer .third a {
   font-size: var(--medium-p);
   text-decoration: none;
@@ -3022,7 +3149,7 @@ html {
   display: inline-block;
 }
 
-/* line 1957, src/sass/style.scss */
+/* line 2061, src/sass/style.scss */
 .footer .copyright_notice {
   margin-top: var(--vertical-xl);
   font-size: var(--small-p);

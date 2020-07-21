@@ -10,8 +10,10 @@
 			</h1>
 
 			<p class="text">
-				<?php _e( 'Sign-up for our emails and you will become a cannabis expert in no-time!', 'hashmuseum' ) ?>
-			</p>			
+				<?php _e( 'Sign-up for our newsletter and become a cannabis expert in no-time!', 'hashmuseum' ) ?>
+			</p>
+			
+			<?php include('parts/newsletter-form.php'); ?>
 
 		</article>
 		
@@ -27,7 +29,8 @@
 
 
 					<h2 class="header">
-					Explore the World of Cannabis. The Past, the Present & the Future.
+						<?php _e( 'Explore the World of Cannabis. The Past, the Present & the Future.', 'hashmuseum' ) ?>
+					
 					</h2>
 
 					<div class="ticket_buttons">
