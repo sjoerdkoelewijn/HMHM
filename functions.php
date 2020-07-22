@@ -13,7 +13,7 @@ if(strpos($_SERVER['REQUEST_URI'], '.local') !== false){
 
 */
 
- include 'functions/advanced-custom-fields.php';
+include 'functions/advanced-custom-fields.php';
 
 add_theme_support( 'title-tag' );
 add_theme_support( 'menus' );

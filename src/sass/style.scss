@@ -117,7 +117,7 @@ html {
 /* ------------- Default Wordpress Blocks ----------------------------------------------------------------------------------------------------------- */
 
 .wp-block-group__inner-container {     
-    display:flex;    
+    display:flex;
     
     .wp-block-group {
         width:66vw;
@@ -1710,7 +1710,7 @@ border: 0;
         &:before {
             content:'';
             @include blackGradient(0deg);
-            width:100%;
+            width:99.2%; // TODO uitzoeken waarom 100% een overlap geeft.
             display:block;
             height:40vh;
             bottom:0;
@@ -1720,7 +1720,7 @@ border: 0;
 
         img {
             height:100vh;
-            width:100%;
+            min-width:100%;
             object-fit: cover;
         }
 
@@ -1746,12 +1746,48 @@ border: 0;
         }
     }
 
+    .slider_button {
+        background:$action-gradient;           
+        width:80px;
+        height:80px;
+        padding:0;
+        position: absolute;
+        top:48%;
+        z-index:100;
+        cursor: pointer;
+        overflow:hidden;
+                      
+        .background_wrap {
+            width:80px;
+            height:80px;
+            padding-top:27px;
+            background-color:rgba($black, 1);
+            transition:background .5s ease;
+        }
+
+        &:hover {
+            .background_wrap {
+                background-color:rgba($black, 0);
+                transition:background-color .5s ease;
+            }
+            
+        }
+    }
+
+    .slider_button.left {
+        left:$horizontal;
+    }
+
+    .slider_button.right {
+        right:$horizontal;
+    }
+
 }
 
  /* ------------- Home Hero ---------------- */
 
 
- 
+
 
 
 /* ------------- Whats on page ----------------------------------------------------------------------------------------------------------- */

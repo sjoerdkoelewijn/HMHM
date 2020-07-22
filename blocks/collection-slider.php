@@ -47,16 +47,12 @@ $id = 'collection-slider' . $block['id'];
             <?php } else { ?>
 
                 <div data-siema-related-post-slider>
-               
-                    <div class="collection_slider_inner">
-                    
-                        <?php foreach( $themes as $theme ): ?>
+                                   
+                    <?php foreach( $themes as $theme ): ?>
 
-                            <?php include('parts/themes/theme-slide.php'); ?>
+                        <?php include('parts/themes/theme-slide.php'); ?>
 
-                        <?php endforeach; ?>
-
-                    </div>
+                    <?php endforeach; ?>
 
                 </div>
 
