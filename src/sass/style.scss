@@ -208,9 +208,6 @@ html {
     }
 }
 
-
-
-
 /* ------------- Logo ----------------------------------------------------------------------------------------------------------- */
 
 .logo {
@@ -218,6 +215,10 @@ html {
     left:$horizontal;
     top:$vertical;
     z-index:1000;
+}
+
+.home .logo {
+    display:none;
 }
 
 .logo path {
@@ -1646,11 +1647,111 @@ border: 0;
   }
 
 .collection_items {
-scrollbar-width: none;
-border: 0;
+    scrollbar-width: none;
+    border: 0;
 }
 
+ /* ------------- Collection Theme Slider ---------------- */
 
+.collection_slider {
+    position:relative;
+
+    &:after {
+        content:'';
+        @include blackGradient(180deg);
+        width:100%;
+        display:block;
+        height:40vh;
+        top:0;
+        position:absolute;
+        z-index:10;
+    }
+
+    .header_wrap {
+        position:absolute;
+        width:100%;
+        text-align:center;
+        color:$white;
+        margin-top:var(--vertical-l);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); 
+        z-index:20;
+        
+        h2 {
+            margin-bottom:15px;
+            color:$lightgrey;
+            font-size:var(--small-subtitle);
+        }
+
+        h1 {
+            margin-bottom:10px;
+        }
+
+        .sepa {
+            margin:0 auto 20px auto;        
+            
+            svg {
+                path {
+                    fill:$white;
+                }
+            }
+        }
+    }
+
+    .collection_slider_inner {
+        display:flex;
+    }
+    
+    .theme {
+        width:33.33vw;
+        position:relative;
+        text-decoration:none;
+        display:block;
+        
+        &:before {
+            content:'';
+            @include blackGradient(0deg);
+            width:100%;
+            display:block;
+            height:40vh;
+            bottom:0;
+            position:absolute;
+            z-index:10;
+        }
+
+        img {
+            height:100vh;
+            width:100%;
+            object-fit: cover;
+        }
+
+        .text_wrap {
+            position:absolute;
+            z-index:20;
+            bottom:0;
+            padding:50px;
+            color:$white; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);           
+
+            h2 {
+                font-size:var(--small-subtitle);
+                margin-bottom:10px;
+            }
+
+            p {
+                font-size: var(--small-p);
+                font-weight:400;
+                margin:0;
+            }
+            
+        }
+    }
+
+}
+
+ /* ------------- Home Hero ---------------- */
+
+
+ 
 
 
 /* ------------- Whats on page ----------------------------------------------------------------------------------------------------------- */
@@ -1785,7 +1886,7 @@ border: 0;
 
     .header {
         font-size: var(--large-title);
-        margin-bottom:10px;
+        margin-bottom:20px;
     }
 
     .subheader {

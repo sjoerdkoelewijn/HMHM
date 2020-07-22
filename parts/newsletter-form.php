@@ -8,7 +8,7 @@
 
             <div class="mc-field-group input_wrap">
                 <label for="mce-NAME">
-                    First Name
+                    First name
                 </label>
                 <input type="text" value="" placeholder="Mary" name="FNAME" class="required name" id="mce-FNAME" autocorrect="off" spellcheck="false" required>
             </div>

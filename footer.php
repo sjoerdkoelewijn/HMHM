@@ -2,15 +2,15 @@
 		<article class="newsletter">
 
 			<h2 class="subheader">
-				<?php _e( 'The Museum Newsletter', 'hashmuseum' ) ?>
+				<?php pll_e( 'Stay in touch', 'hashmuseum' ) ?>
 			</h2>
 
 			<h1 class="header">
-				<?php _e( 'Become a Cannabis Expert', 'hashmuseum' ) ?>
+				<?php pll_e( 'The Museum Newsletter', 'hashmuseum' ) ?>
 			</h1>
 
 			<p class="text">
-				<?php _e( 'Sign-up for our newsletter and become a cannabis expert in no-time!', 'hashmuseum' ) ?>
+				<?php pll_e( 'Sign up to get the latest news about the museum, upcoming exhibitions and events.', 'hashmuseum' ) ?>
 			</p>
 			
 			<?php include('parts/newsletter-form.php'); ?>

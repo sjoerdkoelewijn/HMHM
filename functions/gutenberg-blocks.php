@@ -33,6 +33,17 @@ function my_acf_init() {
 		));
 
 		acf_register_block(array(
+			'name'				=> 'home-hero',
+			'title'				=> __('Home Hero'),
+			'description'		=> __('The hero block for the homepage'),
+			'render_callback'	=> 'sk_acf_block_render_callback',
+			'category'			=> 'common',
+			'icon'				=> 'laptop',
+			'mode'				=> 'edit', // start in edit mode
+			'keywords'			=> array( 'hero', 'home' ),
+		));
+
+		acf_register_block(array(
 			'name'				=> 'image_slider',
 			'title'				=> __('Image Slider'),
 			'description'		=> __('A horizontal image slider that spans the whole width of page.'),
@@ -132,6 +143,17 @@ function my_acf_init() {
 			'keywords'			=> array( 'collection', 'hero' ),
 		));
 
+		acf_register_block(array(
+			'name'				=> 'collection-slider',
+			'title'				=> __('Collection Slider'),
+			'description'		=> __('A slider with selected collection items.'),
+			'render_callback'	=> 'sk_acf_block_render_callback',
+			'category'			=> 'common',
+			'icon'				=> 'slides',
+			'mode'				=> 'edit', // start in edit mode
+			'keywords'			=> array( 'slider', 'collection' ),
+		));
+
 	}
 }
 
@@ -169,6 +191,8 @@ function restrict_blocks( $allowed_blocks, $post ) {
 				'acf/categories',
 				'acf/collection-items',
 				'acf/collection-overview-hero',
+				'acf/collection-slider',
+				'acf/home-hero',
 
 			);
 			return $allowed_blocks;
