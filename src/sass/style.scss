@@ -217,8 +217,12 @@ html {
     z-index:1000;
 }
 
-.home .logo {
-    display:none;
+.home .logo {    
+    svg {
+        path {
+            fill:$white;
+        }
+    }
 }
 
 .logo path {
@@ -1711,7 +1715,7 @@ border: 0;
         &:before {
             content:'';
             @include blackGradient(0deg);
-            width:99.2%; // TODO uitzoeken waarom 100% een overlap geeft.
+            width:100%; // TODO uitzoeken waarom 100% een overlap geeft.
             display:block;
             height:40vh;
             bottom:0;
@@ -1787,7 +1791,42 @@ border: 0;
 
  /* ------------- Home Hero ---------------- */
 
+.home_hero {
+    display:flex;
+    align-items: center; 
 
+    .sidebar {
+        background:$black;
+        width:33.33vw;
+        height:100vh;
+        padding:calc(var(--vertical-xl) * 1.4) var(--horizontal) var(--vertical-s) var(--horizontal);
+        color:$white;
+        text-align:left;
+
+        .subheader {
+            font-size: var(--small-subtitle);
+        }
+
+        .home_navigation {
+            margin:var(--vertical) 0;
+            
+            a {
+                color:$white;
+                text-decoration: none;
+                font-size:var(--large-p);
+                margin:10px 0;
+                display:inline-block;
+                font-weight:300;
+            }
+        }
+
+    }
+
+    .slider_wrap {
+        width:66.66vw;
+    }
+    
+}
 
 
 

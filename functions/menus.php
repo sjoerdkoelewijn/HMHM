@@ -3,6 +3,7 @@
 
 register_nav_menus( array(
 	'main-navigation' => __( 'Main Navigation', 'hashmuseum' ),
+	'home-navigation' => __( 'Home Navigation', 'hashmuseum' ),
 	'language-menu' => __( 'Language Menu', 'hashmuseum' ),
 	'explore-menu' => __( 'Explore Menu (Footer)', 'hashmuseum' ),
 	'boring-links' => __( 'Boring Links', 'hashmuseum' ),

@@ -6,9 +6,7 @@ $id = 'home-hero-' . $block['id']; ?>
 
 <article id="<?php echo $id; ?>" class="home_hero">
 
-    <div class="text_wrap">
-
-        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/logo.svg"); ?>
+    <div class="sidebar">
 
         <h1 class="header">
             <?php the_field('header'); ?>
@@ -18,10 +16,10 @@ $id = 'home-hero-' . $block['id']; ?>
             <?php the_field('subheader'); ?>
         </h2>
 
-        <nav id="main-navigation" class="main_navigation" role="navigation">
+        <nav id="home-navigation" class="home_navigation" role="navigation">
             <?php
             wp_nav_menu(array(
-                'theme_location'  => 'main-navigation',
+                'theme_location'  => 'home-navigation',
                 'fallback_cb'     => false,
                 'container'       => false,
                 'items_wrap'      => '<ul id="%1$s">%3$s</ul>',
@@ -41,21 +39,21 @@ $id = 'home-hero-' . $block['id']; ?>
                 switch ($ButtonType) {
                 case 'action': ?>
                     
-                    <a href="<?php echo $url; ?>" class="btn action_btn black" >
+                    <a href="<?php echo $url; ?>" class="btn action_btn white" >
                         <?php echo $anchor; ?>
                     </a>
 
                     <?php break;
                 case 'secondary': ?>
                     
-                    <a href="<?php echo $url; ?>" class="btn secondary_btn black" >
+                    <a href="<?php echo $url; ?>" class="btn secondary_btn white" >
                         <?php echo $anchor; ?>
                     </a>
 
                     <?php break;
                 case 'ghost': ?>
 
-                    <a href="<?php echo $url; ?>" class="btn ghost_btn black" >
+                    <a href="<?php echo $url; ?>" class="btn ghost_btn white" >
                         <?php echo $anchor; ?>
                     </a>
 
@@ -75,7 +73,7 @@ $id = 'home-hero-' . $block['id']; ?>
 
     </div>
 
-    <div class="image_wrap">
+    <div class="slider_wrap">
 
 
 
