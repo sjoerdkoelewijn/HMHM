@@ -10,8 +10,6 @@ $id = 'home-hero-' . $block['id']; ?>
 
         <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/logo.svg"); ?>
 
-        
-
         <h1 class="header">
             <?php the_field('header'); ?>
         </h1>    

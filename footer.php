@@ -29,18 +29,18 @@
 
 
 					<h2 class="header">
-						<?php _e( 'Explore the World of Cannabis. The Past, the Present & the Future.', 'hashmuseum' ) ?>
+						<?php pll_e( 'Explore the World of Cannabis. The Past, the Present & the Future.', 'hashmuseum' ) ?>
 					
 					</h2>
 
 					<div class="ticket_buttons">
 
 						<a class="ghost_btn black btn" href="#">
-							<?php _e( 'Get your ticket', 'hashmuseum' ) ?>
+							<?php pll_e( 'Get your ticket', 'hashmuseum' ) ?>
 						</a>
 
 						<a class="ghost_btn black btn" href="#">
-							<?php _e( 'Plan your visit', 'hashmuseum' ) ?>
+							<?php pll_e( 'Plan your visit', 'hashmuseum' ) ?>
 						</a>
 						
 					</div>
@@ -48,7 +48,7 @@
 					<div class="sister_companies">
 						
 						<p>
-							<?php _e( 'Our sister companies', 'hashmuseum' ) ?>
+							<?php pll_e( 'Our sister companies', 'hashmuseum' ) ?>
 						</p>
 
 						<div class="logos">
@@ -63,7 +63,7 @@
 				<div class="column second">
 
 				<h2 class="header">
-                        <?php echo __( 'Amsterdam', 'hashmuseum' ) ?>
+                        <?php pll_e( 'Amsterdam', 'hashmuseum' ) ?>
 					</h2>
 					
 					<div class="address">
@@ -107,7 +107,7 @@
                     </nav>
 
                     <h2 class="header">
-                        <?php echo __( 'Barcelona', 'hashmuseum' ) ?>
+                        <?php pll_e( 'Barcelona', 'hashmuseum' ) ?>
                     </h2>
 
 					<div class="address">
@@ -134,7 +134,7 @@
 					<a href="#" class="moreinfo">
                         <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?> 
                         <p>
-							<?php echo __( 'More information', 'hashmuseum' ) ?>
+							<?php pll_e( 'More information', 'hashmuseum' ) ?>
                         </p>
                     </a>
 
@@ -155,7 +155,7 @@
 				<div class="column third">
 
 					<h2 class="header">
-                        <?php echo __( 'Explore', 'hashmuseum' ) ?>
+                        <?php pll_e( 'Explore', 'hashmuseum' ) ?>
 					</h2>
 
 					<nav id="explore-links" class="explore_links" role="navigation">
@@ -170,7 +170,7 @@
                		</nav>
 					
 					<h2 class="header">
-                        <?php echo __( 'Boring', 'hashmuseum' ) ?>
+                        <?php pll_e( 'Boring', 'hashmuseum' ) ?>
                     </h2>
 
 					<nav id="boring-links" class="boring_links" role="navigation">
@@ -189,7 +189,7 @@
 			</div>
 
 			<p class="copyright_notice">
-				© 1985 - <?php echo date("Y"); ?> <?php _e( 'the Hash, Marihuana & Hemp Museum.', 'hashmuseum' ) ?> <?php _e( 'All Rights Reserved.', 'hashmuseum' ) ?>
+				© 1985 - <?php echo date("Y"); ?> <?php pll_e( 'the Hash, Marihuana & Hemp Museum.', 'hashmuseum' ) ?> <?php _e( 'All Rights Reserved.', 'hashmuseum' ) ?>
 			</p>
 
 		</article>
