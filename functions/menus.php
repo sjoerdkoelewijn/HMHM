@@ -6,7 +6,7 @@ register_nav_menus( array(
 	'home-navigation' => __( 'Home Navigation', 'hashmuseum' ),
 	'language-menu' => __( 'Language Menu', 'hashmuseum' ),
 	'explore-menu' => __( 'Explore Menu (Footer)', 'hashmuseum' ),
-	'boring-links' => __( 'Boring Links', 'hashmuseum' ),
+	'legal-links' => __( 'Legal Links', 'hashmuseum' ),
 	'social-menu-ams' => __( 'Social Menu Amsterdam', 'hashmuseum' ),
 	'social-menu-bcn' => __( 'Social Menu Barcelona', 'hashmuseum' ),
 ) );

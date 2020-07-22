@@ -3104,14 +3104,15 @@ html {
   border-radius: 2px;
   padding: 10px 20px;
   margin: 5px;
+  min-width: 300px;
 }
 
-/* line 1999, src/sass/style.scss */
+/* line 2000, src/sass/style.scss */
 .newsletter .input_wrap input.error {
   border-color: #FF4025;
 }
 
-/* line 2003, src/sass/style.scss */
+/* line 2004, src/sass/style.scss */
 .newsletter .input_wrap .error-message {
   text-align: left;
   font-weight: 300;
@@ -3120,20 +3121,20 @@ html {
   color: #FF4025;
 }
 
-/* line 2013, src/sass/style.scss */
+/* line 2014, src/sass/style.scss */
 .newsletter .gdpr_check {
   margin: 20px 0 30px 0;
   font-size: calc(var(--medium-p) * .9);
   font-weight: 300;
 }
 
-/* line 2018, src/sass/style.scss */
+/* line 2019, src/sass/style.scss */
 .newsletter .gdpr_check a {
   font-weight: 400;
   font-size: calc(var(--medium-p) * .8);
 }
 
-/* line 2023, src/sass/style.scss */
+/* line 2024, src/sass/style.scss */
 .newsletter .gdpr_check .error-message {
   text-align: center;
   font-weight: 300;
@@ -3142,7 +3143,7 @@ html {
   display: inline;
 }
 
-/* line 2034, src/sass/style.scss */
+/* line 2035, src/sass/style.scss */
 .newsletter .hide_success.hidden {
   display: none;
   opacity: 0;
@@ -3150,7 +3151,7 @@ html {
   transition: opacity .5s ease, display 0s ease .5s;
 }
 
-/* line 2040, src/sass/style.scss */
+/* line 2041, src/sass/style.scss */
 .newsletter .status_message.success-message {
   margin-top: 20px;
   font-weight: 300;
@@ -3161,7 +3162,7 @@ html {
   border-radius: 30px;
 }
 
-/* line 2051, src/sass/style.scss */
+/* line 2052, src/sass/style.scss */
 .newsletter .status_message.error-message {
   margin-top: 20px;
   font-weight: 300;
@@ -3170,7 +3171,7 @@ html {
 }
 
 /* ------------- Footer Section ----------------------------------------------------------------------------------------------------------- */
-/* line 2063, src/sass/style.scss */
+/* line 2064, src/sass/style.scss */
 .footer {
   padding: var(--vertical-xl) var(--horizontal);
   /* ------------- First Column ---------------- */
@@ -3178,48 +3179,48 @@ html {
   /* ------------- Third Column ---------------- */
 }
 
-/* line 2066, src/sass/style.scss */
+/* line 2067, src/sass/style.scss */
 .footer .header {
   font-size: var(--small-subtitle);
   margin-bottom: 10px;
 }
 
-/* line 2071, src/sass/style.scss */
+/* line 2072, src/sass/style.scss */
 .footer .columns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-/* line 2079, src/sass/style.scss */
+/* line 2080, src/sass/style.scss */
 .footer .first {
   width: 35%;
 }
 
-/* line 2082, src/sass/style.scss */
+/* line 2083, src/sass/style.scss */
 .footer .first .footer_logo {
   margin-bottom: 20px;
 }
 
-/* line 2087, src/sass/style.scss */
+/* line 2088, src/sass/style.scss */
 .footer .first .header {
   max-width: 20vw;
 }
 
-/* line 2091, src/sass/style.scss */
+/* line 2092, src/sass/style.scss */
 .footer .first .ticket_buttons {
   margin-top: var(--vertical);
   max-width: 20vw;
 }
 
-/* line 2099, src/sass/style.scss */
+/* line 2100, src/sass/style.scss */
 .footer .first .sister_companies p {
   font-style: italic;
   font-size: var(--small-p);
   margin: 50px 0 10px 0;
 }
 
-/* line 2105, src/sass/style.scss */
+/* line 2106, src/sass/style.scss */
 .footer .first .sister_companies .logos {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3229,50 +3230,50 @@ html {
           align-items: flex-end;
 }
 
-/* line 2109, src/sass/style.scss */
+/* line 2110, src/sass/style.scss */
 .footer .first .sister_companies .logos svg {
   margin-right: 20px;
 }
 
-/* line 2120, src/sass/style.scss */
+/* line 2121, src/sass/style.scss */
 .footer .second {
   width: 40%;
 }
 
-/* line 2123, src/sass/style.scss */
+/* line 2124, src/sass/style.scss */
 .footer .second .openinghours, .footer .second .address, .footer .second .phonenumber {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-/* line 2126, src/sass/style.scss */
+/* line 2127, src/sass/style.scss */
 .footer .second .openinghours p, .footer .second .address p, .footer .second .phonenumber p {
   font-size: var(--medium-p);
   margin-bottom: 5px;
 }
 
-/* line 2131, src/sass/style.scss */
+/* line 2132, src/sass/style.scss */
 .footer .second .openinghours svg, .footer .second .address svg, .footer .second .phonenumber svg {
   margin: 8px 22px 0 0;
 }
 
-/* line 2134, src/sass/style.scss */
+/* line 2135, src/sass/style.scss */
 .footer .second .openinghours svg path, .footer .second .address svg path, .footer .second .phonenumber svg path {
   fill: #000000;
 }
 
-/* line 2141, src/sass/style.scss */
+/* line 2142, src/sass/style.scss */
 .footer .second .address svg {
   margin: 10px 22px 0 6px;
 }
 
-/* line 2147, src/sass/style.scss */
+/* line 2148, src/sass/style.scss */
 .footer .second .phonenumber svg {
   margin: 10px 18px 0 4px;
 }
 
-/* line 2152, src/sass/style.scss */
+/* line 2153, src/sass/style.scss */
 .footer .second .moreinfo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3281,33 +3282,33 @@ html {
   text-decoration: none;
 }
 
-/* line 2157, src/sass/style.scss */
+/* line 2158, src/sass/style.scss */
 .footer .second .moreinfo p {
   font-size: var(--medium-p);
   margin-bottom: 0;
 }
 
-/* line 2162, src/sass/style.scss */
+/* line 2163, src/sass/style.scss */
 .footer .second .moreinfo svg {
   width: 14px;
   margin: 5px 25px 0 3px;
 }
 
-/* line 2166, src/sass/style.scss */
+/* line 2167, src/sass/style.scss */
 .footer .second .moreinfo svg path {
   fill: #000000;
   -webkit-transition: fill .5s ease;
   transition: fill .5s ease;
 }
 
-/* line 2174, src/sass/style.scss */
+/* line 2175, src/sass/style.scss */
 .footer .second .moreinfo:hover svg path {
   fill: #FF4025;
   -webkit-transition: fill .5s ease;
   transition: fill .5s ease;
 }
 
-/* line 2182, src/sass/style.scss */
+/* line 2183, src/sass/style.scss */
 .footer .second .social {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3315,41 +3316,41 @@ html {
   margin-bottom: var(--vertical-l);
 }
 
-/* line 2186, src/sass/style.scss */
+/* line 2187, src/sass/style.scss */
 .footer .second .social a {
   margin-right: 30px;
 }
 
-/* line 2190, src/sass/style.scss */
+/* line 2191, src/sass/style.scss */
 .footer .second .social a svg path {
   fill: #000000;
   -webkit-transition: fill .5s ease;
   transition: fill .5s ease;
 }
 
-/* line 2198, src/sass/style.scss */
+/* line 2199, src/sass/style.scss */
 .footer .second .social a:hover svg path {
   fill: #FF4025;
   -webkit-transition: fill .5s ease;
   transition: fill .5s ease;
 }
 
-/* line 2209, src/sass/style.scss */
+/* line 2210, src/sass/style.scss */
 .footer .second .social .facebook svg {
   margin-top: -2px;
 }
 
-/* line 2220, src/sass/style.scss */
+/* line 2221, src/sass/style.scss */
 .footer .third {
   width: 25%;
 }
 
-/* line 2223, src/sass/style.scss */
+/* line 2224, src/sass/style.scss */
 .footer .third .header:nth-of-type(2) {
   margin-top: var(--vertical);
 }
 
-/* line 2227, src/sass/style.scss */
+/* line 2228, src/sass/style.scss */
 .footer .third a {
   font-size: var(--medium-p);
   text-decoration: none;
@@ -3358,7 +3359,7 @@ html {
   display: inline-block;
 }
 
-/* line 2238, src/sass/style.scss */
+/* line 2239, src/sass/style.scss */
 .footer .copyright_notice {
   margin-top: var(--vertical-xl);
   font-size: var(--small-p);

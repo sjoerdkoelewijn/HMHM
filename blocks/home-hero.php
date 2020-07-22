@@ -75,8 +75,41 @@ $id = 'home-hero-' . $block['id']; ?>
 
     <div class="slider_wrap">
 
+	<div class="background">
+		<div class="background__image active" id="image_1"></div>
+    
+		<div class="background__image" id="image_2"></div>
+
+		<div class="background__image" id="image_3"></div>
+
+	</div>
+
+	<div class="foreground">
+
+		<div class="foreground__text active" id="item_1">
+			<h5 class="foreground__text_subtitle foreground__text_title">Smoking Farmers</h5>
+            <h5 class="foreground__text_title subtitleslider">by Hendrick Sorgh, ca. 1650</h5>
+			<p class="foreground__text_excerpt LM">Learn more about </p>
+			<p class="foreground__text_excerpt LMS">Cannabis history in Europe</p>
+		</div>
+		
+		<div class="foreground__text" id="item_2">
+			<p class="foreground__text_excerpt LMR"> Temporary Exhibition </p>
+			<p class="foreground__text_excerpt LMS"> Puff Puff Pass! </p>
+			<h5 class="foreground__text_subtitle foreground__text_title">Browse through the ‘smoky’ adventures of various cannabis stars.</h5>
+		</div>
+		
+		<div class="foreground__text" id="item_3">
+			<h5 class="foreground__text_subtitle foreground__text_title">Medicinal Cannabis </h5>
+            <h5 class="foreground__text_title subtitleslider">in the 19th century </h5>
+			<p class="foreground__text_excerpt LM"> Learn more about</p>
+			<p class="foreground__text_excerpt LMS"> Medicinal cannabis in the past and present </p>
+		</div>
+
+	</div>
+</div>
 
 
-    </div> 
+
                 
 </article>

@@ -52,8 +52,15 @@
 						</p>
 
 						<div class="logos">
-							<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/SensiSeedsLogo.svg"); ?>
-							<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/HempFlaxLogo.svg"); ?>
+							<a href="https://sensiseeds.com">
+								<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/SensiSeedsLogo.svg"); ?>
+							</a>
+							<a href="https://www.hempflax.com">	
+								<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/HempFlaxLogo.svg"); ?>
+							</a>
+							<a href="https://www.hempstory.nl">	
+								<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/HempstoryLogo.svg"); ?>
+							</a>
 						</div>
 					
 					</div>
@@ -170,13 +177,13 @@
                		</nav>
 					
 					<h2 class="header">
-                        <?php pll_e( 'Boring', 'hashmuseum' ) ?>
+                        <?php pll_e( 'Legalize', 'hashmuseum' ) ?>
                     </h2>
 
-					<nav id="boring-links" class="boring_links" role="navigation">
+					<nav id="legal-links" class="legal_links" role="navigation">
 						<?php
 						wp_nav_menu(array(
-							'theme_location'  => 'boring-links',
+							'theme_location'  => 'legal-links',
 							'fallback_cb'     => false,
 							'container'       => false,
 							'items_wrap'      => '<ul id="%1$s">%3$s</ul>',
