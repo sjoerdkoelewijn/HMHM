@@ -178,3 +178,44 @@ if (PromoSliderContainer != null){
     PromoSliderNext.addEventListener('click', () => PromoSlider.next());
 
 }
+
+/******************* Home hero *************************************/
+
+const item1 = document.getElementById("item_1");
+const item2 = document.getElementById("item_2");
+const item3 = document.getElementById("item_3");
+
+const image1 = document.getElementById("image_1");
+const image2 = document.getElementById("image_2");
+const image3 = document.getElementById("image_3");
+
+item1.addEventListener("mouseover", functionMouseOver1, false);
+item2.addEventListener("mouseover", functionMouseOver2, false);
+item3.addEventListener("mouseover", functionMouseOver3, false);
+
+function functionMouseOver1(){
+  item1.classList.add("active");
+	item2.classList.remove("active");
+	item3.classList.remove("active");
+	image1.classList.add("active");
+	image2.classList.remove("active");
+	image3.classList.remove("active");
+}
+
+function functionMouseOver2(){
+  item2.classList.add("active");
+	item1.classList.remove("active");
+	item3.classList.remove("active");
+	image2.classList.add("active");
+	image1.classList.remove("active");
+	image3.classList.remove("active");
+}
+
+function functionMouseOver3(){
+  item3.classList.add("active");
+	item1.classList.remove("active");
+	item2.classList.remove("active");
+	image3.classList.add("active");
+	image1.classList.remove("active");
+	image2.classList.remove("active");
+}

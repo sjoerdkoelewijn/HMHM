@@ -1820,12 +1820,175 @@ border: 0;
             }
         }
 
-    }
+    }  
 
     .slider_wrap {
         width:66.66vw;
-    }
+        height: 100vh;
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        overflow: hidden;
+        
+        .background {
+
+            .bg_image {
+                
+                position:absolute;
+                opacity: 0;
+                transition: all 1s ease;                
+                
+                img {
+                    width:100%;
+                    object-fit: cover;
+                    min-height:100vh;
+                }
+            }
+
+            .active {
+                transition: all 1s ease;
+                opacity: 1;
+            }
+
+        }
+
+        .foreground {
+            width: 100%;
+            display: flex;
+            position: absolute;
+            bottom: 0;
+
+            .text_wrap {
+                display: inline-block;
+                position:relative;
+                min-width: 33.33%;
+                height: 230px;
+                padding: 1.7vw 2vw;
+                background:rgba($black, 0.6);
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+                color: #fff;
+                align-self: flex-end;
+                transition: all 0.3s ease;
+
+                &:nth-child(2n) {
+                    background: rgba(0, 0, 0, 0.5);
+                }
+
+                &:nth-child(3n) {
+                    background: rgba(0, 0, 0, 0.4);
+                }
+
+                .item_meta {
+                    visibility:hidden;
+                    opacity:0;
+
+                    h3 {
+                        font-size:var(--small-subtitle);
+                    }
+
+                    p {
+                        font-family: $header-font;
+                        color:$mediumgrey;
+                        font-size:var(--medium-p);
+                    }
+                }
+
+                .text {
+                    position:absolute;
+                    bottom:70px;
+
+                    .subheader {
+                        font-size:calc(var(--small-p) * 1.1);
+                        font-weight: 400;
+                        margin-bottom:5px;
+                        width:90%;
+                    }
     
+                    .header {
+                       width: 90%;
+                       line-height:120%;
+                       font-size:var(--small-subtitle);
+                       font-weight:300; 
+                       font-family:$body-font;
+                       margin-bottom:10px;
+                    }
+
+                }
+                
+                .subheader.action {
+                    color:$action;
+                }
+                
+                .read_more_link {
+                    @include textLink;
+                    color:$white;
+                    position:absolute;
+                    bottom:30px;
+
+                    svg {
+                        path{
+                            fill:$white;
+                        }
+                    }
+                }
+
+            }
+
+            .expo {
+
+                .subheader {
+                    font-size:calc(var(--small-p) * 1.1);
+                    font-weight: 400;
+                    margin-bottom:5px;
+                    width:90%;
+                }
+
+                .header {
+                   width: 90%;
+                   line-height:120%;
+                   font-size:var(--small-subtitle);
+                   font-weight:300; 
+                   font-family:$body-font;
+                   margin-bottom:10px;
+                } 
+
+                .tagline {
+                    margin-top:20px;
+                    font-family: $header-font;
+                    font-size:var(--small-subtitle);
+                    width:90%;
+                    visibility:visible;
+                    opacity:0;                    
+                }
+
+            }
+
+            .active {
+                height: 346px;
+                transition: all 0.3s ease;
+                background: rgba(0, 0, 0, 0.6);
+
+                &:nth-child(2n) {
+                    background: rgba(0, 0, 0, 0.7);
+                }
+
+                &:nth-child(3n) {
+                    background: rgba(0, 0, 0, 0.7);
+                }
+
+                .item_meta, .tagline {
+                    visibility:visible;
+                    opacity:1;
+                    transition: opacity .5s ease, display .5s ease .5s;
+                }
+
+
+            }
+
+        }
+
+    }
+
 }
 
 

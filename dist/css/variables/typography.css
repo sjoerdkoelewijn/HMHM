@@ -49,16 +49,14 @@ a:visited {
   --medium-p:1.3rem;
   --small-p:1rem;
   --small-btn:0.9rem;
-  --body-font:'Lato', sans-serif;
-  --header-font:'Prata', serif;
 }
 
-/* line 43, src/sass/variables/typography.scss */
+/* line 42, src/sass/variables/typography.scss */
 html {
   font-family: "Lato", sans-serif;
 }
 
-/* line 47, src/sass/variables/typography.scss */
+/* line 46, src/sass/variables/typography.scss */
 input, textarea, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   font-family: "Lato", sans-serif;
   font-weight: 300;
@@ -80,22 +78,22 @@ input, textarea, input::placeholder, textarea::placeholder {
   font-weight: 300;
 }
 
-/* line 52, src/sass/variables/typography.scss */
+/* line 51, src/sass/variables/typography.scss */
 button {
   font-family: "Lato", sans-serif;
 }
 
-/* line 56, src/sass/variables/typography.scss */
+/* line 55, src/sass/variables/typography.scss */
 strong {
   font-weight: 700;
 }
 
-/* line 60, src/sass/variables/typography.scss */
+/* line 59, src/sass/variables/typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Prata", serif;
 }
 
-/* line 64, src/sass/variables/typography.scss */
+/* line 63, src/sass/variables/typography.scss */
 h1 {
   font-weight: 400;
   line-height: 140%;
@@ -103,7 +101,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-/* line 72, src/sass/variables/typography.scss */
+/* line 71, src/sass/variables/typography.scss */
 h2 {
   font-weight: 400;
   line-height: 150%;
@@ -111,19 +109,19 @@ h2 {
   margin-bottom: 30px;
 }
 
-/* line 79, src/sass/variables/typography.scss */
+/* line 78, src/sass/variables/typography.scss */
 h1 + h2 {
   margin-top: -15px;
 }
 
-/* line 83, src/sass/variables/typography.scss */
+/* line 82, src/sass/variables/typography.scss */
 h3 {
   font-weight: 400;
   line-height: 150%;
   font-size: 1.5vw;
 }
 
-/* line 89, src/sass/variables/typography.scss */
+/* line 88, src/sass/variables/typography.scss */
 p {
   line-height: 160%;
   font-weight: 300;

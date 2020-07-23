@@ -75,41 +75,161 @@ $id = 'home-hero-' . $block['id']; ?>
 
     <div class="slider_wrap">
 
-	<div class="background">
-		<div class="background__image active" id="image_1"></div>
-    
-		<div class="background__image" id="image_2"></div>
+        <?php $slides = get_field('slides'); ?>
 
-		<div class="background__image" id="image_3"></div>
+        <?php if( have_rows('slides') ): ?>
 
-	</div>
+            <?php $i = 1; ?> 
 
-	<div class="foreground">
+            <div class="background">
 
-		<div class="foreground__text active" id="item_1">
-			<h5 class="foreground__text_subtitle foreground__text_title">Smoking Farmers</h5>
-            <h5 class="foreground__text_title subtitleslider">by Hendrick Sorgh, ca. 1650</h5>
-			<p class="foreground__text_excerpt LM">Learn more about </p>
-			<p class="foreground__text_excerpt LMS">Cannabis history in Europe</p>
-		</div>
-		
-		<div class="foreground__text" id="item_2">
-			<p class="foreground__text_excerpt LMR"> Temporary Exhibition </p>
-			<p class="foreground__text_excerpt LMS"> Puff Puff Pass! </p>
-			<h5 class="foreground__text_subtitle foreground__text_title">Browse through the ‘smoky’ adventures of various cannabis stars.</h5>
-		</div>
-		
-		<div class="foreground__text" id="item_3">
-			<h5 class="foreground__text_subtitle foreground__text_title">Medicinal Cannabis </h5>
-            <h5 class="foreground__text_title subtitleslider">in the 19th century </h5>
-			<p class="foreground__text_excerpt LM"> Learn more about</p>
-			<p class="foreground__text_excerpt LMS"> Medicinal cannabis in the past and present </p>
-		</div>
+                <?php while( have_rows('slides') ): the_row(); ?>
 
-	</div>
-</div>
+                    <?php if( get_row_layout() == 'theme' ): ?>
 
+                        <?php $image = get_sub_field('image'); ?>
 
+                        <div id="image_<?php echo $i ?>" class="bg_image <?php if($i === 1) {echo 'active';} ?>">
 
+                            <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo $image['alt']; ?>" />
+
+                        </div>
+
+                    <?php elseif( get_row_layout() == 'exhibition' ): ?>
+
+                        <?php $image = get_sub_field('image'); ?>
+
+                        <div id="image_<?php echo $i ?>" class="bg_image <?php if($i === 1) {echo 'active';} ?>">
+
+                            <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo $image['alt']; ?>" />
+
+                        </div>
+
+                    <?php elseif( get_row_layout() == 'knowledge' ): ?>
+
+                        <?php $image = get_sub_field('image'); ?>
+
+                        <div id="image_<?php echo $i ?>" class="bg_image <?php if($i === 1) {echo 'active';} ?>">
+
+                            <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo $image['alt']; ?>" />
+
+                        </div>
+                    
+                    <?php endif; ?>
+
+            <?php $i++; ?>
+
+                <?php endwhile; ?>                
+
+            </div>
+
+            <?php $i = 1; ?> 
+
+            <div class="foreground">
+
+                <?php while( have_rows('slides') ): the_row(); ?>
+
+                <?php if( get_row_layout() == 'theme' ): ?>
+
+                    <div class="text_wrap <?php if($i === 1) {echo 'active';} ?>" id="item_<?php echo $i ?>">
+                        
+                        <div class="item_meta">
+
+                            <h3>
+                                <?php the_sub_field('collection_item_header'); ?>
+                            </h3>
+
+                            <p>
+                                <?php the_sub_field('collection_item_subheader'); ?>
+                            </p>        
+
+                        </div>
+
+                        <div class="text">
+
+                            <p class="subheader">
+                                <?php pll_e( 'Read more about', 'hashmuseum' ) ?>
+                            </p>
+                        
+                            <h2 class="header">
+                                <?php the_sub_field('header'); ?>
+                            </h2>
+
+                        </div>
+                        
+                        <a href="<?php the_sub_field('url'); ?>" class="read_more_link">
+                            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
+                            <?php _e( 'The Collection', 'hashmuseum' ) ?>
+                        </a>
+                    </div>
+
+                <?php elseif( get_row_layout() == 'exhibition' ): ?>
+
+                    <div class="text_wrap expo <?php if($i === 1) {echo 'active';} ?>" id="item_<?php echo $i ?>">
+                    
+                        <p class="subheader action">
+                            <?php the_sub_field('subheader'); ?>
+                        </p>
+                    
+                        <h2 class="header">
+                            <?php the_sub_field('header'); ?>
+                        </h2>
+                        
+                        <p class="tagline">
+                            <?php the_sub_field('tagline'); ?>
+                        </p>
+
+                        <a href="<?php the_sub_field('url'); ?>" class="read_more_link">
+                            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
+                            <?php the_sub_field('cta'); ?>
+                        </a>
+                    
+                    </div>
+
+                <?php elseif( get_row_layout() == 'knowledge' ): ?>
+
+                    <div class="text_wrap <?php if($i === 1) {echo 'active';} ?>" id="item_<?php echo $i ?>">
+
+                        <div class="item_meta">
+
+                            <h3>
+                                <?php the_sub_field('knowledge_header'); ?>
+                            </h3>
+
+                            <p>
+                                <?php the_sub_field('knowledge_subheader'); ?>
+                            </p>        
+
+                        </div>
+
+                        <div class="text">
+                        
+                            <p class="subheader">
+                                <?php pll_e( 'Read more about', 'hashmuseum' ) ?>
+                            </p>
+                        
+                            <h2 class="header">
+                                <?php the_sub_field('header'); ?>
+                            </h2>   
+
+                        </div>
+                        
+                        <a href="<?php the_sub_field('url'); ?>" class="read_more_link">
+                            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
+                            <?php _e( 'Cannabis Knowledge', 'hashmuseum' ) ?>
+                        </a>   
+                    </div>
+
+                <?php endif; ?>
+
+            <?php $i++; ?>
+
+                <?php endwhile; ?>  
+                
+            </div>    
+
+        <?php endif; ?>
+
+    </div>
                 
 </article>
