@@ -3080,7 +3080,7 @@ html {
 /* line 1953, src/sass/style.scss */
 .collection_slider .theme img {
   height: 100vh;
-  min-width: 100%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -3207,7 +3207,7 @@ html {
 
 /* line 2069, src/sass/style.scss */
 .home_hero .slider_wrap .background .bg_image img {
-  width: 100%;
+  width: 66.1vw;
   -o-object-fit: cover;
      object-fit: cover;
   min-height: 100vh;
