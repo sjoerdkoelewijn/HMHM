@@ -1,6 +1,6 @@
 <?php /* Part of the hero & promo */ ?>
 
-<div data-siema-hero-slider>
+<div class="slider" data-siema-hero-slider>
                     
     <?php foreach( $images as $image ): ?>
         

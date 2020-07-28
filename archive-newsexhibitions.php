@@ -60,6 +60,18 @@ get_header(); ?>
 							
 							</div>
 						
+					<?php } else { ?>
+
+						<div class="date">
+
+							<p>
+								<?php echo get_the_date('j F Y'); ?>
+							</p>   
+
+							<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/calendarIcon.svg"); ?> 
+
+						</div>
+
 					<?php } ?>
 					
 					<?php if( $location ) { ?>
@@ -102,6 +114,11 @@ get_header(); ?>
 					<?php if( $sub_header ) { ?>
 
 						<a class="title" href="<?php the_permalink(); ?>">
+
+							<h2>
+								<?php the_title(); ?>
+							</h2>
+
 							<h1>
 								<?php echo $sub_header; ?>
 							</h1>

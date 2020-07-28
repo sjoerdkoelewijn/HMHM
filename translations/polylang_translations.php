@@ -11,11 +11,13 @@ if ( function_exists( 'pll_register_string' ) ) {
     pll_register_string('Location Name', 'Amsterdam', 'Hashmuseum');
     pll_register_string('Location Name', 'Barcelona', 'Hashmuseum');
     pll_register_string('Button CTA', 'More information', 'Hashmuseum');
+    pll_register_string('Button CTA', 'How to get there', 'Hashmuseum');
     pll_register_string('Footer Subheader', 'Explore', 'Hashmuseum');
     pll_register_string('Footer Subheader', 'Legalize', 'Hashmuseum');
     pll_register_string('Copyright Notice', 'the Hash, Marihuana & Hemp Museum.', 'Hashmuseum');
     pll_register_string('Copyright Notice', 'All Rights Reserved.', 'Hashmuseum');
     pll_register_string('Home hero', 'Read more about', 'Hashmuseum');
     pll_register_string('Collection Title', 'The Collection', 'Hashmuseum');
+    pll_register_string('Item Copyright Notice', 'Hash Marihuana & Hemp Museum. Please <a href="mailto:info@hashmuseum.com">contact us</a> for licensing options.', 'Hashmuseum');
     
 }   

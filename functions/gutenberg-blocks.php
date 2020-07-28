@@ -44,6 +44,17 @@ function my_acf_init() {
 		));
 
 		acf_register_block(array(
+			'name'				=> 'home-about',
+			'title'				=> __('Home About'),
+			'description'		=> __('The about block for the homepage'),
+			'render_callback'	=> 'sk_acf_block_render_callback',
+			'category'			=> 'common',
+			'icon'				=> 'laptop',
+			'mode'				=> 'edit', // start in edit mode
+			'keywords'			=> array( 'about', 'home' ),
+		));
+
+		acf_register_block(array(
 			'name'				=> 'image_slider',
 			'title'				=> __('Image Slider'),
 			'description'		=> __('A horizontal image slider that spans the whole width of page.'),
@@ -99,6 +110,17 @@ function my_acf_init() {
 		));
 
 		acf_register_block(array(
+			'name'				=> 'reviews',
+			'title'				=> __('Review Block'),
+			'description'		=> __('What others are saying'),
+			'render_callback'	=> 'sk_acf_block_render_callback',
+			'category'			=> 'common',
+			'icon'				=> 'visibility',
+			'mode'				=> 'edit', // start in edit mode
+			'keywords'			=> array( 'reviews', 'image' ),
+		));
+
+		acf_register_block(array(
 			'name'				=> 'info',
 			'title'				=> __('Info Block'),
 			'description'		=> __('A simple information block with slider'),
@@ -107,6 +129,17 @@ function my_acf_init() {
 			'icon'				=> 'laptop',
 			'mode'				=> 'edit', // start in edit mode
 			'keywords'			=> array( 'info', 'image' ),
+		));
+
+		acf_register_block(array(
+			'name'				=> 'info-two-images',
+			'title'				=> __('Info Block (Two images / Quote)'),
+			'description'		=> __('A simple information block with two images or a quote.'),
+			'render_callback'	=> 'sk_acf_block_render_callback',
+			'category'			=> 'common',
+			'icon'				=> 'laptop',
+			'mode'				=> 'edit', // start in edit mode
+			'keywords'			=> array( 'info', 'image', 'quote' ),
 		));
 
 		acf_register_block(array(
@@ -193,6 +226,9 @@ function restrict_blocks( $allowed_blocks, $post ) {
 				'acf/collection-overview-hero',
 				'acf/collection-slider',
 				'acf/home-hero',
+				'acf/info-two-images',
+				'acf/reviews',
+				'acf/home-about',
 
 			);
 			return $allowed_blocks;

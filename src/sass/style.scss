@@ -12,6 +12,10 @@ html {
     scroll-behavior: smooth;
 }
 
+.button_repeater {
+    width:90%;
+}
+
 .btn {
     padding:10px 44px;
     border-radius: 30px;
@@ -25,6 +29,9 @@ html {
     &:visited {
         color:inherit;
     }
+
+    white-space: normal;
+
 }
 
 .action_btn {
@@ -240,7 +247,7 @@ html {
 	transition:all .8s ease	
 }
 
-/* ------------- START Menu ----------------------------------------------------------------------------------------------------------- */
+/* ------------- Menu ----------------------------------------------------------------------------------------------------------- */
 
 .menu_buttons_wrap {
     position: fixed;
@@ -612,7 +619,7 @@ html {
             a {
                 color:$mediumgrey;
                 text-decoration: none;
-                font-size:var(--medium-p);
+                font-size:var(--small-p);
                 font-weight:300;
 
                 &:hover {
@@ -674,6 +681,76 @@ html {
 
 }
 
+/* ------------- Images - Single Image & Image Slider ----------------------------------------------------------------------------------------------------------- */
+
+
+.image_wrap {
+    position:relative;
+    display:flex;
+    align-items: stretch;
+
+    img {
+       width:100%;
+       object-fit: cover;        
+    }
+
+    .slider { // Make sure the slider images scale with the container too.
+        height: 100%; 
+        div {
+            height: 100%;                
+            div {
+                display:flex;
+                align-items: stretch;             
+            }
+        }
+    }
+
+    .slider_button {
+        background:$action-gradient;           
+        width:80px;
+        height:80px;
+        padding:0;
+        position: absolute;
+        top:45%;
+        z-index:100;
+        cursor: pointer;
+        overflow:hidden;
+                   
+        .background_wrap {
+             width:80px;
+             height:80px;
+             padding-top:27px;
+             background-color:rgba($black, 1);
+             transition:background .5s ease;
+        }
+
+        &:hover {
+            .background_wrap {
+                 background-color:rgba($black, 0);
+                 transition:background-color .5s ease;
+            }
+             
+        }
+    }
+
+    .slider_button.left {
+        left:$horizontal;
+    }
+
+    .slider_button.right {
+         right:$horizontal;
+     }
+
+     .caption {
+         margin-top:-80px;
+         margin-left:$horizontal;
+         font-size: $small-p;
+         font-weight:400;
+         color:$white;            
+     }    
+
+}
+
 /* ------------- Custom Gutenberg Blocks ----------------------------------------------------------------------------------------------------------- */
 
 /* ------------- Hero Block ---------------- */
@@ -729,6 +806,7 @@ html {
            font-size:var(--small-p);
            position:absolute;
            bottom:20px;
+           padding-right:10px;
        }
    }
 
@@ -805,59 +883,9 @@ html {
    }
 
    .image_wrap {
-       width:66.66vw;
-       position:relative;
-
-       img {
-          min-width:100%;
-          height:100vh;
-          object-fit: cover; 
-       }
-
-       .slider_button {
-           background:$action-gradient;           
-           width:80px;
-           height:80px;
-           padding:0;
-           position: absolute;
-           top:45%;
-           z-index:100;
-           cursor: pointer;
-           overflow:hidden;
-                      
-           .background_wrap {
-                width:80px;
-                height:80px;
-                padding-top:27px;
-                background-color:rgba($black, 1);
-                transition:background .5s ease;
-           }
-
-           &:hover {
-               .background_wrap {
-                    background-color:rgba($black, 0);
-                    transition:background-color .5s ease;
-               }
-                
-           }
-       }
-
-       .slider_button.left {
-           left:$horizontal;
-       }
-
-       .slider_button.right {
-            right:$horizontal;
-        }
-
-        .caption {
-            margin-top:-80px;
-            margin-left:$horizontal;
-            font-size: $small-p;
-            font-weight:400;
-            color:$white;            
-        }    
-
+       width:67vw;
+       display:flex;
+       align-items: stretch;
    }
 
 
@@ -871,6 +899,7 @@ html {
     .text_wrap {
         padding:0 calc(var(--horizontal-xl) * 2) 0 var(--horizontal);
         width:66.66vw;
+        overflow:hidden;
 
         .description {
 
@@ -884,8 +913,14 @@ html {
     }
 
     .image_wrap {
-        width:33.33vw;
-        
+        width:33vw;
+        display:flex;
+        align-items: stretch;
+
+        img {
+            min-height:100vh;
+        }
+
         .header {
             font-size:calc(var(--x-large-title) * 1.1);
             color:$white;
@@ -897,9 +932,8 @@ html {
         .caption {
             display:none;
         }
+
     }
-
-
 
 }
 
@@ -938,6 +972,8 @@ html {
     .image_wrap {
         width:33.33vw;
         position:relative;
+        display:flex;
+        align-items: stretch;
 
         .header {
             font-size:calc(var(--x-large-title) * 1.1);
@@ -949,7 +985,6 @@ html {
  
         img {
            min-width:100%;
-           height:100vh;
            object-fit: cover; 
         }
  
@@ -1043,70 +1078,261 @@ html {
     }
  
     .text_wrap {
-        width:33.33vw;
-        padding:20vh $horizontal 0 $horizontal;  
+        width:33vw;
+        padding:20vh $horizontal $horizontal $horizontal;  
+
+        strong {
+            font-size:var(--medium-p);
+            font-weight:400;
+        }
+
+        .below_btn_header {
+            font-size:var(--large-p);
+            margin:30px 0 10px 0;
+        }
+
+        .below_btn_text {
+            font-size:var(--medium-p);
+        }
 
     }
- 
-    
+     
     .image_wrap {
-        width:66.66vw;
-        position:relative;
- 
+        width:66.1vw;
+        
         img {
-           min-width:100%;
-           height:100vh;
-           object-fit: cover; 
+            width:66.6vw;
+            
         }
- 
-        .slider_button {
-            background:$action-gradient;           
-            width:80px;
-            height:80px;
-            padding:0;
-            position: absolute;
-            top:45%;
-            z-index:100;
-            cursor: pointer;
-            overflow:hidden;
-                       
-            .background_wrap {
-                 width:80px;
-                 height:80px;
-                 padding-top:27px;
-                 background-color:rgba($black, 1);
-                 transition:background .5s ease;
-            }
- 
-            &:hover {
-                .background_wrap {
-                     background-color:rgba($black, 0);
-                     transition:background-color .5s ease;
-                }
-                 
-            }
-        }
- 
-        .slider_button.left {
-            left:$horizontal;
-        }
- 
-        .slider_button.right {
-             right:$horizontal;
-         }
- 
-         .caption {
-             margin-top:-80px;
-             margin-left:$horizontal;
-             font-size: $small-p;
-             font-weight:400;
-             color:$white;            
-         }    
- 
+    }
+  
+ }
+
+ /* ------------- Info Two Image ---------------- */
+
+.info_two_image {
+    display:flex;
+    width:100vw;
+    min-height:100vh;   
+     
+    .subheader {
+        font-size:var(--small-subtitle);
+        color:$mediumgrey;
+        margin-bottom:20px;
+    }
+
+    .header {
+        font-size:var(--medium-title);
     }
  
- 
+    .text_wrap {
+        width:33.1vw;
+        padding:20vh $horizontal $horizontal $horizontal;  
+
+        strong {
+            font-size:var(--medium-p);
+            font-weight:400;
+        }
+
+    }
+     
+    .image_wrap {
+        width:33vw;
+        display:flex;
+        align-items: stretch;
+
+        img {
+            object-fit: cover; 
+        }
+    }
+
+    .quote_wrap {
+        width:33vw;
+        display: flex;
+        align-items: center; 
+        background:$black;        
+        
+        padding:$vertical $horizontal-l;
+
+        .quote {       
+            color:$white;
+            text-align:center;
+    
+            svg {
+                width:155px; 
+                height:150px;
+                
+                path {
+                    fill:$white;
+                }
+            }
+    
+            .quote_text {
+                margin-top:$vertical;
+                font-family: $header-font;
+                font-size:var(--medium-title);
+            }
+    
+            .quote_text.medium {
+                font-size:var(--large-title);
+            }
+    
+            .quote_text.large {
+                font-size:var(--x-large-title);
+            }
+    
+            .quote_author {
+                color:$mediumgrey;
+                font-family: $header-font;
+                font-size:var(--small-subtitle);
+            }
+    
+        }  
+
+    }      
+  
  }
+
+ /* ------------- Reviews ---------------- */
+
+.reviews {
+    display:flex;
+    align-items: center; 
+    background:$black;
+    position:relative;
+    min-height:100vh;
+
+    .text_wrap {
+        width:33vw;
+        color:$white;
+        text-align:center;
+
+        .header {
+            margin:var(--vertical) var(--horizontal);
+            font-size: var(--x-large-title);
+        }
+    
+        svg {
+            width:155px; 
+            height:150px;
+            
+            path {
+                fill:$white;
+            }
+        }
+
+        .tripadvisor_ratings {
+            display:flex;
+            justify-content: center;
+            
+
+            .rating {
+                text-align: center;
+                margin:20px;
+                text-transform:uppercase;
+                font-size:var(--small-p);
+                font-weight:400;
+
+                svg {
+                    width:40px; 
+                    height:25px;
+                    display: block;
+                    margin:15px auto;
+                    
+                    path {
+                        fill:$white;
+                    }
+                }
+
+                .stars {
+                    --percent: calc(var(--rating) / 5 * 100%);
+                    margin-top:20px;
+                    display:block;
+                    font-size: 30px;
+                    font-family: Times;
+                    line-height: 1;
+                    
+                    &::before {
+                      content: '★★★★★';
+                      letter-spacing: 3px;
+                      background: linear-gradient(90deg, $white var(--percent), rgba($white, .2) var(--percent));
+                      -webkit-background-clip: text;
+                      -webkit-text-fill-color: transparent;
+                    }
+
+                  }
+
+            }
+
+            
+        }    
+    }
+
+    .reviews_slider {
+        width:66vw;
+        position:relative;
+
+        .review {
+            width:33vw;
+            height:100vh;
+            display:block;
+            position:relative;
+            color:$white;
+
+            &:before {
+                content:'';
+                @include blackGradient(0deg);
+                width:100%; // TODO uitzoeken waarom 100% een overlap geeft.
+                display:block;
+                height:40vh;
+                bottom:0;
+                position:absolute;
+                z-index:10;
+            }
+
+            .quote {
+                position:absolute;
+                z-index:20;
+                bottom:calc(var(--vertical) * 2.2);
+                margin-left:var(--horizontal);
+                width:80%;
+                font-size:var(--medium-title);
+                margin-bottom:60px;
+                line-height:120%;
+            }
+
+            .meta {
+                position:absolute;
+                z-index:20;
+                padding:var(--vertical) var(--horizontal);
+                bottom:10px;
+                
+                .name {                
+                   font-family:$header-font;
+                   font-size:calc(var(--x-large-p) * .9);
+                   margin-bottom:10px;
+                }
+    
+                .bio {
+                    text-transform:uppercase;
+                    font-size:var(--small-p);
+                    font-weight:400;
+                    margin:0;
+                }
+                           
+            }
+
+            img {
+                width:100%;
+                height:100%;
+                object-fit: cover; 
+            }
+
+        }
+    }
+
+}
+
 
 /* ------------- Image Slider ---------------- */
 
@@ -1138,9 +1364,9 @@ html {
         object-fit: cover;  
     } 
 
-
-
 }
+
+/* ------------- Slider Buttons ---------------- */
 
 .horizontal_slider_btn_wrap {
         
@@ -1707,7 +1933,7 @@ border: 0;
     }
     
     .theme {
-        width:33.33vw;
+        width:33.3vw;
         position:relative;
         text-decoration:none;
         display:block;
@@ -1715,9 +1941,10 @@ border: 0;
         &:before {
             content:'';
             @include blackGradient(0deg);
-            width:100%; // TODO uitzoeken waarom 100% een overlap geeft.
             display:block;
             height:40vh;
+            left:5px;
+            right:0;
             bottom:0;
             position:absolute;
             z-index:10;
@@ -1735,17 +1962,20 @@ border: 0;
             bottom:0;
             padding:50px;
             color:$white; 
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);           
+            width:100%;
+                       
 
             h2 {
                 font-size:var(--small-subtitle);
                 margin-bottom:10px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
             }
 
             p {
                 font-size: calc(var(--medium-p) * .9);
-                font-weight:400;
+                font-weight:300;
                 margin:0;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.50); 
             }
             
         }
@@ -1793,11 +2023,10 @@ border: 0;
 
 .home_hero {
     display:flex;
-    align-items: center; 
 
     .sidebar {
+        width:33.3vw;
         background:$black;
-        width:33.33vw;
         height:100vh;
         padding:calc(var(--vertical-xl) * 1.4) var(--horizontal) var(--vertical-s) var(--horizontal);
         color:$white;
@@ -1823,10 +2052,9 @@ border: 0;
     }  
 
     .slider_wrap {
-        width:66.66vw;
+        width:66.6vw;
         height: 100vh;
         display: inline-block;
-        overflow: hidden;
         position: relative;
         overflow: hidden;
         
@@ -1992,8 +2220,182 @@ border: 0;
 }
 
 
+ /* ------------- Home About ---------------- */
 
-/* ------------- Whats on page ----------------------------------------------------------------------------------------------------------- */
+.home_about{
+    display:flex;
+    
+    .text_wrap {
+        width:33.3vw;
+        position:relative;
+        padding:var(--vertical-xl) var(--horizontal) var(--vertical) var(--horizontal);
+
+        .visitor_number{
+            font-size:var(--large-title);
+            font-family: $header-font;
+        }
+
+        .header {
+            font-size:var(--small-subtitle);
+        }
+
+        .button_repeater {
+            position:relative;
+            z-index:2;
+        } 
+    
+        .weedleaf {
+            position:absolute;
+            right:-10vw;
+            bottom:-1vw;
+            z-index:1;
+
+            svg {
+                width:30vw;
+                height:30vw;
+
+                path {
+                    fill:rgba($mediumgrey, .1);
+                }
+            }
+        }
+
+    }
+
+    .image_wrap {
+        width:33.3vw; 
+
+    }
+
+    .locations {
+        width:33.3vw;
+        padding:var(--vertical-xl) var(--horizontal) var(--vertical) var(--horizontal-l);
+
+        .header_wrap {
+            font-size:var(--large-title);
+            font-family: $header-font;
+            margin-bottom:var(--vertical);
+
+            .text {
+                position: relative;
+                z-index:2;
+            }
+
+            .ampersand {
+                margin-left:-4vw;
+                position:absolute;
+                z-index:1; 
+            }
+        }
+
+        .address_wrap {
+
+            .header {                
+                font-weight: 600;
+                font-size:var(--medium-p);
+            }
+
+            .openinghours, .address, .phonenumber  {
+                display:flex;
+    
+                p {
+                    font-size:var(--medium-p);
+                    margin-bottom:5px;
+                }
+                
+                svg {
+                    margin:8px 22px 0 0;
+    
+                    path {
+                        fill:$black;
+                    }
+                }
+            }
+    
+            .address {
+                svg {
+                    margin:10px 22px 0 6px;
+                }
+            }
+    
+            .phonenumber {
+                svg {
+                    margin:10px 18px 0 4px;
+                }
+            }
+    
+            .moreinfo {
+                display:flex;
+                margin-bottom:calc(var(--vertical) * .6);
+                text-decoration: none;
+    
+                p {
+                    font-size:var(--medium-p);
+                    margin-bottom:0;
+                }
+                
+                svg {
+                    width:14px;
+                    margin:5px 25px 0 3px;
+    
+                    path {
+                        fill:$black;
+                        transition: fill .5s ease;
+                    }
+                }
+    
+                &:hover {
+                    svg {
+                        path {
+                            fill:$action;
+                            transition: fill .5s ease;
+                        }
+                    }
+                }
+            }
+    
+            .social {
+                display:flex;
+                margin-bottom:var(--vertical);
+    
+                a {
+                    margin-right:30px;
+    
+                    svg {
+                        path {
+                            fill:$black;
+                            transition: fill .5s ease;
+                        }
+                    }
+    
+                    &:hover {
+                        svg {
+                            path {
+                                fill:$action;
+                                transition: fill .5s ease;
+                            }
+                        }
+                    }
+    
+                    
+                }
+    
+                .facebook {
+                    svg {
+                        margin-top:-2px;
+                    }
+                }
+    
+            }  
+
+        }          
+
+    }
+
+}
+
+
+/* ------------- Whats on page / Expo / News / Exhibition ----------------------------------------------------------------------------------------------------------- */
 
 .event {
     display: flex;
@@ -2082,11 +2484,18 @@ border: 0;
             padding:25vh calc(var(--horizontal) * 2) var(--vertical) 8vw;
 
             .title {
-                text-decoration:none;                
+                text-decoration:none;   
+                
+                h2 {
+                    color:rgba($mediumgrey, .3);
+                    font-size:var(--small-subtitle);
+                    margin-bottom:10px;
+                }
                 
                 h1 {
-                    font-size:var(--large-subtitle);
+                    font-size:var(--small-subtitle);
                     margin-bottom:10px;
+                    position:relative;
 
                     &:before {
                         content:'';
@@ -2095,9 +2504,23 @@ border: 0;
                         height:1px;
                         display:block;
                         margin-left:-8vw;
-                        margin-top:70px;
+                        margin-top:20px;
                         position:absolute;
+
                     }
+
+                    &:after {
+                        content:'';
+                        width:20px;
+                        height:20px;
+                        background:$lightgrey;
+                        border:1px solid $black;
+                        border-radius: 10px;
+                        position:absolute;
+                        left:-163px;
+                        top:10px;
+                    }
+
                 }
             }
 
@@ -2107,10 +2530,13 @@ border: 0;
 
     .image {
         width:33.33vw;
+        display:flex;
+        align-items: stretch;
 
         img {
-            height:100vh;
-            object-fit: cover; 
+        width:100%;
+        height:100vh;
+        object-fit: cover;        
         }
     }
 }

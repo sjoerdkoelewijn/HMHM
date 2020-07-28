@@ -20,7 +20,7 @@
 
     <article>
 
-        <a title="<?php bloginfo( 'name' ); ?>" aria-label="Visit the Homepage" class="header_logo_link logo" href="/">
+        <a data-logo title="<?php bloginfo( 'name' ); ?>" aria-label="Visit the Homepage" class="header_logo_link logo" href="/">
             <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/logo.svg"); ?>
         </a>
 

@@ -52,7 +52,7 @@ function hashmuseum_scripts() {
 	wp_enqueue_script('logo-color-switch', get_template_directory_uri() . '/libs/background-check.min.js', NULL, $timestamp, FALSE);
     wp_enqueue_script('slider', get_template_directory_uri() . '/libs/siema.min.js', NULL, $timestamp, FALSE);
 	wp_enqueue_script('hashmuseum-app', get_template_directory_uri() . '/dist/js/app.min.js', NULL, $timestamp, TRUE);
-	wp_enqueue_script('mailchimp', get_template_directory_uri() . '/dist/js/mailchimp.min.js', NULL, $timestamp, TRUE);
+	wp_enqueue_script('mailchimp', get_template_directory_uri() . '/dist/js/mailchimp.js', NULL, $timestamp, TRUE);
 
 }
 add_action( 'wp_enqueue_scripts', 'hashmuseum_scripts', 99 );

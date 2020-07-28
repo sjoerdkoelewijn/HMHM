@@ -43,9 +43,16 @@ BackgroundCheck.init({
     images: '.image'
 });    
   
-window.onload = function () {
-    BackgroundCheck.refresh();     
-};
+const HeaderLogo = document.querySelector('[data-logo]');
+
+observer = new IntersectionObserver((entry, observer) => {
+
+    BackgroundCheck.refresh();
+
+});
+
+observer.observe(HeaderLogo);
+    
 
 /******************* Hero Read More Button *************************************/
 
@@ -180,6 +187,32 @@ if (PromoSliderContainer != null){
 
 }
 
+/******************* Review Slider *************************************/
+
+const ReviewSliderContainer = document.querySelector('[data-siema-review-slider]');
+
+if (ReviewSliderContainer != null){
+
+    const ReviewSlider = new Siema({
+        selector: '[data-siema-review-slider]',
+        duration: 400,
+        easing: 'ease-out',
+        perPage: 2,
+        startIndex: 0,
+        draggable: true,
+        multipleDrag: true,
+        threshold: 20,
+        loop: true,    
+    });
+
+    const ReviewSliderPrev = document.querySelector('[data-siema-review-slider-prev]');
+    const ReviewSliderNext = document.querySelector('[data-siema-review-slider-next]');
+
+    ReviewSliderPrev.addEventListener('click', () => ReviewSlider.prev());
+    ReviewSliderNext.addEventListener('click', () => ReviewSlider.next());
+
+}
+
 /******************* Home hero *************************************/
 
 const item1 = document.getElementById("item_1");
@@ -219,4 +252,82 @@ function functionMouseOver3(){
 	image3.classList.add("active");
 	image1.classList.remove("active");
 	image2.classList.remove("active");
+}
+
+
+/******************* Animate & Add Visitor Count *************************************/
+
+const visitorNumber = document.querySelector('[data-visitor-count]');
+const startDateCount = visitorNumber.getAttribute('data-visitor-count-date');
+
+// We start with this amount of visitors
+let startCount = visitorNumber.getAttribute('data-visitor-start-count');
+
+// Amount of visitors per day 
+const dailyVisitors = visitorNumber.getAttribute('data-visitor-per-day');
+
+
+
+// Date that we started counting 
+const startDate = new Date(startDateCount);
+
+// Current date
+const today = new Date();
+
+// Calculating difference in days between current date and start date
+const timeDiff = Math.abs(today.getTime() - startDate.getTime());   
+const diffDays = Math.ceil(timeDiff /(1000 * 60 * 60 * 24));
+
+// Amount of visitors since startdate
+const diffVisitor = diffDays * parseInt(dailyVisitors);
+const visitorAmount = parseInt(startCount) + diffVisitor;
+
+// Animate the counter
+function animateValue(visitorCountEl, start, end, duration) {
+    // assumes integer values for start and end
+    const obj = visitorCountEl;
+    let range = end - start;
+    // no timer shorter than 50ms (not really visible any way)
+    let minTimer = 50;
+    // calc step time to show all interediate values
+    let stepTime = Math.abs(Math.floor(duration / range));
+    
+    // never go below minTimer
+    stepTime = Math.max(stepTime, minTimer);
+    
+    // get current time and calculate desired end time
+    let startTime = new Date().getTime();
+    let endTime = startTime + duration;
+    let timer;
+  
+    function run() {
+        let now = new Date().getTime();
+        let remaining = Math.max((endTime - now) / duration, 0);
+        let value = Math.round(end - (remaining * range));
+        obj.innerHTML = Number(value).toLocaleString('en-US');
+        if (value == end) {
+            clearInterval(timer);
+        }
+    }
+    
+    timer = setInterval(run, stepTime);
+
+    run();
+
+}
+
+if ('IntersectionObserver' in window) {
+
+    observer = new IntersectionObserver((entry, observer) => {
+
+        animateValue(visitorNumber, startCount, visitorAmount, 1200);
+
+    });
+
+    observer.observe(visitorNumber);
+    
+} else {
+
+    animateValue(visitorNumber, startCount, visitorAmount, 1000);
+
 }

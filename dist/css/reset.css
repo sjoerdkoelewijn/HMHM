@@ -60,12 +60,11 @@ a:not([class]) {
 /* Make images easier to work with */
 /* line 54, src/sass/reset.scss */
 img {
-  max-width: 100%;
   display: block;
 }
 
 /* Inherit fonts for inputs and buttons */
-/* line 60, src/sass/reset.scss */
+/* line 59, src/sass/reset.scss */
 input,
 button,
 textarea,
@@ -73,18 +72,18 @@ select {
   font: inherit;
 }
 
-/* line 67, src/sass/reset.scss */
+/* line 66, src/sass/reset.scss */
 button {
   border: 0;
 }
 
-/* line 71, src/sass/reset.scss */
+/* line 70, src/sass/reset.scss */
 ul {
   margin: 0;
   padding: 0;
 }
 
-/* line 76, src/sass/reset.scss */
+/* line 75, src/sass/reset.scss */
 li {
   margin: 0;
   list-style-type: none;
@@ -92,7 +91,7 @@ li {
 
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-  /* line 83, src/sass/reset.scss */
+  /* line 82, src/sass/reset.scss */
   * {
     -webkit-animation-duration: 0.01ms !important;
             animation-duration: 0.01ms !important;

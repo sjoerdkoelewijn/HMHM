@@ -17,7 +17,7 @@ $id = 'collection-overview-hero-' . $block['id'];
         <?php $single_image = get_field('single_image'); ?>
 
         <?php if( !empty( $single_image ) ): ?>
-            <img loading="lazy" class="single_image" src="<?php echo esc_url($single_image['sizes']['large']); ?>" alt="<?php echo $image['alt']; ?>" />
+            <img loading="lazy" class="single_image image" src="<?php echo esc_url($single_image['sizes']['large']); ?>" alt="<?php echo $image['alt']; ?>" />
         <?php endif; ?>
 
 

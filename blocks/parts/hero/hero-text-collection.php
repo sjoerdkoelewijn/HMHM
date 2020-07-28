@@ -22,7 +22,9 @@
     <?php echo sk_taxonomy_terms(); ?>
     
     <p class="license_message">
-        Copyright <?php echo date("Y");?> Hash Marihuana & Hemp Museum. Please <a href="mailto:info@hashmuseum.com">contact us</a> for licensing options.
+    © <?php echo date("Y");?>
+    <?php _e( 'Hash Marihuana & Hemp Museum. Please <a href="mailto:info@hashmuseum.com">contact us</a> for licensing options.', 'hashmuseum' ) ?>
+    
     </p>
 
 </div>
