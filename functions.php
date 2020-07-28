@@ -331,3 +331,19 @@ add_action( 'created_info_categories', 'sk_created_info_category', 10, 3 );
 	add_image_size( 'large_image', 1620, 1080, false ); 
 	add_image_size( 'medium_image', 960, 638, false ); 
     add_image_size( 'small_image', 300, 300, true ); // (cropped)
+
+
+	/*************************** Add Reusable blocks to menu *********************************/
+
+	function wpdocs_register_my_custom_menu_page() {
+		add_menu_page(
+			__( 'Reusable Blocks', 'hashmuseum' ),
+			'Reusable Blocks',
+			'manage_options',
+			'/edit.php?post_type=wp_block',
+			'',
+			'dashicons-text',
+			20
+		);
+	}
+	add_action( 'admin_menu', 'wpdocs_register_my_custom_menu_page' );	
