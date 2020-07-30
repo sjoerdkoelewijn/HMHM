@@ -14,6 +14,8 @@
                     <?php echo esc_html($image['caption']); ?></?php>
                 </p>
 
+                <span class="slider_gradient"></span>
+
             <?php } ?> 
         
         </div>

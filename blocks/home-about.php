@@ -88,7 +88,7 @@ $id = 'home-about' . $block['id'];
                     </p>
                 </div>
                 
-                <a href="#" class="moreinfo">
+                <a href="<?php pll_e( '/en/amsterdam/about-amsterdam/', 'hashmuseum' ) ?>" class="moreinfo">
                     <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?> 
                     <p>
                         <?php echo __( 'More information', 'hashmuseum' ) ?>
@@ -136,7 +136,7 @@ $id = 'home-about' . $block['id'];
                     </p>
                 </div>
 
-                <a href="#" class="moreinfo">
+                <a href="<?php pll_e( '/en/barcelona/about-barcelona/', 'hashmuseum' ) ?>" class="moreinfo">
                     <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?> 
                     <p>
                         <?php pll_e( 'More information', 'hashmuseum' ) ?>

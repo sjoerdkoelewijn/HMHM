@@ -33,7 +33,7 @@ var hasError = function (field) {
 		}
 
     // If all else fails, return a generic catchall error
-    return 'Controleer dit veld. Gebruik geen speciale tekens.';
+    return 'Please check this field. Avoid using special characters';
 	
 };
 

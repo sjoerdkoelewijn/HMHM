@@ -76,11 +76,11 @@
                 </div>
 
                 <div class="ticket_buttons">
-                    <a class="action_btn btn" href="#">
+                    <a class="action_btn btn" href="#tickets">
                         <?php _e( 'Get your ticket', 'hashmuseum' ) ?>
                     </a>
 
-                    <a class="ghost_btn white btn" href="#">
+                    <a class="ghost_btn white btn" href="<?php echo __( '/en/plan-your-visit/', 'hashmuseum' ) ?>">
                         <?php _e( 'Plan your visit', 'hashmuseum' ) ?>
                     </a>
                 </div>

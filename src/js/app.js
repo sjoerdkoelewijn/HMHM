@@ -40,16 +40,16 @@ mainClose.addEventListener('click', function(e) {
 BackgroundCheck.init({
     targets: '.logo',
     images: '.image'
-});    
+}); 
+
+window.onload = (event) => {
+    BackgroundCheck.refresh();
+};
   
 const HeaderLogo = document.querySelector('[data-logo]');
-
 observer = new IntersectionObserver((entry, observer) => {
-
     BackgroundCheck.refresh();
-
 });
-
 observer.observe(HeaderLogo);
     
 
@@ -222,67 +222,89 @@ const image1 = document.getElementById("image_1");
 const image2 = document.getElementById("image_2");
 const image3 = document.getElementById("image_3");
 
-item1.addEventListener("mouseover", functionMouseOver1, false);
-item2.addEventListener("mouseover", functionMouseOver2, false);
-item3.addEventListener("mouseover", functionMouseOver3, false);
+if (item1 != null){
+
+    item1.addEventListener("mouseover", functionMouseOver1, false);
+    item2.addEventListener("mouseover", functionMouseOver2, false);
+    item3.addEventListener("mouseover", functionMouseOver3, false);
+
+}
 
 function functionMouseOver1(){
-  item1.classList.add("active");
-	item2.classList.remove("active");
-	item3.classList.remove("active");
-	image1.classList.add("active");
-	image2.classList.remove("active");
-	image3.classList.remove("active");
-}
+    item1.classList.add("active");
+        item2.classList.remove("active");
+        item3.classList.remove("active");
+        image1.classList.add("active");
+        image2.classList.remove("active");
+        image3.classList.remove("active");
+    }
 
-function functionMouseOver2(){
-  item2.classList.add("active");
-	item1.classList.remove("active");
-	item3.classList.remove("active");
-	image2.classList.add("active");
-	image1.classList.remove("active");
-	image3.classList.remove("active");
-}
+    function functionMouseOver2(){
+    item2.classList.add("active");
+        item1.classList.remove("active");
+        item3.classList.remove("active");
+        image2.classList.add("active");
+        image1.classList.remove("active");
+        image3.classList.remove("active");
+    }
 
-function functionMouseOver3(){
-  item3.classList.add("active");
-	item1.classList.remove("active");
-	item2.classList.remove("active");
-	image3.classList.add("active");
-	image1.classList.remove("active");
-	image2.classList.remove("active");
-}
-
+    function functionMouseOver3(){
+    item3.classList.add("active");
+        item1.classList.remove("active");
+        item2.classList.remove("active");
+        image3.classList.add("active");
+        image1.classList.remove("active");
+        image2.classList.remove("active");
+    }
 
 /******************* Animate & Add Visitor Count *************************************/
 
 const visitorNumber = document.querySelector('[data-visitor-count]');
-const startDateCount = visitorNumber.getAttribute('data-visitor-count-date');
 
-// We start with this amount of visitors
-let startCount = visitorNumber.getAttribute('data-visitor-start-count');
+if (visitorNumber != null){
 
-// Amount of visitors per day 
-const dailyVisitors = visitorNumber.getAttribute('data-visitor-per-day');
+    const startDateCount = visitorNumber.getAttribute('data-visitor-count-date');
 
+    // We start with this amount of visitors
+    let startCount = visitorNumber.getAttribute('data-visitor-start-count');
 
+    // Amount of visitors per day 
+    const dailyVisitors = visitorNumber.getAttribute('data-visitor-per-day');
 
-// Date that we started counting 
-const startDate = new Date(startDateCount);
+    // Date that we started counting 
+    const startDate = new Date(startDateCount);
 
-// Current date
-const today = new Date();
+    // Current date
+    const today = new Date();
 
-// Calculating difference in days between current date and start date
-const timeDiff = Math.abs(today.getTime() - startDate.getTime());   
-const diffDays = Math.ceil(timeDiff /(1000 * 60 * 60 * 24));
+    // Calculating difference in days between current date and start date
+    const timeDiff = Math.abs(today.getTime() - startDate.getTime());   
+    const diffDays = Math.ceil(timeDiff /(1000 * 60 * 60 * 24));
 
-// Amount of visitors since startdate
-const diffVisitor = diffDays * parseInt(dailyVisitors);
-const visitorAmount = parseInt(startCount) + diffVisitor;
+    // Amount of visitors since startdate
+    const diffVisitor = diffDays * parseInt(dailyVisitors);
+    const visitorAmount = parseInt(startCount) + diffVisitor;
 
-// Animate the counter
-function animateValue(visitorCountEl, start, end, duration) {
+    if ('IntersectionObserver' in window) {
+
+        observer = new IntersectionObserver((entry, observer) => {
+
+            animateValue(visitorNumber, startCount, visitorAmount, 1200);
+
+        });
+
+        observer.observe(visitorNumber);
+        
+    } else {
+
+        animateValue(visitorNumber, startCount, visitorAmount, 1000);
+
+    }
+
+}    
+
+ // Animate the counter
+ function animateValue(visitorCountEl, start, end, duration) {
     // assumes integer values for start and end
     const obj = visitorCountEl;
     let range = end - start;
@@ -298,7 +320,7 @@ function animateValue(visitorCountEl, start, end, duration) {
     let startTime = new Date().getTime();
     let endTime = startTime + duration;
     let timer;
-  
+
     function run() {
         let now = new Date().getTime();
         let remaining = Math.max((endTime - now) / duration, 0);
@@ -315,18 +337,20 @@ function animateValue(visitorCountEl, start, end, duration) {
 
 }
 
-if ('IntersectionObserver' in window) {
 
-    observer = new IntersectionObserver((entry, observer) => {
+/******************* Ticket Modal *************************************/
 
-        animateValue(visitorNumber, startCount, visitorAmount, 1200);
+const ticketModal = document.querySelector('[data-ticket-modal]');
+const ticketModalClose = document.querySelector('[data-ticket-modal-close]');
 
+ticketModalClose.addEventListener('click', function(event) {
+    event.preventDefault();
+    ticketModal.classList.remove('active');
+}); 
+
+document.querySelectorAll('a[href="#tickets"]').forEach(item => {
+    item.addEventListener('click', event => {
+        event.preventDefault();
+        ticketModal.classList.add('active');
     });
-
-    observer.observe(visitorNumber);
-    
-} else {
-
-    animateValue(visitorNumber, startCount, visitorAmount, 1000);
-
-}
+  });

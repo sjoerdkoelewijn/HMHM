@@ -200,6 +200,8 @@
 			</p>
 
 		</article>
+
+		<?php include('parts/ticket-modal.php'); ?>
 		
 		<?php wp_footer(); ?>
 

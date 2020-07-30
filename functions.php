@@ -142,8 +142,8 @@ function sk_acf_options_init() {
 	if( function_exists('acf_add_options_page') ) {
 	
 		acf_add_options_page(array(
-			'page_title' 	=> 'General Settings (non-language specific)',
-			'menu_title'	=> 'General Settings',
+			'page_title' 	=> 'Theme Settings (non-language specific)',
+			'menu_title'	=> 'Theme Settings',
 			'menu_slug' 	=> 'general-settings',
 			'capability'	=> 'edit_posts',
 			'redirect'		=> false
@@ -240,9 +240,9 @@ function sk_taxonomy_terms() {
 function sk_get_ticket_url($location) {
 
 	if($location = 'Barcelona') {
-		echo 'https://tickets.hashmuseum.com/' . pll_current_language() . '/barcelona';
+		pll_e( 'https://tickets.hashmuseum.com/en/barcelona', 'hashmuseum' );
 	} else if ($location = 'Amsterdam'){
-		echo 'https://tickets.hashmuseum.com/' . pll_current_language() . '/tickets';
+		pll_e( 'https://tickets.hashmuseum.com/en/tickets', 'hashmuseum' );
 	}
 
 }

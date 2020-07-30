@@ -14,6 +14,8 @@ $id = 'collection-overview-hero-' . $block['id'];
             <?php the_field('header') ?>
         </h1>
 
+        <span class="slider_gradient"></span>
+
         <?php $single_image = get_field('single_image'); ?>
 
         <?php if( !empty( $single_image ) ): ?>
@@ -41,9 +43,9 @@ $id = 'collection-overview-hero-' . $block['id'];
             <?php the_field('description'); ?>
         </p>
 
-        <button class="action_btn btn black" data-ticket-modal>
+        <a class="action_btn btn black" href="#tickets" >
             <?php _e( 'get your ticket now', 'hashmuseum' ) ?>
-        </button>
+        </a>
 
         <button class="read_more_link" data-read-more-btn>
             <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
@@ -101,6 +103,8 @@ $id = 'collection-overview-hero-' . $block['id'];
                                     <h2><?php the_title(); ?></h2>
                                     <?php the_excerpt(); ?>
                                 </div>
+
+                                <span class="slider_gradient"></span>
 
                             </a>                     
 

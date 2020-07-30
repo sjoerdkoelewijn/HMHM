@@ -33,6 +33,17 @@ function my_acf_init() {
 		));
 
 		acf_register_block(array(
+			'name'				=> 'plan-visit',
+			'title'				=> __('Plan Visit Block'),
+			'description'		=> __('The hero block for the plan your visit page'),
+			'render_callback'	=> 'sk_acf_block_render_callback',
+			'category'			=> 'common',
+			'icon'				=> 'laptop',
+			'mode'				=> 'edit', // start in edit mode
+			'keywords'			=> array( 'image', 'visit' ),
+		));
+
+		acf_register_block(array(
 			'name'				=> 'home-hero',
 			'title'				=> __('Home Hero'),
 			'description'		=> __('The hero block for the homepage'),
@@ -229,7 +240,8 @@ function restrict_blocks( $allowed_blocks, $post ) {
 				'acf/info-two-images',
 				'acf/reviews',
 				'acf/home-about',
-
+				'acf/plan-visit',
+			
 			);
 			return $allowed_blocks;
 		}

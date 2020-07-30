@@ -39,28 +39,28 @@ $id = 'home-hero-' . $block['id']; ?>
                 switch ($ButtonType) {
                 case 'action': ?>
                     
-                    <a href="<?php echo $url; ?>" class="btn action_btn white" >
+                    <a href="<?php echo $url; ?>" class="btn action_btn white">
                         <?php echo $anchor; ?>
                     </a>
 
                     <?php break;
                 case 'secondary': ?>
                     
-                    <a href="<?php echo $url; ?>" class="btn secondary_btn white" >
+                    <a href="<?php echo $url; ?>" class="btn secondary_btn white">
                         <?php echo $anchor; ?>
                     </a>
 
                     <?php break;
                 case 'ghost': ?>
 
-                    <a href="<?php echo $url; ?>" class="btn ghost_btn white" >
+                    <a href="<?php echo $url; ?>" class="btn ghost_btn white">
                         <?php echo $anchor; ?>
                     </a>
 
                     <?php break;
                 default: ?>
                     
-                    <a href="<?php echo $url; ?>" class="read_more_link" >
+                    <a href="<?php echo $url; ?>" class="read_more_link">
                         <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
                         <?php echo $anchor; ?>
                     </a>
