@@ -4,7 +4,7 @@
 
     <a href="/en/collection/" class="back_link">
         <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowLeftIcon.svg"); ?>
-        <?php _e( 'Back to the collection', 'hashmuseum' ) ?>
+        <?php pll_e( 'Back to the collection', 'hashmuseum' ) ?>
     </a>
 
     <h1 class="header">
@@ -22,8 +22,7 @@
     <?php echo sk_taxonomy_terms(); ?>
     
     <p class="license_message">
-    © <?php echo date("Y");?>
-    <?php _e( 'Hash Marihuana & Hemp Museum. Please <a href="mailto:info@hashmuseum.com">contact us</a> for licensing options.', 'hashmuseum' ) ?>
+    <?php pll_e( 'Hash Marihuana & Hemp Museum. Please <a href="mailto:info@hashmuseum.com">contact us</a> for licensing options.', 'hashmuseum' ) ?>
     
     </p>
 

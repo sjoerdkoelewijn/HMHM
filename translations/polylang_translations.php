@@ -19,7 +19,7 @@ if ( function_exists( 'pll_register_string' ) ) {
     pll_register_string('Home hero', 'Read more about', 'Hashmuseum');
     pll_register_string('Collection Title', 'The Collection', 'Hashmuseum');
     pll_register_string('Item Copyright Notice', 'Hash Marihuana & Hemp Museum. Please <a href="mailto:info@hashmuseum.com">contact us</a> for licensing options.', 'Hashmuseum');
-    
+    pll_register_string('Collection back link', 'Back to the collection', 'Hashmuseum');
     
     pll_register_string('link', '/en/plan-your-visit/', 'Hashmuseum');
     pll_register_string('link', '/en/amsterdam/about-amsterdam/', 'Hashmuseum');
