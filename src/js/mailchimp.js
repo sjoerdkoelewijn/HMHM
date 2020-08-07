@@ -13,10 +13,10 @@ for (var i = 0; i < forms.length; i++) {
 var hasError = function (field) {
     
 		// Don't validate submits, buttons, file and reset inputs, and disabled fields
-    if (field.disabled || field.type === 'file' || field.type === 'reset' || field.type === 'submit' || field.type === 'button') return;
+    if (field.disabled || field.type === 'file' || field.type === 'reset' || field.type === 'submit' || field.type === 'button' || field.type === 'search') return;
 
     // Get validity
-    let validity = field.validity;
+    var validity = field.validity;
 	
 	// If valid, return nothing
     if (validity.valid) return '';

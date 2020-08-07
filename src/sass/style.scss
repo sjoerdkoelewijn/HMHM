@@ -978,6 +978,8 @@ html {
 
         img {
             min-height:100vh;
+            width:33vw;
+            object-fit: cover; 
         }
 
         .header {
@@ -2673,6 +2675,108 @@ border: 0;
 
 
         }          
+
+    }
+
+}
+
+/* ------------- Search Page ----------------------------------------------------------------------------------------------------------- */
+
+.result_page {
+    padding:var(--vertical-xl) var(--horizontal);
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center; 
+
+    .header {
+        font-size:var(--x-large-title);
+        text-align: center;
+    }
+    
+    .subheader {
+        font-size: var(--small-subtitle);
+        color:$mediumgrey;
+        margin-bottom:0;
+        text-align: center;
+    }
+
+    .search_form { 
+        display:block;       
+        margin:20vh auto 10vh auto;
+               
+
+        input {
+            width:70vw;
+            height:50px;
+            padding:10px 20px;
+            border:0; 
+            max-width:800px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05); 
+        }
+
+        button {
+            background:$white;
+            height:49px;
+            width:50px;
+            margin-top:1px;
+            margin-left:-50px;
+            position:absolute;
+            cursor: pointer;
+            
+            svg {
+                margin-top:4px;
+
+                path {
+                    fill:$black; 
+                }
+            }
+
+            &:hover {
+                svg {
+                    path {
+                        fill:$action;
+                    }
+                }
+            }
+        }
+    }
+
+    .results {
+        display:flex;
+        flex-wrap:wrap;
+
+        .result {
+            background: $white;
+            margin:1vw;            
+            width:21vw;
+            
+            .image {
+
+                img {
+                    height:25vh;
+                    width:100%;
+                    object-fit: cover;
+                }
+
+            }
+
+            .text {
+                padding:2vw;
+              
+                .header {
+                    text-align:left;
+                    font-size: var(--large-p);
+                    margin-bottom:10px;
+                }
+
+                p {
+                    font-size: var(--medium-p);
+                }
+
+            }
+
+        }
 
     }
 

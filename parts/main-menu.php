@@ -6,7 +6,7 @@
 
                 <div class="menu_top">
 
-                    <?php include('searchform.php'); ?>    
+                    <?php get_search_form(); ?>    
 
                     <button class="main_close" data-main-close aria-label="<?php echo __( 'Close Menu', 'hashmuseum' ) ?>">
                         <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/closeIcon.svg"); ?>
