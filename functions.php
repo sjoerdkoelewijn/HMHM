@@ -347,3 +347,10 @@ add_action( 'created_info_categories', 'sk_created_info_category', 10, 3 );
 		);
 	}
 	add_action( 'admin_menu', 'wpdocs_register_my_custom_menu_page' );	
+
+	/*************************** Google Map API for use in the backend *********************************/
+
+	function sk_acf_init() {
+		acf_update_setting('google_api_key', 'AIzaSyBsrZ7LxIPSOSmJNzUO8IGV_L5OyZNBxOU');
+	}
+	add_action('acf/init', 'sk_acf_init');

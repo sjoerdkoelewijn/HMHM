@@ -30,7 +30,7 @@ $header-font:'Prata', serif;
     --small-subtitle:1.5vw;
 
     --x-large-p:2rem;
-    --large-p:1.5rem;
+    --large-p:1.4rem;
     --medium-p:1.2rem;
     --small-p:1rem;
 
@@ -88,7 +88,7 @@ h3 {
 p{
     line-height:160%; 
     font-weight:300;
-    font-size:$normal-p;
+    font-size:var(--large-p);
     margin-bottom:30px;      
   
 }

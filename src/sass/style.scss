@@ -13,7 +13,7 @@ html {
 }
 
 .button_repeater {
-    width:90%;
+    //width:90%;
 }
 
 .btn {
@@ -25,6 +25,7 @@ html {
     margin:10px 0;
     line-height: 35px;
     cursor: pointer;
+    font-size: var(--small-p);
 
     &:visited {
         color:inherit;
@@ -1766,7 +1767,154 @@ border: 0;
     }
 }
 
+/* ------------- Google Map Block ---------------- */
 
+.google_map {
+    display:flex;
+    align-items: center;
+    align-items: stretch;
+    min-height:100vh;
+    
+
+    .map_wrap {
+        width:66vw;
+        background:$white;
+
+        .map_style {
+            width:100%;
+            min-height:100vh;
+            height:100%;
+        }
+    }
+
+    .text_wrap {
+        width:33vw;
+        padding:var(--vertical-xl) var(--horizontal) var(--vertical-l) var(--horizontal);
+
+        .subheader {
+            color:$mediumgrey;
+        }
+
+        .header {
+            font-size:var(--large-title);
+        }
+
+        .location {
+            margin-bottom:40px;
+            display:flex;
+
+            .icon {
+                margin-top:36px;
+                margin-right:20px;
+
+                svg {
+                    width:35px;
+                    height:50px;
+                }
+            
+            }
+
+            .content {
+                       
+                .label {
+                    text-transform: uppercase;
+                    font-size:var(--small-p);
+                    font-weight:400;
+                    color:$mediumgrey;
+                    margin-bottom:5px;
+                }
+        
+                .text {
+                    margin-bottom:10px;
+                }
+        
+                .link {           
+        
+                    a {
+                        text-decoration:none;  
+                    }
+        
+                    @include textLink;
+                }
+
+            }
+
+        }        
+
+    }
+
+}
+
+
+/* ------------- Visitor Information Block ---------------- */
+
+.visitor_information {
+    display:flex;
+    min-height:100vh;
+    
+    .image_wrap {
+        width:33vw;
+        display:flex;
+        align-items: stretch;
+
+        img {
+            object-fit: cover; 
+        }
+   
+    }
+
+    .text_wrap {
+        width:66vw;
+        padding:var(--vertical) var(--horizontal);
+
+        .header {
+            font-size:var(--small-title);
+            color:$mediumgrey;
+            margin-top:var(--vertical-l);
+        }
+
+        .information {
+            list-style-type: none;
+            columns: 2;
+            column-gap:5vw;
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            break-inside: avoid;
+            
+            li {
+                margin-bottom:var(--vertical-l);
+            }
+
+            .sub_header {
+                display:flex;
+                margin-bottom:20px;
+
+                h3 {
+                    font-size:var(--small-title);
+                    
+                    
+                }
+
+                .icon {
+                    margin-right:15px;
+                    margin-top:3px;
+                }
+            }
+
+            p {
+                font-size:var(--medium-p);
+                
+                strong {
+                    font-size:var(--medium-p);
+                }
+
+            }
+
+        }
+    }
+
+
+}
 
 /* ------------- Promotional Block ---------------- */
 
@@ -1841,7 +1989,13 @@ border: 0;
                 }
                  
             }
+        
+            &:focus {
+                border-radius:0;
+                outline-color:none;
+            }
         }
+
  
         .slider_button.left {
             left:$horizontal;

@@ -198,6 +198,28 @@ function my_acf_init() {
 			'keywords'			=> array( 'slider', 'collection' ),
 		));
 
+		acf_register_block(array(
+			'name'				=> 'visitor-info',
+			'title'				=> __('Visitor Information'),
+			'description'		=> __('Frequently Asked Questions Section'),
+			'render_callback'	=> 'sk_acf_block_render_callback',
+			'category'			=> 'common',
+			'icon'				=> 'info',
+			'mode'				=> 'edit', // start in edit mode
+			'keywords'			=> array( 'slider', 'collection' ),
+		));
+
+		acf_register_block(array(
+			'name'				=> 'google-map',
+			'title'				=> __('Google Map'),
+			'description'		=> __('Google map with locations'),
+			'render_callback'	=> 'sk_acf_block_render_callback',
+			'category'			=> 'common',
+			'icon'				=> 'location',
+			'mode'				=> 'edit', // start in edit mode
+			'keywords'			=> array( 'slider', 'collection' ),
+		));
+
 	}
 }
 
