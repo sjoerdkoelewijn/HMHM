@@ -7,11 +7,9 @@ include 'functions/enqueue.php';
 include 'functions/menus.php';
 
 /* ACF php file is not imported on local env */
-if(strpos($_SERVER['HTTP_HOST'], '.local') !== false){
+if(strpos($_SERVER['HTTP_HOST'], '.local') !== true){
 	include 'functions/advanced-custom-fields.php';	
 }
-
-include 'functions/advanced-custom-fields.php';
 
 add_theme_support( 'title-tag' );
 add_theme_support( 'menus' );
