@@ -1519,7 +1519,7 @@ html {
 
             .image_credit {
                 font-size:var(--small-p);
-                rotate: -90deg;
+                transform: rotate(-90deg);
                 position:absolute;
                 z-index:20;
                 bottom:40px;

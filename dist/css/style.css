@@ -2475,7 +2475,8 @@ html {
 /* line 1520, src/sass/style.scss */
 .reviews .reviews_slider .review .image_credit {
   font-size: var(--small-p);
-  rotate: -90deg;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
   position: absolute;
   z-index: 20;
   bottom: 40px;
