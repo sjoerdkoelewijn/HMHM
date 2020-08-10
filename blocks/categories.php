@@ -54,7 +54,7 @@ $id = 'category-overview' . $block['id'];
 
                         <a class="read_more_link" href="<?php echo esc_url( get_term_link( $term ) ); ?>">
                             <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
-                            <?php _e( 'Read More', 'hashmuseum' ) ?>
+                            <?php pll_e( 'Read More', 'hashmuseum' ) ?>
                         </a>    
 
                     </div>

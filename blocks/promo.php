@@ -47,12 +47,12 @@ $id = 'promo-' . $block['id'];
                 <?php the_field('description'); ?>
             </p>
 
-            <a class="action_btn btn" href="#">
-                <?php _e( 'Get your ticket', 'hashmuseum' ) ?>
+            <a class="action_btn btn" href="#tickets">
+                <?php pll_e( 'Get your ticket', 'hashmuseum' ) ?>
             </a>
 
-            <a class="ghost_btn white btn" href="#">
-                <?php _e( 'Plan your visit', 'hashmuseum' ) ?>
+            <a class="ghost_btn white btn" href="<?php pll_e('/en/plan-your-visit/') ?>">
+                <?php pll_e( 'Plan your visit', 'hashmuseum' ) ?>
             </a>
 
         </div>

@@ -159,7 +159,7 @@ $id = 'home-hero-' . $block['id']; ?>
                         
                         <a href="<?php the_sub_field('url'); ?>" class="read_more_link">
                             <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
-                            <?php _e( 'The Collection', 'hashmuseum' ) ?>
+                            <?php pll_e( 'The Collection', 'hashmuseum' ) ?>
                         </a>
                     </div>
 
@@ -216,7 +216,7 @@ $id = 'home-hero-' . $block['id']; ?>
                         
                         <a href="<?php the_sub_field('url'); ?>" class="read_more_link">
                             <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
-                            <?php _e( 'Cannabis Knowledge', 'hashmuseum' ) ?>
+                            <?php pll_e( 'Cannabis Knowledge', 'hashmuseum' ) ?>
                         </a>   
                     </div>
 

@@ -13,7 +13,7 @@ for (var i = 0; i < forms.length; i++) {
 
 var hasError = function (field) {
     
-		// Don't validate submits, buttons, file and reset inputs, and disabled fields
+	// Don't validate submits, buttons, file and reset inputs, and disabled fields
     if (field.disabled || field.type === 'file' || field.type === 'reset' || field.type === 'submit' || field.type === 'button' || field.type === 'search') return;
 
     // Get validity
@@ -128,7 +128,7 @@ var removeError = function (field) {
 };
 
 
-document.addEventListener('blur', (function (event) {
+forms.addEventListener('blur', (function (event) {
    
     var error = hasError(event.target);
 	
@@ -144,7 +144,7 @@ document.addEventListener('blur', (function (event) {
 
 
 // Check all fields on submit
-document.addEventListener('submit', (function (event) {
+forms.addEventListener('submit', (function (event) {
     
     // Get all of the form elements
     var fields = event.target.elements;

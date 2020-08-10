@@ -58,7 +58,7 @@ $id = 'sub-items' . $block['id'];
 
                         <a class="read_more" href="<?php the_permalink(); ?>">
                             <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
-                            <?php _e( 'Read More', 'hashmuseum' ) ?>
+                            <?php pll_e( 'Read more', 'hashmuseum' ) ?>
                         </a>
 
                     </div>
@@ -91,7 +91,7 @@ $id = 'sub-items' . $block['id'];
                             </p>
                             <a class="read_more" href="<?php the_permalink(); ?>">
                                 <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
-                                <?php _e( 'Read More', 'hashmuseum' ) ?>
+                                <?php pll_e( 'Read more', 'hashmuseum' ) ?>
                             </a>
 
                         </div>

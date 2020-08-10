@@ -57,6 +57,7 @@ $id = 'reviews-' . $block['id'];
                         $name = get_sub_field('name');
                         $bio = get_sub_field('bio');
                         $image = get_sub_field('image');
+                        $imagecredit = get_sub_field('image_credit');
 
                         ?>
 
@@ -76,7 +77,14 @@ $id = 'reviews-' . $block['id'];
                             </div>
                             
                             <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo $image['alt']; ?>" />
-                        
+                  
+                            <?php if($imagecredit): ?>
+                                <p class="image_credit">
+                                    <?php echo $imagecredit ?>
+                                </p>
+                            <?php endif; ?>
+
+
                         </div>                        
 
                     <?php endwhile; ?>    

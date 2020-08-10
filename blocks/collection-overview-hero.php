@@ -44,12 +44,12 @@ $id = 'collection-overview-hero-' . $block['id'];
         </p>
 
         <a class="action_btn btn black" href="#tickets" >
-            <?php _e( 'get your ticket now', 'hashmuseum' ) ?>
+            <?php pll_e( 'Get your ticket', 'hashmuseum' ) ?>
         </a>
 
         <button class="read_more_link" data-read-more-btn>
             <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
-            <?php _e( 'More about the collection', 'hashmuseum' ) ?>
+            <?php pll_e( 'More about the collection', 'hashmuseum' ) ?>
         </button>
 
     </div>

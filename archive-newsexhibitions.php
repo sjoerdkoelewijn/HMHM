@@ -1,8 +1,9 @@
 <?php
 
-use function PHPSTORM_META\map;
 
 get_header(); ?>
+
+	<div class="events">
 
 	<?php if ( have_posts() ) :	
 					
@@ -157,10 +158,21 @@ get_header(); ?>
 			
 		<?php endwhile; ?>
 
+
+		<?php // the_posts_pagination(); ?>
+
+		<div class="next_posts_btn_wrap">
+			<?php next_posts_link('Load more'); ?>
+		</div>
+
 	<?php else : ?>
 
 		'No content'
 
-	<?php endif; ?>   
+	<?php endif; ?> 
+	
+	</div>
+
+	
 
 <?php get_footer();

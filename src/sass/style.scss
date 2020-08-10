@@ -122,6 +122,37 @@ html {
     }
 }
 
+.next_posts_btn_wrap {
+
+    a {
+        padding:10px 44px;
+        border-radius: 30px;
+        display:inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin:10px 0;
+        line-height: 35px;
+        cursor: pointer;
+        font-size: var(--small-p);
+
+ 
+
+        white-space: normal;
+
+        background:$black;
+        color:$white;
+        transition: background-color .6s ease, color .3s ease;
+
+        &:hover {
+            background:$action-gradient;
+            color:$white;
+            text-shadow: 2px 2px 1px rgba(139, 24, 17, 0.25);
+            transition: background-color .6s ease, color .3s ease;
+        }
+    }
+
+}
+
 
 .social {
     display:flex;
@@ -545,7 +576,7 @@ html {
     
     .main_menu_wrap {
         width:33.33vw;
-        min-height:100vh;
+        height:100vh;
         background:$black;
         color:$white;
         padding:var(--horizontal-s);
@@ -563,11 +594,11 @@ html {
                 font-weight:300;
                 font-size:var(--medium-p);
                 padding:10px 20px;
-                transition: background .5s ease;
+                transition: color .5s ease;
                
                 &:hover {
-                    background:rgba($lightgrey, 0.05);
-                    transition: background .5s ease;
+                    color:$action;
+                    transition: color .5s ease;
                 }
         
             }
@@ -645,11 +676,16 @@ html {
             .action_btn {
                 margin-right:20px;
             } 
+
+            .btn {
+                padding: 10px 37px;
+            }
+
         }
         
     
         .boring_links {
-            margin-top:3vh;
+            margin-top:2vh;
             width:100%;
 
             ul {
@@ -705,7 +741,7 @@ html {
     
     .menu_background {
         visibility: visible;
-        background-color:rgba($black, 0.4);    
+        background-color:rgba($black, 0.6);    
         transition-property: background-color, visibility;
         transition-duration: .5s;
         transition-delay:.1s;
@@ -1474,18 +1510,30 @@ html {
     
                 .bio {
                     text-transform:uppercase;
-                    font-size:var(--small-p);
+                    font-size:calc(var(--small-p) * .9);
                     font-weight:400;
                     margin:0;
                 }
                            
             }
 
+            .image_credit {
+                font-size:var(--small-p);
+                rotate: -90deg;
+                position:absolute;
+                z-index:20;
+                bottom:40px;
+                left:31vw;
+                width:100%;
+                transform-origin: left bottom;
+                margin:0;
+            }
+
             img {
                 width:100%;
                 height:100%;
                 object-fit: cover; 
-            }
+            }            
 
         }
     }
@@ -2682,6 +2730,77 @@ border: 0;
 
 /* ------------- Search Page ----------------------------------------------------------------------------------------------------------- */
 
+.fourofour {
+    min-height:100vh;
+    padding:var(--vertical-xl) var(--horizontal);
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+
+    .header {
+        font-size:var(--x-large-title);
+        text-align: center;
+        margin-bottom:20px;
+    }
+    
+    .subheader {
+        font-size: var(--medium-subtitle);
+        margin-top:0;
+        margin-bottom:30px;
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .search_form { 
+        display:block;       
+        margin:5vh auto 10vh auto;
+               
+
+        input {
+            width:70vw;
+            height:60px;
+            padding:10px 25px;
+            border:0; 
+            max-width:800px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05); 
+            font-size:var(--medium-p);
+        }
+
+        button {
+            background:$white;
+            height:49px;
+            width:50px;
+            margin-top:7px;
+            margin-left:-55px;
+            position:absolute;
+            cursor: pointer;
+            
+            svg {
+                margin-top:4px;
+
+                path {
+                    fill:$black; 
+                }
+            }
+
+            &:hover {
+                svg {
+                    path {
+                        fill:$action;
+                    }
+                }
+            }
+        }
+    }
+}    
+
+/* ------------- Search Page ----------------------------------------------------------------------------------------------------------- */
+
 .result_page {
     padding:var(--vertical-xl) var(--horizontal);
 
@@ -2708,22 +2827,23 @@ border: 0;
 
         input {
             width:70vw;
-            height:50px;
-            padding:10px 20px;
+            height:60px;
+            padding:10px 25px;
             border:0; 
             max-width:800px;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05); 
+            font-size:var(--medium-p);
         }
 
         button {
             background:$white;
             height:49px;
             width:50px;
-            margin-top:1px;
-            margin-left:-50px;
+            margin-top:7px;
+            margin-left:-55px;
             position:absolute;
             cursor: pointer;
-            
+                        
             svg {
                 margin-top:4px;
 
@@ -2784,6 +2904,34 @@ border: 0;
 
 
 /* ------------- Whats on page / Expo / News / Exhibition ----------------------------------------------------------------------------------------------------------- */
+
+.pagination {
+    margin:var(--vertical) var(--horizontal);
+    text-align: center;
+
+    .page-numbers {
+        padding:10px 15px;
+        margin:3px;
+        background:$white;
+        border-radius: 2px;
+    
+    }
+
+    .screen-reader-text {
+        display:none;
+    }
+
+}
+
+.events {
+
+
+    .next_posts_btn_wrap {
+        margin:-10px 0 10vh 20vw;
+
+    }
+
+}
 
 .event {
     display: flex;
