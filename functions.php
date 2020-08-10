@@ -6,14 +6,10 @@ include 'functions/gutenberg-blocks.php';
 include 'functions/enqueue.php';
 include 'functions/menus.php';
 
-/* ACF php file is not imported on local env 
-if(strpos($_SERVER['REQUEST_URI'], '.local') !== false){
-	include 'functions/advanced-custom-fields.php';
+/* ACF php file is not imported on local env */
+if(strpos($_SERVER['HTTP_HOST'], '.local') !== false){
+	include 'functions/advanced-custom-fields.php';	
 }
-
-*/
-
-include 'functions/advanced-custom-fields.php';
 
 add_theme_support( 'title-tag' );
 add_theme_support( 'menus' );
@@ -43,6 +39,7 @@ function remove_admin_menus() {
 	remove_menu_page( 'edit.php' ); // Standard post
 
 }
+
 add_action( 'admin_menu', 'remove_admin_menus' );
 
 
