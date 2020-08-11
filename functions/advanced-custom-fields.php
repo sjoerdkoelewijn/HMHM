@@ -3067,7 +3067,7 @@ if( function_exists('acf_add_local_field_group') ):
 					array(
 						array(
 							'field' => 'field_5f202f66a72be',
-							'operator' => '!=',
+							'operator' => '==',
 							'value' => 'hero',
 						),
 					),
@@ -3107,7 +3107,7 @@ if( function_exists('acf_add_local_field_group') ):
 					array(
 						array(
 							'field' => 'field_5f202f66a72be',
-							'operator' => '!=',
+							'operator' => '==',
 							'value' => 'hero',
 						),
 					),

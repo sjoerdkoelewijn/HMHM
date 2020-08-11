@@ -10,7 +10,7 @@ $id = 'plan-visit-' . $block['id'];
     $styleswitch = get_field('style_switch'); 
 ?>
 
-<article id="<?php echo $id; ?>" class="plan_visit">
+<article id="<?php echo $id; ?>" class="location_info">
 
     <?php
 
