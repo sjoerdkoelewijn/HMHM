@@ -3060,8 +3060,8 @@ if( function_exists('acf_add_local_field_group') ):
 					array(
 						array(
 							'field' => 'field_5f202f66a72be',
-							'operator' => '!=',
-							'value' => 'barcelona',
+							'operator' => '==',
+							'value' => 'amsterdam',
 						),
 					),
 					array(
@@ -3100,8 +3100,8 @@ if( function_exists('acf_add_local_field_group') ):
 					array(
 						array(
 							'field' => 'field_5f202f66a72be',
-							'operator' => '!=',
-							'value' => 'amsterdam',
+							'operator' => '==',
+							'value' => 'barcelona',
 						),
 					),
 					array(
