@@ -3,24 +3,32 @@
 
 /* Language & Main menu */
 
-const   languageToggle = document.querySelector('[data-language-menu-toggle]'),
-        languageClose = document.querySelector('[data-language-close]'),
+const   languageToggle = document.querySelectorAll('[data-language-menu-toggle]'),
+        languageClose = document.querySelectorAll('[data-language-close]'),
         languageMenu = document.querySelector('[data-language-menu]'),
         mainToggle = document.querySelector('[data-main-menu-toggle]'),
-        mainClose = document.querySelector('[data-main-close]'),
+        mainClose = document.querySelectorAll('[data-main-close]'),
         mainMenu = document.querySelector('[data-main-menu]');
 
-languageToggle.addEventListener('click', function(e) {
-    e.preventDefault();
-    languageMenu.classList.remove('hidden');
-    languageMenu.classList.add('visible');
+languageToggle.forEach(function(elem) {
+
+    elem.addEventListener('click', function(e) {
+        e.preventDefault();
+        languageMenu.classList.remove('hidden');
+        languageMenu.classList.add('visible');
+    });
+
 });
 
-languageClose.addEventListener('click', function(e) {
-    e.preventDefault();
-    languageMenu.classList.add('hidden');
-    languageMenu.classList.remove('visible');
-}); 
+languageClose.forEach(function(elem) {
+
+    elem.addEventListener('click', function(e) {
+        e.preventDefault();
+        languageMenu.classList.add('hidden');
+        languageMenu.classList.remove('visible');
+    }); 
+
+});
 
 mainToggle.addEventListener('click', function(e) {
     e.preventDefault();
@@ -28,12 +36,15 @@ mainToggle.addEventListener('click', function(e) {
     mainMenu.classList.add('visible');
 });
 
-mainClose.addEventListener('click', function(e) {
-    e.preventDefault();
-    mainMenu.classList.add('hidden');
-    mainMenu.classList.remove('visible');
-}); 
+mainClose.forEach(function(elem) {
 
+    elem.addEventListener('click', function(e) {
+        e.preventDefault();
+        mainMenu.classList.add('hidden');
+        mainMenu.classList.remove('visible');
+    });  
+
+});
 
 /******************* Logo color switch *************************************/
 
@@ -354,3 +365,88 @@ document.querySelectorAll('a[href="#tickets"]').forEach(item => {
         ticketModal.classList.add('active');
     });
   });
+
+/******************* JS Tabs *************************************/
+
+var Tabs = function(options) {
+    var elem         = document.querySelector(options.elem),
+        open         = options.open || 0,
+        titleClass   = 'tab_title',
+        activeClass  = 'tab_title-active',
+        contentClass = 'tab_content',
+        tabsNum      = elem.querySelectorAll('.' + titleClass).length;
+        
+    render();
+    
+    function render(n) {
+        elem.addEventListener('click', onClick);
+
+        var init = (n == null) ? checkTab(open) : checkTab(n);
+  
+        for (var i = 0; i < tabsNum; i++) {
+            elem.querySelectorAll('.' + titleClass)[i].setAttribute('data-index', i);
+            if (i === init) openTab(i);
+        }
+    }
+
+    function onClick(e) {
+        if (e.target.className.indexOf(titleClass) === -1) return;
+        e.preventDefault();
+        openTab(e.target.getAttribute('data-index'));
+    }
+    
+    function reset() {
+        [].forEach.call(elem.querySelectorAll('.' + contentClass), function(item) {
+            item.style.display = 'none';
+        });
+        
+        [].forEach.call(elem.querySelectorAll('.' + titleClass), function(item) {
+            item.className = removeClass(item.className, activeClass);
+        });
+    }
+    
+    function removeClass(str, cls) {
+        var reg = new RegExp('(\ )' + cls + '(\)', 'g');
+        return str.replace(reg, '');
+    }
+
+    function checkTab(n) {
+        return (n < 0 || isNaN(n) || n > tabsNum) ? 0 : n;
+    }
+    
+    function openTab(n) {
+        reset();
+
+        var i = checkTab(n);
+
+        elem.querySelectorAll('.' + titleClass)[i].className += ' ' + activeClass;
+        elem.querySelectorAll('.' + contentClass)[i].style.display = '';
+    }
+
+    function update(n) {
+        destroy();
+        reset();
+        render(n);
+    }
+
+       function destroy() {
+        elem.removeEventListener('click', onClick);
+    }
+
+    return {
+        open: openTab,
+        update: update,
+        destroy: destroy
+    };
+};
+
+/** Mobile Menu Tabs **/
+
+if (window.matchMedia("(max-width: 767px)").matches) {
+
+    var mobileMenuTabs = new Tabs({
+        elem: '[data-mobile-menu-tabs]',
+        open: 1
+    });
+
+}

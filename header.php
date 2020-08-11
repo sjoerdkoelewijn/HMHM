@@ -35,13 +35,25 @@
 
             <button class="language_menu_toggle" data-language-menu-toggle>
                 <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/weedleaf-small.svg"); ?>
-                <?php _e( 'Select Language', 'hashmuseum' ) ?>
+                <?php pll_e( 'Select Language', 'hashmuseum' ) ?>
             </button>
 
             <button class="main_menu_toggle" data-main-menu-toggle>
-                <?php _e( 'menu', 'hashmuseum' ) ?>
+                <?php pll_e( 'menu', 'hashmuseum' ) ?>
                 <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/hamburgerIcon.svg"); ?>
             </button>            
+
+        </div>
+
+        <div class="mobile_buttons">
+
+            <a href="#tickets" class="buy_tickets mobile_btn">
+                <?php pll_e( 'Buy tickets', 'hashmuseum' ) ?>
+            </a>
+
+            <a href="<?php pll_e( '/en/plan-your-visit/', 'hashmuseum' ) ?>" class="plan_visit mobile_btn">
+                <?php pll_e( 'Plan your visit', 'hashmuseum' ) ?>
+            </a>            
 
         </div>
 

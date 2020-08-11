@@ -81,15 +81,16 @@ select {
 /* line 70, src/sass/reset.scss */
 button {
   border: 0;
+  cursor: pointer;
 }
 
-/* line 74, src/sass/reset.scss */
+/* line 75, src/sass/reset.scss */
 ul {
   margin: 0;
   padding: 0;
 }
 
-/* line 79, src/sass/reset.scss */
+/* line 80, src/sass/reset.scss */
 li {
   margin: 0;
   list-style-type: none;
@@ -97,7 +98,7 @@ li {
 
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-  /* line 86, src/sass/reset.scss */
+  /* line 87, src/sass/reset.scss */
   * {
     -webkit-animation-duration: 0.01ms !important;
             animation-duration: 0.01ms !important;
@@ -109,7 +110,7 @@ li {
   }
 }
 
-/* line 14, src/sass/variables/colors.scss */
+/* line 15, src/sass/variables/colors.scss */
 ::-moz-selection {
   color: #ffffff;
   background: #FF4025;
@@ -119,32 +120,32 @@ li {
   background: #FF4025;
 }
 
-/* line 19, src/sass/variables/colors.scss */
+/* line 20, src/sass/variables/colors.scss */
 html {
   color: #000000;
   background: #F6F6F6;
 }
 
-/* line 24, src/sass/variables/colors.scss */
+/* line 25, src/sass/variables/colors.scss */
 a {
   color: #000000;
   -webkit-transition: color .5s ease;
   transition: color .5s ease;
 }
 
-/* line 28, src/sass/variables/colors.scss */
+/* line 29, src/sass/variables/colors.scss */
 a:hover {
   -webkit-transition: color .5s ease;
   transition: color .5s ease;
   color: #FF4025;
 }
 
-/* line 33, src/sass/variables/colors.scss */
+/* line 34, src/sass/variables/colors.scss */
 a:visited {
   color: #000000;
 }
 
-/* line 14, src/sass/variables/colors.scss */
+/* line 15, src/sass/variables/colors.scss */
 ::-moz-selection {
   color: #ffffff;
   background: #FF4025;
@@ -154,27 +155,27 @@ a:visited {
   background: #FF4025;
 }
 
-/* line 19, src/sass/variables/colors.scss */
+/* line 20, src/sass/variables/colors.scss */
 html {
   color: #000000;
   background: #F6F6F6;
 }
 
-/* line 24, src/sass/variables/colors.scss */
+/* line 25, src/sass/variables/colors.scss */
 a {
   color: #000000;
   -webkit-transition: color .5s ease;
   transition: color .5s ease;
 }
 
-/* line 28, src/sass/variables/colors.scss */
+/* line 29, src/sass/variables/colors.scss */
 a:hover {
   -webkit-transition: color .5s ease;
   transition: color .5s ease;
   color: #FF4025;
 }
 
-/* line 33, src/sass/variables/colors.scss */
+/* line 34, src/sass/variables/colors.scss */
 a:visited {
   color: #000000;
 }

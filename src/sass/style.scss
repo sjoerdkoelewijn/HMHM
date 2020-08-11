@@ -463,7 +463,7 @@ html {
         top:0;
         right:0;
         position:fixed;
-        z-index:1020;
+        z-index:1100;
 
         h2 {
             color:$white;
@@ -499,6 +499,66 @@ html {
 
 }
 
+/* ------------- Mobile Buttons ---------------- */
+
+.mobile_buttons {
+    display:flex;
+    height:65px;
+    position:fixed;
+    z-index:100;
+    bottom:0;
+
+    @include tabletup {
+        display:none;
+    }
+   
+    .mobile_btn {
+        width:50vw;
+        text-align:center;
+        text-transform:uppercase;
+        display:block;
+        padding-top:23px;
+        font-size:var(--small-btn);  
+        text-decoration: none;             
+    }
+
+    .buy_tickets {
+        background:$action-gradient;
+        color:$white;
+        text-shadow: 2px 2px 1px rgba(139, 24, 17, 0.25);
+        transition: background-color .6s ease, color .3s ease; //TODO better transition
+    
+        &:visited {
+            color:$white;
+        }
+    
+        &:hover {
+            background:$black;
+            color:$white;
+            text-shadow: none;
+            transition: background-color .6s ease, color .3s ease;
+        }
+    }   
+
+    .plan_visit {
+        color:$white;
+        background:$black;
+        transition: background-color .6s ease, color .3s ease; //TODO better transition
+
+        &:visited {
+            color:$white;
+        }
+    
+        &:hover {
+            background:$action-gradient;
+            color:$white;
+            text-shadow: 2px 2px 1px rgba(139, 24, 17, 0.25);
+            transition: background-color .6s ease, color .3s ease;
+        }
+    }
+
+}
+
 /* ------------- Main Menu ---------------- */
 
 .main_menu_toggle {
@@ -531,104 +591,6 @@ html {
 
 .main_menu {
 
-    .menu_top {
-        display:flex;
-        margin-bottom:var(--horizontal-s);
-        width:100vw;
-        justify-content:space-between;
-
-        @include desktopup {
-            width:29vw;
-        }
-
-        .search_form {
-            position: relative;            
-           
-            .search_field{
-                border:0;
-                background:rgba($lightgrey, 0.15);
-                transition: background .5s ease;
-                padding:20px;
-                font-size:var(--medium-p);
-                font-weight:300;
-                color:$white;
-                height:3.5vw;
-                width:21vw;
-                margin:-8px 0 0 0;
-                vertical-align: bottom;
-
-                &::-webkit-input-placeholder { 
-                    font-size:var(--medium-p);
-                    font-weight:300;
-                    color:$white;
-                    font-style:italic;
-                }
-                &::-moz-placeholder { 
-                    font-size:var(--medium-p);
-                    font-weight:300;
-                    color:$white;
-                    font-style:italic;
-                }
-                &:-ms-input-placeholder { 
-                    font-size:var(--medium-p);
-                    font-weight:300;
-                    color:$white;
-                    font-style:italic;
-                }
-                &:-moz-placeholder { 
-                    font-size:var(--medium-p);
-                    font-weight:300;
-                    color:$white;
-                    
-                }
-                
-            }
-
-            .search_submit {
-                border:0;
-                background:rgba($lightgrey, 0.15);
-                height:3.5vw;
-                width:3.5vw;
-                margin:0 0 0 -3px;
-                cursor: pointer;
-            
-                svg {
-                    margin-top:6px; 
-                        
-                    path{
-                        transition: fill .5s ease;
-                    }
-                    
-                } 
-
-                &:hover {
-                    svg {
-                        path{
-                            fill:$action;
-                            transition: fill .5s ease;
-                        }
-                    }                     
-                }
-            }
-        }
-
-        .main_close {
-            height:3.5vw;
-            width:3.5vw;
-            cursor: pointer;
-            background:rgba($lightgrey, 0.15);
-            transition: background .5s ease;
-        
-            &:hover {
-                background:rgba($lightgrey, 0.2);
-                transition: background .5s ease; 
-            }
-        }
-
-    }
-
-    
-
     .menu_background {
         width:100vw;
         min-height:100vh;
@@ -639,15 +601,201 @@ html {
     }
     
     .main_menu_wrap {
-        width:33.33vw;
+        width:100vw;
         height:100vh;
         background:$black;
         color:$white;
-        padding:var(--horizontal-s);
+        
         top:0;
         right:0;
         position:fixed;
         z-index:1020;
+
+        @include tabletup {
+            width:33.33vw;
+            padding:var(--horizontal-s);
+        }
+
+        .menu_top {
+            display:flex;
+            margin-bottom:var(--horizontal-s);
+            width:100vw;
+            justify-content:space-between;
+    
+            @include tabletup {
+                width:29vw;
+            }
+    
+            .search_form {
+                position: relative;            
+               
+                .search_field{
+                    border:0;
+                    background:rgba($lightgrey, 0.15);
+                    transition: background .5s ease;
+                    padding:20px;
+                    font-size:var(--medium-p);
+                    font-weight:300;
+                    color:$white;
+                    height:3.5vw;
+                    width:21vw;
+                    margin:-8px 0 0 0;
+                    vertical-align: bottom;
+    
+                    &::-webkit-input-placeholder { 
+                        font-size:var(--medium-p);
+                        font-weight:300;
+                        color:$white;
+                        font-style:italic;
+                    }
+                    &::-moz-placeholder { 
+                        font-size:var(--medium-p);
+                        font-weight:300;
+                        color:$white;
+                        font-style:italic;
+                    }
+                    &:-ms-input-placeholder { 
+                        font-size:var(--medium-p);
+                        font-weight:300;
+                        color:$white;
+                        font-style:italic;
+                    }
+                    &:-moz-placeholder { 
+                        font-size:var(--medium-p);
+                        font-weight:300;
+                        color:$white;
+                        
+                    }
+                    
+                }
+    
+                .search_submit {
+                    border:0;
+                    background:rgba($lightgrey, 0.15);
+                    height:3.5vw;
+                    width:3.5vw;
+                    margin:0 0 0 -3px;
+                    cursor: pointer;
+                
+                    svg {
+                        margin-top:6px; 
+                            
+                        path{
+                            transition: fill .5s ease;
+                        }
+                        
+                    } 
+    
+                    &:hover {
+                        svg {
+                            path{
+                                fill:$action;
+                                transition: fill .5s ease;
+                            }
+                        }                     
+                    }
+                }
+            }
+    
+            .main_close {
+                height:3.5vw;
+                width:3.5vw;
+                background:rgba($lightgrey, 0.15);
+                transition: background .5s ease;
+            
+                display:none;
+
+                @include tabletup {
+                    display:block;
+                }
+
+                &:hover {
+                    background:rgba($lightgrey, 0.2);
+                    transition: background .5s ease; 
+                }
+            }            
+    
+        }
+
+        .mobile_bottom_buttons {
+            position:fixed;
+            width:100%;
+            bottom:4vw;
+            left:4vw;
+            right:4vw;
+            display:flex;
+
+            .mobile_close {
+                height:65px;
+                width:35%;
+                color:$white;
+                text-transform:uppercase;
+                text-decoration: none;
+                font-size: $small-btn;
+                font-weight:600;
+                text-transform:uppercase;
+                background:rgba($lightgrey, .15);
+                transition: background .5s ease;
+
+                svg {
+                    margin-right:5px;
+                }
+
+    
+                @include tabletup {
+                    display:none;
+                }
+    
+                &:hover {
+                    background:rgba($lightgrey, 0.2);
+                    transition: background .5s ease; 
+                }
+    
+            }
+    
+            .mobile_language_menu_toggle {
+                height:65px;
+                width:65%;
+                color:$white;
+                text-transform:uppercase;
+                text-decoration: none;
+                font-size: $small-btn;
+                font-weight:600;
+                background:rgba($lightgrey, 0);
+                transition: color .5s ease;
+    
+                @include tabletup {
+                    display:none; 
+                }
+
+                svg {
+                    width:20px;
+                    height:13px;
+                    margin-left:10px;                
+
+                    path {
+                        fill:$white;
+                        transition: fill .5s ease;
+                    }
+                }
+    
+                &:hover {
+                    color:$action;
+                    transition: color .5s ease; 
+
+                    svg {                                   
+    
+                        path {
+                            fill:$action;
+                            transition: fill .5s ease;
+                        }
+                    }
+
+                }
+    
+            }
+
+        }
 
         .main_navigation {
 
@@ -670,7 +818,13 @@ html {
         }
 
         .meta {
-            margin-left:20px;
+            margin:4vw;
+            background:$darkgrey;            
+
+            @include tabletup {
+                background:none;
+                margin:0 0 0 20px;
+            }
 
             .city_header {
                 color:$white;
@@ -679,12 +833,43 @@ html {
                 font-weight:900;
                 margin-bottom:10px;
                 margin-top:4vh;
+
+                @include phone {
+                    display:none;
+                }
                 
+            }
+
+            .tabs_header {                
+                width:100%;
+                display:flex;
+
+                .tab_title {
+                    width:50%;
+                    height:55px;
+                    font-family: $header-font;
+                    font-size:var(--medium-p);
+                    color:$white;
+                    background:rgba($white, 0.15);
+                }
+
+                .tab_title-active {
+                    background:$darkgrey;
+                }
+
+                @include tabletup {
+                    display:none;
+                }
+    
             }
     
             .openinghours {
                 display:flex;
                 margin-bottom:20px;
+
+                @include phone {
+                    margin:4vw;
+                }
 
                 p {
                     font-size:var(--medium-p);
@@ -697,12 +882,53 @@ html {
                     path {
                         fill:$white;
                     }
+
                 }
+
+            }
+
+            .mobile_more_info_link {
+                color:$white;
+                margin-left:4vw;
+                margin-bottom:4vw;
+
+                @include tabletup {
+                    display:none;
+                }
+
+                svg {
+                    width:20px;
+                    height:13px;
+                    margin-right:18px;                
+            
+                    path {
+                        fill:$black;
+                        transition:fill .5s ease;
+                    }
+                }
+            
+                &:hover {
+                    color:$action;
+                    transition:color .5s ease;
+                    cursor: pointer;
+            
+                    svg path {
+                        fill:$action;
+                        transition:fill .5s ease;
+                    }
+                }
+
+                
+                
             }
 
             .social {
                 display:flex;
                 margin-bottom:0;
+
+                @include phone {
+                    display:none;
+                }
 
                 a {
                     margin-right:30px;
@@ -720,9 +946,10 @@ html {
                                 fill:$action;
                                 transition: fill .5s ease;
                             }
-                        }
-                    }
 
+                        }
+
+                    }
                     
                 }
 
@@ -731,11 +958,17 @@ html {
                         margin-top:-2px;
                     }
                 }
+
             }
-        }
+
+        }        
 
         .ticket_buttons {
             margin-top:4vh;
+
+            @include phone {
+                display:none;
+            }
 
             .action_btn {
                 margin-right:20px;
@@ -751,6 +984,10 @@ html {
         .boring_links {
             margin-top:2vh;
             width:100%;
+
+            @include phone {
+                display:none;
+            }
 
             ul {
                 display:flex;
@@ -770,8 +1007,7 @@ html {
                 }
             }
             
-        }
-    
+        }    
 
     }    
 
@@ -790,13 +1026,29 @@ html {
     }
 
     .language_menu_wrap {
-        transform: translate3d(33.33vw, 0, 0);
+        transform: translate3d(100vw, 0, 0);
         transition: transform .6s ease-in-out;
+
+        @include tablet {
+            transform: translate3d(50vw, 0, 0);
+        }
+
+        @include desktopup {
+            transform: translate3d(33.33vw, 0, 0);
+        }
     }
 
     .main_menu_wrap {
-        transform: translate3d(33.33vw, 0, 0);
+        transform: translate3d(100vw, 0, 0);
         transition: transform .6s ease-in-out;
+
+        @include tablet {
+            transform: translate3d(50vw, 0, 0);
+        }
+
+        @include desktopup {
+            transform: translate3d(33.33vw, 0, 0);
+        }
     }
 
 }
@@ -1240,9 +1492,9 @@ html {
  
  }
 
-/* ------------- Plan Visit Block ---------------- */
+/* ------------- Location Info Block ---------------- */
 
-.plan_visit {
+.location_info {
     display:flex;
     min-height:100vh;
 
@@ -1315,6 +1567,10 @@ html {
             width:100%;
             object-fit: cover; 
         }
+    }
+
+    .image_wrap.amsterdam, .image_wrap.barcelona {
+        width:66vw;
     }
 
 }

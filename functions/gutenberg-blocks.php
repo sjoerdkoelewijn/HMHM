@@ -33,8 +33,8 @@ function my_acf_init() {
 		));
 
 		acf_register_block(array(
-			'name'				=> 'plan-visit',
-			'title'				=> __('Plan Visit Block'),
+			'name'				=> 'location-info',
+			'title'				=> __('Location Info'),
 			'description'		=> __('The hero block for the plan your visit page'),
 			'render_callback'	=> 'sk_acf_block_render_callback',
 			'category'			=> 'common',
