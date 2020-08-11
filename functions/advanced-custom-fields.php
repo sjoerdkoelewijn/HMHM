@@ -2924,7 +2924,7 @@ if( function_exists('acf_add_local_field_group') ):
 	
 	acf_add_local_field_group(array(
 		'key' => 'group_5f202e67bdd5a',
-		'title' => 'Plan Your Visit Block',
+		'title' => 'Location info',
 		'fields' => array(
 			array(
 				'key' => 'field_5f202f66a72be',
@@ -2940,12 +2940,14 @@ if( function_exists('acf_add_local_field_group') ):
 					'id' => '',
 				),
 				'choices' => array(
-					'hero' => 'Hero Block Style',
-					'Normal' => 'Normal Block style',
+					'normal' => 'Two locations',
+					'hero' => 'Hero with two locations',
+					'amsterdam' => 'Amsterdam location',
+					'barcelona' => 'Barcelona location',
 				),
 				'allow_null' => 0,
 				'other_choice' => 0,
-				'default_value' => '',
+				'default_value' => 'normal',
 				'layout' => 'vertical',
 				'return_format' => 'value',
 				'translations' => 'sync',
@@ -2958,7 +2960,15 @@ if( function_exists('acf_add_local_field_group') ):
 				'type' => 'textarea',
 				'instructions' => '',
 				'required' => 0,
-				'conditional_logic' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5f202f66a72be',
+							'operator' => '!=',
+							'value' => 'barcelona',
+						),
+					),
+				),
 				'wrapper' => array(
 					'width' => '',
 					'class' => '',
@@ -2978,7 +2988,15 @@ if( function_exists('acf_add_local_field_group') ):
 				'type' => 'textarea',
 				'instructions' => '',
 				'required' => 0,
-				'conditional_logic' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5f202f66a72be',
+							'operator' => '!=',
+							'value' => 'amsterdam',
+						),
+					),
+				),
 				'wrapper' => array(
 					'width' => '',
 					'class' => '',
@@ -2993,19 +3011,114 @@ if( function_exists('acf_add_local_field_group') ):
 			),
 			array(
 				'key' => 'field_5f203b676ecc3',
-				'label' => 'Image',
-				'name' => 'image',
+				'label' => 'Generic Image',
+				'name' => 'generic_image',
 				'type' => 'image',
 				'instructions' => '',
 				'required' => 0,
-				'conditional_logic' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5f202f66a72be',
+							'operator' => '==',
+							'value' => 'normal',
+						),
+					),
+					array(
+						array(
+							'field' => 'field_5f202f66a72be',
+							'operator' => '==',
+							'value' => 'hero',
+						),
+					),
+				),
 				'wrapper' => array(
 					'width' => '',
 					'class' => '',
 					'id' => '',
 				),
 				'return_format' => 'array',
-				'preview_size' => 'medium',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+				'min_width' => '',
+				'min_height' => '',
+				'min_size' => '',
+				'max_width' => '',
+				'max_height' => '',
+				'max_size' => '',
+				'mime_types' => '',
+				'translations' => 'sync',
+			),
+			array(
+				'key' => 'field_5f32a87c21a19',
+				'label' => 'Amsterdam Image',
+				'name' => 'ams_image',
+				'type' => 'image',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5f202f66a72be',
+							'operator' => '!=',
+							'value' => 'barcelona',
+						),
+					),
+					array(
+						array(
+							'field' => 'field_5f202f66a72be',
+							'operator' => '!=',
+							'value' => 'hero',
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'array',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+				'min_width' => '',
+				'min_height' => '',
+				'min_size' => '',
+				'max_width' => '',
+				'max_height' => '',
+				'max_size' => '',
+				'mime_types' => '',
+				'translations' => 'sync',
+			),
+			array(
+				'key' => 'field_5f32a91221a1a',
+				'label' => 'Barcelona Image',
+				'name' => 'bcn_image',
+				'type' => 'image',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5f202f66a72be',
+							'operator' => '!=',
+							'value' => 'amsterdam',
+						),
+					),
+					array(
+						array(
+							'field' => 'field_5f202f66a72be',
+							'operator' => '!=',
+							'value' => 'hero',
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'array',
+				'preview_size' => 'thumbnail',
 				'library' => 'all',
 				'min_width' => '',
 				'min_height' => '',
@@ -3022,7 +3135,7 @@ if( function_exists('acf_add_local_field_group') ):
 				array(
 					'param' => 'block',
 					'operator' => '==',
-					'value' => 'acf/plan-visit',
+					'value' => 'acf/location-info',
 				),
 			),
 		),
