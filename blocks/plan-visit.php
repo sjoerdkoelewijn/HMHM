@@ -101,7 +101,7 @@ $id = 'plan-visit-' . $block['id'];
                 <nav class="social amsterdam">
                     <?php
                     wp_nav_menu(array(
-                        'theme_location'  => 'social-menu-ams',
+                        'theme_location'  => 'social-menu-bcn',
                         'fallback_cb'     => false,
                         'container'       => false,
                         'items_wrap'      => '%3$s',

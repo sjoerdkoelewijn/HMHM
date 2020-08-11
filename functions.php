@@ -369,3 +369,11 @@ add_action( 'created_info_categories', 'sk_created_info_category', 10, 3 );
 		acf_update_setting('google_api_key', 'AIzaSyBsrZ7LxIPSOSmJNzUO8IGV_L5OyZNBxOU');
 	}
 	add_action('acf/init', 'sk_acf_init');
+
+
+	/*************************** Redirect Function*********************************/
+
+	function redirect($url, $statusCode)
+	{
+	header('Location: ' . $url, true, $statusCode);
+	}
