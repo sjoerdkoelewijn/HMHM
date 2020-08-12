@@ -39,6 +39,8 @@ if ( function_exists( 'pll_register_string' ) ) {
     pll_register_string('link', '/en/plan-your-visit/', 'Hashmuseum');
     pll_register_string('link', '/en/amsterdam/about-amsterdam/', 'Hashmuseum');
     pll_register_string('link', '/en/barcelona/about-barcelona/', 'Hashmuseum');
+    pll_register_string('link', '/en/amsterdam/', 'Hashmuseum');
+    pll_register_string('link', '/en/barcelona/', 'Hashmuseum');
     pll_register_string('link', 'https://tickets.hashmuseum.com/en/tickets', 'Hashmuseum');
     pll_register_string('link', 'https://tickets.hashmuseum.com/en/barcelona', 'Hashmuseum');
     pll_register_string('link', '/en/amsterdam/#map', 'Hashmuseum');

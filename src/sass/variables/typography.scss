@@ -36,6 +36,10 @@ $header-font:'Prata', serif;
 
     --small-btn:0.9rem;
 
+    @include phone {
+        --large-title:15vw;
+        --small-subtitle:6vw;
+    }
 
 }
 
@@ -63,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-weight:400;
     line-height:140%;
-    font-size:$normal-title;
+    font-size:var(--large-title);
     margin-bottom:30px;
  
 }

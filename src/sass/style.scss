@@ -465,6 +465,10 @@ html {
         position:fixed;
         z-index:1100;
 
+        @include phone {
+            width:100%;
+        }
+
         h2 {
             color:$white;
             font-size: $small-btn;
@@ -611,6 +615,10 @@ html {
         position:fixed;
         z-index:1020;
 
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+
         @include tabletup {
             width:33.33vw;
             padding:var(--horizontal-s);
@@ -627,7 +635,13 @@ html {
             }
     
             .search_form {
-                position: relative;            
+                position: relative;   
+
+                @include phone {
+                    display:flex; 
+                    margin:4vw;
+                    width:100%;
+                }                        
                
                 .search_field{
                     border:0;
@@ -641,6 +655,12 @@ html {
                     width:21vw;
                     margin:-8px 0 0 0;
                     vertical-align: bottom;
+
+                    @include phone {
+                        margin:0;
+                        width:100%;
+                        height:60px;
+                    }
     
                     &::-webkit-input-placeholder { 
                         font-size:var(--medium-p);
@@ -676,6 +696,13 @@ html {
                     width:3.5vw;
                     margin:0 0 0 -3px;
                     cursor: pointer;
+
+                    @include phone {
+                        margin:0;
+                        
+                        height:60px;
+                        width:60px;
+                    }
                 
                     svg {
                         margin-top:6px; 
@@ -726,8 +753,8 @@ html {
             display:flex;
 
             .mobile_close {
-                height:65px;
-                width:35%;
+                height:50px;
+                width:calc(35% - 6vw);
                 color:$white;
                 text-transform:uppercase;
                 text-decoration: none;
@@ -754,15 +781,16 @@ html {
             }
     
             .mobile_language_menu_toggle {
-                height:65px;
-                width:65%;
+                height:50px;
+                width:calc(65% - 6vw);
                 color:$white;
                 text-transform:uppercase;
                 text-decoration: none;
                 font-size: $small-btn;
                 font-weight:600;
                 background:rgba($lightgrey, 0);
-                transition: color .5s ease;
+                transition: background .5s ease;                
+                margin:0 4vw;
     
                 @include tabletup {
                     display:none; 
@@ -771,25 +799,17 @@ html {
                 svg {
                     width:20px;
                     height:13px;
-                    margin-left:10px;                
+                    margin-left:5px;                
 
                     path {
                         fill:$white;
-                        transition: fill .5s ease;
                     }
                 }
     
                 &:hover {
-                    color:$action;
-                    transition: color .5s ease; 
-
-                    svg {                                   
-    
-                        path {
-                            fill:$action;
-                            transition: fill .5s ease;
-                        }
-                    }
+                    background:rgba($lightgrey, 0.15);
+                    transition: background .5s ease; 
+                    
 
                 }
     
@@ -819,7 +839,8 @@ html {
 
         .meta {
             margin:4vw;
-            background:$darkgrey;            
+            background:$darkgrey; 
+     
 
             @include tabletup {
                 background:none;
@@ -868,12 +889,17 @@ html {
                 margin-bottom:20px;
 
                 @include phone {
-                    margin:4vw;
+                    margin:6vw;
                 }
 
                 p {
                     font-size:var(--medium-p);
                     margin-bottom:0;
+
+                    @include phone {
+                        font-size:var(--small-p);
+                    }
+
                 }
                 
                 svg {
@@ -889,8 +915,12 @@ html {
 
             .mobile_more_info_link {
                 color:$white;
-                margin-left:4vw;
-                margin-bottom:4vw;
+                margin-left:6vw;
+                margin-bottom:6vw;
+                display:inline-block;                
+                font-size:var(--small-p);
+                font-weight:300;
+                text-decoration:none;
 
                 @include tabletup {
                     display:none;
@@ -902,7 +932,7 @@ html {
                     margin-right:18px;                
             
                     path {
-                        fill:$black;
+                        fill:$white;
                         transition:fill .5s ease;
                     }
                 }
@@ -2704,6 +2734,10 @@ border: 0;
 .home_hero {
     display:flex;
 
+    @include phone {
+        flex-wrap: wrap;
+    }
+
     .sidebar {
         width:33.3vw;
         background:$black;
@@ -2712,12 +2746,44 @@ border: 0;
         color:$white;
         text-align:left;
 
+        @include phone {
+            width:100%;  
+            display:flex;          
+
+            .buttons {
+                display:none;
+            }
+
+            .header_text {
+                margin:auto;
+
+                .header {
+                    text-align:center;
+                }
+
+            }
+
+        }
+
         .subheader {
             font-size: var(--small-subtitle);
+
+            @include phone {
+                text-align:center;
+            }
+           
         }
+
+
+
+
 
         .home_navigation {
             margin:var(--vertical) 0;
+
+            @include phone {
+                display:none;
+            }
             
             a {
                 color:$white;

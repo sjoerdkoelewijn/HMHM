@@ -8,13 +8,29 @@ $id = 'home-hero-' . $block['id']; ?>
 
     <div class="sidebar">
 
-        <h1 class="header">
-            <?php the_field('header'); ?>
-        </h1>    
+        <?php $mobileimage = get_sub_field('mobile_image'); ?>
 
-        <h2 class="subheader">
-            <?php the_field('subheader'); ?>
-        </h2>
+        <div id="image_<?php echo $i ?>" class="bg_image <?php if($i === 1) {echo 'active';} ?>">
+
+            <img loading="lazy" class="image" src="<?php echo esc_url($mobileimage['sizes']['large']); ?>" alt="<?php echo $mobileimage['alt']; ?>" />
+
+        </div>
+
+        <div class="header_text">
+
+            <div class="logo">
+                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/weedleaf-large.svg"); ?>
+            </div>    
+
+            <h1 class="header">
+                <?php the_field('header'); ?>
+            </h1>    
+
+            <h2 class="subheader">
+                <?php the_field('subheader'); ?>
+            </h2>
+
+        </div>
 
         <nav id="home-navigation" class="home_navigation" role="navigation">
             <?php
@@ -26,10 +42,12 @@ $id = 'home-hero-' . $block['id']; ?>
             ));
             ?>
         </nav>
+        
+        <?php if( have_rows('buttons') ): ?>
 
-        <?php if( have_rows('buttons') ): 
+            <div class="buttons">
 
-            while( have_rows('buttons') ): the_row(); 
+            <?php while( have_rows('buttons') ): the_row(); 
 
                 $anchor = get_sub_field('anchor');
                 $url = get_sub_field('url');
@@ -67,9 +85,11 @@ $id = 'home-hero-' . $block['id']; ?>
 
                 <?php }  
 
-            endwhile;    
+            endwhile; ?>   
 
-        endif; ?>     
+            </div>
+
+        <?php endif; ?>     
 
     </div>
 

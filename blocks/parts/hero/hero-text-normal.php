@@ -9,7 +9,7 @@
     ?>
 
     <h1 class="header">
-        <?php if ( is_single() ) {
+        <?php if ( is_single() || is_page() ) {
             echo the_title();
         }  elseif (is_tax() ) { 
             $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );

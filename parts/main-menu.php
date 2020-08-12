@@ -64,7 +64,7 @@
                             ?>
                         </nav>
 
-                        <a class="mobile_more_info_link" href="<?php pll_e( '/en/amsterdam/about-amsterdam/', 'hashmuseum' ) ?>">
+                        <a class="mobile_more_info_link" href="<?php pll_e( '/en/amsterdam/', 'hashmuseum' ) ?>">
                             <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
                             <?php pll_e( 'More information', 'hashmuseum' ) ?>
                         </a>
@@ -96,7 +96,7 @@
                             ?>
                         </nav>
 
-                        <a class="mobile_more_info_link" href="<?php pll_e( '/en/barcelona/about-barcelona/', 'hashmuseum' ) ?>">
+                        <a class="mobile_more_info_link" href="<?php pll_e( '/en/barcelona/', 'hashmuseum' ) ?>">
                             <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
                             <?php pll_e( 'More information', 'hashmuseum' ) ?>
                         </a>
