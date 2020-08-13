@@ -1,5 +1,4 @@
 <?php
-
 if( function_exists('acf_add_local_field_group') ):
 
 	acf_add_local_field_group(array(
@@ -4645,17 +4644,23 @@ if( function_exists('acf_add_local_field_group') ):
 							'clock' => 'Clock Icon',
 							'kids' => 'Kids Icon',
 							'camera' => 'Photography Icon',
-							'smilies' => 'Smilies Icon',
+							'smilies' => 'Smile / no Smile Icon',
 							'wheelchair' => 'Wheelchair Icon',
+							'house' => 'House Icon',
+							'party' => 'Balloon Icon',
+							'pets' => 'Dog bone icon',
+							'cocktail' => 'Cocktail Icon',
+							'hearth' => 'Hearth Icon',
+							'paw' => 'Paw Icon',
 							'generic' => 'Generic Icon',
 						),
 						'default_value' => 'generic',
 						'allow_null' => 0,
 						'multiple' => 0,
-						'ui' => 0,
+						'ui' => 1,
+						'ajax' => 1,
 						'return_format' => 'value',
 						'translations' => 'sync',
-						'ajax' => 0,
 						'placeholder' => '',
 					),
 					array(
