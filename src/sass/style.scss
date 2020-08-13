@@ -122,6 +122,11 @@ html {
     }
 }
 
+.read_more_link {
+    @include textLink;
+    display:block;
+}
+
 .next_posts_btn_wrap {
 
     a {
