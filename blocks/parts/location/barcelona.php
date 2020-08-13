@@ -73,7 +73,17 @@ $bcnimage = get_field('bcn_image');
 <div class="image_wrap barcelona">
 
     <?php if( !empty( $bcnimage ) ): ?>
+
         <img loading="lazy" class="image" src="<?php echo esc_url($bcnimage['sizes']['medium']); ?>" alt="<?php echo $bcnimage['alt']; ?>" />
+    
+        <?php if($bcnimage['caption']) { ?>
+
+            <p class="caption">
+                <?php echo esc_html($bcnimage['caption']); ?></?php>
+            </p>
+
+        <?php } ?>     
+    
     <?php endif; ?>
 
 </div>

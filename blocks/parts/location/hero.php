@@ -13,7 +13,17 @@ $genericimage = get_field('generic_image');
 </h1>
 
 <?php if( !empty( $genericimage ) ): ?>
+
     <img loading="lazy" class="image" src="<?php echo esc_url($genericimage['sizes']['large_image']); ?>" alt="<?php echo $genericimage['alt']; ?>" />
+    
+    <?php if($genericimage['caption']) { ?>
+
+        <p class="caption">
+            <?php echo esc_html($genericimage['caption']); ?></?php>
+        </p>
+
+    <?php } ?> 
+
 <?php endif; ?>
 
 </div>

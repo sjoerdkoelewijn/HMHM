@@ -74,6 +74,15 @@ $amsimage = get_field('ams_image');
 
     <?php if( !empty( $amsimage ) ): ?>
         <img loading="lazy" class="image" src="<?php echo esc_url($amsimage['sizes']['medium']); ?>" alt="<?php echo $amsimage['alt']; ?>" />
+    
+        <?php if($amsimage['caption']) { ?>
+
+            <p class="caption">
+                <?php echo esc_html($amsimage['caption']); ?></?php>
+            </p>
+
+        <?php } ?> 
+    
     <?php endif; ?>
 
 </div>

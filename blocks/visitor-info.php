@@ -57,6 +57,24 @@ $id = 'visitor-information-' . $block['id'];
                                     break; 
                                 case 'wheelchair':
                                     echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-wheelchair.svg");
+                                    break;                          
+                                case 'house':
+                                    echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-house.svg");
+                                    break;                                        
+                                case 'pets':
+                                    echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-pets.svg");
+                                    break;
+                                case 'cocktail':
+                                    echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-cocktail.svg");
+                                    break;
+                                case 'hearth':
+                                    echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-hearth.svg");
+                                    break;                                        
+                                case 'paw':
+                                    echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-paw.svg");
+                                    break;
+                                case 'party':
+                                    echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-party.svg");
                                     break;
                                 case 'generic':
                                     echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-generic.svg");

@@ -76,7 +76,17 @@ $bcnimage = get_field('bcn_image');
 <div class="image_wrap">
 
     <?php if( !empty( $genericimage ) ): ?>
+        
         <img loading="lazy" class="image" src="<?php echo esc_url($genericimage['sizes']['medium']); ?>" alt="<?php echo $genericimage['alt']; ?>" />
+    
+        <?php if($genericimage['caption']) { ?>
+
+            <p class="caption">
+                <?php echo esc_html($genericimage['caption']); ?></?php>
+            </p>
+
+        <?php } ?> 
+        
     <?php endif; ?>
 
 </div>

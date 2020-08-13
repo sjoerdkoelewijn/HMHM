@@ -6,7 +6,14 @@ if ( function_exists( 'pll_register_string' ) ) {
     pll_register_string('Newsletter Text', 'Sign up to get the latest news about the museum, upcoming exhibitions and events.', 'Hashmuseum');
     pll_register_string('Website Tagline', 'Explore the World of Cannabis. The Past, the Present & the Future.', 'Hashmuseum');
      
-    pll_register_string('Newsletter Subheader', 'Our sister companies', 'Hashmuseum');
+    pll_register_string('Footer Subheader', 'Our sister companies', 'Hashmuseum');
+
+    pll_register_string('Newsletter', 'Your name', 'Hashmuseum');
+    pll_register_string('Newsletter', 'Mary', 'Hashmuseum');
+    pll_register_string('Newsletter', 'Email address', 'Hashmuseum');
+    pll_register_string('Newsletter', 'mary@jane.com', 'Hashmuseum');
+    pll_register_string('Newsletter', 'Yes, I have read and agree to the <a href="/en/privacy-policy">Privacy Policy</a>.', 'Hashmuseum');
+    pll_register_string('Newsletter', 'Sign me up!', 'Hashmuseum');
     
     pll_register_string('Location Name', 'Amsterdam', 'Hashmuseum');
     pll_register_string('Location Name', 'Barcelona', 'Hashmuseum');
