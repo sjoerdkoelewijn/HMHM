@@ -8,18 +8,10 @@ $id = 'home-hero-' . $block['id']; ?>
 
     <div class="sidebar">
 
-        <?php $mobileimage = get_sub_field('mobile_image'); ?>
-
-        <div id="image_<?php echo $i ?>" class="bg_image <?php if($i === 1) {echo 'active';} ?>">
-
-            <img loading="lazy" class="image" src="<?php echo esc_url($mobileimage['sizes']['large']); ?>" alt="<?php echo $mobileimage['alt']; ?>" />
-
-        </div>
-
         <div class="header_text">
 
-            <div class="logo">
-                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/weedleaf-large.svg"); ?>
+            <div class="mobile_logo">
+                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/logoLarge.svg"); ?>
             </div>    
 
             <h1 class="header">
@@ -42,6 +34,10 @@ $id = 'home-hero-' . $block['id']; ?>
             ));
             ?>
         </nav>
+        
+        <?php $mobileimage = get_field('mobile_image'); ?>
+
+        <img loading="lazy" class="image mobile_image" src="<?php echo esc_url($mobileimage['sizes']['large']); ?>" alt="<?php echo $mobileimage['alt']; ?>" />
         
         <?php if( have_rows('buttons') ): ?>
 

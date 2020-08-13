@@ -54,7 +54,7 @@ a:visited {
 @media (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
   /* line 20, src/sass/variables/typography.scss */
   :root {
-    --large-title:15vw;
+    --large-title:10vw;
     --small-subtitle:6vw;
   }
 }

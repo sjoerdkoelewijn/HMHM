@@ -1646,7 +1646,7 @@ html {
         width:66.1vw;
         
         img {
-            width:66.6vw;
+            width:66.1vw;
             
         }
     }
@@ -2746,6 +2746,14 @@ border: 0;
         color:$white;
         text-align:left;
 
+        .mobile_image {
+            display:none;
+        }
+
+        .mobile_logo {
+            display:none;
+        }
+
         @include phone {
             width:100%;  
             display:flex;          
@@ -2756,6 +2764,30 @@ border: 0;
 
             .header_text {
                 margin:auto;
+                height:50vh;
+
+                .mobile_logo {
+                    display:block;
+                    position:relative;
+                    margin-bottom:5vh;
+                    
+                    svg {
+                        height:70px;
+                    }
+
+                }
+
+                .mobile_image {
+                    display:block;
+                    position:absolute;
+                    width:100%;
+                    left:0;
+                    top:0;
+                    width:100%;
+                    object-fit: cover;
+                    min-height:100vh;
+
+                }
 
                 .header {
                     text-align:center;
@@ -2770,6 +2802,8 @@ border: 0;
 
             @include phone {
                 text-align:center;
+                width:70%;
+                margin:0 auto;
             }
            
         }

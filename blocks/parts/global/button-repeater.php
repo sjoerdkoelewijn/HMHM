@@ -32,9 +32,10 @@
 
                 <?php break;
 
-            case 'ghost': ?>
+            case 'textlink': ?>
 
-                <a href="<?php echo $url; ?>" class="btn ghost_btn black" >
+                <a href="<?php echo $url; ?>" class="read_more_link" >
+                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
                     <?php echo $anchor; ?>
                 </a>
 
