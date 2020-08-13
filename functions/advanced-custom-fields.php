@@ -1,4 +1,5 @@
 <?php
+
 if( function_exists('acf_add_local_field_group') ):
 
 	acf_add_local_field_group(array(
@@ -743,6 +744,29 @@ if( function_exists('acf_add_local_field_group') ):
 		'key' => 'group_5f2bf6be30c04',
 		'title' => 'Google Map',
 		'fields' => array(
+			array(
+				'key' => 'field_5f35019bf58c7',
+				'label' => 'Map Location Switch',
+				'name' => 'map_location_switch',
+				'type' => 'button_group',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => array(
+					'left' => 'Map left',
+					'right' => 'Map right',
+				),
+				'allow_null' => 0,
+				'default_value' => 'left',
+				'layout' => 'horizontal',
+				'return_format' => 'value',
+				'translations' => 'sync',
+			),
 			array(
 				'key' => 'field_5f2bf6fcd7b44',
 				'label' => 'Subheader',
