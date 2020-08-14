@@ -224,6 +224,30 @@ if (ReviewSliderContainer != null){
 
 }
 
+/******************* Home Hero Mobile Slider *************************************/
+
+const MobileHeroSliderContainer = document.querySelector('[data-siema-home-hero-mobile-slider]');
+
+if (MobileHeroSliderContainer != null){
+
+    const MobileHeroSlider = new Siema({
+        selector: '[data-siema-home-hero-mobile-slider]',
+        duration: 400,
+        easing: 'ease-out',
+        perPage: 1,
+        startIndex: 0,
+        draggable: true,
+        multipleDrag: true,
+        threshold: 20,
+        loop: true,    
+    });
+
+    const MobileHeroSliderNext = document.querySelector('[data-siema-review-slider-next]');
+
+    MobileHeroSliderNext.addEventListener('click', () => MobileHeroSlider.next());
+
+}
+
 /******************* Home hero *************************************/
 
 const item1 = document.getElementById("item_1");
@@ -448,6 +472,47 @@ if (window.matchMedia("(max-width: 767px)").matches) {
     var mobileMenuTabs = new Tabs({
         elem: '[data-mobile-menu-tabs]',
         open: 1
+    });
+
+}
+
+/** Homepage about tabs **/
+
+if (window.matchMedia("(max-width: 767px)").matches) {
+
+    var AboutLocationsTabs = new Tabs({
+        elem: '[data-about-location-tabs]',
+        open: 0
+    });
+
+}
+
+/******************* Top & Bottom Menu Hide *************************************/
+
+if (window.matchMedia("(max-width: 767px)").matches) {
+
+    const body = document.querySelector('[data-mobile-menu-hide]');
+    const scrollUp = "scroll-up";
+    const scrollDown = "scroll-down";
+    let lastScroll = 0;
+
+    window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll == 0) {
+        body.classList.remove(scrollUp);
+        return;
+    }
+    
+    if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
+        // down
+        body.classList.remove(scrollUp);
+        body.classList.add(scrollDown);
+    } else if (currentScroll < lastScroll && body.classList.contains(scrollDown)) {
+        // up
+        body.classList.remove(scrollDown);
+        body.classList.add(scrollUp);
+    }
+    lastScroll = currentScroll;
     });
 
 }

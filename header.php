@@ -16,7 +16,7 @@
         <?php wp_head(); ?>
     </head>
 
-    <body <?php body_class(); ?>>
+    <body <?php body_class(); ?> data-mobile-menu-hide>
 
     <article>
 
@@ -24,24 +24,28 @@
             <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/logo.svg"); ?>
         </a>
 
-        <a data-logo title="<?php bloginfo( 'name' ); ?>" aria-label="Visit the Homepage" class="header_logo_link small logo" href="/">
-            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/logo-small.svg"); ?>
-        </a>
+        <div class="mobile_top_menu">
 
-        <div class="menu_buttons_wrap">
+            <a data-logo title="<?php bloginfo( 'name' ); ?>" aria-label="Visit the Homepage" class="header_logo_link small logo" href="/">
+                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/logo-small.svg"); ?>
+            </a>
 
-            <!-- Edit button for logged in users -->
-            <?php include('parts/edit-button.php'); ?>
+            <div class="menu_buttons_wrap">
 
-            <button class="language_menu_toggle" data-language-menu-toggle>
-                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/weedleaf-small.svg"); ?>
-                <?php pll_e( 'Select Language', 'hashmuseum' ) ?>
-            </button>
+                <!-- Edit button for logged in users -->
+                <?php include('parts/edit-button.php'); ?>
 
-            <button class="main_menu_toggle" data-main-menu-toggle>
-                <?php pll_e( 'menu', 'hashmuseum' ) ?>
-                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/hamburgerIcon.svg"); ?>
-            </button>            
+                <button class="language_menu_toggle" data-language-menu-toggle>
+                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/weedleaf-small.svg"); ?>
+                    <?php pll_e( 'Select Language', 'hashmuseum' ) ?>
+                </button>
+
+                <button class="main_menu_toggle" data-main-menu-toggle>
+                    <?php pll_e( 'menu', 'hashmuseum' ) ?>
+                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/hamburgerIcon.svg"); ?>
+                </button>            
+
+            </div>
 
         </div>
 

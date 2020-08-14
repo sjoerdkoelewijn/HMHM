@@ -10,3 +10,17 @@
   --vertical-l:4vw;
   --vertical-xl:8vw;
 }
+
+@media (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  /* line 13, src/sass/variables/spacing.scss */
+  :root {
+    --horizontal-s:2vw;
+    --horizontal:3vw;
+    --horizontal-l:6vw;
+    --horizontal-xl:10vw;
+    --vertical-s:5vw;
+    --vertical:10vw;
+    --vertical-l:15vw;
+    --vertical-xl:20vw;
+  }
+}

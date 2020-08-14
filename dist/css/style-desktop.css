@@ -201,16 +201,17 @@ a:visited {
   /* line 20, src/sass/variables/typography.scss */
   :root {
     --large-title:10vw;
+    --large-subtitle:8vw;
     --small-subtitle:6vw;
   }
 }
 
-/* line 46, src/sass/variables/typography.scss */
+/* line 47, src/sass/variables/typography.scss */
 html {
   font-family: "Lato", sans-serif;
 }
 
-/* line 50, src/sass/variables/typography.scss */
+/* line 51, src/sass/variables/typography.scss */
 input, textarea, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   font-family: "Lato", sans-serif;
   font-weight: 300;
@@ -232,22 +233,22 @@ input, textarea, input::placeholder, textarea::placeholder {
   font-weight: 300;
 }
 
-/* line 55, src/sass/variables/typography.scss */
+/* line 56, src/sass/variables/typography.scss */
 button {
   font-family: "Lato", sans-serif;
 }
 
-/* line 59, src/sass/variables/typography.scss */
+/* line 60, src/sass/variables/typography.scss */
 strong {
   font-weight: 700;
 }
 
-/* line 63, src/sass/variables/typography.scss */
+/* line 64, src/sass/variables/typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Prata", serif;
 }
 
-/* line 67, src/sass/variables/typography.scss */
+/* line 68, src/sass/variables/typography.scss */
 h1 {
   font-weight: 400;
   line-height: 140%;
@@ -255,27 +256,27 @@ h1 {
   margin-bottom: 30px;
 }
 
-/* line 75, src/sass/variables/typography.scss */
+/* line 76, src/sass/variables/typography.scss */
 h2 {
   font-weight: 400;
   line-height: 150%;
-  font-size: 2vw;
+  font-size: var(--large-subtitle);
   margin-bottom: 30px;
 }
 
-/* line 82, src/sass/variables/typography.scss */
+/* line 83, src/sass/variables/typography.scss */
 h1 + h2 {
   margin-top: -15px;
 }
 
-/* line 86, src/sass/variables/typography.scss */
+/* line 87, src/sass/variables/typography.scss */
 h3 {
   font-weight: 400;
   line-height: 150%;
-  font-size: 1.5vw;
+  font-size: var(--small-subtitle);
 }
 
-/* line 92, src/sass/variables/typography.scss */
+/* line 93, src/sass/variables/typography.scss */
 p {
   line-height: 160%;
   font-weight: 300;
@@ -293,6 +294,20 @@ p {
   --vertical:2vw;
   --vertical-l:4vw;
   --vertical-xl:8vw;
+}
+
+@media (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  /* line 13, src/sass/variables/spacing.scss */
+  :root {
+    --horizontal-s:2vw;
+    --horizontal:3vw;
+    --horizontal-l:6vw;
+    --horizontal-xl:10vw;
+    --vertical-s:5vw;
+    --vertical:10vw;
+    --vertical-l:15vw;
+    --vertical-xl:20vw;
+  }
 }
 
 @-webkit-keyframes fadeIn {

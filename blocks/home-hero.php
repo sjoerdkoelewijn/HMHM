@@ -24,6 +24,10 @@ $id = 'home-hero-' . $block['id']; ?>
 
         </div>
 
+        <?php $mobileimage = get_field('mobile_image'); ?>
+        <img loading="lazy" class="image mobile_image" src="<?php echo esc_url($mobileimage['sizes']['large']); ?>" alt="<?php echo $mobileimage['alt']; ?>" />
+
+
         <nav id="home-navigation" class="home_navigation" role="navigation">
             <?php
             wp_nav_menu(array(
@@ -33,12 +37,8 @@ $id = 'home-hero-' . $block['id']; ?>
                 'items_wrap'      => '<ul id="%1$s">%3$s</ul>',
             ));
             ?>
-        </nav>
-        
-        <?php $mobileimage = get_field('mobile_image'); ?>
-
-        <img loading="lazy" class="image mobile_image" src="<?php echo esc_url($mobileimage['sizes']['large']); ?>" alt="<?php echo $mobileimage['alt']; ?>" />
-        
+        </nav>        
+      
         <?php if( have_rows('buttons') ): ?>
 
             <div class="buttons">
@@ -247,5 +247,138 @@ $id = 'home-hero-' . $block['id']; ?>
         <?php endif; ?>
 
     </div>
+
+    <?php if( have_rows('slides') ): ?>
+
+        <div class="mobile_slider">
+
+            <div data-siema-home-hero-mobile-slider>
+
+                <?php while( have_rows('slides') ): the_row(); ?>
+
+                    <div class="slide">
+
+                        <?php if( get_row_layout() == 'theme' ): ?>
+
+                            <div class="text_wrap" id="item_<?php echo $i ?>">
+                        
+                                <div class="item_meta">
+
+                                    <h3>
+                                        <?php the_sub_field('collection_item_header'); ?>
+                                    </h3>
+
+                                    <p>
+                                        <?php the_sub_field('collection_item_subheader'); ?>
+                                    </p>        
+
+                                </div>
+
+                                <div class="text">
+
+                                    <p class="subheader">
+                                        <?php pll_e( 'Read more about', 'hashmuseum' ) ?>
+                                    </p>
+                                
+                                    <h2 class="header">
+                                        <?php the_sub_field('header'); ?>
+                                    </h2>
+
+                                </div>
+                                
+                                <a href="<?php the_sub_field('url'); ?>" class="read_more_link">
+                                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
+                                    <?php pll_e( 'The Collection', 'hashmuseum' ) ?>
+                                </a>
+
+                            </div>
+
+                            <?php $image = get_sub_field('image'); ?>
+                            <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo $image['alt']; ?>" />
+
+                        <?php elseif( get_row_layout() == 'exhibition' ): ?>
+
+                            <div class="text_wrap">
+                    
+                                <p class="subheader action">
+                                    <?php the_sub_field('subheader'); ?>
+                                </p>
+                            
+                                <h2 class="header">
+                                    <?php the_sub_field('header'); ?>
+                                </h2>
+                                
+                                <p class="tagline">
+                                    <?php the_sub_field('tagline'); ?>
+                                </p>
+
+                                <a href="<?php the_sub_field('url'); ?>" class="read_more_link">
+                                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
+                                    <?php the_sub_field('cta'); ?>
+                                </a>
+                            
+                            </div>
+
+                            <?php $image = get_sub_field('image'); ?>
+                            <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo $image['alt']; ?>" />
+
+                        <?php elseif( get_row_layout() == 'knowledge' ): ?>
+
+                            <div class="text_wrap">
+
+                                <div class="item_meta">
+
+                                    <h3>
+                                        <?php the_sub_field('knowledge_header'); ?>
+                                    </h3>
+
+                                    <p>
+                                        <?php the_sub_field('knowledge_subheader'); ?>
+                                    </p>        
+
+                                </div>
+
+                                <div class="text">
+                                
+                                    <p class="subheader">
+                                        <?php pll_e( 'Read more about', 'hashmuseum' ) ?>
+                                    </p>
+                                
+                                    <h2 class="header">
+                                        <?php the_sub_field('header'); ?>
+                                    </h2>   
+
+                                </div>
+                                
+                                <a href="<?php the_sub_field('url'); ?>" class="read_more_link">
+                                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
+                                    <?php pll_e( 'Cannabis Knowledge', 'hashmuseum' ) ?>
+                                </a>   
+                            
+                            </div>
+
+                            <?php $image = get_sub_field('image'); ?>
+                            <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo $image['alt']; ?>" />
+
+                        <?php endif; ?>
+
+                    </div>                        
+
+                <?php endwhile; ?>    
+            
+            </div>
+
+            <div class="horizontal_slider_btn_wrap">
+                
+                <button class="slider_button right" data-siema-review-slider-next>
+                    <div class="background_wrap">
+                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
+                    </div>
+                </button>
+            </div>
+        
+        </div>
+            
+    <?php endif; ?> 
                 
 </article>

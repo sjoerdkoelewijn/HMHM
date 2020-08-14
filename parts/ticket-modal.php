@@ -13,16 +13,16 @@
         </button>		
 
         <div class="location_info amsterdam">
-            <h2>
+            <h2 class="location_header">
                 <?php pll_e( 'Amsterdam', 'hashmuseum' ) ?>
             </h2>
 
-            <p>
+            <p class="intro_text">
                 <?php sk_lang_specific_option('amsterdam_info'); ?>
             </p>
 
             <a href="<?php pll_e( 'https://tickets.hashmuseum.com/en/tickets', 'hashmuseum' ) ?>" class="btn action_btn black" >
-                <?php pll_e( 'Get your Amsterdam ticket', 'hashmuseum' ) ?>
+                <?php pll_e( 'Amsterdam tickets', 'hashmuseum' ) ?>
             </a>
 
             <div class="meta">
@@ -53,16 +53,16 @@
         </div>
 
         <div class="location_info barcelona">
-            <h2>
+            <h2 class="location_header">
                 <?php pll_e( 'Barcelona', 'hashmuseum' ) ?>
             </h2>
 
-            <p>
+            <p class="intro_text">
                 <?php sk_lang_specific_option('barcelona_info'); ?>
             </p>
 
             <a href="<?php pll_e( 'https://tickets.hashmuseum.com/en/barcelona', 'hashmuseum' ) ?>" class="btn action_btn black" >
-                <?php pll_e( 'Get your Barcelona ticket', 'hashmuseum' ) ?>
+                <?php pll_e( 'Barcelona tickets', 'hashmuseum' ) ?>
             </a>
 
             <div class="meta">

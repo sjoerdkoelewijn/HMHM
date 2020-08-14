@@ -6,7 +6,8 @@ $id = 'home-about' . $block['id'];
 
 ?>
 
-<?php $image = get_field('image'); ?> 
+<?php $image = get_field('image'); ?>
+<?php $mobileimage = get_field('mobile_image'); ?>  
 
 <article id="<?php echo $id; ?>" class="home_about">      
     
@@ -46,6 +47,20 @@ $id = 'home-about' . $block['id'];
     
     </div>
 
+    <div class="image_wrap tablet" >
+
+        <img loading="lazy" class="image" src="<?php echo esc_url($mobileimage['sizes']['medium']); ?>" alt="<?php echo $mobileimage['alt']; ?>" />
+
+        <?php if($mobileimage['caption']) { ?>
+
+            <p class="caption">
+                <?php echo esc_html($mobileimage['caption']); ?></?php>
+            </p>
+
+        <?php } ?>  
+    
+    </div>
+
     <div class="section locations">
 
             <div class="header_wrap">
@@ -61,101 +76,117 @@ $id = 'home-about' . $block['id'];
 
             </div>
 
-            <div class="address_wrap amsterdam">
+            <div class="meta" data-about-location-tabs>
 
-                <div class="header">
-                    <?php pll_e( 'Amsterdam', 'hashmuseum' ) ?>
-                </div>
-                
-                <div class="address">
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/locationIcon.svg"); ?> 
-                    <p>
-                        <?php the_field('amsterdam_address', 'option'); ?>
-                    </p>
-                </div>
-                
-                <div class="phonenumber">
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/phoneIcon.svg"); ?> 
-                    <p>
-                        <?php the_field('amsterdam_phone_number', 'option'); ?>
-                    </p>
+                <div class="tabs_header">
+
+                    <button class="tab_title">
+                        <?php echo __( 'Amsterdam', 'hashmuseum' ) ?>
+                    </button>
+
+                    <button class="tab_title">
+                        <?php echo __( 'Barcelona', 'hashmuseum' ) ?>
+                    </button>
+
                 </div>
 
-                <div class="openinghours">
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/clockIcon.svg"); ?> 
-                    <p>
-                        <?php sk_lang_specific_option('amsterdam_opening_hours'); ?>
-                    </p>
-                </div>
-                
-                <a href="<?php pll_e( '/en/amsterdam/about-amsterdam/', 'hashmuseum' ) ?>" class="moreinfo">
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?> 
-                    <p>
-                        <?php pll_e( 'More information', 'hashmuseum' ) ?>
-                    </p>
-                </a>
+                <div class="address_wrap amsterdam tab_content">                                        
 
-                <nav class="social amsterdam">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location'  => 'social-menu-ams',
-                        'fallback_cb'     => false,
-                        'container'       => false,
-                        'items_wrap'      => '%3$s',
-                        'walker'          => new Social_Menu_Walker()
-                    ));
-                    ?>
-                </nav>
+                    <div class="header">
+                        <?php pll_e( 'Amsterdam', 'hashmuseum' ) ?>
+                    </div>
+                    
+                    <div class="address">
+                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/locationIcon.svg"); ?> 
+                        <p>
+                            <?php the_field('amsterdam_address', 'option'); ?>
+                        </p>
+                    </div>
+                    
+                    <div class="phonenumber">
+                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/phoneIcon.svg"); ?> 
+                        <p>
+                            <?php the_field('amsterdam_phone_number', 'option'); ?>
+                        </p>
+                    </div>
+
+                    <div class="openinghours">
+                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/clockIcon.svg"); ?> 
+                        <p>
+                            <?php sk_lang_specific_option('amsterdam_opening_hours'); ?>
+                        </p>
+                    </div>
+                    
+                    <a href="<?php pll_e( '/en/amsterdam/', 'hashmuseum' ) ?>" class="moreinfo">
+                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?> 
+                        <p>
+                            <?php pll_e( 'More information', 'hashmuseum' ) ?>
+                        </p>
+                    </a>
+
+                    <nav class="social amsterdam">
+                        <?php
+                        wp_nav_menu(array(
+                            'theme_location'  => 'social-menu-ams',
+                            'fallback_cb'     => false,
+                            'container'       => false,
+                            'items_wrap'      => '%3$s',
+                            'walker'          => new Social_Menu_Walker()
+                        ));
+                        ?>
+                    </nav>
+
+                </div>
+
+                <div class="address_wrap barcelona tab_content">
+
+                    <div class="header">
+                        <?php pll_e( 'Barcelona', 'hashmuseum' ) ?>
+                    </div>
+
+                    <div class="address">
+                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/locationIcon.svg"); ?> 
+                        <p>
+                            <?php the_field('barcelona_address', 'option'); ?>
+                        </p>
+                    </div>
+                    
+                    <div class="phonenumber">
+                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/phoneIcon.svg"); ?> 
+                        <p>
+                            <?php the_field('barcelona_phone_number', 'option'); ?>
+                        </p>
+                    </div>
+                    
+                    <div class="openinghours">
+                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/clockIcon.svg"); ?> 
+                        <p>
+                            <?php sk_lang_specific_option('barcelona_opening_hours'); ?>
+                        </p>
+                    </div>
+
+                    <a href="<?php pll_e( '/en/barcelona/', 'hashmuseum' ) ?>" class="moreinfo">
+                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?> 
+                        <p>
+                            <?php pll_e( 'More information', 'hashmuseum' ) ?>
+                        </p>
+                    </a>
+
+                    <nav class="social barcelona">
+                        <?php
+                        wp_nav_menu(array(
+                            'theme_location'  => 'social-menu-bcn',
+                            'fallback_cb'     => false,
+                            'container'       => false,
+                            'items_wrap'      => '%3$s',
+                            'walker'          => new Social_Menu_Walker()
+                        ));
+                        ?>
+                    </nav>
+
+                </div>
 
             </div>
-
-            <div class="address_wrap amsterdam">
-
-                <div class="header">
-                    <?php pll_e( 'Barcelona', 'hashmuseum' ) ?>
-                </div>
-
-                <div class="address">
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/locationIcon.svg"); ?> 
-                    <p>
-                        <?php the_field('barcelona_address', 'option'); ?>
-                    </p>
-                </div>
-                
-                <div class="phonenumber">
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/phoneIcon.svg"); ?> 
-                    <p>
-                        <?php the_field('barcelona_phone_number', 'option'); ?>
-                    </p>
-                </div>
-                
-                <div class="openinghours">
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/clockIcon.svg"); ?> 
-                    <p>
-                        <?php sk_lang_specific_option('barcelona_opening_hours'); ?>
-                    </p>
-                </div>
-
-                <a href="<?php pll_e( '/en/barcelona/about-barcelona/', 'hashmuseum' ) ?>" class="moreinfo">
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?> 
-                    <p>
-                        <?php pll_e( 'More information', 'hashmuseum' ) ?>
-                    </p>
-                </a>
-
-            <nav class="social barcelona">
-                <?php
-                wp_nav_menu(array(
-                    'theme_location'  => 'social-menu-bcn',
-                    'fallback_cb'     => false,
-                    'container'       => false,
-                    'items_wrap'      => '%3$s',
-                    'walker'          => new Social_Menu_Walker()
-                ));
-                ?>
-            </nav>
-
-            </div>    
                 
         </div>
 

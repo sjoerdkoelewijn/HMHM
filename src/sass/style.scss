@@ -346,8 +346,6 @@ html {
     }
 }
 
-
-
 .logo path {
 	fill:$black;
 	transition:all .8s ease
@@ -361,6 +359,36 @@ html {
 .logo.background--light path {
 	fill:$black;
 	transition:all .8s ease	
+}
+
+/* ------------- Hide / Show Mobile menus on scroll ---------------- */
+
+.mobile_top_menu {
+    
+    .logo.small, .main_menu_toggle {
+        transition: all 200ms linear ;
+    }
+
+}
+
+.scroll-down .mobile_top_menu {
+    
+    .logo.small, .main_menu_toggle {
+        transition: all 200ms linear;
+        transform: translate3d(0, -65px, 0);
+    }
+
+}
+
+.mobile_buttons {
+    transition: all 200ms linear ;
+
+}
+
+.scroll-up .mobile_buttons {
+    transition: all 200ms linear;
+    transform: translate3d(0, 65px, 0);
+    
 }
 
 /* ------------- Menu ----------------------------------------------------------------------------------------------------------- */
@@ -2769,8 +2797,22 @@ border: 0;
         }
 
         @include phone {
-            width:100%;  
-            display:flex;          
+            width:100%;
+            height:calc(100vh - 65px - 65px);  
+            display:flex;
+            
+            &:before {
+                z-index:10;
+                content:'';
+                //background:$black;
+                @include blackGradient(0deg);
+                width:100%;
+                display:block;
+                height:80vh;
+                bottom:0;
+                left:0;
+                position:absolute;
+            }
 
             .buttons {
                 display:none;
@@ -2778,34 +2820,43 @@ border: 0;
 
             .header_text {
                 margin:auto;
-                height:50vh;
+                height:45vh;
+                margin-top:25vh;
+                z-index:100;
+                text-shadow: 1px 1px 6px #000000;
+
+                .header {
+                    text-align:center;
+                    margin-bottom:2vh;
+                }
 
                 .mobile_logo {
                     display:block;
                     position:relative;
-                    margin-bottom:5vh;
+                    margin-bottom:2vh;
                     
                     svg {
                         height:70px;
+
+                        path {
+                            fill:$white;
+                        }
                     }
-
+    
                 }
 
-                .mobile_image {
-                    display:block;
-                    position:absolute;
-                    width:100%;
-                    left:0;
-                    top:0;
-                    width:100%;
-                    object-fit: cover;
-                    min-height:100vh;
+            }
 
-                }
-
-                .header {
-                    text-align:center;
-                }
+            .mobile_image {
+                display:block;
+                position:absolute;
+                width:100%;
+                left:0;
+                top:0;
+                width:100%;
+                object-fit: cover;
+                min-height:100vh;
+                z-index:1;              
 
             }
 
@@ -2851,6 +2902,10 @@ border: 0;
         display: inline-block;
         position: relative;
         overflow: hidden;
+
+        @include phone {
+            display:none;
+        }
         
         .background {
 
@@ -2863,7 +2918,8 @@ border: 0;
                 img {
                     width:66.1vw;
                     object-fit: cover;
-                    min-height:100vh;
+                    min-height:100vh;                    
+
                 }
             }
 
@@ -3011,6 +3067,51 @@ border: 0;
 
     }
 
+    .mobile_slider {
+        display:block;
+        height:calc(100vh - 2 * 65px);
+        width:100vw;
+        position:relative;
+        overflow:hidden;
+
+        .slide {
+            position:relative;
+
+            &:before {
+                content:'';
+                @include blackGradient(0deg);
+                width:100%; // TODO uitzoeken waarom 100% een overlap geeft.
+                display:block;
+                height:40vh;
+                bottom:0;
+                position:absolute;
+                z-index:10;
+            }
+
+            .text_wrap {
+                position:absolute;
+                width:100vw;
+                bottom:4vh;
+                margin-left:4vh;
+                z-index: 100;
+                color:$white;
+            }
+    
+            .image {
+                width:100%;
+                object-fit: cover;
+                height:calc(100vh - 2 * 65px);
+                z-index: 1;
+            }
+
+        }
+
+        @include tabletup {
+            display:none;
+        }
+
+    }
+
 }
 
 
@@ -3018,11 +3119,19 @@ border: 0;
 
 .home_about{
     display:flex;
+
+    @include phone {
+        flex-wrap:wrap;
+    }
     
     .text_wrap {
         width:33.3vw;
         position:relative;
         padding:var(--vertical-xl) var(--horizontal) var(--vertical) var(--horizontal);
+
+        @include phone {
+            width:100vw;
+        }
 
         .visitor_number{
             font-size:var(--large-title);
@@ -3058,6 +3167,20 @@ border: 0;
 
     .image_wrap {
         width:33.3vw; 
+        
+        @include phone {
+            width:100vw;
+            height:50vh;
+        }
+
+    }
+
+    .image_wrap.tablet {
+        display:none;
+        
+        @include tablet {
+            width:50vw;            
+        }
 
     }
 
@@ -3065,10 +3188,19 @@ border: 0;
         width:33.3vw;
         padding:var(--vertical-xl) var(--horizontal) var(--vertical) var(--horizontal-l);
 
+        @include phone {
+            width:100vw;
+            padding:0;
+        }
+
         .header_wrap {
             font-size:var(--large-title);
             font-family: $header-font;
             margin-bottom:var(--vertical);
+
+            @include phone {
+                display:none;
+            }
 
             .text {
                 position: relative;
@@ -3088,12 +3220,42 @@ border: 0;
             }
         }
 
+        .tabs_header {
+            display:none;
+            width:100vw;
+            
+            @include phone {
+                display:flex;
+            }
+
+            .tab_title {
+                width:50%;
+                height:65px;
+                font-family:$header-font;
+                background:rgba($mediumgrey, .3);
+                font-size:var(--large-p);
+            }
+
+            .tab_title-active {
+                background:$lightgrey;
+            }
+        }
+
         .address_wrap {
             z-index:2;
+            
+            @include phone {
+                padding:var(--vertical) var(--horizontal) var(--vertical) var(--horizontal-l);
+            }
 
             .header {                
                 font-weight: 600;
                 font-size:var(--medium-p);
+
+                @include phone {
+                    display:none;
+                }
+
             }
 
             .openinghours, .address, .phonenumber  {
@@ -3638,6 +3800,11 @@ border: 0;
         display:flex;
         padding:4vw 0;
 
+        @include phone {
+            width:90vw;
+            flex-wrap: wrap;
+        }
+
         .weedleaf {
             position:absolute;
             left:50%;
@@ -3645,6 +3812,10 @@ border: 0;
             margin-top:24%;
             background:$white;
             padding:8px 0 3px 0;
+
+            @include phone {
+                display:none;
+            }
 
             svg {
                 width:50px;
@@ -3661,12 +3832,35 @@ border: 0;
             width:50%;
             padding:1vw 5vw;
 
+            @include phone {
+                width:100%;
+                min-height:auto;
+            }
+
             h2 {
                 font-size: var(--large-title);
             }
 
+            @include phone {
+
+                .location_header {
+                    font-size:var(--large-p);
+                    margin:2vh 0 2vh 0;
+                }
+
+                .intro_text {
+                    font-size:var(--small-p);
+                    margin:0 0 2vh 0;
+                }
+
+            }           
+
             .meta {
                 margin-top:30px;
+
+                @include phone {
+                    display:none;
+                }
 
                 .openinghours, .address, .phonenumber  {
                     display:flex;
@@ -3674,6 +3868,10 @@ border: 0;
                     p {
                         font-size:var(--medium-p);
                         margin-bottom:5px;
+
+                        @include phone {                            
+                            font-size:var(--small-p);                            
+                        }
                     }
                     
                     svg {
@@ -3686,6 +3884,7 @@ border: 0;
                 }
             
                 .address {
+
                     svg {
                         margin:10px 22px 0 6px;
                     }
