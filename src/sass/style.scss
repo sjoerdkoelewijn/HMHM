@@ -1746,7 +1746,11 @@ html {
 .info_two_image {
     display:flex;
     width:100vw;
-    min-height:100vh;   
+    min-height:100vh;
+    
+    @include phone {
+        flex-direction: column;
+    }
      
     .subheader {
         font-size:var(--small-subtitle);
@@ -1767,6 +1771,11 @@ html {
             font-weight:400;
         }
 
+        @include phone {
+            width:100vw;
+            padding:var(--vertical-xl) var(--horizontal);
+        }
+
     }
      
     .image_wrap {
@@ -1777,8 +1786,24 @@ html {
         img {
             object-fit: cover; 
         }
+
+        @include phone {
+            display:none;
+            width:100vw;
+            height:50vh;
+        }
+
     }
 
+    .image_wrap.mobile {
+        display:none;
+
+        @include phone {
+            display:flex;        
+        }
+
+    }
+    
     .quote_wrap {
         width:33vw;
         display: flex;
@@ -1786,6 +1811,11 @@ html {
         background:$black;        
         
         padding:$vertical $horizontal-l;
+
+        @include phone {
+            width:100vw;
+            padding:var(--vertical-xl) var(--horizontal);
+        }
 
         .quote {       
             color:$white;
