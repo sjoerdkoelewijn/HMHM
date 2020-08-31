@@ -200,6 +200,7 @@ a:visited {
 @media (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
   /* line 20, src/sass/variables/typography.scss */
   :root {
+    --x-large-title:13vw;
     --large-title:10vw;
     --medium-title:8vw;
     --large-subtitle:8vw;
@@ -209,12 +210,12 @@ a:visited {
   }
 }
 
-/* line 52, src/sass/variables/typography.scss */
+/* line 53, src/sass/variables/typography.scss */
 html {
   font-family: "Lato", sans-serif;
 }
 
-/* line 56, src/sass/variables/typography.scss */
+/* line 57, src/sass/variables/typography.scss */
 input, textarea, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   font-family: "Lato", sans-serif;
   font-weight: 300;
@@ -236,22 +237,22 @@ input, textarea, input::placeholder, textarea::placeholder {
   font-weight: 300;
 }
 
-/* line 61, src/sass/variables/typography.scss */
+/* line 62, src/sass/variables/typography.scss */
 button {
   font-family: "Lato", sans-serif;
 }
 
-/* line 65, src/sass/variables/typography.scss */
+/* line 66, src/sass/variables/typography.scss */
 strong {
   font-weight: 700;
 }
 
-/* line 69, src/sass/variables/typography.scss */
+/* line 70, src/sass/variables/typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Prata", serif;
 }
 
-/* line 73, src/sass/variables/typography.scss */
+/* line 74, src/sass/variables/typography.scss */
 h1 {
   font-weight: 400;
   line-height: 140%;
@@ -259,7 +260,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-/* line 81, src/sass/variables/typography.scss */
+/* line 82, src/sass/variables/typography.scss */
 h2 {
   font-weight: 400;
   line-height: 150%;
@@ -267,19 +268,19 @@ h2 {
   margin-bottom: 30px;
 }
 
-/* line 88, src/sass/variables/typography.scss */
+/* line 89, src/sass/variables/typography.scss */
 h1 + h2 {
   margin-top: -15px;
 }
 
-/* line 92, src/sass/variables/typography.scss */
+/* line 93, src/sass/variables/typography.scss */
 h3 {
   font-weight: 400;
   line-height: 150%;
   font-size: var(--small-subtitle);
 }
 
-/* line 98, src/sass/variables/typography.scss */
+/* line 99, src/sass/variables/typography.scss */
 p {
   line-height: 160%;
   font-weight: 300;

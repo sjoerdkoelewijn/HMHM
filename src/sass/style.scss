@@ -1865,10 +1865,19 @@ html {
     position:relative;
     min-height:100vh;
 
+    @include phone {
+        flex-direction:column;
+    }
+
     .text_wrap {
         width:33vw;
         color:$white;
         text-align:center;
+
+        @include phone {
+            width:100vw;
+            padding:var(--vertical-xl) var(--horizontal-l);
+        }
 
         .header {
             margin:var(--vertical) var(--horizontal);
@@ -1878,6 +1887,11 @@ html {
         svg {
             width:155px; 
             height:150px;
+
+            @include phone {
+                width:110px;
+                height:105px;  
+            }
             
             path {
                 fill:$white;
@@ -1895,6 +1909,10 @@ html {
                 text-transform:uppercase;
                 font-size:var(--small-p);
                 font-weight:400;
+
+                @include phone {
+                    margin:10px;   
+                }
 
                 svg {
                     width:40px; 
@@ -1935,12 +1953,20 @@ html {
         width:66vw;
         position:relative;
 
+        @include phone {
+            width:100vw;   
+        }
+
         .review {
             width:33vw;
             height:100vh;
             display:block;
             position:relative;
             color:$white;
+
+            @include phone {
+                width:100vw;   
+            }
 
             &:before {
                 content:'';
@@ -1995,6 +2021,10 @@ html {
                 width:100%;
                 transform-origin: left bottom;
                 margin:0;
+
+                @include phone {
+                    left:91vw;   
+                }
             }
 
             img {

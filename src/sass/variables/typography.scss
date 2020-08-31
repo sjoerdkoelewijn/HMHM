@@ -37,6 +37,7 @@ $header-font:'Prata', serif;
     --small-btn:0.9rem;
 
     @include phone {
+        --x-large-title:13vw;
         --large-title:10vw;
         --medium-title:8vw;
 

@@ -158,7 +158,7 @@ if (RelatedPostSliderContainer != null){
         perPage: {
             768: 1,
             1024: 2,
-            1600: 3,
+            1400: 3,
         },
         startIndex: 0,
         draggable: true,
@@ -212,7 +212,10 @@ if (ReviewSliderContainer != null){
         selector: '[data-siema-review-slider]',
         duration: 400,
         easing: 'ease-out',
-        perPage: 2,
+        perPage: {
+            320: 1,
+            1024: 2,
+        },
         startIndex: 0,
         draggable: true,
         multipleDrag: true,
