@@ -58,6 +58,9 @@
 							<a href="https://www.hempflax.com">	
 								<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/HempFlaxLogo.svg"); ?>
 							</a>
+							<a href="https://cannabiscollege.com/">	
+								<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/CannabisCollegeLogo.svg"); ?>
+							</a>
 							<a href="https://www.hempstory.nl">	
 								<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/HempstoryLogo.svg"); ?>
 							</a>
