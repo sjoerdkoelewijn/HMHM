@@ -47,7 +47,7 @@ $id = 'info-two-image' . $block['id'];
 
             endif; ?>
 
-        <?php include('parts/info/info-text-normal.php'); ?>
+        <?php include('parts/info/info-text.php'); ?>
 
             <?php if ($quotetoggle === 'right_quote'): ?>
 

@@ -38,8 +38,13 @@ $header-font:'Prata', serif;
 
     @include phone {
         --large-title:10vw;
+        --medium-title:8vw;
+
         --large-subtitle:8vw;
         --small-subtitle:6vw;
+
+        --large-p:1.2rem;
+        --small-p:.85rem;
     }
 
 }
