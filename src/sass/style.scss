@@ -1824,6 +1824,11 @@ html {
             svg {
                 width:155px; 
                 height:150px;
+
+                @include phone {
+                    width:110px;
+                    height:105px;
+                }
                 
                 path {
                     fill:$white;
@@ -2973,7 +2978,6 @@ border: 0;
 
     .mobile_slider {
         display:block;
-        height:calc(100vh - 65px);
         width:100vw;
         position:relative;
         overflow:hidden;
@@ -2994,7 +2998,7 @@ border: 0;
 
             .text_wrap {
                 position:absolute;
-                width:100vw;
+                width:90vw;
                 bottom:4vh;
                 margin-left:4vh;
                 z-index: 100;
@@ -3006,6 +3010,52 @@ border: 0;
                 object-fit: cover;
                 height:calc(100vh - 2 * 65px);
                 z-index: 1;
+            }
+
+            .read_more_link {
+                color:$white;
+
+                svg {
+                    path {
+                        fill:$white;
+                    }
+                }
+
+                &:hover {
+                    color:$action;
+
+                    svg {
+                        path {
+                            fill:$action;
+                        }
+                    }
+                }
+            }
+
+            .item_meta {
+                display:none;
+            }
+
+            .subheader {
+                margin-bottom:10px;
+                font-family: $body-font;
+                font-weight:400;
+                font-size: calc(var(--small-p) * 1.2);
+            }
+
+            .header {
+                //font-family: $body-font;
+                font-weight:300;
+                font-size: var(--large-subtitle);
+                margin-bottom:10px;
+            }
+
+            .tagline {
+                margin-bottom:20px;
+            }
+
+            .read_more_link {
+                margin:20px 0 10px 0;
             }
 
         }
@@ -3040,6 +3090,12 @@ border: 0;
         .visitor_number{
             font-size:var(--large-title);
             font-family: $header-font;
+
+            @include phone {
+                font-size:var(--x-large-title);
+                margin-bottom:10px;
+            }
+            
         }
 
         .header {
@@ -3125,8 +3181,7 @@ border: 0;
         }
 
         .tabs_header {
-            display:none;
-            width:100vw;
+            display:none;     
             
             @include phone {
                 display:flex;
