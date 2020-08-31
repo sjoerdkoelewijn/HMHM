@@ -3792,9 +3792,47 @@ border: 0;
         
     .columns {
         display:flex;
+
+        @include phone {
+            flex-direction: column;
+        }
+
     }
 
+    .sister_companies {
+            
+        p {
+            font-style: italic;
+            font-size: var(--small-p);
+            margin:50px 0 10px 0;
+        }
 
+        .logos {
+            display:flex;
+            align-items:flex-end;
+
+            svg {                
+                margin-right:20px;
+            }
+        } 
+        
+        @include phone {
+            display:none;
+        }
+        
+    }
+
+    .sister_companies.mobile {
+        display:none;
+    }
+
+    @include phone {
+        
+        .sister_companies.mobile {
+            display:block;
+        }
+
+    }
 
     /* ------------- First Column ---------------- */
 
@@ -3802,8 +3840,7 @@ border: 0;
         width:35%;
 
         .footer_logo {
-            margin-bottom:20px;
-        
+            margin-bottom:20px;        
         }
 
         .header {
@@ -3813,25 +3850,23 @@ border: 0;
         .ticket_buttons {
             margin-top:var(--vertical);
             max-width:20vw;
-
         }
 
-        .sister_companies {
-            
-            p {
-                font-style: italic;
-                font-size: var(--small-p);
-                margin:50px 0 10px 0;
+        
+
+        @include phone {
+
+            .footer_logo {
+
+                svg {
+                    width:80vw;
+                }   
+
             }
 
-            .logos {
-                display:flex;
-                align-items:flex-end;
-
-                svg {                
-                    margin-right:20px;
-                }
-            }            
+            .header, .ticket_buttons {
+                display:none;
+            }
 
         }
 
@@ -3841,6 +3876,10 @@ border: 0;
 
     .second {
         width:40%;
+
+        @include phone {
+            width:100%;
+        }
 
         .openinghours, .address, .phonenumber  {
             display:flex;
@@ -3909,6 +3948,10 @@ border: 0;
 
     .third {
         width:25%;
+        
+        @include phone {
+            width:100%;
+        }
 
         .header:nth-of-type(2) {
             margin-top:var(--vertical);
@@ -3929,6 +3972,11 @@ border: 0;
         margin-top:var(--vertical-xl);
         font-size: var(--small-p);
         text-align: center;
+
+        @include phone {
+            text-align:left;
+        }
+
     }
 
 }

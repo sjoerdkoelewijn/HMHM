@@ -29,8 +29,7 @@
 
 
 					<h2 class="header">
-						<?php pll_e( 'Explore the World of Cannabis. The Past, the Present & the Future.', 'hashmuseum' ) ?>
-					
+						<?php pll_e( 'Explore the World of Cannabis. The Past, the Present & the Future.', 'hashmuseum' ) ?>					
 					</h2>
 
 					<div class="ticket_buttons">
@@ -196,6 +195,29 @@
 					
 				</div>
 
+			</div>
+
+			<div class="sister_companies mobile">
+						
+				<p>
+					<?php pll_e( 'Our sister companies', 'hashmuseum' ) ?>
+				</p>
+
+				<div class="logos">
+					<a href="https://sensiseeds.com">
+						<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/SensiSeedsLogo.svg"); ?>
+					</a>
+					<a href="https://www.hempflax.com">	
+						<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/HempFlaxLogo.svg"); ?>
+					</a>
+					<a href="https://cannabiscollege.com/">	
+						<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/CannabisCollegeLogo.svg"); ?>
+					</a>
+					<a href="https://www.hempstory.nl">	
+						<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/HempstoryLogo.svg"); ?>
+					</a>
+				</div>
+			
 			</div>
 
 			<p class="copyright_notice">
