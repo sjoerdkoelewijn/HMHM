@@ -396,6 +396,16 @@ html {
 
 }
 
+@include phone {
+    .logo {
+        svg {
+            path {
+                fill:$white;
+            }
+        }
+    }
+}
+
 @include tabletup  {
     
     .logo.small {

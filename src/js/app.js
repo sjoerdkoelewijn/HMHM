@@ -48,20 +48,24 @@ mainClose.forEach(function(elem) {
 
 /******************* Logo color switch *************************************/
 
-BackgroundCheck.init({
-    targets: '.logo',
-    images: '.image'
-}); 
+if (window.matchMedia("(min-width: 767px)").matches) {
 
-window.onload = (event) => {
-    BackgroundCheck.refresh();
-};
-  
-const HeaderLogo = document.querySelector('[data-logo]');
-observer = new IntersectionObserver((entry, observer) => {
-    BackgroundCheck.refresh();
-});
-observer.observe(HeaderLogo);
+    BackgroundCheck.init({
+        targets: '.logo',
+        images: '.image'
+    }); 
+
+    window.onload = (event) => {
+        BackgroundCheck.refresh();
+    };
+    
+    const HeaderLogo = document.querySelector('[data-logo]');
+    observer = new IntersectionObserver((entry, observer) => {
+        BackgroundCheck.refresh();
+    });
+    observer.observe(HeaderLogo);
+
+}
     
 
 /******************* Hero Read More Button *************************************/

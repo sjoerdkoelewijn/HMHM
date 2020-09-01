@@ -80,7 +80,7 @@ $id = 'reviews-' . $block['id'];
                   
                             <?php if($imagecredit): ?>
                                 <p class="image_credit">
-                                    <?php echo $imagecredit ?>
+                                    &copy; <?php echo $imagecredit ?>
                                 </p>
                             <?php endif; ?>
 
