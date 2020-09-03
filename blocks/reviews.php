@@ -7,7 +7,7 @@ $id = 'reviews-' . $block['id'];
 ?>
 
 
-    <article id="<?php echo $id; ?>" class="reviews">
+    <article id="<?php echo $id; ?>" class="reviews gb_block">
 
         <div class="text_wrap">
 

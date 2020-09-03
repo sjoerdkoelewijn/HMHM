@@ -6,7 +6,7 @@ $id = 'sub-items' . $block['id'];
 
 ?>
 
-    <article id="<?php echo $id; ?>" class="sub_items">
+    <article id="<?php echo $id; ?>" class="sub_items gb_block">
         
         <div class="header_wrap">         
 

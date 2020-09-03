@@ -10,7 +10,7 @@ $id = 'info-' . $block['id'];
 
 <?php if ($imageposition === 'left') { ?>
 
-    <article id="<?php echo $id; ?>" class="info left">
+    <article id="<?php echo $id; ?>" class="info left gb_block">
         
         <?php include('parts/info/info-image.php'); ?> 
         
@@ -20,7 +20,7 @@ $id = 'info-' . $block['id'];
 
 <?php } else { ?> 
 
-    <article id="<?php echo $id; ?>" class="info right">
+    <article id="<?php echo $id; ?>" class="info right gb_block">
 
         <div class="mobile">    
             <?php include('parts/info/info-image.php'); ?>

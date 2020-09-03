@@ -6,7 +6,7 @@ $id = 'image-sidebar-' . $block['id'];
 
 ?>
 
-    <article id="<?php echo $id; ?>" class="image_sidebar">
+    <article id="<?php echo $id; ?>" class="image_sidebar gb_block">
     
         <?php 
         

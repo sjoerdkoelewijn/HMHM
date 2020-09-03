@@ -6,7 +6,7 @@ $id = 'collection-slider' . $block['id'];
 
 ?>
 
-    <article id="<?php echo $id; ?>" class="collection_slider">
+    <article id="<?php echo $id; ?>" class="collection_slider gb_block">
 
         <div class="header_wrap">
 

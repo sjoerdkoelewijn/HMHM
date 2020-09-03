@@ -203,6 +203,7 @@ a:visited {
     --x-large-title:13vw;
     --large-title:10vw;
     --medium-title:8vw;
+    --small-title:7vw;
     --large-subtitle:8vw;
     --medium-subtitle:7vw;
     --small-subtitle:6vw;
@@ -211,12 +212,12 @@ a:visited {
   }
 }
 
-/* line 54, src/sass/variables/typography.scss */
+/* line 55, src/sass/variables/typography.scss */
 html {
   font-family: "Lato", sans-serif;
 }
 
-/* line 58, src/sass/variables/typography.scss */
+/* line 59, src/sass/variables/typography.scss */
 input, textarea, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   font-family: "Lato", sans-serif;
   font-weight: 300;
@@ -238,22 +239,22 @@ input, textarea, input::placeholder, textarea::placeholder {
   font-weight: 300;
 }
 
-/* line 63, src/sass/variables/typography.scss */
+/* line 64, src/sass/variables/typography.scss */
 button {
   font-family: "Lato", sans-serif;
 }
 
-/* line 67, src/sass/variables/typography.scss */
+/* line 68, src/sass/variables/typography.scss */
 strong {
   font-weight: 700;
 }
 
-/* line 71, src/sass/variables/typography.scss */
+/* line 72, src/sass/variables/typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Prata", serif;
 }
 
-/* line 75, src/sass/variables/typography.scss */
+/* line 76, src/sass/variables/typography.scss */
 h1 {
   font-weight: 400;
   line-height: 140%;
@@ -261,7 +262,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-/* line 83, src/sass/variables/typography.scss */
+/* line 84, src/sass/variables/typography.scss */
 h2 {
   font-weight: 400;
   line-height: 150%;
@@ -269,19 +270,19 @@ h2 {
   margin-bottom: 30px;
 }
 
-/* line 90, src/sass/variables/typography.scss */
+/* line 91, src/sass/variables/typography.scss */
 h1 + h2 {
   margin-top: -15px;
 }
 
-/* line 94, src/sass/variables/typography.scss */
+/* line 95, src/sass/variables/typography.scss */
 h3 {
   font-weight: 400;
   line-height: 150%;
   font-size: var(--small-subtitle);
 }
 
-/* line 100, src/sass/variables/typography.scss */
+/* line 101, src/sass/variables/typography.scss */
 p {
   line-height: 160%;
   font-weight: 300;
@@ -1538,8 +1539,8 @@ html {
 
 /* line 832, src/sass/style-desktop.scss */
 .image_wrap .slider_gradient {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(1%, rgba(0, 0, 0, 0.01)), color-stop(99%, rgba(0, 0, 0, 0.75)));
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.75) 99%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(1%, rgba(0, 0, 0, 0.01)), color-stop(99%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.8) 99%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
@@ -1980,8 +1981,8 @@ html {
 
 /* line 1084, src/sass/style-desktop.scss */
 .collection-overview-hero .image_wrap .slider_gradient {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(1%, rgba(0, 0, 0, 0.01)), color-stop(99%, rgba(0, 0, 0, 0.75)));
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.75) 99%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(1%, rgba(0, 0, 0, 0.01)), color-stop(99%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.8) 99%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
@@ -2453,8 +2454,8 @@ html {
 /* line 1477, src/sass/style-desktop.scss */
 .reviews .reviews_slider .review:before {
   content: '';
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(1%, rgba(0, 0, 0, 0.01)), color-stop(99%, rgba(0, 0, 0, 0.75)));
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.75) 99%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(1%, rgba(0, 0, 0, 0.01)), color-stop(99%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.8) 99%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
@@ -3479,8 +3480,8 @@ html {
 /* line 2249, src/sass/style-desktop.scss */
 .collection_slider:after {
   content: '';
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(1%, rgba(0, 0, 0, 0.01)), color-stop(99%, rgba(0, 0, 0, 0.75)));
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.75) 99%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(1%, rgba(0, 0, 0, 0.01)), color-stop(99%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.8) 99%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
@@ -3544,8 +3545,8 @@ html {
 /* line 2301, src/sass/style-desktop.scss */
 .collection_slider .theme:before {
   content: '';
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(1%, rgba(0, 0, 0, 0.01)), color-stop(99%, rgba(0, 0, 0, 0.75)));
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.75) 99%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(1%, rgba(0, 0, 0, 0.01)), color-stop(99%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.8) 99%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);

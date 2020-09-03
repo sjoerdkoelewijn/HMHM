@@ -6,7 +6,7 @@ $id = 'info-two-image' . $block['id'];
 
 ?>
 
-    <article id="<?php echo $id; ?>" class="info_two_image">      
+    <article id="<?php echo $id; ?>" class="info_two_image gb_block">      
         
 
         <?php 

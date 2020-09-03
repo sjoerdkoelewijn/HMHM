@@ -6,7 +6,7 @@ $id = 'visitor-information-' . $block['id'];
 
 ?>
 
-<article id="<?php echo $id; ?>" class="visitor_information">
+<article id="<?php echo $id; ?>" class="visitor_information gb_block">
 
     <div class="image_wrap">
 
@@ -34,9 +34,9 @@ $id = 'visitor-information-' . $block['id'];
 
             <?php while ( have_rows('information') ) : the_row(); ?>
                 
-                <li>
+                <li class="info_item">
 
-                    <div class="sub_header">
+                    <div class="sub_header" data-dropdown-header>
                        
                         <div class="icon">
 
@@ -91,9 +91,16 @@ $id = 'visitor-information-' . $block['id'];
                             <?php the_sub_field('sub_header'); ?>
                         </h3>
 
-                    </div>    
+                        <span class="mobile_icon">
+                            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/CaretDownIcon.svg"); ?>
+                        </span>
 
-                    <?php the_sub_field('text'); ?>
+                    </div>  
+                    
+                    <div class="content">
+                        <?php the_sub_field('text'); ?>       
+                    </div>
+                    
 
                 </li>
 

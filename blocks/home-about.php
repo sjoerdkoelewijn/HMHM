@@ -9,7 +9,7 @@ $id = 'home-about' . $block['id'];
 <?php $image = get_field('image'); ?>
 <?php $mobileimage = get_field('mobile_image'); ?>  
 
-<article id="<?php echo $id; ?>" class="home_about">      
+<article id="<?php echo $id; ?>" class="home_about gb_block">      
     
     <div class="section text_wrap">
 
@@ -76,7 +76,7 @@ $id = 'home-about' . $block['id'];
 
             </div>
 
-            <div class="meta" data-about-location-tabs>
+            <div class="meta" data-location-tabs>
 
                 <div class="tabs_header">
 

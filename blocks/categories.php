@@ -6,7 +6,7 @@ $id = 'category-overview' . $block['id'];
 
 ?>
 
-    <article id="<?php echo $id; ?>" class="category_overview">
+    <article id="<?php echo $id; ?>" class="category_overview gb_block">
         
         <?php 
 

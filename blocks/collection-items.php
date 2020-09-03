@@ -6,7 +6,7 @@ $id = 'collection-items-' . $block['id'];
 
 ?>
 
-    <div id="<?php echo $id; ?>" class="collection_items " data-horizontal-slider-container>
+    <div id="<?php echo $id; ?>" class="collection_items gb_block" data-horizontal-slider-container>
 
         <div class="image_wrap">
             

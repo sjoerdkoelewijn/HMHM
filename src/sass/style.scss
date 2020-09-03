@@ -462,7 +462,6 @@ html {
 
 .mobile_buttons {
     transition: all 200ms linear ;
-
 }
 
 .scroll-up .mobile_buttons {
@@ -493,6 +492,10 @@ html {
     padding:20px 30px;
     cursor: pointer;
     transition: background .5s ease;
+
+    @include phone {
+        display:none;
+    }
 
     svg {
         margin-top:-4px;
@@ -631,7 +634,7 @@ html {
     display:flex;
     height:65px;
     position:fixed;
-    z-index:100;
+    z-index:1000;
     bottom:0;
 
     @include tabletup {
@@ -1584,12 +1587,54 @@ html {
     display:flex;
     min-height:100vh;
 
+    .tabs {
+        display:flex;
+
+        .tabs_header {                
+            width:100%;
+            display:none;
+
+            .tab_title {
+                width:50%;
+                height:55px;
+                font-family: $header-font;
+                font-size:var(--medium-p);
+                background:rgba($black, 0.15);
+            }
+
+            .tab_title-active {
+                background:$white;
+            }
+
+            @include tabletup {
+                display:none;
+            }
+
+        }
+
+        @include phone {
+            background:$white;
+            display:block;
+
+            .tabs_header {
+                display: flex;
+            }
+        }
+        
+    }
+
+
     .text_wrap {
         display:flex;
         justify-content: center;
         align-self: center;
         width:33vw;
         padding:var(--vertical) 5vw;
+
+        @include phone {
+            width:100vw;
+            padding:var(--vertical-xl) var(--horizontal) var(--vertical-xl) var(--horizontal);
+        }
 
         .social {
             margin-bottom:10px;
@@ -1606,6 +1651,10 @@ html {
 
         .meta {
             height:180px;
+
+            @include phone {
+                height:auto;
+            }
 
             .openinghours, .address, .phonenumber  {
                 display:flex;
@@ -1640,6 +1689,15 @@ html {
 
         .buttons {
             margin-bottom:var(--vertical);
+
+            @include phone {
+                
+                .ticket {
+
+                    display:none;
+                
+                }
+            }
         }
 
     }
@@ -1648,6 +1706,63 @@ html {
         width:33vw;
         display:flex;
         align-items: stretch;
+        position:relative;
+
+        .mobile_text {
+            display: none;
+        }
+
+        &:before {
+            content:'';
+            @include blackGradient(0deg);
+            width:100%; // TODO uitzoeken waarom 100% een overlap geeft.
+            display:block;
+            height:40vh;
+            bottom:0;
+            position:absolute;
+            z-index:10;
+        }
+
+        @include phone {
+            width:100vw;            
+            min-height:calc(100vh - 65px);
+
+            .caption {
+                display:none;
+            }
+
+            .mobile_text {
+                width:100%;
+                display: block;
+                position:absolute;
+                z-index:20;
+                bottom:var(--vertical);
+                padding:0 var(--horizontal);
+
+                color:$white;
+                filter: drop-shadow($text-shadow);
+
+                text-align:center;
+
+                h1 {
+                    font-size:calc(var(--x-large-title) * 1.15);
+                    margin-bottom:var(--vertical);
+                }
+
+                h2 {
+                    font-size:var(--small-subtitle);
+                }
+
+                svg {
+                    width:65vw;
+
+                    path {
+                        fill:$white;
+                    }
+                }
+            }
+            
+        }
 
         img {
             width:100%;
@@ -1657,8 +1772,71 @@ html {
 
     .image_wrap.amsterdam, .image_wrap.barcelona {
         width:66vw;
+
+        @include phone {
+            width:100vw;
+        }
     }
 
+    .image_wrap.hero {   
+        
+        .content {
+            position:absolute;
+            z-index:100;
+            bottom:var(--vertical);
+            left:var(--horizontal);  
+           
+            .mobile_logo {               
+                display:none;               
+
+                svg {
+                    width:65vw;
+                    margin-left:12.5vw;
+                    margin-bottom:10px;
+
+                    path {
+                        fill:$white;
+                    }
+                }
+
+                @include phone {
+                    display:block;
+                }
+            }
+
+            .header {
+                color:$white;
+                font-size:calc(var(--x-large-title) * 1.5);
+                line-height:110%;            
+                width:1rem;
+                margin:0;
+                
+                @include phone {
+                    font-size:calc(var(--x-large-title) * 1.2);
+                    line-height:130%;
+                    width:calc(100vw - var(--horizontal) * 2);
+                    text-align:center;                
+                }
+            } 
+
+        }
+              
+       
+    } 
+
+}
+
+@include phone {
+
+    .location_info.amsterdam, .location_info.barcelona {
+        flex-direction: column-reverse;
+    }
+
+    .location_info.hero {
+        flex-direction: column;
+        
+    }
+    
 }
 
 /* ------------- Info Block ---------------- */
@@ -2229,12 +2407,19 @@ border: 0;
     display:flex;
     align-items: center;
     align-items: stretch;
-    min-height:100vh;
+    min-height:100vh;  
     
+    @include phone {
+        flex-direction: column;    
+    }
 
     .map_wrap {
         width:66vw;
         background:$white;
+
+        @include phone {
+            width:100vw;
+        }
 
         .map_style {
             width:100%;
@@ -2246,6 +2431,10 @@ border: 0;
     .text_wrap {
         width:33vw;
         padding:var(--vertical-xl) var(--horizontal) var(--vertical-l) var(--horizontal);
+
+        @include phone {
+            width:100vw;
+        }
 
         .subheader {
             color:$mediumgrey;
@@ -2301,12 +2490,24 @@ border: 0;
 
 }
 
+@include phone {
+    
+    .google_map.left {
+        flex-direction: column-reverse;
+    }
+}
+
 
 /* ------------- Visitor Information Block ---------------- */
 
 .visitor_information {
     display:flex;
     min-height:100vh;
+
+    @include phone {
+        min-height:auto;
+        background:$white;
+    }
     
     .image_wrap {
         width:33vw;
@@ -2316,17 +2517,29 @@ border: 0;
         img {
             object-fit: cover; 
         }
+
+        @include phone {
+            display:none;
+        }
    
     }
 
     .text_wrap {
         width:66vw;
-        padding:var(--vertical) var(--horizontal);
+        padding:var(--vertical) var(--horizontal); 
+
+        @include phone {
+            width:100vw;
+        }
 
         .header {
-            font-size:var(--small-title);
+            font-size:var(--small-subtitle);
             color:$mediumgrey;
             margin-top:var(--vertical-l);
+
+            @include phone {
+                margin-top:var(--vertical);
+            }
         }
 
         .information {
@@ -2337,35 +2550,80 @@ border: 0;
             page-break-inside: avoid;
             break-inside: avoid;
             
-            li {
+            @include phone {
+                columns: auto;
+            }
+
+            .info_item {
                 margin-bottom:var(--vertical-l);
-            }
 
-            .sub_header {
-                display:flex;
-                margin-bottom:20px;
+                .sub_header {
+                    display:flex;
+                    margin-bottom:20px;
 
-                h3 {
-                    font-size:var(--small-title);
-                    
-                    
+                    @include phone {
+                        cursor: pointer;
+                    }
+    
+                    h3 {
+                        font-size:var(--small-title);                       
+                        
+                    }
+    
+                    .icon {
+                        margin-right:15px;
+                        margin-top:3px;
+                    }
                 }
 
-                .icon {
-                    margin-right:15px;
-                    margin-top:3px;
-                }
-            }
+                .mobile_icon {
+                    position:absolute;
+                    right:10vw;
+                    margin-top:8px;
 
-            p {
-                font-size:var(--medium-p);
+                    @include tabletup {
+                        display:none;
+                    }
+
+                }
                 
-                strong {
-                    font-size:var(--medium-p);
-                }
+                @include phone {
+                    padding:5px;
+                    margin-bottom:20px;
+                    border-bottom:1px solid rgba($mediumgrey, .2);
 
+                    .icon {
+                        display:none;
+                    }
+                
+                    .content {
+                        max-height: 0;
+                        opacity:0;       
+                        overflow:hidden;
+                        transition: max-height .4s ease, opacity .3s ease;          
+
+                        p {
+                            font-size:var(--medium-p);
+                            
+                            
+                            strong {
+                                font-size:var(--medium-p);
+                            }
+            
+                        }
+                    }
+                }                       
             }
 
+            .info_item.open {
+
+                .content {
+                    max-height: 2000px;
+                    opacity:1;
+                    transition: max-height .6s ease, opacity .4s ease; 
+                }
+   
+            }
         }
     }
 
@@ -2382,18 +2640,26 @@ border: 0;
     color:$white;
     text-align: center;  
     align-items: center;
- 
+     
     .text_wrap {
         width:33.33vw;
-        padding:0 $horizontal-l 0 $horizontal-l;
+        padding:var(--vertical-l) var(--horizontal-l);
+
+        @include phone {
+            width:100vw;
+        }
 
         .header {
-            font-size:$small-title;
-            margin-top: $vertical-l;
+            font-size:var(--small-title);
+            margin-top: var(--vertical-l);
+
+            @include phone {
+                font-size:var(--medium-title);
+            }
         }
      
         .subheader {
-            font-size:$small-subtitle;
+            font-size:var(--small-subtitle);
         }        
 
         svg {
@@ -2404,14 +2670,24 @@ border: 0;
                 fill:$white; 
             }
         }
-        
- 
+
+        @include phone {
+            
+            .btn {
+                display:none;
+            }
+
+        }
         
     }
  
     .image_wrap {
         width:66.66vw;
         position:relative;
+
+        @include phone {
+            display:none;
+        }
  
         img {
            min-width:100%;

@@ -6,7 +6,7 @@ $id = 'collection-overview-hero-' . $block['id'];
 
 ?>
 
-<article id="<?php echo $id; ?>" class="collection-overview-hero">
+<article id="<?php echo $id; ?>" class="collection-overview-hero gb_block">
 
     <div class="image_wrap">
 

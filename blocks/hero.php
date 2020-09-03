@@ -12,7 +12,7 @@ $id = 'hero-' . $block['id'];
 
     <?php $HeroType = get_field('hero_type'); ?>
 
-    <article id="<?php echo $id; ?>" class="hero <?php echo $HeroType; ?>">
+    <article id="<?php echo $id; ?>" class="hero <?php echo $HeroType; ?> gb_block">
         
         <div class="image_wrap">
 

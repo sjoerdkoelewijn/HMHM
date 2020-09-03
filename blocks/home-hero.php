@@ -4,7 +4,7 @@
 // create id attribute for specific styling
 $id = 'home-hero-' . $block['id']; ?>
 
-<article id="<?php echo $id; ?>" class="home_hero">
+<article id="<?php echo $id; ?>" class="home_hero gb_block">
 
     <div class="sidebar">
 

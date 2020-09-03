@@ -74,7 +74,7 @@ if (window.matchMedia("(min-width: 767px)").matches) {
 const ReadMoreBtn = document.querySelector('[data-read-more-btn]');
 let pageHeight = window.innerHeight;
 
-if (ReadMoreBtn != null){
+if (ReadMoreBtn != null) {
 
     ReadMoreBtn.addEventListener('click', (function(){
         window.scrollBy(0, pageHeight);
@@ -308,7 +308,7 @@ function functionMouseOver1(){
 
 const visitorNumber = document.querySelector('[data-visitor-count]');
 
-if (visitorNumber != null){
+if (visitorNumber != null) {
 
     const startDateCount = visitorNumber.getAttribute('data-visitor-count-date');
 
@@ -390,17 +390,21 @@ if (visitorNumber != null){
 const ticketModal = document.querySelector('[data-ticket-modal]');
 const ticketModalClose = document.querySelector('[data-ticket-modal-close]');
 
-ticketModalClose.addEventListener('click', (function(event) {
-    event.preventDefault();
-    ticketModal.classList.remove('active');
-})); 
+if (ticketModal != null) {
 
-document.querySelectorAll('a[href="#tickets"]').forEach(item => {
-    item.addEventListener('click', event => {
+    ticketModalClose.addEventListener('click', (function(event) {
         event.preventDefault();
-        ticketModal.classList.add('active');
-    });
-  });
+        ticketModal.classList.remove('active');
+    })); 
+    
+    document.querySelectorAll('a[href="#tickets"]').forEach(item => {
+        item.addEventListener('click', event => {
+            event.preventDefault();
+            ticketModal.classList.add('active');
+        });
+      });
+
+}
 
 /******************* JS Tabs *************************************/
 
@@ -478,23 +482,31 @@ var Tabs = function(options) {
 
 /** Mobile Menu Tabs **/
 
+const MobileMenuTabsEl = document.querySelector('[data-mobile-menu-tabs]');
+const LocationsTabsEl = document.querySelector('[data-location-tabs]');
+
+
 if (window.matchMedia("(max-width: 767px)").matches) {
 
-    var mobileMenuTabs = new Tabs({
-        elem: '[data-mobile-menu-tabs]',
-        open: 1
-    });
+    if (MobileMenuTabsEl != null) { 
 
-}
+        var mobileMenuTabs = new Tabs({
+            elem: '[data-mobile-menu-tabs]',
+            open: 1
+        });
 
+    }
+    
 /** Homepage about tabs **/
 
-if (window.matchMedia("(max-width: 767px)").matches) {
+    if (LocationsTabsEl != null) { 
+        
+        var AboutLocationsTabs = new Tabs({
+            elem: '[data-location-tabs]',
+            open: 0
+        });
 
-    var AboutLocationsTabs = new Tabs({
-        elem: '[data-about-location-tabs]',
-        open: 0
-    });
+    }
 
 }
 
@@ -526,4 +538,32 @@ if (window.matchMedia("(max-width: 767px)").matches) {
     lastScroll = currentScroll;
     });
 
+}
+
+
+/******************* Accordion *************************************/
+
+if (window.matchMedia("(max-width: 767px)").matches) {
+
+    var AccordionHeaders = document.querySelectorAll('[data-dropdown-header]');
+
+    if (AccordionHeaders != null) { 
+
+        for(var i = 0; i < AccordionHeaders.length; i++) {
+            AccordionHeaders[i].addEventListener('click', openAccordion);
+        }
+        
+    }
+    
+}
+
+function openAccordion(e) {
+	var parent = this.parentElement;
+	
+	if (!parent.classList.contains('open')) {
+		parent.classList.add('open');
+	}
+	else {
+		parent.classList.remove('open');
+	}
 }

@@ -31,7 +31,7 @@ $amsimage = get_field('ams_image');
 
         <div class="buttons">
 
-            <a href="<?php sk_get_ticket_url('amsterdam') ?>" class="btn action_btn black" >
+            <a href="<?php sk_get_ticket_url('amsterdam') ?>" class="btn action_btn black ticket" >
                 <?php pll_e( 'Get your ticket', 'hashmuseum' ) ?>
             </a>
 
@@ -71,6 +71,16 @@ $amsimage = get_field('ams_image');
 </div>
 
 <div class="image_wrap amsterdam">
+
+    <div class="mobile_text">
+        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/LogoLarge.svg"); ?>
+        <h1>
+            <?php pll_e( 'Amsterdam', 'hashmuseum' ) ?>
+        </h1>
+        <h2>
+            <?php the_field('amsterdam_address', 'option'); ?>
+        </h2>        
+    </div>
 
     <?php if( !empty( $amsimage ) ): ?>
         <img loading="lazy" class="image" src="<?php echo esc_url($amsimage['sizes']['medium']); ?>" alt="<?php echo $amsimage['alt']; ?>" />

@@ -6,7 +6,7 @@ $id = 'related-posts' . $block['id'];
 
 ?>
 
-    <article id="<?php echo $id; ?>" class="related_posts">
+    <article id="<?php echo $id; ?>" class="related_posts gb_block">
         
         <div class="header_wrap">
             <div class="leaf_wrap">

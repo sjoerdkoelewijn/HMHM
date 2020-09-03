@@ -7,7 +7,7 @@
 
     ?>
 
-    <div id="<?php echo $id; ?>" class="horizontal_slider" <?php if( count($images) > 2 ) { echo 'data-horizontal-slider-container'; } ?> >
+    <div id="<?php echo $id; ?>" class="gb_block horizontal_slider" <?php if( count($images) > 2 ) { echo 'data-horizontal-slider-container'; } ?> >
         
         <?php 
         $images = get_field('images');

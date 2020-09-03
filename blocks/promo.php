@@ -10,7 +10,7 @@ $id = 'promo-' . $block['id'];
 
 <?php if ($imageposition === 'left') { ?>
 
-    <article id="<?php echo $id; ?>" class="promo">
+    <article id="<?php echo $id; ?>" class="promo gb_block">
         
         <div class="image_wrap">
 
@@ -42,11 +42,9 @@ $id = 'promo-' . $block['id'];
             <h3 class="subheader">
                 <?php the_field('subheader'); ?>
             </h3>
-
-            <p class="description">
-                <?php the_field('description'); ?>
-            </p>
-
+            
+            <?php the_field('description'); ?>
+            
             <a class="action_btn btn" href="#tickets">
                 <?php pll_e( 'Get your ticket', 'hashmuseum' ) ?>
             </a>

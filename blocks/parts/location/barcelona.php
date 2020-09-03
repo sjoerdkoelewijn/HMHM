@@ -31,7 +31,7 @@ $bcnimage = get_field('bcn_image');
 
         <div class="buttons">
 
-            <a href="<?php sk_get_ticket_url('barcelona') ?>" class="btn action_btn black" >
+            <a href="<?php sk_get_ticket_url('barcelona') ?>" class="btn action_btn black ticket" >
                 <?php pll_e( 'Get your ticket', 'hashmuseum' ) ?>
             </a>
 
@@ -71,6 +71,16 @@ $bcnimage = get_field('bcn_image');
 </div>
 
 <div class="image_wrap barcelona">
+
+    <div class="mobile_text">
+        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/LogoLarge.svg"); ?>
+        <h1>
+            <?php pll_e( 'Barcelona', 'hashmuseum' ) ?>
+        </h1>
+        <h2>
+            <?php the_field('barcelona_address', 'option'); ?>
+        </h2>        
+    </div>
 
     <?php if( !empty( $bcnimage ) ): ?>
 

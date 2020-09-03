@@ -2,7 +2,7 @@
 /* Block Name: Collection Overview Hero */
 
 // create id attribute for specific styling
-$id = 'plan-visit-' . $block['id'];
+$id = 'location-info-' . $block['id'];
 
 ?>
 
@@ -10,7 +10,7 @@ $id = 'plan-visit-' . $block['id'];
     $styleswitch = get_field('style_switch'); 
 ?>
 
-<article id="<?php echo $id; ?>" class="location_info">
+<article id="<?php echo $id; ?>" class="location_info gb_block <?php echo $styleswitch ?>">
 
     <?php
 
