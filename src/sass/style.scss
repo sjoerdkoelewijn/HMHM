@@ -1481,10 +1481,19 @@ html {
 .hero.large_text {
     align-items: center;
 
+    @include phone {
+        flex-direction: column;
+    }
+
     .text_wrap {
-        padding:0 calc(var(--horizontal-xl) * 2) 0 var(--horizontal);
+        padding:var(--vertical) calc(var(--horizontal-xl) * 2) var(--vertical) var(--horizontal);
         width:66.66vw;
         overflow:hidden;
+
+        @include phone {
+            padding:var(--vertical) var(--horizontal);
+            width:100vw;
+        }
 
         .description {
 
@@ -1502,18 +1511,67 @@ html {
         display:flex;
         align-items: stretch;
 
+        &:before {
+            content:'';
+            @include blackGradient(0deg);
+            width:100%;
+            display:block;
+            height:40vh;
+            bottom:0;
+            position:absolute;
+            z-index:10;
+        }
+
+        @include phone {
+            width:100vw;
+        }
+
         img {
             min-height:100vh;
             width:33vw;
             object-fit: cover; 
+
+            @include phone {
+                min-height:calc(100vh - 65px);
+                width:100vw;
+            }
         }
 
-        .header {
-            font-size:calc(var(--x-large-title) * 1.1);
-            color:$white;
+        .content {
             position:absolute;
             bottom:0;
             padding:var(--vertical) var(--horizontal);
+            z-index:100;
+            margin:0;
+
+            .mobile_logo {
+                display:none;
+
+                @include phone {
+                    display:block;
+
+                    svg {
+                        width:65vw;
+                        margin:0 auto 20px auto;
+                        display:block;
+    
+                        path {
+                            fill:$white;
+                        }
+                    }
+                }
+            }
+
+            .header {
+                font-size:calc(var(--x-large-title) * 1.1);
+                color:$white;
+                margin:0;
+                    
+                @include phone {
+                    text-align:center;
+                }
+            }
+
         }
 
         .caption {

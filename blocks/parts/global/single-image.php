@@ -5,9 +5,19 @@
 $HeroType = get_field('hero_type');
 
 if ($HeroType === 'large_text') {?> 
-    <h1 class="header">
-        <?php the_field('header') ?>
-    </h1>
+     <div class="content">
+
+        <div class="mobile_logo">
+
+            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/LogoLarge.svg"); ?>
+
+        </div>
+
+        <h1 class="header">
+            <?php the_field('header') ?>
+        </h1>
+
+    </div>
 <?php } ?>
 
 <?php foreach( $images as $image ): ?>
