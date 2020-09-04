@@ -297,25 +297,25 @@ html {
     
     .wp-block-group {
         width:65vw;
-        padding:$horizontal;
+        padding:var(--horizontal);
 
         @include phone {
             width:100vw;
         }        
         
         h2 {
-            margin-top:$vertical-l;
+            margin-top:var(--vertical-l);
             width:30ch;
         }
 
         h2:first-of-type {
-            font-size:var(--normal-title);
+            font-size:var(--large-title);
             margin-top:20px;
             width:20ch;
         }
 
         h3:first-of-type {
-            margin:$vertical 0 20px 0;
+            margin:var(--vertical) 0 20px 0;
             color:$mediumgrey;
         }
 
@@ -1342,6 +1342,11 @@ html {
             }
         }
 
+        @include phone {
+            .breadcrumb_last {
+                display:none;
+            }
+        }
     }
 
     .subheader {
@@ -1582,14 +1587,25 @@ html {
 
 }
 
+.hero.exhibition {
+    
+    @include phone {
+
+        .image_wrap {
+            margin-top:65px;
+        }
+
+    }
+    
+}
+
 /* ------------- Collection Overview Hero Block ---------------- */
 
 .collection-overview-hero {
     display:flex;
     width:100vw;
     min-height:100vh;
-      
-
+   
     @include phone {
         flex-direction: column;
     }
@@ -1943,6 +1959,7 @@ html {
 
         img {
             width:100%;
+            heigth:100%;
             object-fit: cover; 
         }
     }
@@ -1956,7 +1973,7 @@ html {
     }
 
     .image_wrap.hero {   
-        
+             
         .content {
             position:absolute;
             z-index:100;
@@ -2991,8 +3008,8 @@ border: 0;
             color:$white;
             font-size:$small-p;
             font-weight:400;
-            padding-left:$horizontal;
-            padding-bottom:$vertical-s;
+            padding-left:var(--horizontal);
+            padding-bottom:var(--vertical);
             left:0;
             bottom:0;
                         
@@ -3002,25 +3019,29 @@ border: 0;
     .quote {
         background:$black;
         color:$white;
-        padding:$vertical $horizontal;
+        padding:var(--vertical) var(--horizontal);
+
+        @include phone{
+            padding:var(--vertical) var(--horizontal-l);
+        }
 
         .quote_text {
-            margin-top:$vertical;
+            margin-top:var(--vertical);
             font-family: $header-font;
-            font-size:$large-p;
+            font-size:var(--large-p);
         }
 
         .quote_text.medium {
-            font-size:$normal-subtitle;
+            font-size:var(--large-subtitle);
         }
 
         .quote_text.large {
-            font-size:$normal-title;
+            font-size:var(--large-title);
         }
 
         .quote_author {
             font-family: $body-font;
-            font-size:$small-p;
+            font-size:var(--small-p);
         }
 
     }    
