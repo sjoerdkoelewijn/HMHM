@@ -10,9 +10,19 @@ $id = 'collection-overview-hero-' . $block['id'];
 
     <div class="image_wrap">
 
-        <h1 class="header">
-            <?php the_field('header') ?>
-        </h1>
+        <div class="content">
+
+            <div class="mobile_logo">
+
+                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/LogoLarge.svg"); ?>
+
+            </div>
+
+            <h1 class="header">
+                <?php the_field('header') ?>
+            </h1>
+
+        </div>
 
         <span class="slider_gradient"></span>
 
@@ -39,22 +49,24 @@ $id = 'collection-overview-hero-' . $block['id'];
             <?php the_field('location_text'); ?>
         </h2>
 
-        <p class="description">
+        <div class="description">
             <?php the_field('description'); ?>
-        </p>
+        </div>
 
-        <a class="action_btn btn black" href="#tickets" >
-            <?php pll_e( 'Get your ticket', 'hashmuseum' ) ?>
-        </a>
+        <div class="buttons">
+            <a class="action_btn btn black" href="#tickets" >
+                <?php pll_e( 'Get your ticket', 'hashmuseum' ) ?>
+            </a>
 
-        <button class="read_more_link" data-read-more-btn>
-            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
-            <?php pll_e( 'More about the collection', 'hashmuseum' ) ?>
-        </button>
+            <button class="read_more_link" data-read-more-btn>
+                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
+                <?php pll_e( 'More about the collection', 'hashmuseum' ) ?>
+            </button>
+        </div>
 
     </div>
 
-    <div class="image_wrap">
+    <div class="image_wrap slider">
 
         <?php 
         $posts = get_field('single_item_slider');

@@ -21,13 +21,17 @@
         <?php the_field('subheader'); ?>
     </h2>
 
-    <p class="description">
+    <div class="description">
         <?php the_field('description'); ?>
-    </p>
+    </div>
 
-    <button class="read_more_link" data-read-more-btn>
-        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
-        <?php _e( 'Read More', 'hashmuseum' ) ?>
-    </button>
+    <div class="button">
+
+        <button class="read_more_link" data-read-more-btn>
+            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
+            <?php _e( 'Read More', 'hashmuseum' ) ?>
+        </button>
+
+    </div>
 
 </div>

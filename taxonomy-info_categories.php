@@ -7,7 +7,7 @@
     $output =  apply_filters( 'the_content', $custom_page->post_content );
 
     if ( empty($output) ) :
-        echo '<h2>Please create a frontpage for this category</h2>';
+        echo '<div class="frontpage warning"><h2>Please add content to the <a href="/wp-admin/edit.php?post_type=cannabisinfo_pages">frontpage</a> of this category.</h2></div>';
     else : ?>
         <div class="custom_page_content"><?php echo $output; ?></div>
     <?php endif; ?>

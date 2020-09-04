@@ -48,6 +48,20 @@ $id = 'info-two-image' . $block['id'];
         endif; ?>
 
         <div class="image_wrap mobile">
+        
+            <div class="mobile_text">
+
+                <div class="mobile_logo">
+
+                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/LogoLarge.svg"); ?>
+
+                </div>
+
+                <h1 class="header">
+                    <?php the_field('header'); ?>
+                </h1>   
+
+            </div>
 
             <img loading="lazy" class="image" src="<?php echo esc_url($mobileimage['sizes']['large']); ?>" alt="<?php echo $mobileimage['alt']; ?>" />
 

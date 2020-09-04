@@ -8,7 +8,7 @@ $genericimage = get_field('generic_image');
 
 <div class="image_wrap hero">
 
-    <div class="content">
+    <div class="mobile_content">
 
         <div class="mobile_logo">
 
@@ -18,7 +18,7 @@ $genericimage = get_field('generic_image');
 
         <h1 class="header">
         
-            <?php the_title(); ?>
+            <?php the_field('header'); ?>
         
         </h1>
                 

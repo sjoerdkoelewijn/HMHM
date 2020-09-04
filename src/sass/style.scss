@@ -14,9 +14,17 @@ html {
     
 }
 
-.button_repeater {
-    //width:90%;
+.frontpage.warning {
+
+    width:100vw;
+    height:100vh;
+    display:flex;
+    align-items: center; 
+    justify-content: center;
+
 }
+
+
 
 .btn {
     padding:10px 44px;
@@ -138,6 +146,11 @@ html {
     .read_more_link {
         margin-top:10px;
         margin-bottom:10px;
+
+        @include phone {
+            margin-top:25px;
+            margin-bottom:25px;
+        }
     }
 
 }
@@ -277,11 +290,18 @@ html {
 
 .wp-block-group__inner-container {     
     display:flex;
+
+    @include phone {
+        flex-direction: column;
+    }
     
     .wp-block-group {
         width:65vw;
         padding:$horizontal;
-        
+
+        @include phone {
+            width:100vw;
+        }        
         
         h2 {
             margin-top:$vertical-l;
@@ -289,7 +309,7 @@ html {
         }
 
         h2:first-of-type {
-            font-size:$normal-title;
+            font-size:var(--normal-title);
             margin-top:20px;
             width:20ch;
         }
@@ -301,6 +321,10 @@ html {
 
         p, h3 {
             width:80%;
+
+            @include phone {
+                width:100%;
+            }
         } 
 
         .wp-block-group__inner-container {
@@ -313,6 +337,10 @@ html {
     .wp-block-group__inner-container {
         .wp-block-group ~ .wp-block-group {
             width:33.33vw;
+
+            @include phone {
+                width:100%;
+            }
 
             h3:first-of-type {
                 margin:0 0 20px 0;
@@ -1261,6 +1289,11 @@ html {
         font-weight:400;
         color:$white;
         z-index:100;
+        filter: drop-shadow($text-shadow);
+
+        @include phone {
+            bottom:0;
+        }
         
     }
     
@@ -1285,7 +1318,11 @@ html {
 .hero {
    display:flex;
    width:100vw;
-   min-height:100vh;   
+   min-height:100vh;
+   
+   @include phone {
+        flex-direction:column-reverse;
+   }
 
    .breadcrumbs {
     font-size:$small-btn;
@@ -1308,33 +1345,42 @@ html {
     }
 
     .subheader {
-        font-size:$small-subtitle;
+        font-size:var(--small-subtitle);
     }
 
    .text_wrap {
-       width:33.33vw;
-       padding:20vh $horizontal 0 $horizontal;
-       
-       .read_more_link {           
-           @include textLink;         
-       }
+        width:33.33vw;
+        margin-top:10vh;
+        padding:var(--vertical) var(--horizontal);
+        flex-direction: column;
+        display: inline-flex;
+        justify-content: center;
 
-       .back_link {
+        @include phone {
+            width:100vw;
+            margin-top:0;
+        }
+        
+        .read_more_link {           
+            @include textLink;         
+        }
+
+        .back_link {
             @include textLink;
             margin-bottom:20px;
             display:inline-block;
-       }
+        }
 
-       .taxonomy_link {
+        .taxonomy_link {
             @include textLink;
-       }
+        }
 
-       .license_message {
-           font-size:var(--small-p);
-           position:absolute;
-           bottom:20px;
-           padding-right:10px;
-       }
+        .license_message {
+            font-size:var(--small-p);
+            position:absolute;
+            bottom:20px;
+            padding-right:10px;
+        }
    }
 
    .text_wrap.expo {
@@ -1410,10 +1456,19 @@ html {
    }
 
    .image_wrap {
-    width:66.6vw;
+        width:66.6vw;
+
+        @include phone {
+            width:100vw;
+        }
     
         img {
             width:66.6vw;
+
+            @include phone {
+                width:100vw;
+                min-height:50vh;
+            }
             
         }
     
@@ -1434,7 +1489,7 @@ html {
         .description {
 
             p:first-of-type {
-                font-size:$small-subtitle;
+                font-size:var(--small-subtitle);
                 font-family: $header-font;
             }
 
@@ -1474,11 +1529,23 @@ html {
 .collection-overview-hero {
     display:flex;
     width:100vw;
-    height:100vh;   
+    min-height:100vh;
+      
+
+    @include phone {
+        flex-direction: column;
+    }
  
     .text_wrap {
         width:33.33vw;
-        padding:20vh $horizontal 0 $horizontal;
+        padding:var(--vertical) var(--horizontal);
+        flex-direction: column;
+        display: inline-flex;
+        justify-content: center;
+
+        @include phone {
+            width:100vw;
+        }
 
         .item_number {
             font-size:var(--x-large-title);
@@ -1491,7 +1558,7 @@ html {
         }
 
         .location_text {
-            font-size:$small-subtitle;
+            font-size:var(--small-subtitle);
         }
         
         .read_more_link { 
@@ -1506,15 +1573,63 @@ html {
         position:relative;
         display:flex;
         align-items: stretch;
-
-        .header {
-            font-size:calc(var(--x-large-title) * 1.1);
-            color:$white;
+        
+        &:before {
+            content:'';
+            @include blackGradient(0deg);
+            width:100%;
+            display:block;
+            height:40vh;
+            bottom:0;
+            position:absolute;
+            z-index:10;
+        }
+        
+        .content {
             position:absolute;
             bottom:0;
             padding:var(--vertical) var(--horizontal);
             z-index:100;
+            margin:0;
+
+            .mobile_logo {
+                display:none;
+
+                @include phone {
+                    display:block;
+
+                    svg {
+                        width:65vw;
+                        margin:0 auto 20px auto;
+                        display:block;
+    
+                        path {
+                            fill:$white;
+                        }
+                    }
+                }
+            }
+
+            .header {
+                font-size:calc(var(--x-large-title) * 1.1);
+                color:$white;
+                margin:0;
+                    
+                @include phone {
+                    text-align:center;
+                }
+            }
+
         }
+
+        @include phone {
+            width:100vw;
+            height:calc(100vh - 65px);
+
+            img {
+                height:calc(100vh - 65px);
+            }
+        }        
 
         .slider_gradient {
             @include blackGradient(0deg);
@@ -1535,8 +1650,6 @@ html {
         .slider_button.left {
             display:none;
         }
- 
-       
  
         .image_slide {
             height:100vh;
@@ -1576,6 +1689,12 @@ html {
         }
            
  
+    }
+
+    .image_wrap.slider {
+        @include phone {
+            display:none;
+        }
     }
  
  
@@ -1818,11 +1937,15 @@ html {
                     text-align:center;                
                 }
             } 
-
-        }
-              
-       
+        }                    
     } 
+
+    .image_wrap.normal_block {
+
+        @include phone {
+            display:none;
+        }
+    }
 
 }
 
@@ -1941,13 +2064,12 @@ html {
     }
      
     .subheader {
-        font-size:var(--small-subtitle);
-        color:$mediumgrey;
+        font-size:var(--medium-title);
         margin-bottom:20px;
     }
 
     .header {
-        font-size:var(--medium-title);
+        display:none;
     }
  
     .text_wrap {
@@ -1985,9 +2107,55 @@ html {
 
     .image_wrap.mobile {
         display:none;
-
+        min-height:calc(100vh - 65px);
+        
         @include phone {
             display:flex;        
+        }
+
+        &:before {
+            content:'';
+            @include blackGradient(0deg);
+            width:100%;
+            display:block;
+            height:40vh;
+            bottom:0;
+            position:absolute;
+            z-index:10;
+        }
+
+        .mobile_text {
+            position:absolute;
+            width:100%;
+            bottom:var(--vertical);
+            padding:0 var(--horizontal);
+            z-index:20;
+            color:$white;
+            filter: drop-shadow($text-shadow);
+            text-align:center;
+
+            .header {
+                display:block;
+                margin-bottom:0;
+                font-size:calc(var(--x-large-title) * 1.15);
+            }
+
+            .mobile_logo {
+
+                svg {
+                    width:65vw;
+                    margin-bottom:10px;
+
+                    path {
+                        fill:$white;
+                    }
+                }
+            }
+
+        }
+
+        .caption {
+            display:none;
         }
 
     }
@@ -2047,6 +2215,37 @@ html {
 
     }      
   
+ }
+
+.gb_block ~ .info_two_image {
+
+    .image_wrap.mobile {
+        min-height:50vh;
+
+        &:before { 
+            display:none;
+        }
+    }
+
+    .caption {
+        display:block;
+    }
+
+    .header {
+        font-size:var(--medium-title);
+        display:block;
+    }
+
+     .subheader {
+        font-size:var(--small-subtitle);
+        color:$mediumgrey;
+        margin-bottom:20px;
+    }
+
+    .mobile_text {
+        display:none;
+    }
+
  }
 
  /* ------------- Reviews ---------------- */
@@ -2715,12 +2914,18 @@ border: 0;
     display:inline-block;
     width:33.33vw;
 
+    @include phone {
+        width:100vw;
+        
+    }
+
     .image_wrap {
         position:relative;
 
         img {
             height:100vh;
             object-fit: cover; 
+
         }
     
         .caption {
@@ -2771,17 +2976,33 @@ border: 0;
     flex-wrap: wrap;
     width:100vw;
 
+    @include phone {
+        display:block;
+    }
+
     .category {
         width:33.33vw;
+
+        @include phone {
+            width:100vw;
+        }
 
         .image {
             height: 40vh;
             width:100%;
             object-fit: cover;
+
+            @include phone {
+                height: 50vh;
+            }
         }
     
         .text_wrap {
             padding:var(--horizontal); 
+            
+            @include phone {
+                padding:var(--vertical) var(--horizontal);
+            }
             
             h2 {
                 margin-bottom:10px;
