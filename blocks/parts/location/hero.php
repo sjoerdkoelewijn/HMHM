@@ -6,7 +6,7 @@ $genericimage = get_field('generic_image');
 
 ?>
 
-<div class="image_wrap hero">
+<div class="image_wrap location_hero">
 
     <div class="content">
 
@@ -24,19 +24,19 @@ $genericimage = get_field('generic_image');
                 
     </div>
 
-<?php if( !empty( $genericimage ) ): ?>
+    <?php if( !empty( $genericimage ) ): ?>
 
-    <img loading="lazy" class="image" src="<?php echo esc_url($genericimage['sizes']['large_image']); ?>" alt="<?php echo $genericimage['alt']; ?>" />
-    
-    <?php if($genericimage['caption']) { ?>
+        <img loading="lazy" class="image" src="<?php echo esc_url($genericimage['sizes']['large_image']); ?>" alt="<?php echo $genericimage['alt']; ?>" />
+        
+        <?php if($genericimage['caption']) { ?>
 
-        <p class="caption">
-            <?php echo esc_html($genericimage['caption']); ?></?php>
-        </p>
+            <p class="caption">
+                <?php echo esc_html($genericimage['caption']); ?></?php>
+            </p>
 
-    <?php } ?> 
+        <?php } ?> 
 
-<?php endif; ?>
+    <?php endif; ?>
 
 </div>
 

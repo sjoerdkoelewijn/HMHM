@@ -49,17 +49,17 @@ get_header(); ?>
 
 					<?php if( $end_date_string ) { ?>
 
-							<div class="date">
+						<div class="date">
 
-								<p>
-									<?php echo $start_date->format('j F Y'); ?>
-									-
-									<?php echo $end_date->format('j F Y'); ?>
-								</p>   
+							<p>
+								<?php echo $start_date->format('j F Y'); ?>
+								-
+								<?php echo $end_date->format('j F Y'); ?>
+							</p>   
 
-								<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/calendarIcon.svg"); ?> 
-							
-							</div>
+							<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/calendarIcon.svg"); ?> 
+						
+						</div>
 						
 					<?php } else { ?>
 
@@ -106,8 +106,7 @@ get_header(); ?>
 						<?php } ?>
 					
 					<?php } ?>
-				
-				
+								
 				</div>
 				
 				<div class="description">
@@ -120,20 +119,102 @@ get_header(); ?>
 								<?php the_title(); ?>
 							</h2>
 
-							<h1>
-								<?php echo $sub_header; ?>
-							</h1>
-						</a>
+						</a>	
 
-					<?php } ?>							
+						<div class="mobile_meta_info">
 
+							<?php if( $end_date_string ) { ?>
+
+								<div class="date">
+
+									<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/calendarIcon.svg"); ?> 
+
+									<p>
+										<?php echo $start_date->format('j F Y'); ?>
+										-
+										<?php echo $end_date->format('j F Y'); ?>
+									</p>   
+								
+								</div>
+								
+							<?php } else { ?>
+
+								<div class="date">
+
+									<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/calendarIcon.svg"); ?> 
+
+									<p>
+										<?php echo get_the_date('j F Y'); ?>
+									</p>   
+
+								</div>
+
+							<?php } ?>
+
+							<?php if( $location ) { ?>
+
+								<div class="location">
+									<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/pinIcon.svg"); ?>  
+									<p>
+										<?php echo $location; ?>
+									</p>
+								</div>
+
+							<?php } ?>
+
+							<?php if( $end_date_string > $today ) { ?> 
+
+								<?php if($free === 'paid') { ?>
+
+									<a class="action_btn black btn" href="<?php sk_get_ticket_url($location) ?>">
+										<?php _e( 'Get your ticket', 'hashmuseum' ) ?>
+									</a>
+
+								<?php } else if($free === 'free') { ?>
+
+									<div class="free_entry">
+										<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/euroIcon.svg"); ?>  
+										<p>
+											<?php _e( 'Free entry', 'hashmuseum' ) ?>
+										</p>
+									</div>
+
+								<?php } ?>
+
+							<?php } ?>
+										
+						</div>
+
+						<div class="mobile_image">
+
+							<?php if ( has_post_thumbnail( $post->ID ) ) { ?>
+
+								<a href="<?php the_permalink(); ?>">
+									<?php echo get_the_post_thumbnail( ); ?>
+								</a>
+
+							<?php } ?>
+						
+						</div>
+
+						<h1>
+							<?php echo $sub_header; ?>
+						</h1>
+
+					<?php } ?>
+					
 					<p>
 						<?php the_excerpt(); ?>
 					</p>
 
-					<a class="ghost_btn black btn" href="<?php the_permalink(); ?>">
-						<?php _e( 'More about', 'hashmuseum' ) ?>
-						<?php the_title(); ?>
+					<a class="ghost_btn black btn" aria-label="<?php _e( 'More about', 'hashmuseum' ) ?> <?php the_title(); ?>" href="<?php the_permalink(); ?>">
+						<span class="short_text">
+							<?php _e( 'More info', 'hashmuseum' ) ?>
+						</span>
+						<span class="long_text">
+							<?php _e( 'More about', 'hashmuseum' ) ?>
+							<?php the_title(); ?>
+						</span>
 					</a>
 				
 				</div>
