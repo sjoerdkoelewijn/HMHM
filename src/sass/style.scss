@@ -1010,8 +1010,11 @@ html {
         .meta {
             margin:4vw;
             background:$darkgrey;
-            position:absolute;
-            bottom:calc(50px + 4vw);      
+            
+            @include phone {
+                position:absolute;
+                bottom:calc(50px + 4vw); 
+            }
 
             @include tabletup {
                 background:none;
