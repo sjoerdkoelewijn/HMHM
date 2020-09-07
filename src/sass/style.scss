@@ -908,7 +908,7 @@ html {
         }
 
         .mobile_bottom_buttons {
-            position:fixed;
+            position:absolute;
             width:100%;
             bottom:4vw;
             left:4vw;
@@ -982,6 +982,13 @@ html {
 
         .main_navigation {
 
+            @include phone{
+                min-height:43vh;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
             a {
                 color:$white;
                 text-decoration:none;
@@ -1002,8 +1009,9 @@ html {
 
         .meta {
             margin:4vw;
-            background:$darkgrey; 
-     
+            background:$darkgrey;
+            position:absolute;
+            bottom:calc(50px + 4vw);      
 
             @include tabletup {
                 background:none;
@@ -1059,9 +1067,6 @@ html {
                     font-size:var(--medium-p);
                     margin-bottom:0;
 
-                    @include phone {
-                        font-size:var(--small-p);
-                    }
 
                 }
                 
@@ -1081,7 +1086,7 @@ html {
                 margin-left:6vw;
                 margin-bottom:6vw;
                 display:inline-block;                
-                font-size:var(--small-p);
+                font-size:var(--medium-p);
                 font-weight:300;
                 text-decoration:none;
 
@@ -1933,7 +1938,7 @@ html {
         }
 
         @include phone {
-            width:100vw;            
+            width:100vw;
             min-height:calc(100vh - #{$mobile-btn-height});
 
             .caption {
@@ -1975,7 +1980,7 @@ html {
 
         img {
             width:100%;
-            height:100%;
+            //height:100%;
         }
     }
 
@@ -3961,7 +3966,6 @@ border: 0;
 
 .result_page {
     padding:var(--vertical-xl) var(--horizontal);
-
     display:flex;
     flex-direction: column;
     justify-content: center; 
@@ -3981,8 +3985,11 @@ border: 0;
     .search_form { 
         display:block;       
         margin:20vh auto 10vh auto;
-               
 
+        @include phone {
+            margin:var(--vertical) auto;
+        }
+        
         input {
             width:70vw;
             height:60px;
@@ -3991,6 +3998,11 @@ border: 0;
             max-width:800px;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05); 
             font-size:var(--medium-p);
+
+            @include phone {
+                width:90vw;
+            }
+            
         }
 
         button {
@@ -4024,10 +4036,19 @@ border: 0;
         display:flex;
         flex-wrap:wrap;
 
+        @include phone {
+            flex-direction: column;
+        }
+
         .result {
             background: $white;
             margin:1vw;            
             width:21vw;
+
+            @include phone {
+                margin:var(--horizontal);
+                width:auto;
+            }
             
             .image {
 
@@ -4041,6 +4062,11 @@ border: 0;
 
             .text {
                 padding:2vw;
+
+                @include phone {
+                    padding:var(--vertical) var(--horizontal);
+                }
+                
               
                 .header {
                     text-align:left;
@@ -4611,9 +4637,6 @@ border: 0;
                         font-size:var(--medium-p);
                         margin-bottom:5px;
 
-                        @include phone {                            
-                            font-size:var(--small-p);                            
-                        }
                     }
                     
                     svg {
