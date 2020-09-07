@@ -122,9 +122,13 @@
 
     <?php } ?>
 
-    <button class="read_more_link" data-read-more-btn>
-        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
-        <?php _e( 'More information', 'hashmuseum' ) ?>
-    </button>
+    <div class="buttons">
+
+        <button class="read_more_link" data-read-more-btn>
+            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
+            <?php _e( 'More information', 'hashmuseum' ) ?>
+        </button>
+        
+    </div>    
 
 </div>

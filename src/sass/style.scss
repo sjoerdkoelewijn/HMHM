@@ -302,18 +302,27 @@ html {
         padding:var(--horizontal);
 
         @include phone {
-            width:100vw;
+            width:100%;
         }        
         
         h2 {
             margin-top:var(--vertical-l);
-            width:30ch;
+            max-width:30ch;
+
+            @include phone {
+                width:100%;
+            }
         }
 
         h2:first-of-type {
             font-size:var(--large-title);
             margin-top:20px;
-            width:20ch;
+            max-width:20ch;
+
+            @include phone {
+                width:100%;
+            }
+
         }
 
         h3:first-of-type {
@@ -1279,6 +1288,10 @@ html {
                 align-items: stretch;             
             }
         }
+
+        @include phone{
+            height:50vh;
+        }
     }
 
     .caption {
@@ -1300,13 +1313,13 @@ html {
     .slider_gradient {
         @include blackGradient(0deg);
         display:block;
-        height:40vh;
+        height:30vh;
         left:0;
         right:0;
         bottom:0;
         position:absolute;
         z-index:10;
-        opacity:.7;
+        opacity:.3;
     }
 
 }
@@ -1587,6 +1600,10 @@ html {
 }
 
 .hero.exhibition {
+
+    .slider {
+        max-height:100vh;
+    }
     
     @include phone {
 
@@ -1707,12 +1724,13 @@ html {
         .slider_gradient {
             @include blackGradient(0deg);
             display:block;
-            height:40vh;
+            height:30vh;
             left:0;
             right:0;
             bottom:0;
             position:absolute;
             z-index:10;
+            opacity:.5;
         }
  
         img {
@@ -2583,17 +2601,33 @@ border: 0;
     .post {
         width:33.33vw;
 
+        @include phone {
+            width:100%;
+        }
+
         .image_wrap {
+            @include phone {
+                height:50vh;
+            }
 
             img {
                 min-width:100%;
                 height:45vh;
+            
+                @include phone {
+                    height:50vh;
+                }
+            
             }
 
         }
 
         .text_wrap {
-            padding:$vertical $horizontal;
+            padding:var(--vertical) var(--horizontal);
+
+                @include phone {
+                    padding:calc(var(--vertical) * 1.2) var(--horizontal) var(--vertical) var(--horizontal);
+                }
 
             .title {
                 text-decoration:none;
