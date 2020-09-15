@@ -6,7 +6,6 @@ $id = 'reviews-' . $block['id'];
 
 ?>
 
-
     <article id="<?php echo $id; ?>" class="reviews gb_block">
 
         <div class="text_wrap">
@@ -92,16 +91,19 @@ $id = 'reviews-' . $block['id'];
                 </div>
 
                 <div class="horizontal_slider_btn_wrap">
+
                     <button class="slider_button left" data-siema-review-slider-prev>
                         <div class="background_wrap">
                             <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowLeftIcon.svg"); ?>
                         </div>    
                     </button>
+            
                     <button class="slider_button right" data-siema-review-slider-next>
                         <div class="background_wrap">
                             <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
                         </div>
                     </button>
+                    
                 </div>
             
             </div>

@@ -11,6 +11,14 @@ function sk_dequeue_block_styles(){
    	add_action( 'wp_enqueue_scripts', 'sk_dequeue_block_styles', 99 );
    }
 
+/*************************** Dequeue WP Embed **********************************/
+
+function sk_deregister_embed(){
+		wp_dequeue_script( 'wp-embed' );
+	}
+
+add_action( 'wp_footer', 'sk_deregister_embed' );   
+
 /*************************** Enqueue Styles **********************************/
 
 function hashmuseum_styles() {

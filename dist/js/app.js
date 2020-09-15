@@ -218,7 +218,7 @@ if (ReviewSliderContainer != null){
         easing: 'ease-out',
         perPage: {
             320: 1,
-            1024: 2,
+            1441: 2,
         },
         startIndex: 0,
         draggable: true,
@@ -232,7 +232,7 @@ if (ReviewSliderContainer != null){
 
     ReviewSliderPrev.addEventListener('click', () => ReviewSlider.prev());
     ReviewSliderNext.addEventListener('click', () => ReviewSlider.next());
-
+    
 }
 
 /******************* Home Hero Mobile Slider *************************************/

@@ -10,9 +10,9 @@
         <?php the_field('header'); ?>
     </h2>    
 
-    <p class="description">
+    <div class="description">
         <?php the_field('description'); ?>
-    </p>
+    </div>
 
     <?php include(get_template_directory() . '/blocks/parts/global/button-repeater.php'); ?> 
 

@@ -50,6 +50,20 @@ $header-font:'Prata', serif;
         --small-p:.85rem;
     }
 
+    @include tablet {
+        --x-large-title:6vw;
+        --large-title:4.5vw;
+        --medium-title:4vw;
+        --small-title:4vw;
+
+        --large-subtitle:4vw;
+        --medium-subtitle:3vw;
+        --small-subtitle:2.5vw;
+
+        --large-p:1.3rem;
+        --small-p:.9rem;
+    }
+
 }
 
 html {

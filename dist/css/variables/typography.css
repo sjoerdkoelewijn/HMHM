@@ -51,7 +51,7 @@ a:visited {
   --small-btn:0.9rem;
 }
 
-@media (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 768px) and (orientation: portrait) {
   /* line 20, src/sass/variables/typography.scss */
   :root {
     --x-large-title:13vw;
@@ -66,12 +66,27 @@ a:visited {
   }
 }
 
-/* line 55, src/sass/variables/typography.scss */
+@media (min-width: 769px) and (max-width: 1440px) {
+  /* line 20, src/sass/variables/typography.scss */
+  :root {
+    --x-large-title:6vw;
+    --large-title:4.5vw;
+    --medium-title:4vw;
+    --small-title:4vw;
+    --large-subtitle:4vw;
+    --medium-subtitle:3vw;
+    --small-subtitle:2.5vw;
+    --large-p:1.3rem;
+    --small-p:.9rem;
+  }
+}
+
+/* line 69, src/sass/variables/typography.scss */
 html {
   font-family: "Lato", sans-serif;
 }
 
-/* line 59, src/sass/variables/typography.scss */
+/* line 73, src/sass/variables/typography.scss */
 input, textarea, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   font-family: "Lato", sans-serif;
   font-weight: 300;
@@ -93,22 +108,22 @@ input, textarea, input::placeholder, textarea::placeholder {
   font-weight: 300;
 }
 
-/* line 64, src/sass/variables/typography.scss */
+/* line 78, src/sass/variables/typography.scss */
 button {
   font-family: "Lato", sans-serif;
 }
 
-/* line 68, src/sass/variables/typography.scss */
+/* line 82, src/sass/variables/typography.scss */
 strong {
   font-weight: 700;
 }
 
-/* line 72, src/sass/variables/typography.scss */
+/* line 86, src/sass/variables/typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Prata", serif;
 }
 
-/* line 76, src/sass/variables/typography.scss */
+/* line 90, src/sass/variables/typography.scss */
 h1 {
   font-weight: 400;
   line-height: 140%;
@@ -116,7 +131,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-/* line 84, src/sass/variables/typography.scss */
+/* line 98, src/sass/variables/typography.scss */
 h2 {
   font-weight: 400;
   line-height: 150%;
@@ -124,19 +139,19 @@ h2 {
   margin-bottom: 30px;
 }
 
-/* line 91, src/sass/variables/typography.scss */
+/* line 105, src/sass/variables/typography.scss */
 h1 + h2 {
   margin-top: -15px;
 }
 
-/* line 95, src/sass/variables/typography.scss */
+/* line 109, src/sass/variables/typography.scss */
 h3 {
   font-weight: 400;
   line-height: 150%;
   font-size: var(--small-subtitle);
 }
 
-/* line 101, src/sass/variables/typography.scss */
+/* line 115, src/sass/variables/typography.scss */
 p {
   line-height: 160%;
   font-weight: 300;
