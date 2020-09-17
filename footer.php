@@ -24,7 +24,7 @@
 				<div class="column first">
 					
 					<div class="footer_logo">
-						<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/LogoLarge.svg"); ?>
+						<?php echo file_get_contents(get_template_directory() . "/images/svg/LogoLarge.svg"); ?>
 					</div>
 
 
@@ -52,16 +52,16 @@
 
 						<div class="logos">
 							<a href="https://sensiseeds.com">
-								<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/SensiSeedsLogo.svg"); ?>
+								<?php echo file_get_contents(get_template_directory() . "/images/svg/SensiSeedsLogo.svg"); ?>
 							</a>
 							<a href="https://www.hempflax.com">	
-								<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/HempFlaxLogo.svg"); ?>
+								<?php echo file_get_contents(get_template_directory() . "/images/svg/HempFlaxLogo.svg"); ?>
 							</a>
 							<a href="https://cannabiscollege.com/">	
-								<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/CannabisCollegeLogo.svg"); ?>
+								<?php echo file_get_contents(get_template_directory() . "/images/svg/CannabisCollegeLogo.svg"); ?>
 							</a>
 							<a href="https://www.hempstory.nl">	
-								<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/HempstoryLogo.svg"); ?>
+								<?php echo file_get_contents(get_template_directory() . "/images/svg/HempstoryLogo.svg"); ?>
 							</a>
 						</div>
 					
@@ -72,32 +72,34 @@
 				<div class="column second">
 
 				<h2 class="header">
-                        <?php pll_e( 'Amsterdam', 'hashmuseum' ) ?>
+						<a class="location_link" href="/<?php echo pll_current_language(); ?>/amsterdam/">
+                    		<?php pll_e( 'Amste rdam', 'hashmuseum' ) ?>
+                		</a>
 					</h2>
 					
 					<div class="address">
-                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/locationIcon.svg"); ?> 
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/locationIcon.svg"); ?> 
                         <p>
                             <?php the_field('amsterdam_address', 'option'); ?>
                         </p>
 					</div>
 					
 					<div class="phonenumber">
-                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/phoneIcon.svg"); ?> 
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/phoneIcon.svg"); ?> 
                         <p>
 							<?php the_field('amsterdam_phone_number', 'option'); ?>
 						</p>
 					</div>
 
                     <div class="openinghours">
-                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/clockIcon.svg"); ?> 
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/clockIcon.svg"); ?> 
                         <p>
                             <?php sk_lang_specific_option('amsterdam_opening_hours'); ?>
                         </p>
 					</div>
 					
 					<a href="#" class="moreinfo">
-                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?> 
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?> 
                         <p>
 							<?php echo __( 'More information', 'hashmuseum' ) ?>
                         </p>
@@ -116,32 +118,34 @@
                     </nav>
 
                     <h2 class="header">
-                        <?php pll_e( 'Barcelona', 'hashmuseum' ) ?>
+						<a class="location_link" href="/<?php echo pll_current_language(); ?>/barcelona/">
+							<?php pll_e( 'Barcelona', 'hashmuseum' ) ?>
+						</a>
                     </h2>
 
 					<div class="address">
-                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/locationIcon.svg"); ?> 
-                        <p>
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/locationIcon.svg"); ?> 
+						<p>
 							<?php the_field('barcelona_address', 'option'); ?>
                         </p>
 					</div>
 					
 					<div class="phonenumber">
-                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/phoneIcon.svg"); ?> 
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/phoneIcon.svg"); ?> 
                         <p>
 							<?php the_field('barcelona_phone_number', 'option'); ?>
                         </p>
 					</div>
 					
                     <div class="openinghours">
-                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/clockIcon.svg"); ?> 
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/clockIcon.svg"); ?> 
                         <p>
                             <?php sk_lang_specific_option('barcelona_opening_hours'); ?>
                         </p>
                     </div>
 
 					<a href="#" class="moreinfo">
-                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?> 
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?> 
                         <p>
 							<?php pll_e( 'More information', 'hashmuseum' ) ?>
                         </p>
@@ -205,16 +209,16 @@
 
 				<div class="logos">
 					<a href="https://sensiseeds.com">
-						<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/SensiSeedsLogo.svg"); ?>
+						<?php echo file_get_contents(get_template_directory() . "/images/svg/SensiSeedsLogo.svg"); ?>
 					</a>
 					<a href="https://www.hempflax.com">	
-						<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/HempFlaxLogo.svg"); ?>
+						<?php echo file_get_contents(get_template_directory() . "/images/svg/HempFlaxLogo.svg"); ?>
 					</a>
 					<a href="https://cannabiscollege.com/">	
-						<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/CannabisCollegeLogo.svg"); ?>
+						<?php echo file_get_contents(get_template_directory() . "/images/svg/CannabisCollegeLogo.svg"); ?>
 					</a>
 					<a href="https://www.hempstory.nl">	
-						<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/HempstoryLogo.svg"); ?>
+						<?php echo file_get_contents(get_template_directory() . "/images/svg/HempstoryLogo.svg"); ?>
 					</a>
 				</div>
 			

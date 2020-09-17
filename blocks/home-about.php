@@ -28,7 +28,7 @@ $id = 'home-about' . $block['id'];
         <?php include('parts/global/button-repeater.php'); ?>
 
         <div class="weedleaf">
-            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/weedleaf-large.svg"); ?>
+            <?php echo file_get_contents(get_template_directory() . "/images/svg/weedleaf-large.svg"); ?>
         </div>
         
     </div>
@@ -66,7 +66,7 @@ $id = 'home-about' . $block['id'];
             <div class="header_wrap">
 
                 <div class="ampersand">
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/ampersand.svg"); ?> 
+                    <?php echo file_get_contents(get_template_directory() . "/images/svg/ampersand.svg"); ?> 
                 </div>
 
                 <div class="text">
@@ -97,28 +97,28 @@ $id = 'home-about' . $block['id'];
                     </div>
                     
                     <div class="address">
-                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/locationIcon.svg"); ?> 
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/locationIcon.svg"); ?> 
                         <p>
                             <?php the_field('amsterdam_address', 'option'); ?>
                         </p>
                     </div>
                     
                     <div class="phonenumber">
-                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/phoneIcon.svg"); ?> 
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/phoneIcon.svg"); ?> 
                         <p>
                             <?php the_field('amsterdam_phone_number', 'option'); ?>
                         </p>
                     </div>
 
                     <div class="openinghours">
-                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/clockIcon.svg"); ?> 
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/clockIcon.svg"); ?> 
                         <p>
                             <?php sk_lang_specific_option('amsterdam_opening_hours'); ?>
                         </p>
                     </div>
                     
                     <a href="<?php pll_e( '/en/amsterdam/', 'hashmuseum' ) ?>" class="moreinfo">
-                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?> 
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?> 
                         <p>
                             <?php pll_e( 'More information', 'hashmuseum' ) ?>
                         </p>
@@ -145,28 +145,28 @@ $id = 'home-about' . $block['id'];
                     </div>
 
                     <div class="address">
-                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/locationIcon.svg"); ?> 
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/locationIcon.svg"); ?> 
                         <p>
                             <?php the_field('barcelona_address', 'option'); ?>
                         </p>
                     </div>
                     
                     <div class="phonenumber">
-                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/phoneIcon.svg"); ?> 
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/phoneIcon.svg"); ?> 
                         <p>
                             <?php the_field('barcelona_phone_number', 'option'); ?>
                         </p>
                     </div>
                     
                     <div class="openinghours">
-                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/clockIcon.svg"); ?> 
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/clockIcon.svg"); ?> 
                         <p>
                             <?php sk_lang_specific_option('barcelona_opening_hours'); ?>
                         </p>
                     </div>
 
                     <a href="<?php pll_e( '/en/barcelona/', 'hashmuseum' ) ?>" class="moreinfo">
-                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?> 
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?> 
                         <p>
                             <?php pll_e( 'More information', 'hashmuseum' ) ?>
                         </p>

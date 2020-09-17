@@ -53,7 +53,7 @@ $id = 'category-overview' . $block['id'];
                         </p>
 
                         <a class="read_more_link" href="<?php echo esc_url( get_term_link( $term ) ); ?>">
-                            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
+                            <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
                             <?php pll_e( 'Read More', 'hashmuseum' ) ?>
                         </a>    
 

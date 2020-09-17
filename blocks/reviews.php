@@ -10,7 +10,7 @@ $id = 'reviews-' . $block['id'];
 
         <div class="text_wrap">
 
-            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/weedleaf-large.svg"); ?>
+            <?php echo file_get_contents(get_template_directory() . "/images/svg/weedleaf-large.svg"); ?>
 
             <h2 class="header">
                 <?php the_field('header'); ?>
@@ -20,7 +20,7 @@ $id = 'reviews-' . $block['id'];
 
                 <div class="rating amsterdam">
 
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/tripadvisor.svg"); ?>
+                    <?php echo file_get_contents(get_template_directory() . "/images/svg/tripadvisor.svg"); ?>
 
                     Amsterdam
 
@@ -30,7 +30,7 @@ $id = 'reviews-' . $block['id'];
 
                 <div class="rating barcelona">
 
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/tripadvisor.svg"); ?>
+                    <?php echo file_get_contents(get_template_directory() . "/images/svg/tripadvisor.svg"); ?>
 
                     Barcelona
 
@@ -94,13 +94,13 @@ $id = 'reviews-' . $block['id'];
 
                     <button class="slider_button left" data-siema-review-slider-prev>
                         <div class="background_wrap">
-                            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowLeftIcon.svg"); ?>
+                            <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowLeftIcon.svg"); ?>
                         </div>    
                     </button>
             
                     <button class="slider_button right" data-siema-review-slider-next>
                         <div class="background_wrap">
-                            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
+                            <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
                         </div>
                     </button>
                     

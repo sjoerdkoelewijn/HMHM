@@ -12,8 +12,6 @@ $mobile-btn-height : 65px;
 html {
     overflow-x:hidden;
     scroll-behavior: smooth;
-    
-    
 }
 
 .frontpage.warning {
@@ -23,13 +21,14 @@ html {
     display:flex;
     align-items: center; 
     justify-content: center;
-
 }
 
-
+.location_link {
+    text-decoration:none;
+}
 
 .btn {
-    padding:6px 35px;
+    padding:8px 35px;
     border-radius: 30px;
     display:inline-block;
     text-decoration: none;
@@ -46,7 +45,11 @@ html {
     white-space: normal;
 
     @include phone{
-        padding:8px 35px;
+        padding:6px 30px;
+    }
+
+    @include tablet{
+        padding:5px 28px;
     }
 
 }
@@ -2040,7 +2043,12 @@ html {
                     text-align:center;                
                 }
             } 
-        }                    
+        }
+        
+        @include tablet {
+            width:50vw;
+        }
+
     } 
 
     .image_wrap.normal_block {
@@ -2063,6 +2071,48 @@ html {
         
     }
     
+}
+
+@include tablet {
+
+    .location_info {
+
+        .tabs {
+            width:50vw;
+            flex-direction: column;
+            justify-content: center;
+            padding-top:80px;
+        
+            .text_wrap {
+                width:50vw;
+                margin-top:10px;
+
+                h2 {
+                    margin-bottom:0;
+                    font-size:var(--large-subtitle);
+                    
+                }
+
+                .meta {
+                    height:auto;
+                }
+
+                .buttons {
+                    margin:0;
+
+                    .ghost_btn {
+                        display:none;
+                    }
+                }
+
+                .text {
+                    display:none;
+                }
+            }
+    
+        }
+    }
+
 }
 
 /* ------------- Info Block ---------------- */
@@ -2100,6 +2150,7 @@ html {
 
         @include tablet {
             width:50vw;
+            padding:var(--vertical-xl) var(--horizontal);
         }
 
         strong {
@@ -2179,6 +2230,10 @@ html {
     
     @include phone {
         flex-direction: column;
+    }
+
+    @include tablet {
+        flex-direction: row-reverse;
     }
      
     .subheader {
@@ -2787,6 +2842,10 @@ border: 0;
             width:100vw;
         }
 
+        @include tablet {
+            width:50vw;
+        }
+
         .map_style {
             width:100%;
             min-height:100vh;
@@ -2800,6 +2859,10 @@ border: 0;
 
         @include phone {
             width:100vw;
+        }
+
+        @include tablet {
+            width:50vw;
         }
 
         .subheader {
@@ -2870,6 +2933,10 @@ border: 0;
     display:flex;
     min-height:100vh;
 
+    @include tablet {
+        min-height: 50vh;
+    }
+
     @include phone {
         min-height:auto;
         background:$white;
@@ -2883,6 +2950,10 @@ border: 0;
         @include phone {
             display:none;
         }
+
+        @include tablet {
+            width:50vw;
+        }
    
     }
 
@@ -2892,6 +2963,10 @@ border: 0;
 
         @include phone {
             width:100vw;
+        }
+
+        @include tablet {
+            width:50vw;
         }
 
         .header {
@@ -2912,8 +2987,12 @@ border: 0;
             page-break-inside: avoid;
             break-inside: avoid;
             
-            @include phone {
+            @include phoneup {
                 columns: auto;
+            }
+
+            @include desktopup {
+                columns: 2;
             }
 
             .info_item {
@@ -2926,15 +3005,29 @@ border: 0;
                     @include phone {
                         cursor: pointer;
                     }
+
+                    @include tablet {
+                        cursor: pointer;
+                    }
     
                     h3 {
-                        font-size:var(--small-title);                       
+                        font-size:var(--medium-subtitle);
+                        
+                        @include tablet {
+                            font-size:var(--small-subtitle);
+                        }
                         
                     }
     
                     .icon {
                         margin-right:15px;
                         margin-top:3px;
+
+                        @include tablet {
+                            svg {
+                                width:23px;
+                            }
+                        }
                     }
                 }
 
@@ -2943,8 +3036,12 @@ border: 0;
                     right:10vw;
                     margin-top:8px;
 
-                    @include tabletup {
+                    @include desktopup {
                         display:none;
+                    }
+
+                    @include tablet {
+                        right:5vw;
                     }
 
                 }
@@ -2958,6 +3055,28 @@ border: 0;
                         display:none;
                     }
                 
+                    .content {
+                        max-height: 0;
+                        opacity:0;       
+                        overflow:hidden;
+                        transition: max-height .4s ease, opacity .3s ease;          
+
+                        p {
+                            font-size:var(--medium-p);                            
+                            
+                            strong {
+                                font-size:var(--medium-p);
+                            }
+            
+                        }
+                    }
+                }
+
+                @include tablet {
+                    padding:5px;
+                    margin-bottom:20px;
+                    border-bottom:1px solid rgba($mediumgrey, .2);
+
                     .content {
                         max-height: 0;
                         opacity:0;       
@@ -2988,8 +3107,6 @@ border: 0;
             }
         }
     }
-
-
 }
 
 /* ------------- Promotional Block ---------------- */

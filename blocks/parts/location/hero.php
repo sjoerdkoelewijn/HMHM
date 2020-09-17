@@ -12,13 +12,14 @@ $genericimage = get_field('generic_image');
 
         <div class="mobile_logo">
 
-            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/LogoLarge.svg"); ?>
+            <?php echo file_get_contents(get_template_directory() . "/images/svg/LogoLarge.svg"); ?>
 
         </div>
 
         <h1 class="header">
         
             <?php the_title(); ?>
+
         
         </h1>
                 
@@ -71,27 +72,29 @@ $genericimage = get_field('generic_image');
             </nav>
 
             <h2>
-                <?php pll_e( 'Amsterdam', 'hashmuseum' ) ?>
+                <a class="location_link" href="/<?php echo pll_current_language(); ?>/amsterdam/">
+                    <?php pll_e( 'Amsterdam', 'hashmuseum' ) ?>
+                </a>
             </h2>
             
             <div class="meta">
 
                 <div class="address">
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/locationIcon.svg"); ?> 
+                    <?php echo file_get_contents(get_template_directory() . "/images/svg/locationIcon.svg"); ?> 
                     <p>
                         <?php the_field('amsterdam_address', 'option'); ?>
                     </p>
                 </div>
                 
                 <div class="phonenumber">
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/phoneIcon.svg"); ?> 
+                    <?php echo file_get_contents(get_template_directory() . "/images/svg/phoneIcon.svg"); ?> 
                     <p>
                         <?php the_field('amsterdam_phone_number', 'option'); ?>
                     </p>
                 </div>
 
                 <div class="openinghours">
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/clockIcon.svg"); ?> 
+                    <?php echo file_get_contents(get_template_directory() . "/images/svg/clockIcon.svg"); ?> 
                     <p>
                         <?php sk_lang_specific_option('amsterdam_opening_hours'); ?>
                     </p>
@@ -136,27 +139,29 @@ $genericimage = get_field('generic_image');
             </nav>
 
             <h2>
-                <?php pll_e( 'Barcelona', 'hashmuseum' ) ?>
+                <a class="location_link" href="/<?php echo pll_current_language(); ?>/barcelona/">
+                    <?php pll_e( 'Barcelona', 'hashmuseum' ) ?>
+                </a>
             </h2>
 
             <div class="meta">
 
                 <div class="address">
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/locationIcon.svg"); ?> 
+                    <?php echo file_get_contents(get_template_directory() . "/images/svg/locationIcon.svg"); ?> 
                     <p>
                         <?php the_field('barcelona_address', 'option'); ?>
                     </p>
                 </div>
                 
                 <div class="phonenumber">
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/phoneIcon.svg"); ?> 
+                    <?php echo file_get_contents(get_template_directory() . "/images/svg/phoneIcon.svg"); ?> 
                     <p>
                         <?php the_field('barcelona_phone_number', 'option'); ?>
                     </p>
                 </div>
                 
                 <div class="openinghours">
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/clockIcon.svg"); ?> 
+                    <?php echo file_get_contents(get_template_directory() . "/images/svg/clockIcon.svg"); ?> 
                     <p>
                         <?php sk_lang_specific_option('barcelona_opening_hours'); ?>
                     </p>

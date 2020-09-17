@@ -26,7 +26,7 @@
         <?php $counter = 1; ?>
         <?php if( have_rows('locations') ):?>
             <?php while ( have_rows('locations') ) : the_row(); ?>
-                var marker = new google.maps.Marker({position: location_<?php echo $counter; ?>, map: map, icon: '<?php echo get_template_directory_uri() ?>/images/svg/google-map-pin-<?php echo $counter; ?>.svg'});
+                var marker = new google.maps.Marker({position: location_<?php echo $counter; ?>, map: map, icon: '<?php echo get_template_directory() ?>/images/svg/google-map-pin-<?php echo $counter; ?>.svg'});
                 <?php $counter++; ?>
             <?php endwhile; ?>
         <?php endif; ?>        

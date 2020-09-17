@@ -21,13 +21,13 @@
     <article>
 
         <a data-logo title="<?php bloginfo( 'name' ); ?>" aria-label="Visit the Homepage" class="header_logo_link large logo" href="/">
-            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/logo.svg"); ?>
+            <?php echo file_get_contents(get_template_directory() . "/images/svg/logo.svg"); ?>
         </a>
 
         <div class="mobile_top_menu">
 
             <a data-logo title="<?php bloginfo( 'name' ); ?>" aria-label="Visit the Homepage" class="header_logo_link small logo" href="/">
-                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/logo-small.svg"); ?>
+                <?php echo file_get_contents(get_template_directory() . "/images/svg/logo-small.svg"); ?>
             </a>
 
             <div class="menu_buttons_wrap">
@@ -36,13 +36,13 @@
                 <?php include('parts/edit-button.php'); ?>
 
                 <button class="language_menu_toggle" data-language-menu-toggle>
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/weedleaf-small.svg"); ?>
+                    <?php echo file_get_contents(get_template_directory() . "/images/svg/weedleaf-small.svg"); ?>
                     <?php pll_e( 'Select Language', 'hashmuseum' ) ?>
                 </button>
 
                 <button class="main_menu_toggle" data-main-menu-toggle>
                     <?php pll_e( 'menu', 'hashmuseum' ) ?>
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/hamburgerIcon.svg"); ?>
+                    <?php echo file_get_contents(get_template_directory() . "/images/svg/hamburgerIcon.svg"); ?>
                 </button>            
 
             </div>

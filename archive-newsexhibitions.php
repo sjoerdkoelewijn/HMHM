@@ -57,7 +57,7 @@ get_header(); ?>
 								<?php echo $end_date->format('j F Y'); ?>
 							</p>   
 
-							<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/calendarIcon.svg"); ?> 
+							<?php echo file_get_contents(get_template_directory() . "/images/svg/calendarIcon.svg"); ?> 
 						
 						</div>
 						
@@ -69,7 +69,7 @@ get_header(); ?>
 								<?php echo get_the_date('j F Y'); ?>
 							</p>   
 
-							<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/calendarIcon.svg"); ?> 
+							<?php echo file_get_contents(get_template_directory() . "/images/svg/calendarIcon.svg"); ?> 
 
 						</div>
 
@@ -81,7 +81,7 @@ get_header(); ?>
 							<p>
 								<?php echo $location; ?>
 							</p>
-							<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/pinIcon.svg"); ?>  
+							<?php echo file_get_contents(get_template_directory() . "/images/svg/pinIcon.svg"); ?>  
 						</div>
 
 					<?php } ?>
@@ -100,7 +100,7 @@ get_header(); ?>
 								<p>
 									<?php _e( 'Free entry', 'hashmuseum' ) ?>
 								</p>
-								<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/euroIcon.svg"); ?>  
+								<?php echo file_get_contents(get_template_directory() . "/images/svg/euroIcon.svg"); ?>  
 							</div>
 
 						<?php } ?>
@@ -127,7 +127,7 @@ get_header(); ?>
 
 								<div class="date">
 
-									<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/calendarIcon.svg"); ?> 
+									<?php echo file_get_contents(get_template_directory() . "/images/svg/calendarIcon.svg"); ?> 
 
 									<p>
 										<?php echo $start_date->format('j F Y'); ?>
@@ -141,7 +141,7 @@ get_header(); ?>
 
 								<div class="date">
 
-									<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/calendarIcon.svg"); ?> 
+									<?php echo file_get_contents(get_template_directory() . "/images/svg/calendarIcon.svg"); ?> 
 
 									<p>
 										<?php echo get_the_date('j F Y'); ?>
@@ -154,7 +154,7 @@ get_header(); ?>
 							<?php if( $location ) { ?>
 
 								<div class="location">
-									<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/pinIcon.svg"); ?>  
+									<?php echo file_get_contents(get_template_directory() . "/images/svg/pinIcon.svg"); ?>  
 									<p>
 										<?php echo $location; ?>
 									</p>
@@ -173,7 +173,7 @@ get_header(); ?>
 								<?php } else if($free === 'free') { ?>
 
 									<div class="free_entry">
-										<?php echo file_get_contents(get_template_directory_uri() . "/images/svg/euroIcon.svg"); ?>  
+										<?php echo file_get_contents(get_template_directory() . "/images/svg/euroIcon.svg"); ?>  
 										<p>
 											<?php _e( 'Free entry', 'hashmuseum' ) ?>
 										</p>

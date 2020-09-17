@@ -33,13 +33,13 @@ $id = 'collection-items-' . $block['id'];
     <div class="collection_items_btn_wrap">
         <button class="slider_button left hidden" data-slide-left-btn>
             <div class="background_wrap">
-                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowLeftIcon.svg"); ?>
+                <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowLeftIcon.svg"); ?>
             </div>
         </button>
 
         <button class="slider_button right" data-slide-right-btn>
             <div class="background_wrap">
-                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
+                <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
             </div>
         </button>
     </div>

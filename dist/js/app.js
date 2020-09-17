@@ -543,7 +543,7 @@ if (window.matchMedia("(max-width: 767px)").matches) {
 
 /******************* Accordion *************************************/
 
-if (window.matchMedia("(max-width: 767px)").matches) {
+if (window.matchMedia("(max-width: 1440px)").matches) {
 
     var AccordionHeaders = document.querySelectorAll('[data-dropdown-header]');
 
@@ -562,8 +562,23 @@ function openAccordion(e) {
 	
 	if (!parent.classList.contains('open')) {
 		parent.classList.add('open');
-	}
+    }
+    
 	else {
 		parent.classList.remove('open');
+    }
+    
+}
+
+function openCurrAccordion(e) {
+	for(var i = 0; i < AccordionHeaders.length; i++) {
+		var parent = AccordionHeaders[i].parentElement;
+
+		if (this === AccordionHeaders[i] && !parent.classList.contains('open')) {
+			parent.classList.add('open');
+		}
+		else {
+			parent.classList.remove('open');
+		}
 	}
 }

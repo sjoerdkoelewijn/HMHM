@@ -33,7 +33,7 @@ $id = 'promo-' . $block['id'];
 
         <div class="text_wrap">
 
-            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/weedleaf-large.svg"); ?>
+            <?php echo file_get_contents(get_template_directory() . "/images/svg/weedleaf-large.svg"); ?>
 
             <h2 class="header">
                 <?php the_field('header'); ?>
@@ -64,7 +64,7 @@ $id = 'promo-' . $block['id'];
 
         <div class="text_wrap">
 
-            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/weedleaf-large.svg"); ?>
+            <?php echo file_get_contents(get_template_directory() . "/images/svg/weedleaf-large.svg"); ?>
 
             <h2 class="header">
                 <?php the_field('header'); ?>

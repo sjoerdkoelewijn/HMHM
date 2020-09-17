@@ -34,7 +34,7 @@ $id = 'visitor-information-' . $block['id'];
 
             <?php while ( have_rows('information') ) : the_row(); ?>
                 
-                <li class="info_item">
+                <li class="info_item <?php if (get_row_index() === 1) { echo 'open'; } ?>">
 
                     <div class="sub_header" data-dropdown-header>
                        
@@ -44,43 +44,43 @@ $id = 'visitor-information-' . $block['id'];
                                 $icon = get_sub_field('icon'); 
                                 switch ($icon) {
                                 case 'clock':
-                                    echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-clock.svg");
+                                    echo file_get_contents(get_template_directory() . "/images/svg/visitor-info-icon-clock.svg");
                                     break;
                                 case 'kids':
-                                    echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-kids.svg");
+                                    echo file_get_contents(get_template_directory() . "/images/svg/visitor-info-icon-kids.svg");
                                     break;
                                 case 'camera':
-                                    echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-camera.svg");
+                                    echo file_get_contents(get_template_directory() . "/images/svg/visitor-info-icon-camera.svg");
                                     break;
                                 case 'smilies':
-                                    echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-smilies.svg");
+                                    echo file_get_contents(get_template_directory() . "/images/svg/visitor-info-icon-smilies.svg");
                                     break; 
                                 case 'wheelchair':
-                                    echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-wheelchair.svg");
+                                    echo file_get_contents(get_template_directory() . "/images/svg/visitor-info-icon-wheelchair.svg");
                                     break;                          
                                 case 'house':
-                                    echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-house.svg");
+                                    echo file_get_contents(get_template_directory() . "/images/svg/visitor-info-icon-house.svg");
                                     break;                                        
                                 case 'pets':
-                                    echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-pets.svg");
+                                    echo file_get_contents(get_template_directory() . "/images/svg/visitor-info-icon-pets.svg");
                                     break;
                                 case 'cocktail':
-                                    echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-cocktail.svg");
+                                    echo file_get_contents(get_template_directory() . "/images/svg/visitor-info-icon-cocktail.svg");
                                     break;
                                 case 'hearth':
-                                    echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-hearth.svg");
+                                    echo file_get_contents(get_template_directory() . "/images/svg/visitor-info-icon-hearth.svg");
                                     break;                                        
                                 case 'paw':
-                                    echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-paw.svg");
+                                    echo file_get_contents(get_template_directory() . "/images/svg/visitor-info-icon-paw.svg");
                                     break;
                                 case 'party':
-                                    echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-party.svg");
+                                    echo file_get_contents(get_template_directory() . "/images/svg/visitor-info-icon-party.svg");
                                     break;
                                 case 'generic':
-                                    echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-generic.svg");
+                                    echo file_get_contents(get_template_directory() . "/images/svg/visitor-info-icon-generic.svg");
                                     break;
                                 default:
-                                    echo file_get_contents(get_template_directory_uri() . "/images/svg/visitor-info-icon-generic.svg");
+                                    echo file_get_contents(get_template_directory() . "/images/svg/visitor-info-icon-generic.svg");
                                 }
 
                             ?> 
@@ -92,7 +92,7 @@ $id = 'visitor-information-' . $block['id'];
                         </h3>
 
                         <span class="mobile_icon">
-                            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/CaretDownIcon.svg"); ?>
+                            <?php echo file_get_contents(get_template_directory() . "/images/svg/CaretDownIcon.svg"); ?>
                         </span>
 
                     </div>  

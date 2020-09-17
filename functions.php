@@ -19,7 +19,7 @@ if(strpos($_SERVER['HTTP_HOST'], 'hashmuseum.local') !== false){
 	include 'functions/advanced-custom-fields.php';	
 
 	function favicon() {
-		echo '<link rel="Shortcut Icon" type="image/x-icon" href="'. get_template_directory_uri() . '/images/favicon.ico" />';
+		echo '<link rel="Shortcut Icon" type="image/x-icon" href="'. get_template_directory() . '/images/favicon.ico" />';
 	}
 	add_action('wp_head', 'favicon');
 
@@ -239,7 +239,7 @@ function sk_taxonomy_terms() {
  
         if ( ! empty( $terms ) ) {
             foreach ( $terms as $term ) {
-                $out[] = sprintf( '<a class="taxonomy_link" href="%1$s">'. file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"). '%2$s</a>',
+                $out[] = sprintf( '<a class="taxonomy_link" href="%1$s">'. file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"). '%2$s</a>',
                     esc_url( get_term_link( $term->slug, $taxonomy_slug ) ),
                     esc_html( $term->name )
                 );

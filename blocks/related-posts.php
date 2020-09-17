@@ -10,7 +10,7 @@ $id = 'related-posts' . $block['id'];
         
         <div class="header_wrap">
             <div class="leaf_wrap">
-                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/weedleaf-large.svg"); ?>
+                <?php echo file_get_contents(get_template_directory() . "/images/svg/weedleaf-large.svg"); ?>
             </div>            
 
             <h2 class="header">
@@ -55,7 +55,7 @@ $id = 'related-posts' . $block['id'];
                                 <?php the_excerpt(); ?>
                             </p>
                             <a class="read_more" href="<?php the_permalink(); ?>">
-                                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
+                                <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
                                 <?php pll_e( 'Read more', 'hashmuseum' ) ?>
                             </a>
 
@@ -96,7 +96,7 @@ $id = 'related-posts' . $block['id'];
                                     <?php the_excerpt(); ?>
                                 </p>
                                 <a class="read_more" href="<?php the_permalink(); ?>">
-                                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
+                                    <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
                                     <?php pll_e( 'Read more', 'hashmuseum' ) ?>
                                 </a>
 
@@ -112,12 +112,12 @@ $id = 'related-posts' . $block['id'];
 
                 <button class="slider_button left" data-siema-related-post-slider-prev>
                     <div class="background_wrap">
-                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowLeftIcon.svg"); ?>
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowLeftIcon.svg"); ?>
                     </div>    
                 </button>
                 <button class="slider_button right" data-siema-related-post-slider-next>
                     <div class="background_wrap">
-                        <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
                     </div>
                 </button>
 

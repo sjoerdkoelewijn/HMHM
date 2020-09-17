@@ -45,7 +45,7 @@
             
             <div class="date">
 
-                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/calendarIcon.svg"); ?> 
+                <?php echo file_get_contents(get_template_directory() . "/images/svg/calendarIcon.svg"); ?> 
                 <p>
                     <?php _e( 'Ends on', 'hashmuseum' ) ?>
                     <?php echo $end_date->format('j F Y'); ?>
@@ -55,7 +55,7 @@
                 
             <div class="opening_hours">
             
-                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/clockIcon.svg"); ?> 
+                <?php echo file_get_contents(get_template_directory() . "/images/svg/clockIcon.svg"); ?> 
 
                 <?php if( $opening_hours_toggle === 'same' ) { ?>
 
@@ -88,7 +88,7 @@
 
             <div class="date">
 
-                <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/calendarIcon.svg"); ?> 
+                <?php echo file_get_contents(get_template_directory() . "/images/svg/calendarIcon.svg"); ?> 
                 <p>
                     <?php _e( 'Ended on', 'hashmuseum' ) ?>
                     <?php echo $end_date->format('j F Y'); ?>
@@ -103,7 +103,7 @@
     <?php if( $location ): ?>
 
         <div class="location">
-            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/pinIcon.svg"); ?>  
+            <?php echo file_get_contents(get_template_directory() . "/images/svg/pinIcon.svg"); ?>  
             <p>
                 <?php echo $location; ?>
             </p>
@@ -114,7 +114,7 @@
     <?php if($free === 'free' && $end_date_string > $today ) { ?>
 
         <div class="free_entry">
-            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/euroIcon.svg"); ?>  
+            <?php echo file_get_contents(get_template_directory() . "/images/svg/euroIcon.svg"); ?>  
             <p>
                 <?php _e( 'Free entry', 'hashmuseum' ) ?>
             </p>
@@ -125,7 +125,7 @@
     <div class="buttons">
 
         <button class="read_more_link" data-read-more-btn>
-            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/arrowRightIcon.svg"); ?>
+            <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
             <?php _e( 'More information', 'hashmuseum' ) ?>
         </button>
         
