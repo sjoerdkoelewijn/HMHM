@@ -11,8 +11,7 @@ $id = 'home-hero-' . $block['id']; ?>
         <div class="header_text">
 
             <div class="mobile_logo">
-                <?php echo get_template_directory() . "/images/svg/logoLarge.svg"; ?>
-                <?php echo file_get_contents(get_template_directory() . "/images/svg/logoLarge.svg"); ?>
+                <?php echo file_get_contents(get_template_directory() . "/images/svg/LogoLarge.svg"); ?>
             </div>    
 
             <h1 class="header">
