@@ -1,6 +1,7 @@
 /*! Hashmuseum v1.0.0 | (c) 2020 Sjoerd Koelewijn | MIT License |  */
-/* line 13, src/sass/variables/spacing.scss */
+/* line 5, src/sass/variables/spacing.scss */
 :root {
+  --mobile-btn-height: 65px;
   --horizontal-s:2vw;
   --horizontal:3vw;
   --horizontal-l:6vw;
@@ -11,8 +12,8 @@
   --vertical-xl:8vw;
 }
 
-@media (min-width: 320px) and (max-width: 768px) and (orientation: portrait) {
-  /* line 13, src/sass/variables/spacing.scss */
+@media (min-width: 280px) and (max-width: 799px) {
+  /* line 5, src/sass/variables/spacing.scss */
   :root {
     --horizontal-s:2vw;
     --horizontal:3vw;
@@ -22,5 +23,13 @@
     --vertical:10vw;
     --vertical-l:15vw;
     --vertical-xl:20vw;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 1024px) and (orientation: portrait) {
+  /* line 5, src/sass/variables/spacing.scss */
+  :root {
+    --mobile-btn-height: 85px;
+    --horizontal:6vw;
   }
 }

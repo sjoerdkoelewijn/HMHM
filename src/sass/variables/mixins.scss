@@ -1,7 +1,7 @@
 @mixin textLink {
     padding:0;
     text-decoration: none;
-    font-size: $small-btn;
+    font-size: var(--small-btn);
     text-transform:uppercase;
     font-weight:600;
     background:none;
@@ -46,5 +46,5 @@
         rgba(0,0,0,0.008) 95.2%,
         rgba(0,0,0,0.001) 98.2%, 
         rgba(0,0,0,0) 100%
-        );    
+    );    
 }

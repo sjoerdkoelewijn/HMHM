@@ -48,7 +48,7 @@ mainClose.forEach(function(elem) {
 
 /******************* Logo color switch *************************************/
 
-if (window.matchMedia("(min-width: 767px)").matches) {
+if (window.matchMedia("(min-width: 800px)").matches) {
 
     BackgroundCheck.init({
         targets: '.logo',
@@ -160,7 +160,7 @@ if (RelatedPostSliderContainer != null){
         easing: 'ease-out',
         perPage: {
             768: 1,
-            1024: 2,
+            800: 2,
             1400: 3,
         },
         startIndex: 0,
@@ -485,7 +485,7 @@ const MobileMenuTabsEl = document.querySelector('[data-mobile-menu-tabs]');
 const LocationsTabsEl = document.querySelector('[data-location-tabs]');
 
 
-if (window.matchMedia("(max-width: 767px)").matches) {
+if (window.matchMedia("(max-width: 800px)").matches) {
 
     if (MobileMenuTabsEl != null) { 
 
@@ -511,7 +511,7 @@ if (window.matchMedia("(max-width: 767px)").matches) {
 
 /******************* Top & Bottom Menu Hide *************************************/
 
-if (window.matchMedia("(max-width: 767px)").matches) {
+if (window.matchMedia("(max-width: 799px)").matches) {
 
     const body = document.querySelector('[data-mobile-menu-hide]');
     const scrollUp = "scroll-up";

@@ -1,6 +1,6 @@
 <div class="main_menu hidden" data-main-menu>
 
-        <div class="menu_background"></div> 
+        <div class="menu_background" data-main-close></div> 
 
             <div class="main_menu_wrap">
 
@@ -30,11 +30,11 @@
                     <div class="tabs_header">
 
                         <button class="tab_title">
-                            <?php echo __( 'Amsterdam', 'hashmuseum' ) ?>
+                            <?php pll_e( 'Amsterdam', 'hashmuseum' ) ?>
                         </button>
 
                         <button class="tab_title">
-                            <?php echo __( 'Barcelona', 'hashmuseum' ) ?>
+                            <?php pll_e( 'Barcelona', 'hashmuseum' ) ?>
                         </button>
 
                     </div>

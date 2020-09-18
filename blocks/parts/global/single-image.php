@@ -5,6 +5,7 @@
 $HeroType = get_field('hero_type');
 
 if ($HeroType === 'large_text') {?> 
+
      <div class="content">
 
         <div class="mobile_logo">
@@ -18,6 +19,7 @@ if ($HeroType === 'large_text') {?>
         </h1>
 
     </div>
+
 <?php } ?>
 
 <?php foreach( $images as $image ): ?>

@@ -34,6 +34,7 @@ $header-font:'Prata', serif;
     --medium-p:1.2rem;
     --small-p:1rem;
 
+    --medium-btn:1.1rem;
     --small-btn:0.9rem;
 
     @include phone {
@@ -48,9 +49,19 @@ $header-font:'Prata', serif;
 
         --large-p:1.3rem;
         --small-p:.85rem;
+        
     }
 
     @include tablet {
+        --medium-btn:1.2rem;
+        --small-btn:1rem;
+
+        --large-p:1.6rem;
+        --medium-p:1.4rem;
+        --small-p:1.2rem;
+    }
+
+    @include desktop-s {
         --x-large-title:6vw;
         --large-title:4.5vw;
         --medium-title:4vw;
