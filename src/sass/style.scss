@@ -177,7 +177,6 @@ html {
         cursor: pointer;
         font-size: var(--small-p);
 
- 
 
         white-space: normal;
 
@@ -1463,6 +1462,12 @@ html {
                 display:none;
             }
         }
+
+        @include desktop-s {
+            .breadcrumb_last {
+                display:none;
+            }
+        }
     }
 
     .subheader {
@@ -1963,7 +1968,7 @@ html {
         justify-content: center;
         align-self: center;
         width:33vw;
-        padding:20vh var(--horizontal) var(--vertical) var(--horizontal);
+        padding:var(--vertical) var(--horizontal) var(--vertical) var(--horizontal);
 
         @include phone {
             width:100vw;
@@ -2385,7 +2390,7 @@ html {
     }
 
     @include desktop-s {
-        flex-direction: row-reverse;
+        //flex-direction: row-reverse;
     }
        
     .subheader {
@@ -4582,6 +4587,10 @@ border: 0;
             display:inline-block;
             text-align:center;
             margin-top:-15px;
+
+            @include desktop-s {
+                margin-top:10vh;
+            }
         }
 
         @include phone {
@@ -4591,6 +4600,12 @@ border: 0;
             margin-left:calc(var(--horizontal) + 1px);
             border-top:1px solid $black;
         }
+
+        @include desktop-s {
+            width:98vw;
+            border-left:1px solid $black;
+            margin-left:2vw;
+        }
     }
 }
 
@@ -4598,6 +4613,11 @@ border: 0;
     display: flex;
     min-height:100vh;
     align-items: center;
+
+    @include desktop-s {
+        border-left:1px solid $black;
+        margin-left:2vw;
+    }
     
     .info_wrap {
         width:66.66vw;
@@ -4612,6 +4632,10 @@ border: 0;
                 padding-top:var(--mobile-btn-height);
             }            
         }
+
+        @include desktop-s {
+            width:48vw;
+        }
         
         .meta_info {
             width:40vw;
@@ -4621,6 +4645,10 @@ border: 0;
             border-right:1px solid $black;
 
             @include phone {
+                display:none;
+            }
+
+            @include desktop-s {
                 display:none;
             }
 
@@ -4698,6 +4726,10 @@ border: 0;
                 width:100%;
             }
 
+            @include desktop-s {
+                padding:var(--vertical) calc(var(--horizontal) * 2);
+            }
+
             .title {
                 text-decoration:none;   
                 
@@ -4707,6 +4739,11 @@ border: 0;
                     margin-bottom:10px;
 
                     @include phone {
+                        font-size:var(--medium-title);
+                        color:$black;
+                    }
+
+                    @include desktop-s {
                         font-size:var(--medium-title);
                         color:$black;
                     }
@@ -4734,6 +4771,10 @@ border: 0;
                         display:none;
                     }
 
+                    @include desktop-s {
+                        display:none;
+                    }
+
                 }
 
                 &:after {
@@ -4752,7 +4793,7 @@ border: 0;
 
             .mobile_meta_info {
                 
-                @include desktop-s-up {
+                @include desktop-up {
                     display:none;
                 }
     
@@ -4782,8 +4823,13 @@ border: 0;
                         margin-left:-8vw;
                         margin-top:20px;
                         position:absolute;
+
+                        @include desktop-s {
+                            width:4vw;
+                            margin-left:calc(var(--horizontal-l) * -1);
+                        }
     
-                        @include desktop-s-up {
+                        @include desktop-up {
                             display:none;
                         }
     
@@ -4800,7 +4846,11 @@ border: 0;
                         left:-30px;
                         top:13px;
 
-                        @include desktop-s-up {
+                        @include desktop-s {
+                            left:calc((var(--horizontal-l) * -1) - 7px);
+                        }
+
+                        @include desktop-up {
                             display:none;
                         }
                     }
@@ -4853,11 +4903,21 @@ border: 0;
                     @include phone {
                         display:block;
                     }
+
+                    @include desktop-s {
+                        display:block;
+                    }
                 }
                 .long_text {
-                    @include phone {
+                    
+                    @include desktop-up {
                         display:none;
                     }
+
+                    @include desktop-s {
+                        display:none;
+                    }
+
                 }
             }
 
@@ -4887,9 +4947,13 @@ border: 0;
             display:none;
         }
 
+        @include desktop-s {
+            width:50vw;
+        }
+
         img {
         width:100%;
-        height:100vh;
+        min-height:100vh;
         }
     }
 }

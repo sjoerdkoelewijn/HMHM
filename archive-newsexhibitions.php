@@ -190,7 +190,7 @@ get_header(); ?>
 							<?php if ( has_post_thumbnail( $post->ID ) ) { ?>
 
 								<a href="<?php the_permalink(); ?>">
-									<?php echo get_the_post_thumbnail( ); ?>
+									<?php echo get_the_post_thumbnail(); ?>
 								</a>
 
 							<?php } ?>
@@ -226,7 +226,7 @@ get_header(); ?>
 				<?php if ( has_post_thumbnail( $post->ID ) ) { ?>
 
 					<a href="<?php the_permalink(); ?>">
-						<?php echo get_the_post_thumbnail( ); ?>
+						<?php the_post_thumbnail('medium'); ?>
 					</a>
 
 				<?php } ?>
