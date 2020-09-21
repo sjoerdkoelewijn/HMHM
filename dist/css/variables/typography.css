@@ -135,7 +135,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Prata", serif;
 }
 
-/* line 101, src/sass/variables/typography.scss */
+/* line 100, src/sass/variables/typography.scss */
+h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong {
+  font-weight: 300;
+}
+
+/* line 105, src/sass/variables/typography.scss */
 h1 {
   font-weight: 400;
   line-height: 140%;
@@ -143,7 +148,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-/* line 109, src/sass/variables/typography.scss */
+/* line 113, src/sass/variables/typography.scss */
 h2 {
   font-weight: 400;
   line-height: 150%;
@@ -151,19 +156,19 @@ h2 {
   margin-bottom: 30px;
 }
 
-/* line 116, src/sass/variables/typography.scss */
+/* line 120, src/sass/variables/typography.scss */
 h1 + h2 {
   margin-top: -15px;
 }
 
-/* line 120, src/sass/variables/typography.scss */
+/* line 124, src/sass/variables/typography.scss */
 h3 {
   font-weight: 400;
   line-height: 150%;
   font-size: var(--small-subtitle);
 }
 
-/* line 126, src/sass/variables/typography.scss */
+/* line 130, src/sass/variables/typography.scss */
 p {
   line-height: 160%;
   font-weight: 300;

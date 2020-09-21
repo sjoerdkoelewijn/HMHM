@@ -75,7 +75,6 @@ $id = 'info-two-image' . $block['id'];
         
         </div> 
         
-
         <?php include('parts/info/info-text.php'); ?>
 
 

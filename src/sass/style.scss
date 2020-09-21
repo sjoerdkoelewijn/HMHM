@@ -210,6 +210,12 @@ html {
         width:60px;
         height:60px;
     }
+
+    @include desktop-s {
+        width:70px;
+        height:70px;
+        top:52%;
+    }
                
     .background_wrap {
          width:80px;
@@ -226,6 +232,17 @@ html {
             svg {
                 width:20px;
                 height:20px;
+            }
+        }
+
+        @include desktop-s {
+            width:70px;
+            height:70px;
+            padding-top:25px;
+
+            svg {
+                width:22px;
+                height:22px;
             }
         }
         
@@ -310,7 +327,11 @@ html {
 
         @include phone {
             width:100%;
-        }        
+        }
+        
+        @include desktop-s {
+            width:50vw;
+        }
         
         h2 {
             margin-top:var(--vertical-l);
@@ -1450,8 +1471,8 @@ html {
 
    .text_wrap {
         width:33.33vw;
-        margin-top:10vh;
-        padding:var(--vertical) var(--horizontal);
+        //margin-top:10vh;
+        padding:20vh var(--horizontal) var(--vertical) var(--horizontal);
         flex-direction: column;
         display: inline-flex;
         justify-content: center;
@@ -1459,6 +1480,10 @@ html {
         @include phone {
             width:100vw;
             margin-top:0;
+        }
+
+        @include desktop-s {
+            width:50vw;
         }
         
         .read_more_link {           
@@ -1583,7 +1608,7 @@ html {
 /* ------------- Styling specifically for the large text hero block ---------------- */
 
 .hero.large_text {
-    align-items: center;
+    //align-items: center;
 
     @include phone {
         flex-direction: column;
@@ -1601,7 +1626,7 @@ html {
 
         @include desktop-s {
             width:50vw;
-            padding:var(--vertical) var(--horizontal) ;
+            padding:20vh var(--horizontal) var(--horizontal) var(--horizontal); 
         }
 
         .description {
@@ -1617,7 +1642,9 @@ html {
 
     .image_wrap {
         width:33vw;
-        min-height:100vh;        
+        display:flex;
+        align-items: stretch; 
+        overflow:hidden;      
 
         &:before {
             content:'';
@@ -1632,6 +1659,7 @@ html {
 
         @include phone {
             width:100vw;
+            min-height:calc(100vh - var(--mobile-btn-height));
         }
 
         @include desktop-s {
@@ -1723,6 +1751,10 @@ html {
             width:100vw;
         }
 
+        @include desktop-s {
+            width:50vw;
+        }
+
         .item_number {
             font-size:var(--x-large-title);
             margin:0;
@@ -1749,6 +1781,10 @@ html {
         position:relative;
         display:flex;
         align-items: stretch;
+
+        @include desktop-s {
+            width:50vw;
+        }
         
         &:before {
             content:'';
@@ -1871,6 +1907,9 @@ html {
         @include phone {
             display:none;
         }
+        @include desktop-s {
+            display:none;
+        }
     }
  
  
@@ -1924,11 +1963,15 @@ html {
         justify-content: center;
         align-self: center;
         width:33vw;
-        padding:var(--vertical) 5vw;
+        padding:20vh var(--horizontal) var(--vertical) var(--horizontal);
 
         @include phone {
             width:100vw;
             padding:var(--vertical-xl) var(--horizontal) var(--vertical-xl) var(--horizontal);
+        }
+
+        @include desktop-s {
+            width:50vw;
         }
 
         .social {
@@ -2071,6 +2114,10 @@ html {
         @include phone {
             width:100vw;
         }
+
+        @include desktop-s {
+            width:50vw;
+        }
     }
 
     .image_wrap.location_hero {   
@@ -2163,6 +2210,16 @@ html {
 
 @include desktop-s {
 
+    .location_info.amsterdam, .location_info.barcelona {
+        flex-direction: row-reverse;
+    }
+
+    .location_info.hero {
+        .text_wrap {
+            padding-top:var(--vertical);
+        }
+    }
+    
     .location_info {
 
         .tabs {
@@ -2199,6 +2256,7 @@ html {
             }
     
         }
+
     }
 
     .gb_block ~ .location_info {
@@ -2325,8 +2383,11 @@ html {
     @include phone {
         flex-direction: column;
     }
-  
-     
+
+    @include desktop-s {
+        flex-direction: row-reverse;
+    }
+       
     .subheader {
         font-size:var(--medium-title);
         margin-bottom:20px;
@@ -2888,6 +2949,10 @@ border: 0;
     .post {
         width:33.33vw;
 
+        @include desktop-s {
+            width:50vw;
+        }
+
         .image_wrap {
 
             img {
@@ -3295,8 +3360,11 @@ border: 0;
     width:33.33vw;
 
     @include phone {
-        width:100vw;
-        
+        width:100vw;        
+    }
+
+    @include desktop-s {
+        width:50vw;        
     }
 
     .image_wrap {
@@ -3367,6 +3435,10 @@ border: 0;
 
         @include phone {
             width:100vw;
+        }
+
+        @include desktop-s {
+            width:50vw;
         }
 
         .image {
