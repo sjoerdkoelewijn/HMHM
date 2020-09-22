@@ -310,6 +310,22 @@ html {
 
 }  
 
+/* ------------- Wordpress Embedd Videos ----------------------------------------------------------------------------------------------------------- */
+
+.wp-block-embed.is-type-video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 90%;
+        height: 90%;
+    }
+}
 
 /* ------------- Default Wordpress Blocks ----------------------------------------------------------------------------------------------------------- */
 
@@ -319,17 +335,21 @@ html {
     @include phone {
         flex-direction: column;
     }
+
+    @include desktop-s {
+        flex-direction: column;
+    }
     
     .wp-block-group {
         width:65vw;
-        padding:var(--horizontal);
+        padding:20vh var(--horizontal) var(--vertical) var(--horizontal);
 
         @include phone {
             width:100%;
         }
         
         @include desktop-s {
-            width:50vw;
+            width:100vw;
         }
         
         h2 {
@@ -369,6 +389,10 @@ html {
             display:inline-block;
         }
     }
+}
+
+.gb_block ~ .wp-block-group {
+    padding:var(--vertical) var(--horizontal) var(--vertical) var(--horizontal);
 }
 
 .wp-block-group {
@@ -1431,13 +1455,18 @@ html {
 /* ------------- Hero Block ---------------- */
 
 .hero {
-   display:flex;
-   width:100vw;
-   min-height:100vh;
+    display:flex;
+    width:100vw;
+    height:100vh;
    
-   @include phone {
+    @include phone {
         flex-direction:column-reverse;
-   }
+    }
+
+    @include desktop-s {
+        height:auto;
+        min-height:100vh;
+    }
 
    .breadcrumbs {
     font-size:$small-btn;
@@ -3369,7 +3398,12 @@ border: 0;
     }
 
     @include desktop-s {
-        width:50vw;        
+        width:100vw;
+        display:flex;
+        
+        .image_wrap ~ .image_wrap {
+            width:50vw;
+        }
     }
 
     .image_wrap {
@@ -3401,23 +3435,39 @@ border: 0;
             padding:var(--vertical) var(--horizontal-l);
         }
 
+        @include desktop-s {
+            width:50vw;
+        }
+
         .quote_text {
             margin-top:var(--vertical);
             font-family: $header-font;
-            font-size:var(--large-p);
+            font-size:var(--medium-title);
+
+            @include tablet {
+                font-size:var(--large-title);
+            }
+
+            @include desktop-s {
+                font-size:var(--medium-title);
+            }
         }
 
         .quote_text.medium {
-            font-size:var(--large-subtitle);
+            font-size:var(--large-title);
         }
 
         .quote_text.large {
-            font-size:var(--large-title);
+            font-size:var(--x-large-title);
         }
 
         .quote_author {
             font-family: $body-font;
             font-size:var(--small-p);
+
+            @include desktop-s {
+                font-size:var(--medium-p);
+            }
         }
 
     }    

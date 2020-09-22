@@ -53,6 +53,15 @@ $header-font:'Prata', serif;
     }
 
     @include tablet {
+        --x-large-title:11vw;
+        --large-title:8vw;
+        --medium-title:6vw;
+        --small-title:5vw;
+
+        --large-subtitle:5vw;
+        --medium-subtitle:4vw;
+        --small-subtitle:3vw;
+        
         --medium-btn:1.2rem;
         --small-btn:1rem;
 

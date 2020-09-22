@@ -29,7 +29,12 @@
 
     @include tablet { 
         --mobile-btn-height : 85px; 
-        --horizontal:6vw;   
+        --horizontal:6vw;
+        
+        --vertical-s:4vw;
+        --vertical:8vw;
+        --vertical-l:10vw;
+        --vertical-xl:15vw;
     }
 
 }
