@@ -4562,7 +4562,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'max_height' => '',
 				'max_size' => '',
 				'mime_types' => '',
-				'translations' => 'sync',
+				'translations' => 'copy_once',
 			),
 		),
 		'location' => array(
