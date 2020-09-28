@@ -391,7 +391,7 @@ html {
     }
 }
 
-.gb_block ~ .wp-block-group {
+.gb_block ~ .wp-block-group ~ .wp-block-group {
     padding:var(--vertical) var(--horizontal) var(--vertical) var(--horizontal);
 }
 
@@ -1529,17 +1529,7 @@ html {
             margin-bottom:20px;
             display:inline-block;
         }
-
-        .taxonomy_link {
-            @include textLink;
-        }
-
-        .license_message {
-            font-size:var(--small-p);
-            position:absolute;
-            bottom:20px;
-            padding-right:10px;
-        }
+        
    }
 
    .text_wrap.expo {
@@ -1763,6 +1753,92 @@ html {
     
 }
 
+.hero.collection_item {
+
+    .taxonomy_link {
+        @include textLink;
+    }
+
+    .text_wrap {
+        padding:var(--vertical) var(--horizontal);
+        flex-direction: column;
+        justify-content: space-between;
+        align-items:stretch;
+
+        .text_wrap_inner {        
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height:90vh;
+        }    
+    
+        .license_message {
+            font-size:var(--small-p);
+            margin-right:10px;
+        }
+    }
+  
+    @include desktop-s {
+        flex-direction:column;
+
+        .text_wrap_inner {        
+            min-height:50vh;
+        } 
+
+        .image_wrap {        
+            width:100vw;
+            min-height:100vh; 
+            
+            img {
+                width:100vw;
+                min-height:100vh; 
+            }
+        }
+    }   
+
+    @include tablet {
+        flex-direction:column;
+        height:auto;
+
+        .text_wrap {
+            .text_wrap_inner {        
+                min-height:auto;
+            }
+
+            .license_message {
+                margin-top:20px;
+            }
+        }
+        
+        .image_wrap {        
+            margin-top:var(--mobile-btn-height);           
+            
+        }
+    
+    }
+
+    @include phone {
+        flex-direction:column;
+        height:auto;
+
+        .text_wrap {
+            .text_wrap_inner {        
+                min-height:auto;
+            }
+
+            .license_message {
+                margin-top:20px;
+            }
+        }
+        
+        .image_wrap {        
+            margin-top:var(--mobile-btn-height);           
+            
+        }
+    
+    }
+}
+
 /* ------------- Collection Overview Hero Block ---------------- */
 
 .collection-overview-hero {
@@ -1821,7 +1897,7 @@ html {
         }
         
         &:before {
-            content:'';
+            //content:'';
             @include blackGradient(0deg);
             width:100%;
             display:block;
@@ -3707,10 +3783,11 @@ border: 0;
             display:none;
         }
     }
-
-  
+ 
 
 }
+
+
 
  /* ------------- Home Hero ---------------- */
 

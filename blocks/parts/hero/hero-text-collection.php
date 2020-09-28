@@ -2,28 +2,31 @@
 
 <div class="text_wrap">
 
-    <a href="/en/collection/" class="back_link">
-        <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowLeftIcon.svg"); ?>
-        <?php pll_e( 'Back to the collection', 'hashmuseum' ) ?>
-    </a>
+    <div class="text_wrap_inner">
 
-    <h1 class="header">
-        <?php echo the_title(); ?>
-    </h1>    
+        <a href="/en/collection/" class="back_link">
+            <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowLeftIcon.svg"); ?>
+            <?php pll_e( 'Back to the collection', 'hashmuseum' ) ?>
+        </a>
 
-    <h2 class="subheader">
-        <?php the_field('subheader'); ?>
-    </h2>
+        <h1 class="header">
+            <?php echo the_title(); ?>
+        </h1>    
 
-    <p class="description">
-        <?php the_field('description'); ?>
-    </p>
+        <h2 class="subheader">
+            <?php the_field('subheader'); ?>
+        </h2>
 
-    <?php echo sk_taxonomy_terms(); ?>
-    
+        <div class="description">
+            <?php the_field('description'); ?>
+        </div>
+
+        <?php echo sk_taxonomy_terms(); ?>
+
+    </div>
+        
     <p class="license_message">
-    <?php pll_e( 'Hash Marihuana & Hemp Museum. Please <a href="mailto:info@hashmuseum.com">contact us</a> for licensing options.', 'hashmuseum' ) ?>
-    
+        <?php pll_e( 'Hash Marihuana & Hemp Museum. Please <a href="mailto:info@hashmuseum.com">contact us</a> for licensing options.', 'hashmuseum' ) ?>
     </p>
 
 </div>
