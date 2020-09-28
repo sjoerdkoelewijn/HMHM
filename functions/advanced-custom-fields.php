@@ -4550,7 +4550,7 @@ if( function_exists('acf_add_local_field_group') ):
 					'id' => '',
 				),
 				'return_format' => 'array',
-				'preview_size' => 'medium',
+				'preview_size' => 'small_image',
 				'insert' => 'append',
 				'library' => 'all',
 				'min' => 1,
