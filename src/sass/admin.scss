@@ -1,5 +1,11 @@
+@import "variables/breakpoints";
+
 .wp-block {
-    max-width:50vw !important;
+    
+    @include desktop-up {
+        max-width:50vw !important;
+    }
+
 }
 
 .wp-block-group {

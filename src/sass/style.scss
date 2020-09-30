@@ -5038,7 +5038,7 @@ border: 0;
                 .long_text {
                     
                     @include desktop-up {
-                        display:none;
+                        display:block;
                     }
 
                     @include desktop-s {

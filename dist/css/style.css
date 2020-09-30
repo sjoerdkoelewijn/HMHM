@@ -7345,7 +7345,7 @@ html {
 @media (min-width: 1441px) {
   /* line 5038, src/sass/style.scss */
   .event .info_wrap .description .btn .long_text {
-    display: none;
+    display: block;
   }
 }
 
