@@ -45,7 +45,6 @@ function admin_styles() {
 add_action('admin_enqueue_scripts', 'admin_styles');
 
 
-
 /*************************** Enqueue Scripts **********************************/
 
 function hashmuseum_scripts() {
@@ -60,7 +59,20 @@ function hashmuseum_scripts() {
 	wp_enqueue_script('logo-color-switch', get_template_directory_uri() . '/libs/background-check.min.js', NULL, $timestamp, FALSE);
     wp_enqueue_script('slider', get_template_directory_uri() . '/libs/siema.min.js', NULL, $timestamp, FALSE);
 	wp_enqueue_script('hashmuseum-app', get_template_directory_uri() . '/dist/js/app.min.js', NULL, $timestamp, TRUE);
+	wp_enqueue_script('hashmuseum-app-defer', get_template_directory_uri() . '/dist/js/app-defer.min.js', NULL, $timestamp, TRUE);
 	wp_enqueue_script('mailchimp', get_template_directory_uri() . '/dist/js/mailchimp.min.js', NULL, $timestamp, TRUE);
 
 }
 add_action( 'wp_enqueue_scripts', 'hashmuseum_scripts', 99 );
+
+
+// Defer js - Adapted from https://gist.github.com/toscho/1584783
+add_filter( 'clean_url', function( $url )
+{
+    if ( FALSE === strpos( $url, '-defer.min.js' ) )
+    { 
+        return $url;
+    }
+    
+    return "$url' defer='defer";
+}, 11, 1 );

@@ -73,7 +73,7 @@
 
 				<h2 class="header">
 						<a class="location_link" href="/<?php echo pll_current_language(); ?>/amsterdam/">
-                    		<?php pll_e( 'Amste rdam', 'hashmuseum' ) ?>
+                    		<?php pll_e( 'Amsterdam', 'hashmuseum' ) ?>
                 		</a>
 					</h2>
 					
@@ -231,6 +231,7 @@
 		</article>
 
 		<?php include('parts/ticket-modal.php'); ?>
+		<?php include('parts/cookie-message.php'); ?>
 		
 		<?php wp_footer(); ?>
 

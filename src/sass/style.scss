@@ -310,6 +310,91 @@ html {
 
 }  
 
+/* ------------- Cookie message ----------------------------------------------------------------------------------------------------------- */
+
+.cookie_message {
+    background:rgba($black, .6);
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:10000;
+    display:none;
+
+    
+
+    .box {        
+        background:$white;
+        width:24vw;
+        //height:55vh;
+        position:fixed;
+        
+        bottom:0;
+        right:10vw;
+
+        @include phone {
+            width:calc(100vw - var(--horizontal) * 2);
+            right:var(--horizontal);
+            left:var(--horizontal);
+        }
+
+        @include desktop-s {
+            width:55vh;
+        }
+
+        .gdpr_image {
+            display:block;
+            width:100%;
+            height:200px;
+
+            @include phone {
+                display:none;
+            }
+
+            @include tablet {
+                display:block;
+                width:calc(100vw - var(--horizontal) * 2);
+            }
+
+            @include desktop-s {
+                width:55vh;
+            }
+
+        }
+
+        .text {
+            padding:var(--horizontal-s);
+
+            @include phone {
+                padding:var(--horizontal-l);
+            }
+
+            h2 {
+                font-size:2rem;
+                margin:0;
+            }
+            
+            p {
+                font-size:1.2rem;
+
+                @include tablet {
+                    font-size:1.5rem;
+                }
+            }
+
+            
+        }
+
+    }
+    
+}
+
+.cookie_message.visible {
+    display:block;
+}
+
+
 /* ------------- Wordpress Embedd Videos ----------------------------------------------------------------------------------------------------------- */
 
 .wp-block-embed.is-type-video {

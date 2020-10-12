@@ -47,7 +47,7 @@ $large-uhd-width: 3840px;
 }
 
 @mixin desktop {
-    @media (min-width: #{$medium-desktop-width + 1}) and (max-width: #{$small-uhd-width - 1px}) and (orientation:landscape) {
+    @media (min-width: #{$medium-desktop-width + 1}) and (orientation:landscape) {
         @content;
     }
 }
