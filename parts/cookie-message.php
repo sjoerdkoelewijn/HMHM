@@ -19,7 +19,7 @@
                 Have a cookie
             </h2>
             <p>
-                <?php pll_e( 'We use cookies to improve your experience and deliver personalized content. By using this website you agree to our <a href="/en/cookie-policy">Cookie Policy.</a>', 'hashmuseum' ) ?>
+                <?php pll_e( 'We use cookies to improve your experience and deliver personalized content. By using this website you agree to our <a href="/en/privacy-policy">Cookie Policy.</a>', 'hashmuseum' ) ?>
             </p>
 
             <button class="btn secondary_btn black" data-cookie-accept>

@@ -58,6 +58,6 @@ if ( function_exists( 'pll_register_string' ) ) {
     pll_register_string('404', "Don't worry though, it's probably just a typo. Please use the search function instead.", 'Hashmuseum');
 
     pll_register_string('Cookie Message', 'Have a cookie', 'Hashmuseum');
-    pll_register_string('Cookie Message', 'We use cookies to improve your experience and deliver personalized content. <a href="/en/cookie-policy">Cookie Policy.</a>', 'Hashmuseum');
+    pll_register_string('Cookie Message', 'We use cookies to improve your experience and deliver personalized content. By using this website you agree to our <a href="/en/privacy-policy">Privacy Policy.</a>', 'Hashmuseum');
 
 }   
