@@ -321,13 +321,11 @@ html {
     left:0;
     z-index:10000;
     display:none;
-
-    
+   
 
     .box {        
         background:$white;
         width:24vw;
-        //height:55vh;
         position:fixed;
         
         bottom:0;
@@ -346,10 +344,9 @@ html {
         .gdpr_image {
             display:block;
             width:100%;
-            height:200px;
 
             @include phone {
-                display:none;
+                // display:none;
             }
 
             @include tablet {
@@ -383,10 +380,36 @@ html {
                 }
             }
 
+            .checkbox_wrap {
+                margin-top:15px;
+                margin-bottom:15px;
+
+                .checkbox {
+                    transform: scale(1.3);
+                    filter: grayscale(1)
+                }
+
+                label {
+                    font-size:1.1rem;
+                    font-weight:600;
+                    margin-left:5px;
+                }
+
+                label.functional {
+                    color:$mediumgrey;
+                }
+
+                p {
+                    margin-bottom:0;
+                }
+                
+            }
             
         }
 
     }
+
+    
     
 }
 
