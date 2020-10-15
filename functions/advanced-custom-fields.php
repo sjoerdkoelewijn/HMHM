@@ -1,5 +1,4 @@
 <?php
-
 if( function_exists('acf_add_local_field_group') ):
 
 	acf_add_local_field_group(array(
@@ -2981,7 +2980,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'key' => 'field_5f202f58bd637',
 				'label' => 'Amsterdam Text',
 				'name' => 'amsterdam_text',
-				'type' => 'textarea',
+				'type' => 'wysiwyg',
 				'instructions' => '',
 				'required' => 0,
 				'conditional_logic' => array(
@@ -2999,17 +2998,17 @@ if( function_exists('acf_add_local_field_group') ):
 					'id' => '',
 				),
 				'default_value' => '',
-				'placeholder' => '',
-				'maxlength' => '',
-				'rows' => 4,
-				'new_lines' => '',
+				'tabs' => 'all',
+				'toolbar' => 'basic',
+				'media_upload' => 0,
+				'delay' => 0,
 				'translations' => 'translate',
 			),
 			array(
 				'key' => 'field_5f202e87fb11f',
 				'label' => 'Barcelona Text',
 				'name' => 'barcelona_text',
-				'type' => 'textarea',
+				'type' => 'wysiwyg',
 				'instructions' => '',
 				'required' => 0,
 				'conditional_logic' => array(
@@ -3027,10 +3026,10 @@ if( function_exists('acf_add_local_field_group') ):
 					'id' => '',
 				),
 				'default_value' => '',
-				'placeholder' => '',
-				'maxlength' => '',
-				'rows' => 4,
-				'new_lines' => '',
+				'tabs' => 'all',
+				'toolbar' => 'basic',
+				'media_upload' => 0,
+				'delay' => 0,
 				'translations' => 'translate',
 			),
 			array(
