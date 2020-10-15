@@ -2274,6 +2274,24 @@ html {
 
     }
 
+    .text_wrap.amsterdam {
+        border-right:1px solid $mediumgrey;
+        position:relative;
+
+        &:after {
+            content:'';
+            background:$lightgrey url('../../images/svg/weedleaf-large.svg') no-repeat;
+            background-size:50px 50px;
+            background-position:center center;
+            position:absolute;
+
+            height:60px;
+            width:60px;
+            
+            right:-33px;
+        }
+    }
+
     .image_wrap {
         width:33vw;
         display:flex;
