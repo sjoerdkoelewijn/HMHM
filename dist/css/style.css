@@ -3662,7 +3662,7 @@ html {
 /* line 2281, src/sass/style.scss */
 .location_info .text_wrap.amsterdam:after {
   content: '';
-  background: #F6F6F6 url("../../images/svg/weedleaf-large.svg") no-repeat;
+  background: rgba(246, 246, 246, 0.7) url("../../images/svg/weedleaf-large.svg") no-repeat;
   background-size: 50px 50px;
   background-position: center center;
   position: absolute;
@@ -4453,7 +4453,7 @@ html {
 
 /* line 2918, src/sass/style.scss */
 .reviews .text_wrap .tripadvisor_ratings .rating .stars {
-  --percent: calc(var(--rating) / 5 * 100%);
+  --percent: calc(var(--rating) / 5 * 99%);
   margin-top: 20px;
   display: block;
   font-size: 30px;

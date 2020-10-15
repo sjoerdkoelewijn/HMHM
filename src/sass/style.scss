@@ -2280,7 +2280,7 @@ html {
 
         &:after {
             content:'';
-            background:$lightgrey url('../../images/svg/weedleaf-large.svg') no-repeat;
+            background:rgba($lightgrey, .7) url('../../images/svg/weedleaf-large.svg') no-repeat;
             background-size:50px 50px;
             background-position:center center;
             position:absolute;
@@ -2916,7 +2916,7 @@ html {
                 }
 
                 .stars {
-                    --percent: calc(var(--rating) / 5 * 100%);
+                    --percent: calc(var(--rating) / 5 * 99%);
                     margin-top:20px;
                     display:block;
                     font-size: 30px;
