@@ -2141,6 +2141,7 @@ html {
 .location_info {
     display:flex;
     min-height:100vh;
+    max-height:100vh;
 
     .tabs {
         display:flex;
@@ -2209,7 +2210,7 @@ html {
         }
 
         .meta {
-            height:180px;
+            //height:180px;
 
             @include phone {
                 height:auto;

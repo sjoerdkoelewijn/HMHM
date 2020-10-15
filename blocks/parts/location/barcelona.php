@@ -84,7 +84,7 @@ $bcnimage = get_field('bcn_image');
 
     <?php if( !empty( $bcnimage ) ): ?>
 
-        <img loading="lazy" class="image" src="<?php echo esc_url($bcnimage['sizes']['medium']); ?>" alt="<?php echo $bcnimage['alt']; ?>" />
+        <img loading="lazy" class="image" src="<?php echo esc_url($bcnimage['sizes']['large_image']); ?>" alt="<?php echo $bcnimage['alt']; ?>" />
     
         <?php if($bcnimage['caption']) { ?>
 

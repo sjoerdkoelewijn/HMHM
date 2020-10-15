@@ -6,7 +6,7 @@
         
         <div class="image_slide">
             
-            <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo $image['alt']; ?>" />
+            <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['larger_image']); ?>" alt="<?php echo $image['alt']; ?>" />
             
             <?php if($image['caption']) { ?>
 
