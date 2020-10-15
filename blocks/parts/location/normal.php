@@ -91,7 +91,7 @@ $bcnimage = get_field('bcn_image');
 
         <?php if( !empty( $genericimage ) ): ?>
             
-            <img loading="lazy" class="image" src="<?php echo esc_url($genericimage['sizes']['medium']); ?>" alt="<?php echo $genericimage['alt']; ?>" />
+            <img loading="lazy" class="image" src="<?php echo esc_url($genericimage['sizes']['large_image']); ?>" alt="<?php echo $genericimage['alt']; ?>" />
         
             <?php if($genericimage['caption']) { ?>
 
@@ -176,7 +176,7 @@ $bcnimage = get_field('bcn_image');
 
     <?php if( !empty( $genericimage ) ): ?>
         
-        <img loading="lazy" class="image" src="<?php echo esc_url($genericimage['sizes']['medium']); ?>" alt="<?php echo $genericimage['alt']; ?>" />
+        <img loading="lazy" class="image" src="<?php echo esc_url($genericimage['sizes']['large_image']); ?>" alt="<?php echo $genericimage['alt']; ?>" />
     
         <?php if($genericimage['caption']) { ?>
 

@@ -25,9 +25,9 @@ $amsimage = get_field('ams_image');
             <?php pll_e( 'Amsterdam', 'hashmuseum' ) ?>
         </h2>
 
-        <p class="text">
+        <div class="text">
             <?php echo $amstext; ?>
-        </p>
+        </div>
 
         <div class="buttons">
 

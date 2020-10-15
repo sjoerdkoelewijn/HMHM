@@ -25,9 +25,9 @@ $bcnimage = get_field('bcn_image');
             <?php pll_e( 'Barcelona', 'hashmuseum' ) ?>
         </h2>
 
-        <p class="text">
+        <div class="text">
             <?php echo $bcntext; ?>
-        </p>
+        </div>
 
         <div class="buttons">
 

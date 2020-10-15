@@ -114,9 +114,9 @@ $genericimage = get_field('generic_image');
 
             </div>
 
-            <p class="text">
+            <div class="text">
                 <?php echo $amstext; ?>
-            </p>
+            </div>
 
         </div>
 
@@ -181,9 +181,9 @@ $genericimage = get_field('generic_image');
 
             </div>
 
-            <p class="text">
+            <div class="text">
                 <?php echo $bcntext; ?>
-            </p>
+            </div>
 
         </div>    
 

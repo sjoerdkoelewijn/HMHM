@@ -2141,7 +2141,11 @@ html {
 .location_info {
     display:flex;
     min-height:100vh;
-    max-height:100vh;
+
+    @include desktop-up {
+        max-height:100vh;
+    }
+    
 
     .tabs {
         display:flex;
@@ -2185,7 +2189,12 @@ html {
         justify-content: center;
         align-self: center;
         width:33vw;
-        padding:var(--vertical) var(--horizontal) var(--vertical) var(--horizontal);
+        padding:0 var(--horizontal-l);
+
+        @include desktop-s-down {
+            padding:var(--vertical-l) var(--horizontal-l);
+            
+        }
 
         @include phone {
             width:100vw;
@@ -2206,7 +2215,10 @@ html {
         }
 
         .text {
-            font-size:var(--medium-p);
+            p {
+                font-size:var(--medium-p);
+                margin-bottom:0;
+            }
         }
 
         .meta {

@@ -46,6 +46,12 @@ $large-uhd-width: 3840px;
     }       
 }
 
+@mixin desktop-s-down {
+    @media (max-width: #{$medium-tablet-width - 1}) {
+        @content;
+    }       
+}
+
 @mixin desktop {
     @media (min-width: #{$medium-desktop-width + 1}) and (orientation:landscape) {
         @content;
