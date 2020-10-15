@@ -165,9 +165,9 @@ function sk_frontpages_notice() { ?>
 
 function sk_get_ticket_url($location) {
 
-	if($location = 'Barcelona') {
+	if($location == 'barcelona') {
 		pll_e( 'https://tickets.hashmuseum.com/en/barcelona', 'hashmuseum' );
-	} else if ($location = 'Amsterdam'){
+	} else if ($location == 'amsterdam'){
 		pll_e( 'https://tickets.hashmuseum.com/en/tickets', 'hashmuseum' );
 	}
 

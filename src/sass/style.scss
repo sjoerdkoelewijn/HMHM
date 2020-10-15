@@ -325,16 +325,17 @@ html {
 
     .box {        
         background:$white;
-        width:24vw;
+        width:30vw;
+        max-width:450px;
         position:fixed;
         
         bottom:0;
         right:10vw;
 
         @include phone {
-            width:calc(100vw - var(--horizontal) * 2);
-            right:var(--horizontal);
-            left:var(--horizontal);
+            width:100vw;
+            right:0;
+            left:0;
         }
 
         @include desktop-s {
@@ -344,9 +345,10 @@ html {
         .gdpr_image {
             display:block;
             width:100%;
+            max-height:25vh;
 
             @include phone {
-                // display:none;
+                display:none;
             }
 
             @include tablet {
@@ -374,6 +376,7 @@ html {
             
             p {
                 font-size:1.2rem;
+                max-width:33ch;
 
                 @include tablet {
                     font-size:1.5rem;
