@@ -8,7 +8,27 @@ $id = 'sub-items' . $block['id'];
 
     <article id="<?php echo $id; ?>" class="sub_items gb_block">
         
-        <div class="header_wrap">         
+        
+
+
+
+
+
+
+
+
+
+    <?php 
+
+    $posts = get_field('posts');
+
+    if ( have_posts() ) : ?>
+
+        <div class="header_wrap">
+            
+            <div class="leaf_wrap">
+                <?php echo file_get_contents(get_template_directory() . "/images/svg/weedleaf-large.svg"); ?>
+            </div>            
 
             <h2 class="header">
                 <?php the_field('header'); ?>
@@ -17,26 +37,14 @@ $id = 'sub-items' . $block['id'];
             <p class="description">
                 <?php the_field('description'); ?>
             </p>
-    
+
         </div>
-
-
-
         
-		
-					
-		
+        <?php if( $posts < 4 ) { ?>
 
-
-        <?php 
-        
-        $posts = get_field('posts');
-        
-        if ( have_posts() ) : ?>
+            <div class="related_posts_inner">
             
-                <div data-siema-related-post-slider>
-
-                    <?php while ( have_posts() ) : the_post(); ?>
+                <?php while ( have_posts() ) : the_post(); ?>
                     
                     <div class="post">
 
@@ -46,61 +54,63 @@ $id = 'sub-items' . $block['id'];
 
                         <div class="text_wrap">
                 
-                        <a class="title" href="<?php the_permalink(); ?>">
-                            <h2>
-                                <?php the_title(); ?>
-                            </h2>
-                        </a>
-                        
-                        <p class="excerpt">
-                            <?php the_excerpt(); ?>
-                        </p>
-
-                        <a class="read_more" href="<?php the_permalink(); ?>">
-                            <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
-                            <?php pll_e( 'Read more', 'hashmuseum' ) ?>
-                        </a>
-
-                    </div>
-                            
-                    </div>        
-                        
-                    <?php endwhile; ?>
-
-                <?php global $post; ?>
-            
-                <?php foreach((array) $posts as $post ): ?>
-
-                <?php setup_postdata($post); ?>
-
-                    <div class="post">
-
-                        <a class="image_wrap" href="<?php the_permalink(); ?>">
-                            <?php the_post_thumbnail( 'large' ); ?>
-                        </a> 
-                        
-                        <div class="text_wrap">
-
                             <a class="title" href="<?php the_permalink(); ?>">
                                 <h2>
                                     <?php the_title(); ?>
                                 </h2>
                             </a>
+                            
                             <p class="excerpt">
                                 <?php the_excerpt(); ?>
                             </p>
+
                             <a class="read_more" href="<?php the_permalink(); ?>">
                                 <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
                                 <?php pll_e( 'Read more', 'hashmuseum' ) ?>
                             </a>
 
                         </div>
+                            
+                    </div>        
                         
-                    </div> 
-                    
-                <?php endforeach; ?>
+                <?php endwhile; ?>
 
-                <?php wp_reset_postdata(); ?>
+            </div>
+
+        <?php } else { ?>
+
+            <div data-siema-related-post-slider>
+
+                <?php while ( have_posts() ) : the_post(); ?>
+                    
+                    <div class="post">
+
+                        <a class="image_wrap" href="<?php the_permalink(); ?>">
+                            <?php the_post_thumbnail( 'large' ); ?>
+                        </a> 
+
+                        <div class="text_wrap">
+                
+                            <a class="title" href="<?php the_permalink(); ?>">
+                                <h2>
+                                    <?php the_title(); ?>
+                                </h2>
+                            </a>
+                            
+                            <p class="excerpt">
+                                <?php the_excerpt(); ?>
+                            </p>
+
+                            <a class="read_more" href="<?php the_permalink(); ?>">
+                                <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
+                                <?php pll_e( 'Read more', 'hashmuseum' ) ?>
+                            </a>
+
+                        </div>
+                            
+                    </div>        
+                        
+                <?php endwhile; ?>
 
             </div>
 
@@ -114,8 +124,50 @@ $id = 'sub-items' . $block['id'];
                     <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
                 </div>
             </button>
-            
-        <?php endif; ?>
-    
+
+        <?php } ?>        
+        
+    <?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
                 
     </article>

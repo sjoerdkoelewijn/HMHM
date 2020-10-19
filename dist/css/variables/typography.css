@@ -23,15 +23,15 @@ a {
 }
 
 /* line 29, src/sass/variables/colors.scss */
+a:visited {
+  color: #000000;
+}
+
+/* line 33, src/sass/variables/colors.scss */
 a:hover {
   -webkit-transition: color .5s ease;
   transition: color .5s ease;
   color: #FF4025;
-}
-
-/* line 34, src/sass/variables/colors.scss */
-a:visited {
-  color: #000000;
 }
 
 /* line 20, src/sass/variables/typography.scss */

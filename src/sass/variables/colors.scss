@@ -26,13 +26,14 @@ a {
   color:$black;
   transition: color .5s ease;
 
+  &:visited {
+    color:$black;
+  }
+
   &:hover {
     transition: color .5s ease;
     color:$action;
   }
-
-  &:visited {
-    color:$black;
-  }
+    
 }
 

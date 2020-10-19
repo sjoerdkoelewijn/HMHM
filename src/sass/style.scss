@@ -990,6 +990,10 @@ html {
             padding:var(--horizontal-s);
         }
 
+        @include uhd {
+            width:25vw;
+        }
+
         .menu_top {
             display:flex;
             margin-bottom:var(--horizontal-s);
@@ -1027,6 +1031,10 @@ html {
                         margin:0;
                         width:100%;
                         height:var(--mobile-btn-height);
+                    }
+
+                    @include uhd {
+                        height:3vw;
                     }
     
                     &::-webkit-input-placeholder { 
@@ -1071,6 +1079,10 @@ html {
                         height:var(--mobile-btn-height);
                         width:var(--mobile-btn-height);
                     }
+
+                    @include uhd {
+                        height:3vw;
+                    }
                 
                     svg {
                         margin-top:6px; 
@@ -1106,6 +1118,11 @@ html {
                     display:block;
                 }
 
+                @include uhd {
+                    height:3vw;
+                    width:3vw;
+                }
+
                 &:hover {
                     background:rgba($lightgrey, 0.2);
                     transition: background .5s ease; 
@@ -1124,6 +1141,10 @@ html {
                 width:calc(100% - var(--horizontal-s) * 2);
                 margin-left:var(--horizontal-s);
                 margin-bottom:var(--horizontal-s);
+            }
+
+            @include desktop-s-up {
+                display:none;
             }
 
             .mobile_close {
@@ -1225,6 +1246,10 @@ html {
 
                 @include desktop-up {
                     padding:10px 20px;
+                }
+
+                @include uhd {
+                    font-size:calc(var(--large-p) * 1.2);                    
                 }
                
                 &:hover {
@@ -3715,7 +3740,7 @@ border: 0;
         }
 
         .image {
-            height: 40vh;
+            height: 65vh;
             width:100%;
             object-fit: cover;
 

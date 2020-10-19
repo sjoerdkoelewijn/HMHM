@@ -1,6 +1,6 @@
 <div class="language_menu hidden" data-language-menu>
 
-    <div class="menu_background"></div> 
+    <div class="menu_background" data-language-close></div> 
 
     <div class="language_menu_wrap">
 

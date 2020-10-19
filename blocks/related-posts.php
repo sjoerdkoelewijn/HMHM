@@ -7,28 +7,31 @@ $id = 'related-posts' . $block['id'];
 ?>
 
     <article id="<?php echo $id; ?>" class="related_posts gb_block">
-        
-        <div class="header_wrap">
-            <div class="leaf_wrap">
-                <?php echo file_get_contents(get_template_directory() . "/images/svg/weedleaf-large.svg"); ?>
-            </div>            
-
-            <h2 class="header">
-                <?php the_field('header'); ?>
-            </h2>
-
-            <p class="description">
-                <?php the_field('description'); ?>
-            </p>
-    
-        </div>
+                
 
         <?php 
+
         $posts = get_field('posts');
         
-        if( $posts ): 
+        if( $posts ): ?>
+
+            <div class="header_wrap">
+                
+                <div class="leaf_wrap">
+                    <?php echo file_get_contents(get_template_directory() . "/images/svg/weedleaf-large.svg"); ?>
+                </div>            
+
+                <h2 class="header">
+                    <?php the_field('header'); ?>
+                </h2>
+
+                <p class="description">
+                    <?php the_field('description'); ?>
+                </p>
+        
+            </div>
             
-            if( count($posts) < 4 ) { ?>
+            <?php if( count($posts) < 4 ) { ?>
 
                 <div class="related_posts_inner">
                 
