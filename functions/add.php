@@ -226,7 +226,7 @@ function sk_created_collection_theme($taxonomy) {
 
 }
 
-add_action( 'created_collection_themes', 'sk_created_collection_theme', 10, 3 );
+// add_action( 'created_collection_themes', 'sk_created_collection_theme', 10, 3 );
 
 
 function sk_created_info_category($taxonomy) {
@@ -246,7 +246,7 @@ function sk_created_info_category($taxonomy) {
 
 }
 
-add_action( 'created_info_categories', 'sk_created_info_category', 10, 3 );
+// add_action( 'created_info_categories', 'sk_created_info_category', 10, 3 );
 
 
 

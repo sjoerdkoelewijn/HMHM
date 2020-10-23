@@ -8,27 +8,20 @@ $id = 'sub-items' . $block['id'];
 
     <article id="<?php echo $id; ?>" class="sub_items gb_block">
         
-        
-
-
-
-
-
-
-
-
 
     <?php 
 
+    $count = 0;
     $posts = get_field('posts');
+    if (is_array($posts)) {
+        $count = count($posts);
+        echo $count;
+    }
+
 
     if ( have_posts() ) : ?>
 
         <div class="header_wrap">
-            
-            <div class="leaf_wrap">
-                <?php echo file_get_contents(get_template_directory() . "/images/svg/weedleaf-large.svg"); ?>
-            </div>            
 
             <h2 class="header">
                 <?php the_field('header'); ?>
@@ -40,7 +33,7 @@ $id = 'sub-items' . $block['id'];
 
         </div>
         
-        <?php if( $posts < 4 ) { ?>
+        <?php if( $count < 4 ) { ?>
 
             <div class="related_posts_inner">
             
