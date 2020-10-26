@@ -7589,6 +7589,7 @@ html {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  height: 100vh;
 }
 
 @media (min-width: 280px) and (max-width: 799px) {
@@ -7605,34 +7606,34 @@ html {
   }
 }
 
-/* line 5248, src/sass/style.scss */
+/* line 5249, src/sass/style.scss */
 .event .image img {
   width: 100%;
   min-height: 100vh;
 }
 
 /* ------------- Newsletter Subscribe Section ----------------------------------------------------------------------------------------------------------- */
-/* line 5258, src/sass/style.scss */
+/* line 5259, src/sass/style.scss */
 .newsletter {
   background: #ffffff;
   padding: var(--vertical-xl) var(--horizontal);
   text-align: center;
 }
 
-/* line 5263, src/sass/style.scss */
+/* line 5264, src/sass/style.scss */
 .newsletter .header {
   font-size: var(--large-title);
   margin-bottom: 20px;
 }
 
-/* line 5268, src/sass/style.scss */
+/* line 5269, src/sass/style.scss */
 .newsletter .subheader {
   font-size: var(--small-subtitle);
   color: #828282;
   margin-bottom: 20px;
 }
 
-/* line 5274, src/sass/style.scss */
+/* line 5275, src/sass/style.scss */
 .newsletter .form_inner {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -7641,18 +7642,18 @@ html {
 }
 
 @media (min-width: 280px) and (max-width: 799px) {
-  /* line 5274, src/sass/style.scss */
+  /* line 5275, src/sass/style.scss */
   .newsletter .form_inner {
     display: block;
   }
 }
 
-/* line 5284, src/sass/style.scss */
+/* line 5285, src/sass/style.scss */
 .newsletter .input_wrap {
   display: inline;
 }
 
-/* line 5287, src/sass/style.scss */
+/* line 5288, src/sass/style.scss */
 .newsletter .input_wrap label {
   display: block;
   text-align: left;
@@ -7662,13 +7663,13 @@ html {
 }
 
 @media (min-width: 480px) and (max-width: 1024px) and (orientation: portrait) {
-  /* line 5287, src/sass/style.scss */
+  /* line 5288, src/sass/style.scss */
   .newsletter .input_wrap label {
     margin-left: 40px;
   }
 }
 
-/* line 5299, src/sass/style.scss */
+/* line 5300, src/sass/style.scss */
 .newsletter .input_wrap input {
   border: 1px solid rgba(130, 130, 130, 0.4);
   -webkit-box-sizing: border-box;
@@ -7680,18 +7681,18 @@ html {
 }
 
 @media (min-width: 280px) and (max-width: 799px) {
-  /* line 5299, src/sass/style.scss */
+  /* line 5300, src/sass/style.scss */
   .newsletter .input_wrap input {
     width: 90%;
   }
 }
 
-/* line 5313, src/sass/style.scss */
+/* line 5314, src/sass/style.scss */
 .newsletter .input_wrap input.error {
   border-color: #FF4025;
 }
 
-/* line 5317, src/sass/style.scss */
+/* line 5318, src/sass/style.scss */
 .newsletter .input_wrap .error-message {
   text-align: left;
   font-weight: 300;
@@ -7700,20 +7701,20 @@ html {
   color: #FF4025;
 }
 
-/* line 5327, src/sass/style.scss */
+/* line 5328, src/sass/style.scss */
 .newsletter .gdpr_check {
   margin: 20px 0 30px 0;
   font-size: calc(var(--medium-p) * .9);
   font-weight: 300;
 }
 
-/* line 5332, src/sass/style.scss */
+/* line 5333, src/sass/style.scss */
 .newsletter .gdpr_check a {
   font-weight: 400;
   font-size: calc(var(--medium-p) * .8);
 }
 
-/* line 5337, src/sass/style.scss */
+/* line 5338, src/sass/style.scss */
 .newsletter .gdpr_check .error-message {
   text-align: center;
   font-weight: 300;
@@ -7722,7 +7723,7 @@ html {
   display: inline;
 }
 
-/* line 5348, src/sass/style.scss */
+/* line 5349, src/sass/style.scss */
 .newsletter .hide_success.hidden {
   display: none;
   opacity: 0;
@@ -7730,7 +7731,7 @@ html {
   transition: opacity .5s ease, display 0s ease .5s;
 }
 
-/* line 5354, src/sass/style.scss */
+/* line 5355, src/sass/style.scss */
 .newsletter .status_message.success-message {
   margin-top: 20px;
   font-weight: 300;
@@ -7741,7 +7742,7 @@ html {
   border-radius: 30px;
 }
 
-/* line 5365, src/sass/style.scss */
+/* line 5366, src/sass/style.scss */
 .newsletter .status_message.error-message {
   margin-top: 20px;
   font-weight: 300;
@@ -7749,7 +7750,7 @@ html {
   color: #FF4025;
 }
 
-/* line 5374, src/sass/style.scss */
+/* line 5375, src/sass/style.scss */
 .ticket_modal {
   position: fixed;
   z-index: 2000;
@@ -7762,7 +7763,7 @@ html {
   padding: 5vw;
 }
 
-/* line 5385, src/sass/style.scss */
+/* line 5386, src/sass/style.scss */
 .ticket_modal .modal_inner {
   position: relative;
   background: #ffffff;
@@ -7777,7 +7778,7 @@ html {
 }
 
 @media (min-width: 280px) and (max-width: 799px) {
-  /* line 5385, src/sass/style.scss */
+  /* line 5386, src/sass/style.scss */
   .ticket_modal .modal_inner {
     width: 90vw;
     -ms-flex-wrap: wrap;
@@ -7785,7 +7786,7 @@ html {
   }
 }
 
-/* line 5400, src/sass/style.scss */
+/* line 5401, src/sass/style.scss */
 .ticket_modal .modal_inner .weedleaf {
   position: absolute;
   left: 50%;
@@ -7796,24 +7797,24 @@ html {
 }
 
 @media (min-width: 280px) and (max-width: 799px) {
-  /* line 5400, src/sass/style.scss */
+  /* line 5401, src/sass/style.scss */
   .ticket_modal .modal_inner .weedleaf {
     display: none;
   }
 }
 
-/* line 5412, src/sass/style.scss */
+/* line 5413, src/sass/style.scss */
 .ticket_modal .modal_inner .weedleaf svg {
   width: 50px;
   height: 50px;
 }
 
-/* line 5416, src/sass/style.scss */
+/* line 5417, src/sass/style.scss */
 .ticket_modal .modal_inner .weedleaf svg path {
   fill: #000000;
 }
 
-/* line 5422, src/sass/style.scss */
+/* line 5423, src/sass/style.scss */
 .ticket_modal .modal_inner .location_info {
   display: block;
   width: 50%;
@@ -7821,82 +7822,82 @@ html {
 }
 
 @media (min-width: 280px) and (max-width: 799px) {
-  /* line 5422, src/sass/style.scss */
+  /* line 5423, src/sass/style.scss */
   .ticket_modal .modal_inner .location_info {
     width: 100%;
     min-height: auto;
   }
 }
 
-/* line 5432, src/sass/style.scss */
+/* line 5433, src/sass/style.scss */
 .ticket_modal .modal_inner .location_info h2 {
   font-size: var(--large-title);
 }
 
 @media (min-width: 280px) and (max-width: 799px) {
-  /* line 5438, src/sass/style.scss */
+  /* line 5439, src/sass/style.scss */
   .ticket_modal .modal_inner .location_info .location_header {
     font-size: var(--large-p);
     margin: 2vh 0 2vh 0;
   }
-  /* line 5443, src/sass/style.scss */
+  /* line 5444, src/sass/style.scss */
   .ticket_modal .modal_inner .location_info .intro_text {
     font-size: var(--small-p);
     margin: 0 0 2vh 0;
   }
 }
 
-/* line 5450, src/sass/style.scss */
+/* line 5451, src/sass/style.scss */
 .ticket_modal .modal_inner .location_info .meta {
   margin-top: 30px;
 }
 
 @media (min-width: 280px) and (max-width: 799px) {
-  /* line 5450, src/sass/style.scss */
+  /* line 5451, src/sass/style.scss */
   .ticket_modal .modal_inner .location_info .meta {
     display: none;
   }
 }
 
-/* line 5457, src/sass/style.scss */
+/* line 5458, src/sass/style.scss */
 .ticket_modal .modal_inner .location_info .meta .openinghours, .ticket_modal .modal_inner .location_info .meta .address, .ticket_modal .modal_inner .location_info .meta .phonenumber {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-/* line 5460, src/sass/style.scss */
+/* line 5461, src/sass/style.scss */
 .ticket_modal .modal_inner .location_info .meta .openinghours p, .ticket_modal .modal_inner .location_info .meta .address p, .ticket_modal .modal_inner .location_info .meta .phonenumber p {
   font-size: var(--medium-p);
   margin-bottom: 5px;
 }
 
-/* line 5466, src/sass/style.scss */
+/* line 5467, src/sass/style.scss */
 .ticket_modal .modal_inner .location_info .meta .openinghours svg, .ticket_modal .modal_inner .location_info .meta .address svg, .ticket_modal .modal_inner .location_info .meta .phonenumber svg {
   margin: 8px 22px 0 0;
 }
 
-/* line 5469, src/sass/style.scss */
+/* line 5470, src/sass/style.scss */
 .ticket_modal .modal_inner .location_info .meta .openinghours svg path, .ticket_modal .modal_inner .location_info .meta .address svg path, .ticket_modal .modal_inner .location_info .meta .phonenumber svg path {
   fill: #000000;
 }
 
-/* line 5477, src/sass/style.scss */
+/* line 5478, src/sass/style.scss */
 .ticket_modal .modal_inner .location_info .meta .address svg {
   margin: 10px 22px 0 6px;
 }
 
-/* line 5483, src/sass/style.scss */
+/* line 5484, src/sass/style.scss */
 .ticket_modal .modal_inner .location_info .meta .phonenumber svg {
   margin: 10px 18px 0 4px;
 }
 
-/* line 5491, src/sass/style.scss */
+/* line 5492, src/sass/style.scss */
 .ticket_modal .modal_inner .location_info + .location_info {
   border-left: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-/* line 5495, src/sass/style.scss */
+/* line 5496, src/sass/style.scss */
 .ticket_modal .modal_inner .close {
   position: absolute;
   right: 30px;
@@ -7905,12 +7906,12 @@ html {
   cursor: pointer;
 }
 
-/* line 5503, src/sass/style.scss */
+/* line 5504, src/sass/style.scss */
 .ticket_modal .modal_inner .close svg path {
   fill: #000000;
 }
 
-/* line 5514, src/sass/style.scss */
+/* line 5515, src/sass/style.scss */
 .ticket_modal.active {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7918,7 +7919,7 @@ html {
 }
 
 /* ------------- Footer Section ----------------------------------------------------------------------------------------------------------- */
-/* line 5521, src/sass/style.scss */
+/* line 5522, src/sass/style.scss */
 .footer {
   padding: var(--vertical-xl) var(--horizontal);
   /* ------------- First Column ---------------- */
@@ -7926,13 +7927,13 @@ html {
   /* ------------- Third Column ---------------- */
 }
 
-/* line 5524, src/sass/style.scss */
+/* line 5525, src/sass/style.scss */
 .footer .header {
   font-size: var(--small-subtitle);
   margin-bottom: 10px;
 }
 
-/* line 5529, src/sass/style.scss */
+/* line 5530, src/sass/style.scss */
 .footer .columns {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7940,7 +7941,7 @@ html {
 }
 
 @media (min-width: 280px) and (max-width: 799px) {
-  /* line 5529, src/sass/style.scss */
+  /* line 5530, src/sass/style.scss */
   .footer .columns {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -7950,7 +7951,7 @@ html {
 }
 
 @media (min-width: 800px) and (max-width: 1440px) {
-  /* line 5529, src/sass/style.scss */
+  /* line 5530, src/sass/style.scss */
   .footer .columns {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -7959,14 +7960,14 @@ html {
   }
 }
 
-/* line 5545, src/sass/style.scss */
+/* line 5546, src/sass/style.scss */
 .footer .sister_companies p {
   font-style: italic;
   font-size: var(--small-p);
   margin: 50px 0 10px 0;
 }
 
-/* line 5551, src/sass/style.scss */
+/* line 5552, src/sass/style.scss */
 .footer .sister_companies .logos {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7976,44 +7977,44 @@ html {
           align-items: flex-end;
 }
 
-/* line 5555, src/sass/style.scss */
+/* line 5556, src/sass/style.scss */
 .footer .sister_companies .logos svg {
   margin-right: 20px;
 }
 
 @media (min-width: 280px) {
-  /* line 5543, src/sass/style.scss */
+  /* line 5544, src/sass/style.scss */
   .footer .sister_companies {
     display: none;
   }
 }
 
 @media (min-width: 1441px) {
-  /* line 5543, src/sass/style.scss */
+  /* line 5544, src/sass/style.scss */
   .footer .sister_companies {
     display: block;
   }
 }
 
-/* line 5570, src/sass/style.scss */
+/* line 5571, src/sass/style.scss */
 .footer .sister_companies.mobile {
   display: none;
 }
 
 @media (min-width: 280px) and (max-width: 799px) {
-  /* line 5576, src/sass/style.scss */
+  /* line 5577, src/sass/style.scss */
   .footer .sister_companies.mobile {
     display: block;
   }
 }
 
-/* line 5584, src/sass/style.scss */
+/* line 5585, src/sass/style.scss */
 .footer .first {
   width: 35%;
 }
 
 @media (min-width: 800px) and (max-width: 1440px) {
-  /* line 5584, src/sass/style.scss */
+  /* line 5585, src/sass/style.scss */
   .footer .first {
     width: 100%;
     margin-bottom: var(--vertical-xl);
@@ -8033,109 +8034,109 @@ html {
   }
 }
 
-/* line 5596, src/sass/style.scss */
+/* line 5597, src/sass/style.scss */
 .footer .first .footer_logo {
   margin-bottom: 20px;
 }
 
 @media (min-width: 800px) and (max-width: 1440px) {
-  /* line 5596, src/sass/style.scss */
+  /* line 5597, src/sass/style.scss */
   .footer .first .footer_logo {
     max-width: 51vw;
     text-align: center;
   }
 }
 
-/* line 5605, src/sass/style.scss */
+/* line 5606, src/sass/style.scss */
 .footer .first .header {
   max-width: 20vw;
 }
 
 @media (min-width: 800px) and (max-width: 1440px) {
-  /* line 5605, src/sass/style.scss */
+  /* line 5606, src/sass/style.scss */
   .footer .first .header {
     max-width: 51vw;
     text-align: center;
   }
 }
 
-/* line 5614, src/sass/style.scss */
+/* line 5615, src/sass/style.scss */
 .footer .first .ticket_buttons {
   margin-top: var(--vertical);
   max-width: 20vw;
 }
 
 @media (min-width: 800px) and (max-width: 1440px) {
-  /* line 5614, src/sass/style.scss */
+  /* line 5615, src/sass/style.scss */
   .footer .first .ticket_buttons {
     max-width: 100vw;
   }
 }
 
 @media (min-width: 280px) and (max-width: 799px) {
-  /* line 5629, src/sass/style.scss */
+  /* line 5630, src/sass/style.scss */
   .footer .first .footer_logo svg {
     width: 80vw;
   }
-  /* line 5635, src/sass/style.scss */
+  /* line 5636, src/sass/style.scss */
   .footer .first .header, .footer .first .ticket_buttons {
     display: none;
   }
 }
 
-/* line 5645, src/sass/style.scss */
+/* line 5646, src/sass/style.scss */
 .footer .second {
   width: 40%;
 }
 
 @media (min-width: 280px) and (max-width: 799px) {
-  /* line 5645, src/sass/style.scss */
+  /* line 5646, src/sass/style.scss */
   .footer .second {
     width: 100%;
   }
 }
 
 @media (min-width: 800px) and (max-width: 1440px) {
-  /* line 5645, src/sass/style.scss */
+  /* line 5646, src/sass/style.scss */
   .footer .second {
     width: 35%;
   }
 }
 
-/* line 5656, src/sass/style.scss */
+/* line 5657, src/sass/style.scss */
 .footer .second .openinghours, .footer .second .address, .footer .second .phonenumber {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-/* line 5659, src/sass/style.scss */
+/* line 5660, src/sass/style.scss */
 .footer .second .openinghours p, .footer .second .address p, .footer .second .phonenumber p {
   font-size: var(--medium-p);
   margin-bottom: 5px;
 }
 
-/* line 5664, src/sass/style.scss */
+/* line 5665, src/sass/style.scss */
 .footer .second .openinghours svg, .footer .second .address svg, .footer .second .phonenumber svg {
   margin: 8px 22px 0 0;
 }
 
-/* line 5667, src/sass/style.scss */
+/* line 5668, src/sass/style.scss */
 .footer .second .openinghours svg path, .footer .second .address svg path, .footer .second .phonenumber svg path {
   fill: #000000;
 }
 
-/* line 5674, src/sass/style.scss */
+/* line 5675, src/sass/style.scss */
 .footer .second .address svg {
   margin: 10px 22px 0 6px;
 }
 
-/* line 5680, src/sass/style.scss */
+/* line 5681, src/sass/style.scss */
 .footer .second .phonenumber svg {
   margin: 10px 18px 0 4px;
 }
 
-/* line 5685, src/sass/style.scss */
+/* line 5686, src/sass/style.scss */
 .footer .second .moreinfo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8144,57 +8145,57 @@ html {
   text-decoration: none;
 }
 
-/* line 5690, src/sass/style.scss */
+/* line 5691, src/sass/style.scss */
 .footer .second .moreinfo p {
   font-size: var(--medium-p);
   margin-bottom: 0;
 }
 
-/* line 5695, src/sass/style.scss */
+/* line 5696, src/sass/style.scss */
 .footer .second .moreinfo svg {
   width: 14px;
   margin: 5px 25px 0 3px;
 }
 
-/* line 5699, src/sass/style.scss */
+/* line 5700, src/sass/style.scss */
 .footer .second .moreinfo svg path {
   fill: #000000;
   -webkit-transition: fill .5s ease;
   transition: fill .5s ease;
 }
 
-/* line 5707, src/sass/style.scss */
+/* line 5708, src/sass/style.scss */
 .footer .second .moreinfo:hover svg path {
   fill: #FF4025;
   -webkit-transition: fill .5s ease;
   transition: fill .5s ease;
 }
 
-/* line 5721, src/sass/style.scss */
+/* line 5722, src/sass/style.scss */
 .footer .third {
   width: 25%;
 }
 
 @media (min-width: 280px) and (max-width: 799px) {
-  /* line 5721, src/sass/style.scss */
+  /* line 5722, src/sass/style.scss */
   .footer .third {
     width: 100%;
   }
 }
 
-/* line 5728, src/sass/style.scss */
+/* line 5729, src/sass/style.scss */
 .footer .third .header:nth-of-type(2) {
   margin-top: var(--vertical);
 }
 
 @media (min-width: 800px) and (max-width: 1440px) {
-  /* line 5728, src/sass/style.scss */
+  /* line 5729, src/sass/style.scss */
   .footer .third .header:nth-of-type(2) {
     margin-top: var(--vertical-l);
   }
 }
 
-/* line 5736, src/sass/style.scss */
+/* line 5737, src/sass/style.scss */
 .footer .third a {
   font-size: var(--medium-p);
   text-decoration: none;
@@ -8203,7 +8204,7 @@ html {
   display: inline-block;
 }
 
-/* line 5747, src/sass/style.scss */
+/* line 5748, src/sass/style.scss */
 .footer .copyright_notice {
   margin-top: var(--vertical-xl);
   font-size: var(--small-p);
@@ -8211,7 +8212,7 @@ html {
 }
 
 @media (min-width: 280px) and (max-width: 799px) {
-  /* line 5747, src/sass/style.scss */
+  /* line 5748, src/sass/style.scss */
   .footer .copyright_notice {
     text-align: left;
   }

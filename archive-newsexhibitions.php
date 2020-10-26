@@ -226,7 +226,7 @@ get_header(); ?>
 				<?php if ( has_post_thumbnail( $post->ID ) ) { ?>
 
 					<a href="<?php the_permalink(); ?>">
-						<?php the_post_thumbnail('larger_image'); ?>
+						<?php the_post_thumbnail('large_image'); ?>
 					</a>
 
 				<?php } ?>

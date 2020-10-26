@@ -5236,6 +5236,7 @@ border: 0;
         width:33.33vw;
         display:flex;
         align-items: stretch;
+        height:100vh;
 
         @include phone {
             display:none;
