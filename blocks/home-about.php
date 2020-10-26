@@ -35,7 +35,7 @@ $id = 'home-about' . $block['id'];
     
     <div class="image_wrap" >
 
-        <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['medium']); ?>" alt="<?php echo $image['alt']; ?>" />
+        <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['larger_image']); ?>" alt="<?php echo $image['alt']; ?>" />
 
         <?php if($image['caption']) { ?>
 
@@ -49,7 +49,7 @@ $id = 'home-about' . $block['id'];
 
     <div class="image_wrap tablet" >
 
-        <img loading="lazy" class="image" src="<?php echo esc_url($mobileimage['sizes']['medium']); ?>" alt="<?php echo $mobileimage['alt']; ?>" />
+        <img loading="lazy" class="image" src="<?php echo esc_url($mobileimage['sizes']['larger_image']); ?>" alt="<?php echo $mobileimage['alt']; ?>" />
 
         <?php if($mobileimage['caption']) { ?>
 
