@@ -1,8 +1,7 @@
 <?php get_header(); ?>
 
 <?php
-	
-	
+		
 	$collection_custom_page   = get_post(pll_get_post(get_page_by_path( 'collection', OBJECT, 'collection_pages' )->ID)); 
 	
 	$collection_output =  apply_filters( 'the_content', $collection_custom_page->post_content );

@@ -2,9 +2,7 @@
 
 	<?php
 
-	if ( is_post_type_archive( $post_types = 'cannabisinfo' ) ) {		
-
-		$cpt_custom_page   = get_page_by_path('cannabis-knowledge', OBJECT, 'cannabisinfo_pages');
+		$cpt_custom_page   = get_post(pll_get_post(get_page_by_path( 'cannabis-knowledge', OBJECT, 'cannabisinfo_pages' )->ID)); 
 		$output =  apply_filters( 'the_content', $cpt_custom_page->post_content );
 
 		if ( empty($output) ) :
@@ -13,6 +11,5 @@
 			<div class="knowledge frontpage"><?php echo $output; ?></div>
 		<?php endif; 		
 
-	} ?>
 
 <?php get_footer();
