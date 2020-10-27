@@ -1,5 +1,6 @@
 <?php
 
+include_once( get_stylesheet_directory() .'/translations/polylang_translations.php');
 include_once( get_stylesheet_directory() .'/functions/custom-post-types.php');
 include_once( get_stylesheet_directory() .'/functions/gutenberg-blocks.php');
 include_once( get_stylesheet_directory() .'/functions/enqueue.php');
