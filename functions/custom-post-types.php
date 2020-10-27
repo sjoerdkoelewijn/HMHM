@@ -32,7 +32,7 @@ function cpt_collection() {
 			'filter_items_list'     => __( 'Filter items list', 'hashmuseum' ),
 	);
 	$rewrite = array(
-			'slug'                  => __( 'collection', 'hashmuseum' ) . '/%collection_themes%',
+			'slug'                  => __( 'collection', 'hashmuseum' ),
 			'with_front'            => true,
 			'pages'                 => true,
 			'feeds'                 => true,
