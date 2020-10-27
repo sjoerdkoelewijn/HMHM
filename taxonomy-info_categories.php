@@ -3,7 +3,7 @@
 <?php
 	
     $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-    $custom_page   = get_post(pll_get_post(get_page_by_path( 'cannabis-knowledge', OBJECT, 'cannabisinfo_pages' )->ID));
+    $custom_page   = get_post(pll_get_post(get_page_by_path( $term->slug, OBJECT, 'cannabisinfo_pages' )->ID));
     $output =  apply_filters( 'the_content', $custom_page->post_content );
 
     if ( empty($output) ) :
