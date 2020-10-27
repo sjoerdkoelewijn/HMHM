@@ -230,7 +230,7 @@ $id = 'home-hero-' . $block['id']; ?>
 
                         </div>
                         
-                        <a href="<?php the_sub_field('url'); ?>" class="read_more_link">
+                        <a href="/<?php echo pll_current_language(); ?>/<?php pll_e('cannabis-knowledge'); ?>/" class="read_more_link">
                             <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
                             <?php pll_e( 'Cannabis Knowledge', 'hashmuseum' ) ?>
                         </a>   
