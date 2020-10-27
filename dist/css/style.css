@@ -6105,7 +6105,7 @@ html {
 /* line 4102, src/sass/style.scss */
 .home_hero .slider_wrap {
   width: 66.6vw;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
   background: #000000;
