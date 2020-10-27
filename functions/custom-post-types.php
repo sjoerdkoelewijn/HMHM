@@ -547,7 +547,7 @@ function sk_update_permalink_structure( $post_link, $post )
 		
         foreach ((array) $taxonomy_terms as $term ) { 
             if ( ! $term->parent ) {
-                $post_link = str_replace( '%collection_themes%', $term->slug, $post_link );
+                //$post_link = str_replace( '%collection_themes%', $term->slug, $post_link );
             }
         } 
 	}
@@ -569,7 +569,7 @@ function sk_update_permalink_structure( $post_link, $post )
 		
         foreach ((array) $taxonomy_terms as $term ) { 
             if ( ! $term->parent ) {
-                $post_link = str_replace( '%news_exhibitions%', $term->slug, $post_link );
+                //$post_link = str_replace( '%news_exhibitions%', $term->slug, $post_link );
             }
         } 
 	}
