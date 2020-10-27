@@ -32,7 +32,7 @@ function cpt_collection() {
 			'filter_items_list'     => __( 'Filter items list', 'hashmuseum' ),
 	);
 	$rewrite = array(
-			'slug'                  => __( 'collection', 'hashmuseum' ),
+			'slug'                  => pll_e( 'collection', 'hashmuseum' ),
 			'with_front'            => true,
 			'pages'                 => true,
 			'feeds'                 => true,
@@ -197,7 +197,7 @@ function cpt_cannabisinfo() {
 			'filter_items_list'     => __( 'Filter items list', 'hashmuseum' ),
 	);
 	$rewrite = array(
-			'slug'                  => __( 'cannabis-knowledge', 'hashmuseum' ) . '/%info_categories%',
+			'slug'                  => pll_e( 'cannabis-knowledge', 'hashmuseum' ) . '/%info_categories%',
 			'with_front'            => true,
 			'pages'                 => true,
 			'feeds'                 => true,
@@ -370,7 +370,7 @@ function cpt_newsexhibitions() {
 	);
 
 	$rewrite = array(
-			'slug'                  => __( 'whats-on', 'hashmuseum' ),
+			'slug'                  => pll_e( 'whats-on', 'hashmuseum' ),
 			'with_front'            => true,
 			'pages'                 => true,
 			'feeds'                 => true,
