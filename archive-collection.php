@@ -12,6 +12,4 @@
 		<div class="collection frontpage"><?php echo $collection_output; ?></div>
 	<?php endif; 
 
-?>
-
-<?php get_footer();
+get_footer();
