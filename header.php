@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 
-<!--[if IE 9]>
-<html class="ie ie9" <?php language_attributes(); ?>>
-<![endif]-->
-
 <html <?php language_attributes(); ?>>
 
     <head>
-        <meta charset="<?php bloginfo( 'charset' ); ?>">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-        <link rel="profile" href="http://gmpg.org/xfn/11">
-        <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
+        <meta charset="<?php bloginfo( 'charset' ); ?>" />
+        <meta name="viewport" content="width=device-width" />
+        <title><?php wp_title( '|', true, 'right' ); ?></title>
+        <link rel="profile" href="https://gmpg.org/xfn/11" />
+        <link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>">
         <?php wp_head(); ?>
     </head>
 
     <body <?php body_class(); ?> data-mobile-menu-hide>
 
-    <article>
+    <header>
 
         <a data-logo title="<?php bloginfo( 'name' ); ?>" aria-label="Visit the Homepage" class="header_logo_link large logo" href="/">
             <?php echo file_get_contents(get_template_directory() . "/images/svg/logo.svg"); ?>
@@ -65,6 +60,4 @@
 
         <?php include('parts/language-menu.php'); ?>
 
-    </article>
-
-
+    </header>
