@@ -1646,7 +1646,8 @@ html {
    .text_wrap {
         width:33.33vw;
         //margin-top:10vh;
-        padding:20vh var(--horizontal) var(--vertical) var(--horizontal);
+        padding:var(--vertical) var(--horizontal) var(--vertical) var(--horizontal);
+        margin-top:200px;
         flex-direction: column;
         display: inline-flex;
         justify-content: center;

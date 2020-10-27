@@ -370,7 +370,7 @@ function cpt_newsexhibitions() {
 	);
 
 	$rewrite = array(
-			'slug'                  => __( 'whats-on', 'hashmuseum' ) . '/%news_exhibitions%',
+			'slug'                  => __( 'whats-on', 'hashmuseum' ),
 			'with_front'            => true,
 			'pages'                 => true,
 			'feeds'                 => true,
