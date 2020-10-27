@@ -13,6 +13,10 @@ html {
     scroll-behavior: smooth;
 }
 
+.gb_block {
+    width:100vw;
+}
+
 .frontpage.warning {
 
     width:100vw;
@@ -2883,7 +2887,7 @@ html {
     .text_wrap {
         width:33vw;
         color:$white;
-        text-align:center;
+        text-align:center;         
 
         @include phone {
             width:100vw;
@@ -2891,7 +2895,8 @@ html {
         }
 
         @include desktop-s {
-            width:50vw;   
+            width:50vw;
+              
         }
 
         .header {
@@ -2973,7 +2978,8 @@ html {
         }
 
         @include desktop-s {
-            width:50vw;   
+            width:50vw;
+            overflow:hidden;   
         }
 
         .review {
@@ -2994,7 +3000,7 @@ html {
             &:before {
                 content:'';
                 @include blackGradient(0deg);
-                width:100%; // TODO uitzoeken waarom 100% een overlap geeft.
+                width:100%; 
                 display:block;
                 height:40vh;
                 bottom:0;
@@ -3871,7 +3877,7 @@ border: 0;
     }
     
     .theme {
-        width:33.3vw;
+        width:33.33vw;
         position:relative;
         text-decoration:none;
         display:block;
@@ -3889,7 +3895,7 @@ border: 0;
             @include blackGradient(0deg);
             display:block;
             height:40vh;
-            left:5px;
+            left:0;
             right:0;
             bottom:0;
             position:absolute;

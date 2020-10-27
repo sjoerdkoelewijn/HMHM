@@ -91,27 +91,6 @@ function getCookie(c_name) {
 }
 
 
-/******************* Logo color switch *************************************/
-
-if (window.matchMedia("(min-width: 800px)").matches) {
-
-    BackgroundCheck.init({
-        targets: '.logo',
-        images: '.image'
-    }); 
-
-    window.addEventListener('load', (event) => {
-        BackgroundCheck.refresh();
-    });
-    
-    const HeaderLogo = document.querySelector('[data-logo]');
-    observer = new IntersectionObserver((entry, observer) => {
-        BackgroundCheck.refresh();
-    });
-    observer.observe(HeaderLogo);
-
-}
-
 /* Language & Main menu */
 
 const   languageToggle = document.querySelectorAll('[data-language-menu-toggle]'),
@@ -322,4 +301,23 @@ if (window.matchMedia("(max-width: 799px)").matches) {
 
 }
 
+/******************* Logo color switch *************************************/
 
+if (window.matchMedia("(min-width: 800px)").matches) {
+
+    BackgroundCheck.init({
+        targets: '.logo',
+        images: '.image'
+    }); 
+
+    window.addEventListener('load', (event) => {
+        BackgroundCheck.refresh();
+    });
+    
+    const HeaderLogo = document.querySelector('[data-logo]');
+    observer = new IntersectionObserver((entry, observer) => {
+        BackgroundCheck.refresh();
+    });
+    observer.observe(HeaderLogo);
+
+}
