@@ -32,7 +32,7 @@ function cpt_collection() {
 			'filter_items_list'     => __( 'Filter items list', 'hashmuseum' ),
 	);
 	$rewrite = array(
-			'slug'                  => pll__( 'collection', 'hashmuseum' ),
+			'slug'                  => pll__( 'collection', 'hashmuseum' ) . '/' . '%collection_themes%',
 			'with_front'            => true,
 			'pages'                 => true,
 			'feeds'                 => true,
@@ -52,7 +52,7 @@ function cpt_collection() {
 			'show_in_admin_bar'     => true,
 			'show_in_nav_menus'     => true,
 			'can_export'            => true,
-			'has_archive'           => 'collection',
+			'has_archive'           => pll__( 'collection', 'hashmuseum' ),
 			'exclude_from_search'   => false,
 			'publicly_queryable'    => true,
 			'rewrite'               => $rewrite,
@@ -83,7 +83,7 @@ function cpt_collection_taxonomy() {
 	  
 	  register_taxonomy('collection_themes', array('collection'), array(
 		'hierarchical' 		=> true,
-		"public"        	=> true,
+		'public'        	=> true,
 		'labels' 			=> $labels,
 		'show_ui' 			=> true,
 		'show_admin_column' => true,
@@ -370,7 +370,7 @@ function cpt_newsexhibitions() {
 	);
 
 	$rewrite = array(
-			'slug'                  => pll__( 'whats-on', 'hashmuseum' ),
+			'slug'                  => pll__( 'whats-on', 'hashmuseum' ) . '/' .'%news_exhibitions%',
 			'with_front'            => true,
 			'pages'                 => true,
 			'feeds'                 => true,
@@ -547,7 +547,7 @@ function sk_update_permalink_structure( $post_link, $post )
 		
         foreach ((array) $taxonomy_terms as $term ) { 
             if ( ! $term->parent ) {
-                //$post_link = str_replace( '%collection_themes%', $term->slug, $post_link );
+                $post_link = str_replace( '%collection_themes%', $term->slug, $post_link );
             }
         } 
 	}
@@ -569,7 +569,7 @@ function sk_update_permalink_structure( $post_link, $post )
 		
         foreach ((array) $taxonomy_terms as $term ) { 
             if ( ! $term->parent ) {
-                //$post_link = str_replace( '%news_exhibitions%', $term->slug, $post_link );
+                $post_link = str_replace( '%news_exhibitions%', $term->slug, $post_link );
             }
         } 
 	}
