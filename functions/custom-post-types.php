@@ -89,7 +89,7 @@ function cpt_collection_taxonomy() {
 		'show_admin_column' => true,
 		'query_var' 		=> true,
 		'show_in_rest'      => true,
-		'rewrite' 			=> array( 'slug' => 'collection' ),
+		'rewrite' 			=> array( 'slug' => pll__( 'collection', 'hashmuseum' ) ),
 	  ));
 	 
 }
@@ -370,7 +370,7 @@ function cpt_newsexhibitions() {
 	);
 
 	$rewrite = array(
-			'slug'                  => pll__( 'whats-on', 'hashmuseum' ) . '/' .'%news_exhibitions%',
+			'slug'                  => pll__( 'whats-on', 'hashmuseum' ),
 			'with_front'            => true,
 			'pages'                 => true,
 			'feeds'                 => true,
@@ -390,18 +390,18 @@ function cpt_newsexhibitions() {
 			'show_in_admin_bar'     => true,
 			'show_in_nav_menus'     => true,
 			'can_export'            => true,
-			'has_archive'           => __( 'whats-on', 'hashmuseum' ),
+			'has_archive'           => pll__( 'whats-on', 'hashmuseum' ),
 			'exclude_from_search'   => false,
 			'publicly_queryable'    => true,
 			'rewrite'               => $rewrite,
 			'capability_type'       => 'post',
 			'show_in_rest'          => true,
-			'query_var'           	=> true,
+			//'query_var'           	=> true,
 	);
 	register_post_type( 'newsexhibitions', $args );
 
 }
-add_action( 'init', 'cpt_newsexhibitions', 3 );
+add_action( 'init', 'cpt_newsexhibitions', 0 );
 
 
 function cpt_newsexhibitions_taxonomy() { 
@@ -422,13 +422,13 @@ function cpt_newsexhibitions_taxonomy() {
 	  
 	  register_taxonomy('news_exhibitions', array('newsexhibitions'), array(
 		'hierarchical' 		=> true,
-		"public"        	=> true,
+		'public'        	=> true,
 		'labels' 			=> $labels,
 		'show_ui' 			=> true,
 		'show_admin_column' => true,
 		'query_var' 		=> true,
 		'show_in_rest'      => true,
-		'rewrite' 			=> array( 'slug' => 'whats-on' ),
+		'rewrite' 			=> array( 'slug' => pll__( 'whats-on', 'hashmuseum' ) ),
 	  ));
 	 
 }
