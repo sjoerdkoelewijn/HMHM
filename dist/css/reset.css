@@ -8,15 +8,20 @@
           box-sizing: border-box;
 }
 
+/* line 10, src/sass/reset.scss */
+*, *:focus, *:hover {
+  outline: none;
+}
+
 /* Remove default padding */
-/* line 11, src/sass/reset.scss */
+/* line 15, src/sass/reset.scss */
 ul[class],
 ol[class] {
   padding: 0;
 }
 
 /* Remove default margin */
-/* line 17, src/sass/reset.scss */
+/* line 21, src/sass/reset.scss */
 body,
 h1,
 h2,
@@ -35,7 +40,7 @@ dd {
 }
 
 /* Set core body defaults */
-/* line 35, src/sass/reset.scss */
+/* line 39, src/sass/reset.scss */
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
@@ -44,28 +49,29 @@ body {
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
-/* line 43, src/sass/reset.scss */
+/* line 47, src/sass/reset.scss */
 ul[class],
 ol[class] {
   list-style: none;
 }
 
 /* A elements that don't have a class get default styles */
-/* line 49, src/sass/reset.scss */
+/* line 53, src/sass/reset.scss */
 a:not([class]) {
   -webkit-text-decoration-skip: ink;
           text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
-/* line 54, src/sass/reset.scss */
+/* line 58, src/sass/reset.scss */
 img {
-  max-width: 100%;
   display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /* Inherit fonts for inputs and buttons */
-/* line 60, src/sass/reset.scss */
+/* line 64, src/sass/reset.scss */
 input,
 button,
 textarea,
@@ -73,18 +79,19 @@ select {
   font: inherit;
 }
 
-/* line 67, src/sass/reset.scss */
+/* line 71, src/sass/reset.scss */
 button {
   border: 0;
+  cursor: pointer;
 }
 
-/* line 71, src/sass/reset.scss */
+/* line 76, src/sass/reset.scss */
 ul {
   margin: 0;
   padding: 0;
 }
 
-/* line 76, src/sass/reset.scss */
+/* line 81, src/sass/reset.scss */
 li {
   margin: 0;
   list-style-type: none;
@@ -92,7 +99,7 @@ li {
 
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-  /* line 83, src/sass/reset.scss */
+  /* line 88, src/sass/reset.scss */
   * {
     -webkit-animation-duration: 0.01ms !important;
             animation-duration: 0.01ms !important;

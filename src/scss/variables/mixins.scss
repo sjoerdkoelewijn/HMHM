@@ -1,0 +1,50 @@
+@mixin textLink {
+    padding:0;
+    text-decoration: none;
+    font-size: var(--small-btn);
+    text-transform:uppercase;
+    font-weight:600;
+    background:none;
+    transition:color .5s ease;
+
+    svg {
+        width:20px;
+        height:13px;
+        margin-right:18px;                
+
+        path {
+            fill:$black;
+            transition:fill .5s ease;
+        }
+    }
+
+    &:hover {
+        color:$action;
+        transition:color .5s ease;
+        cursor: pointer;
+
+        svg path {
+            fill:$action;
+            transition:fill .5s ease;
+        }
+    }
+}
+
+@mixin blackGradient($deg) {
+    background: 
+    linear-gradient(
+        $deg,
+        rgba(0,0,0,0.738) 19%,
+        rgba(0,0,0,0.541) 34%,
+        rgba(0,0,0,0.382) 47%,
+        rgba(0,0,0,0.278) 56.5%,
+        rgba(0,0,0,0.194) 65%,
+        rgba(0,0,0,0.126) 73%,
+        rgba(0,0,0,0.075) 80.2%,
+        rgba(0,0,0,0.042) 86.1%,
+        rgba(0,0,0,0.021) 91%,
+        rgba(0,0,0,0.008) 95.2%,
+        rgba(0,0,0,0.001) 98.2%, 
+        rgba(0,0,0,0) 100%
+    );    
+}

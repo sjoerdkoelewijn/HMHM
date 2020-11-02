@@ -1,131 +1,64 @@
 <!DOCTYPE html>
 
-<!--[if IE 9]>
-<html class="ie ie9" <?php language_attributes(); ?>>
-<![endif]-->
-
 <html <?php language_attributes(); ?>>
 
     <head>
-        <meta charset="<?php bloginfo( 'charset' ); ?>">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-        <link rel="profile" href="http://gmpg.org/xfn/11">
-        <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
+        <meta charset="<?php bloginfo( 'charset' ); ?>" />
+        <meta name="viewport" content="width=device-width" />
+        <title><?php wp_title( '|', true, 'right' ); ?></title>
+        <link rel="profile" href="https://gmpg.org/xfn/11" />
+        <link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
         <?php wp_head(); ?>
     </head>
 
-    <body <?php body_class(); ?>>
+    <body <?php body_class(); ?> data-mobile-menu-hide>
 
-    <article>
+    <header>
 
-        <a title="<?php bloginfo( 'name' ); ?>" aria-label="Visit the Homepage" class="header_logo_link logo" href="/">
-            <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/logo.svg"); ?>
+        <a data-logo title="<?php bloginfo( 'name' ); ?>" aria-label="Visit the Homepage" class="header_logo_link large logo" href="/">
+            <?php echo file_get_contents(get_template_directory() . "/images/svg/logo.svg"); ?>
         </a>
 
-        <div class="menu_buttons_wrap">
+        <div class="mobile_top_menu">
 
-            <button class="language_menu_toggle" data-language-menu-toggle>
-                <?php _e( 'Select Language', 'hashmuseum' ) ?>
-            </button>
+            <a data-logo title="<?php bloginfo( 'name' ); ?>" aria-label="Visit the Homepage" class="header_logo_link small logo" href="/">
+                <?php echo file_get_contents(get_template_directory() . "/images/svg/logo-small.svg"); ?>
+            </a>
 
-            <button class="main_menu_toggle" data-main-menu-toggle>
-                <?php _e( 'menu', 'hashmuseum' ) ?>
-            </button>
+            <div class="menu_buttons_wrap">
 
-        </div>
+                <!-- Edit button for logged in users -->
+                <?php include('parts/edit-button.php'); ?>
 
-        <div class="main_menu hidden" data-main-menu>
-
-            <div class="menu_background"></div> 
-
-            <div class="main_menu_wrap">
-
-                <button class="main_close" data-main-close aria-label="<?php echo __( 'Close Menu', 'hashmuseum' ) ?>">
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/closeIcon.svg"); ?>
+                <button class="language_menu_toggle" data-language-menu-toggle>
+                    <?php echo file_get_contents(get_template_directory() . "/images/svg/weedleaf-small.svg"); ?>
+                    <?php pll_e( 'Select Language', 'hashmuseum' ) ?>
                 </button>
 
-                <nav id="main-navigation" class="main_navigation" role="navigation">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location'  => 'main-navigation',
-                        'fallback_cb'     => false,
-                        'container'       => false,
-                        'items_wrap'      => '<ul id="%1$s">%3$s</ul>',
-                    ));
-                    ?>
-                </nav>
-
-                <nav class="social amsterdam">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location'  => 'social-menu-ams',
-                        'fallback_cb'     => false,
-                        'container'       => false,
-                        'items_wrap'      => '%3$s',
-                        'walker'          => new Social_Menu_Walker()
-                    ));
-                    ?>
-                </nav>
-
-                <nav class="social barcelona">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location'  => 'social-menu-bcn',
-                        'fallback_cb'     => false,
-                        'container'       => false,
-                        'items_wrap'      => '%3$s',
-                        'walker'          => new Social_Menu_Walker()
-                    ));
-                    ?>
-                </nav>
-
-                <nav id="boring-links" class="Boring_links" role="navigation">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location'  => 'boring-links',
-                        'fallback_cb'     => false,
-                        'container'       => false,
-                        'items_wrap'      => '<ul id="%1$s">%3$s</ul>',
-                    ));
-                    ?>
-                </nav>
+                <button class="main_menu_toggle" data-main-menu-toggle>
+                    <?php pll_e( 'menu', 'hashmuseum' ) ?>
+                    <?php echo file_get_contents(get_template_directory() . "/images/svg/hamburgerIcon.svg"); ?>
+                </button>            
 
             </div>
 
         </div>
 
+        <div class="mobile_buttons">
 
-        <div class="language_menu hidden" data-language-menu>
+            <a href="#tickets" class="buy_tickets mobile_btn">
+                <?php pll_e( 'Buy tickets', 'hashmuseum' ) ?>
+            </a>
 
-            <div class="menu_background"></div> 
-
-            <div class="language_menu_wrap">
-
-                <h2>
-                <?php echo __( 'Select Language', 'hashmuseum' ) ?> 
-                </h2>   
-                
-                <button class="language_close" data-language-close aria-label="<?php echo __( 'Close Menu', 'hashmuseum' ) ?>">
-                    <?php echo file_get_contents(get_template_directory_uri() . "/images/svg/closeIcon.svg"); ?>
-                </button>
-
-                <nav id="language-navigation" class="language_navigation" role="navigation">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location'  => 'language-menu',
-                        'fallback_cb'     => false,
-                        'container'       => false,
-                        'items_wrap'      => '<ul id="%1$s">%3$s</ul>',
-                    ));
-                    ?>
-                </nav>
-
-            </div>
+            <a href="<?php pll_e( '/en/plan-your-visit/', 'hashmuseum' ) ?>" class="plan_visit mobile_btn">
+                <?php pll_e( 'Plan your visit', 'hashmuseum' ) ?>
+            </a>            
 
         </div>
 
-    </article>
+        <?php include('parts/main-menu.php'); ?>
 
+        <?php include('parts/language-menu.php'); ?>
 
+    </header>

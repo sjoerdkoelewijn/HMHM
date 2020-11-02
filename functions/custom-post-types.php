@@ -32,7 +32,7 @@ function cpt_collection() {
 			'filter_items_list'     => __( 'Filter items list', 'hashmuseum' ),
 	);
 	$rewrite = array(
-			'slug'                  => __( 'collection', 'hashmuseum' ) . '/%collection_themes%',
+			'slug'                  => pll__( 'collection', 'hashmuseum' ) . '/' . '%collection_themes%',
 			'with_front'            => true,
 			'pages'                 => true,
 			'feeds'                 => true,
@@ -52,13 +52,12 @@ function cpt_collection() {
 			'show_in_admin_bar'     => true,
 			'show_in_nav_menus'     => true,
 			'can_export'            => true,
-			'has_archive'           => 'collection',
+			'has_archive'           => pll__( 'collection', 'hashmuseum' ),
 			'exclude_from_search'   => false,
 			'publicly_queryable'    => true,
 			'rewrite'               => $rewrite,
 			'capability_type'       => 'post',
 			'show_in_rest'          => true,
-			"query_var"           	=> true,
 	);
 	register_post_type( 'collection', $args );
 
@@ -84,12 +83,13 @@ function cpt_collection_taxonomy() {
 	  
 	  register_taxonomy('collection_themes', array('collection'), array(
 		'hierarchical' 		=> true,
-		"public"        	=> true,
+		'public'        	=> true,
 		'labels' 			=> $labels,
 		'show_ui' 			=> true,
 		'show_admin_column' => true,
 		'query_var' 		=> true,
-		'rewrite' 			=> array( 'slug' => 'collection' ),
+		'show_in_rest'      => true,
+		'rewrite' 			=> array( 'slug' => pll__( 'collection', 'hashmuseum' ) ),
 	  ));
 	 
 }
@@ -137,7 +137,7 @@ function custom_collection_pages() {
 			'label'                 => __( 'Collection Front Pages', 'hashmuseum' ),
 			'description'           => __( 'Custom front pages for the collection post type.', 'hashmuseum' ),
 			'labels'                => $labels,
-			'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields',),
+			'supports'              => array( 'title', 'editor', 'revisions', 'custom-fields',),
 			'hierarchical'          => false,
 			'public'                => true,
 			'show_ui'               => true,
@@ -153,7 +153,6 @@ function custom_collection_pages() {
 			'rewrite'               => $rewrite,
 			'capability_type'       => 'page',
 			'show_in_rest'          => true, // false will enable classic editor.
-			"query_var"           	=> true,
 	);
 	register_post_type( 'collection_pages', $args );
 
@@ -169,10 +168,10 @@ add_action( 'init', 'custom_collection_pages', 1 );
 function cpt_cannabisinfo() {
 
 	$labels = array(
-			'name'                  => _x( 'Cannabis Info', 'Post Type General Name', 'hashmuseum' ),
-			'singular_name'         => _x( 'Cannabis Info', 'Post Type Singular Name', 'hashmuseum' ),
-			'menu_name'             => __( 'Cannabis Info', 'hashmuseum' ),
-			'name_admin_bar'        => __( 'Cannabis Info Item', 'hashmuseum' ),
+			'name'                  => _x( 'Cannabis Knowledge', 'Post Type General Name', 'hashmuseum' ),
+			'singular_name'         => _x( 'Cannabis Knowledge', 'Post Type Singular Name', 'hashmuseum' ),
+			'menu_name'             => __( 'Knowledgebase', 'hashmuseum' ),
+			'name_admin_bar'        => __( 'Cannabis Knowledge Item', 'hashmuseum' ),
 			'archives'              => __( 'Item Archives', 'hashmuseum' ),
 			'attributes'            => __( 'Item Attributes', 'hashmuseum' ),
 			'parent_item_colon'     => __( 'Parent Item:', 'hashmuseum' ),
@@ -198,14 +197,14 @@ function cpt_cannabisinfo() {
 			'filter_items_list'     => __( 'Filter items list', 'hashmuseum' ),
 	);
 	$rewrite = array(
-			'slug'                  => __( 'cannabis-info', 'hashmuseum' ) . '/%info_categories%',
+			'slug'                  => pll__( 'cannabis-knowledge', 'hashmuseum' ) . '/%info_categories%',
 			'with_front'            => true,
 			'pages'                 => true,
 			'feeds'                 => true,
 	);
 	$args = array(
-			'label'                 => __( 'Cannabis Info', 'hashmuseum' ),
-			'description'           => __( 'Cannabis information', 'hashmuseum' ),
+			'label'                 => __( 'Cannabis Knowledge', 'hashmuseum' ),
+			'description'           => __( 'Cannabis Knowledge', 'hashmuseum' ),
 			'labels'                => $labels,
 			'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', ),
 			'hierarchical'          => false,
@@ -217,13 +216,12 @@ function cpt_cannabisinfo() {
 			'show_in_admin_bar'     => true,
 			'show_in_nav_menus'     => true,
 			'can_export'            => true,
-			'has_archive'           => 'cannabis-info',
+			'has_archive'           => __( 'cannabis-knowledge', 'hashmuseum' ),
 			'exclude_from_search'   => false,
 			'publicly_queryable'    => true,
 			'rewrite'               => $rewrite,
 			'capability_type'       => 'post',
 			'show_in_rest'          => true,
-			"query_var"           	=> true,
 	);
 	register_post_type( 'cannabisinfo', $args );
 
@@ -254,7 +252,8 @@ function cpt_cannabisinfo_taxonomy() {
 		'show_ui' 			=> true,
 		'show_admin_column' => true,
 		'query_var' 		=> true,
-		'rewrite' 			=> array( 'slug' => 'cannabis-info' ),
+		'show_in_rest'      => true,
+		'rewrite' 			=> array( 'slug' => 'cannabis-knowledge' ),
 	  ));
 	 
 }
@@ -300,7 +299,7 @@ function custom_cannabisinfo_pages() {
 			'label'                 => __( 'Cannabis Info Front Pages', 'hashmuseum' ),
 			'description'           => __( 'Custom front pages for the cannabis info post type.', 'hashmuseum' ),
 			'labels'                => $labels,
-			'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields',),
+			'supports'              => array( 'title', 'editor', 'revisions', 'custom-fields',),
 			'hierarchical'          => false,
 			'public'                => true,
 			'show_ui'               => true,
@@ -316,7 +315,7 @@ function custom_cannabisinfo_pages() {
 			'rewrite'               => $rewrite,
 			'capability_type'       => 'page',
 			'show_in_rest'          => true, // false will enable classic editor.
-			"query_var"           	=> true,
+			'query_var'           	=> true,
 	);
 	register_post_type( 'cannabisinfo_pages', $args );
 
@@ -348,7 +347,7 @@ function cpt_newsexhibitions() {
 			'archives'              => __( 'Item Archives', 'hashmuseum' ),
 			'attributes'            => __( 'Item Attributes', 'hashmuseum' ),
 			'parent_item_colon'     => __( 'Parent Item:', 'hashmuseum' ),
-			'all_items'             => __( 'Info Items', 'hashmuseum' ),
+			'all_items'             => __( 'Agenda Items', 'hashmuseum' ),
 			'add_new_item'          => __( 'Add New Info Item', 'hashmuseum' ),
 			'add_new'               => __( 'Add New', 'hashmuseum' ),
 			'new_item'              => __( 'New Item', 'hashmuseum' ),
@@ -371,7 +370,7 @@ function cpt_newsexhibitions() {
 	);
 
 	$rewrite = array(
-			'slug'                  => __( 'whats-on', 'hashmuseum' ) . '/%news_exhibitions%',
+			'slug'                  => pll__( 'whats-on', 'hashmuseum' ),
 			'with_front'            => true,
 			'pages'                 => true,
 			'feeds'                 => true,
@@ -391,18 +390,18 @@ function cpt_newsexhibitions() {
 			'show_in_admin_bar'     => true,
 			'show_in_nav_menus'     => true,
 			'can_export'            => true,
-			'has_archive'           => 'news',
+			'has_archive'           => pll__( 'whats-on', 'hashmuseum' ),
 			'exclude_from_search'   => false,
 			'publicly_queryable'    => true,
 			'rewrite'               => $rewrite,
 			'capability_type'       => 'post',
 			'show_in_rest'          => true,
-			"query_var"           	=> true,
+			//'query_var'           	=> true,
 	);
 	register_post_type( 'newsexhibitions', $args );
 
 }
-add_action( 'init', 'cpt_newsexhibitions', 3 );
+add_action( 'init', 'cpt_newsexhibitions', 0 );
 
 
 function cpt_newsexhibitions_taxonomy() { 
@@ -423,12 +422,13 @@ function cpt_newsexhibitions_taxonomy() {
 	  
 	  register_taxonomy('news_exhibitions', array('newsexhibitions'), array(
 		'hierarchical' 		=> true,
-		"public"        	=> true,
+		'public'        	=> true,
 		'labels' 			=> $labels,
 		'show_ui' 			=> true,
 		'show_admin_column' => true,
 		'query_var' 		=> true,
-		'rewrite' 			=> array( 'slug' => 'whats-on' ),
+		'show_in_rest'      => true,
+		'rewrite' 			=> array( 'slug' => pll__( 'whats-on', 'hashmuseum' ) ),
 	  ));
 	 
 }

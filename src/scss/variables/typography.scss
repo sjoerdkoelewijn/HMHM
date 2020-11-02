@@ -1,0 +1,145 @@
+@import "../variables/colors";
+@import "../variables/breakpoints";
+
+
+$normal-title:3vw;
+$small-title:2vw;
+
+$normal-subtitle:2vw;
+$small-subtitle:1.5vw;
+
+$large-p:2rem;
+$normal-p:1.5rem;
+$small-p:1rem;
+
+$small-btn:0.9rem;
+$body-font:'Lato', sans-serif;
+$header-font:'Prata', serif;
+
+
+:root {
+
+    --x-large-title:4vw;
+    --large-title:3vw;
+    --medium-title:2.5vw;
+    --small-title:2vw;
+
+    --x-large-subtitle:3vw;
+    --large-subtitle:2vw;
+    --medium-subtitle:1.75vw;
+    --small-subtitle:1.5vw;
+
+    --x-large-p:2rem;
+    --large-p:1.4rem;
+    --medium-p:1.2rem;
+    --small-p:1rem;
+
+    --medium-btn:1.1rem;
+    --small-btn:0.9rem;
+
+    @include phone {
+        --x-large-title:13vw;
+        --large-title:10vw;
+        --medium-title:8vw;
+        --small-title:7vw;
+
+        --large-subtitle:8vw;
+        --medium-subtitle:7vw;
+        --small-subtitle:6vw;
+
+        --large-p:1.3rem;
+        --small-p:.85rem;
+        
+    }
+
+    @include tablet {
+        --x-large-title:11vw;
+        --large-title:8vw;
+        --medium-title:6vw;
+        --small-title:5vw;
+
+        --large-subtitle:5vw;
+        --medium-subtitle:4vw;
+        --small-subtitle:3vw;
+        
+        --medium-btn:1.2rem;
+        --small-btn:1rem;
+
+        --large-p:1.6rem;
+        --medium-p:1.4rem;
+        --small-p:1.2rem;
+    }
+
+    @include desktop-s {
+        --x-large-title:6vw;
+        --large-title:4.5vw;
+        --medium-title:4vw;
+        --small-title:4vw;
+
+        --large-subtitle:4vw;
+        --medium-subtitle:3vw;
+        --small-subtitle:2.5vw;
+
+        --large-p:1.3rem;
+        --small-p:.9rem;
+    }
+
+}
+
+html {
+    font-family: $body-font; 
+}
+
+input, textarea, input::placeholder, textarea::placeholder {
+    font-family: $body-font; 
+    font-weight:300;
+}
+
+button {
+    font-family: $body-font; 
+}
+
+strong {
+    font-weight:700;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family:$header-font;
+
+    strong {
+        font-weight:300;
+    }
+}
+
+h1 {
+    font-weight:400;
+    line-height:140%;
+    font-size:var(--large-title);
+    margin-bottom:30px;
+ 
+}
+
+h2 {
+    font-weight:400;
+    line-height:150%;
+    font-size:var(--large-subtitle);
+    margin-bottom:30px;
+}
+
+h1 + h2 {
+   margin-top:-15px; // Adjacent sibling selector - Move h2 up when it follows a h1
+}
+
+h3 {
+    font-weight:400;
+    line-height:150%;
+    font-size:var(--small-subtitle);
+}
+
+p{
+    line-height:160%; 
+    font-weight:300;
+    font-size:var(--large-p);
+    margin-bottom:30px;      
+  
+}

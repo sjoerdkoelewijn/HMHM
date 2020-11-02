@@ -1,5 +1,6 @@
-<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">    
-    <label class="screen-reader-text" for="s"><?php _e( 'Search for:', 'shopkeeper' ); ?></label>
-    <input type="search" class="search-field" placeholder="<?php _e( 'Search &hellip;', 'shopkeeper' ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s">
-    <input type="submit" class="search-submit" value="<?php _e( 'Search', 'shopkeeper' ); ?>">
+<form role="search" method="get" class="search_form" action="<?php echo esc_url(home_url('/')); ?>">    
+    <input type="search" name="s" id="search" class="search_field" placeholder="<?php _e( 'Type to search &hellip;', 'hashmuseum' ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>">
+    <button type="submit" class="search_submit">
+        <?php echo file_get_contents(get_template_directory() . "/images/svg/searchIcon.svg"); ?>
+    </button>
 </form>
