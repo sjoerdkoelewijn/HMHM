@@ -8,6 +8,7 @@
         <title><?php wp_title( '|', true, 'right' ); ?></title>
         <link rel="profile" href="https://gmpg.org/xfn/11" />
         <link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
         <?php wp_head(); ?>
     </head>
 

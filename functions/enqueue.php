@@ -23,13 +23,12 @@ add_action( 'wp_footer', 'sk_deregister_embed' );
 
 function hashmuseum_styles() {
 
-	$filename = get_stylesheet_directory() . '/dist/css/style.min.css';
+	$filename = get_stylesheet_directory() . '/src/css/style.min.css';
 	$timestamp = filemtime($filename);
-
-	wp_enqueue_style('hashmuseum-styles', get_template_directory_uri() . '/dist/css/style.min.css', NULL, $timestamp, 'all' );
 
 	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Prata&display=swap', NULL, NULL, 'all' );
 
+	wp_enqueue_style('hashmuseum-styles', get_template_directory_uri() . '/src/css/style.min.css', NULL, $timestamp, 'all' );
 
 }
 add_action( 'wp_enqueue_scripts', 'hashmuseum_styles', 99 );
@@ -39,7 +38,7 @@ function admin_styles() {
 
 	$filename = get_stylesheet_directory() . '/dist/css/admin.min.css';
 	$timestamp = filemtime($filename);
-	wp_enqueue_style('admin-styles', get_template_directory_uri() . '/dist/css/admin.min.css', NULL, $timestamp, 'all' );
+	wp_enqueue_style('admin-styles', get_template_directory_uri() . '/src/css/admin.min.css', NULL, $timestamp, 'all' );
 
 }
 add_action('admin_enqueue_scripts', 'admin_styles');
@@ -56,18 +55,20 @@ function hashmuseum_scripts() {
 		wp_deregister_script('jquery');
 	}
 
-	wp_enqueue_script('logo-color-switch', get_template_directory_uri() . '/libs/background-check.min.js', NULL, $timestamp, FALSE);
-    wp_enqueue_script('slider', get_template_directory_uri() . '/libs/siema.min.js', NULL, $timestamp, FALSE);
-	wp_enqueue_script('hashmuseum-app', get_template_directory_uri() . '/dist/js/app.min.js', NULL, $timestamp, TRUE);
-	wp_enqueue_script('hashmuseum-app-defer', get_template_directory_uri() . '/dist/js/app-defer.min.js', NULL, $timestamp, TRUE);
-	wp_enqueue_script('mailchimp', get_template_directory_uri() . '/dist/js/mailchimp-defer.min.js', NULL, $timestamp, TRUE);
+	wp_enqueue_script('logo-color-switch', get_template_directory_uri() . '/src/js/libs/background-check.min.js', NULL, $timestamp, FALSE);
+	wp_enqueue_script('slider', get_template_directory_uri() . '/src/js/libs/siema.min.js', NULL, $timestamp, FALSE);
+	
+	wp_enqueue_script('hashmuseum-app', get_template_directory_uri() . '/src/js/app.min.js', NULL, $timestamp, TRUE);
+
+	wp_enqueue_script('hashmuseum-app-defer', get_template_directory_uri() . '/src/js/app-defer.min.js', NULL, $timestamp, TRUE);
+	wp_enqueue_script('mailchimp', get_template_directory_uri() . '/src/js/mailchimp-defer.min.js', NULL, $timestamp, TRUE);
 
 }
 add_action( 'wp_enqueue_scripts', 'hashmuseum_scripts', 99 );
 
-
 // Defer js - Adapted from https://gist.github.com/toscho/1584783
 add_filter( 'clean_url', function( $url )
+
 {
     if ( FALSE === strpos( $url, '-defer.min.js' ) )
     { 

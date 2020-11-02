@@ -1597,15 +1597,14 @@ html {
 .hero {
     display:flex;
     width:100vw;
-    height:100vh;
+    
    
     @include phone {
         flex-direction:column-reverse;
     }
 
     @include desktop-s {
-        height:auto;
-        min-height:100vh;
+        height:100vh;
     }
 
    .breadcrumbs {
@@ -2314,11 +2313,18 @@ html {
             background-size:50px 50px;
             background-position:center center;
             position:absolute;
+            display:none;
 
             height:60px;
             width:60px;
             
             right:-33px;
+
+            @include desktop-up {
+                display:block;
+            }
+
+
         }
     }
 
@@ -4125,9 +4131,10 @@ border: 0;
                 transition: all 1s ease;                
                 
                 img {
-                    width:66.1vw;
+                    width:70vw;
                     object-fit: cover;
-                    min-height:100vh;                    
+                    min-height:100vh;
+                    height:100%;                    
 
                 }
             }
@@ -4449,6 +4456,11 @@ border: 0;
             right:-10vw;
             bottom:-1vw;
             z-index:1;
+            display:none;
+
+            @include desktop-up {
+                display:block;
+            }
 
             svg {
                 width:30vw;
@@ -5412,9 +5424,10 @@ border: 0;
             margin-top:24%;
             background:$white;
             padding:8px 0 3px 0;
+            display:none;
 
-            @include phone {
-                display:none;
+            @include desktop-up {
+                display:block;
             }
 
             svg {
@@ -5444,12 +5457,12 @@ border: 0;
             @include phone {
 
                 .location_header {
-                    font-size:var(--large-p);
+                    font-size:var(--medium-subtitle);
                     margin:2vh 0 2vh 0;
                 }
 
                 .intro_text {
-                    font-size:var(--small-p);
+                    font-size:var(--medium-p);
                     margin:0 0 2vh 0;
                 }
 

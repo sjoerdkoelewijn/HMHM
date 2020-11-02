@@ -34,11 +34,11 @@
 
 					<div class="ticket_buttons">
 
-						<a class="ghost_btn black btn" href="#">
+						<a class="ghost_btn black btn" href="#tickets">
 							<?php pll_e( 'Get your ticket', 'hashmuseum' ) ?>
 						</a>
 
-						<a class="ghost_btn black btn" href="#">
+						<a class="ghost_btn black btn" href="<?php pll_e( '/en/plan-your-visit/', 'hashmuseum' ) ?>">
 							<?php pll_e( 'Plan your visit', 'hashmuseum' ) ?>
 						</a>
 						
@@ -98,10 +98,10 @@
                         </p>
 					</div>
 					
-					<a href="#" class="moreinfo">
+					<a href="/<?php echo pll_current_language(); ?>/amsterdam/" class="moreinfo">
                         <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?> 
                         <p>
-							<?php echo __( 'More information', 'hashmuseum' ) ?>
+							<?php pll_e( 'More information', 'hashmuseum' ) ?>
                         </p>
                     </a>
 
@@ -144,7 +144,7 @@
                         </p>
                     </div>
 
-					<a href="#" class="moreinfo">
+					<a href="/<?php echo pll_current_language(); ?>/barcelona/" class="moreinfo">
                         <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?> 
                         <p>
 							<?php pll_e( 'More information', 'hashmuseum' ) ?>
