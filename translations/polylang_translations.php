@@ -58,6 +58,15 @@ if ( function_exists( 'pll_register_string' ) ) {
     pll_register_string('404', "Don't worry though, it's probably just a typo. Please use the search function instead.", 'Hashmuseum');
 
     pll_register_string('Cookie Message', 'Have a cookie', 'Hashmuseum');
-    pll_register_string('Cookie Message', 'We use cookies to improve your experience and deliver personalized content. By using this website you agree to our <a href="/en/privacy-policy">Privacy Policy.</a>', 'Hashmuseum');
+    pll_register_string('Cookie Message', 'We use cookies to store data and enable important site functionality including analytics and language settings. See our <a href="/en/privacy-policy">privacy policy</a> for more information.', 'Hashmuseum');
+    
+    pll_register_string('Cookie Message', 'Accept', 'Hashmuseum');
+    pll_register_string('Cookie Message', 'Settings', 'Hashmuseum');
+    pll_register_string('Cookie Message', 'Cookie settings', 'Hashmuseum');
+    pll_register_string('Cookie Message', 'Functional', 'Hashmuseum');
+    pll_register_string('Cookie Message', 'These cookies are required for the website to work so you can’t disable them.', 'Hashmuseum');
+    pll_register_string('Cookie Message', 'Analytics', 'Hashmuseum');
+    pll_register_string('Cookie Message', 'We anonymize our statistics and we only use this data to make our website better.', 'Hashmuseum');
+
 
 }   
