@@ -817,6 +817,12 @@ html {
         position:fixed;
         z-index:1100;
 
+        .current-lang {
+            a {
+                font-weight:700;
+            }
+        }
+
         @include phone {
             width:100%;
         }

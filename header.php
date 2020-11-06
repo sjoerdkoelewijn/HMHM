@@ -33,7 +33,7 @@
 
                 <button class="language_menu_toggle" data-language-menu-toggle>
                     <?php echo file_get_contents(get_template_directory() . "/images/svg/weedleaf-small.svg"); ?>
-                    <?php pll_e( 'Select Language', 'hashmuseum' ) ?>
+                    <?php pll_e( 'Select Language', 'hashmuseum' ) // echo pll_current_language('name'); //  ?>
                 </button>
 
                 <button class="main_menu_toggle" data-main-menu-toggle>

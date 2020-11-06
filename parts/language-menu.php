@@ -5,7 +5,7 @@
     <div class="language_menu_wrap">
 
         <h2>
-        <?php echo __( 'Select Language', 'hashmuseum' ) ?> 
+            <?php pll_e( 'Select Language', 'hashmuseum' ) ?>
         </h2>   
         
         <button class="language_close" data-language-close aria-label="<?php echo __( 'Close Menu', 'hashmuseum' ) ?>">
