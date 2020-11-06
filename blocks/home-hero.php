@@ -370,7 +370,7 @@ $id = 'home-hero-' . $block['id']; ?>
 
             <div class="horizontal_slider_btn_wrap">
                 
-                <button class="slider_button right" data-siema-review-slider-next>
+                <button class="slider_button right" data-siema-home-hero-mobile-slider-next>
                     <div class="background_wrap">
                         <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
                     </div>

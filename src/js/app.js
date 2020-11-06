@@ -196,7 +196,7 @@ if (MobileHeroSliderContainer != null){
         loop: true,    
     });
 
-    const MobileHeroSliderNext = document.querySelector('[data-siema-review-slider-next]');
+    const MobileHeroSliderNext = document.querySelector('[data-siema-home-hero-mobile-slider-next]');
 
     MobileHeroSliderNext.addEventListener('click', () => MobileHeroSlider.next());
 
