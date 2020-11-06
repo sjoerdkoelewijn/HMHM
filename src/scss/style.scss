@@ -3020,6 +3020,10 @@ html {
                 bottom:0;
                 position:absolute;
                 z-index:10;
+
+                @include phone {
+                    height:70vh;
+                }
             }
 
             .quote {
@@ -3035,6 +3039,10 @@ html {
                 @include desktop-s {
                     margin-bottom:80px;
                 }
+
+                @include phone {
+                    margin-bottom:45px;
+                }
             }
 
             .meta {
@@ -3047,6 +3055,10 @@ html {
                    font-family:$header-font;
                    font-size:calc(var(--x-large-p) * .9);
                    margin-bottom:10px;
+
+                   @include phone {
+                        font-size:calc(var(--x-large-p) * .7);
+                   }
                 }
     
                 .bio {
