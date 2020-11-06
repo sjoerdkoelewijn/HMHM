@@ -71,7 +71,7 @@
 
 				<div class="column second">
 
-				<h2 class="header">
+					<h2 class="header">
 						<a class="location_link" href="/<?php echo pll_current_language(); ?>/amsterdam/">
                     		<?php pll_e( 'Amsterdam', 'hashmuseum' ) ?>
                 		</a>
@@ -90,6 +90,13 @@
 							<?php the_field('amsterdam_phone_number', 'option'); ?>
 						</p>
 					</div>
+
+					<a href="mailto:amsterdam@hashmuseum.com" class="email">
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/emailIcon.svg"); ?> 
+						<p>
+							amsterdam@hashmuseum.com
+						</p>
+					</a>
 
                     <div class="openinghours">
                         <?php echo file_get_contents(get_template_directory() . "/images/svg/clockIcon.svg"); ?> 
@@ -136,6 +143,13 @@
 							<?php the_field('barcelona_phone_number', 'option'); ?>
                         </p>
 					</div>
+
+					<a href="mailto:barcelona@hashmuseum.com" class="email">
+                        <?php echo file_get_contents(get_template_directory() . "/images/svg/emailIcon.svg"); ?> 
+						<p>
+							barcelona@hashmuseum.com
+						</p>
+					</a>
 					
                     <div class="openinghours">
                         <?php echo file_get_contents(get_template_directory() . "/images/svg/clockIcon.svg"); ?> 

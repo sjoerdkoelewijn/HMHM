@@ -5711,7 +5711,7 @@ border: 0;
             width:35%;
         }
 
-        .openinghours, .address, .phonenumber  {
+        .openinghours, .address, .phonenumber, .email  {
             display:flex;
 
             p {
@@ -5753,6 +5753,35 @@ border: 0;
             svg {
                 width:14px;
                 margin:5px 25px 0 3px;
+
+                path {
+                    fill:$black;
+                    transition: fill .5s ease;
+                }
+            }
+
+            &:hover {
+                svg {
+                    path {
+                        fill:$action;
+                        transition: fill .5s ease;
+                    }
+                }
+            }
+        }
+
+        .email {
+            display:flex;
+            text-decoration: none;
+
+            p {
+                font-size:var(--medium-p);
+                margin-bottom:5px;
+            }
+            
+            svg {
+                width:18px;
+                margin:9px 20px 0 3px;
 
                 path {
                     fill:$black;
