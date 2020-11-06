@@ -91,14 +91,14 @@ get_header(); ?>
 						<?php if($free === 'paid') { ?>
 
 							<a class="action_btn black btn" href="<?php sk_get_ticket_url($location) ?>">
-								<?php _e( 'Get your ticket', 'hashmuseum' ) ?>
+								<?php pll_e( 'Get your ticket', 'hashmuseum' ) ?>
 							</a>
 
 						<?php } else if($free === 'free') { ?>
 
 							<div class="free_entry">
 								<p>
-									<?php _e( 'Free entry', 'hashmuseum' ) ?>
+									<?php pll_e( 'Free entry', 'hashmuseum' ) ?>
 								</p>
 								<?php echo file_get_contents(get_template_directory() . "/images/svg/euroIcon.svg"); ?>  
 							</div>
@@ -167,7 +167,7 @@ get_header(); ?>
 								<?php if($free === 'paid') { ?>
 
 									<a class="action_btn black btn" href="<?php sk_get_ticket_url($location) ?>">
-										<?php _e( 'Get your ticket', 'hashmuseum' ) ?>
+										<?php pll_e( 'Get your ticket', 'hashmuseum' ) ?>
 									</a>
 
 								<?php } else if($free === 'free') { ?>
@@ -175,7 +175,7 @@ get_header(); ?>
 									<div class="free_entry">
 										<?php echo file_get_contents(get_template_directory() . "/images/svg/euroIcon.svg"); ?>  
 										<p>
-											<?php _e( 'Free entry', 'hashmuseum' ) ?>
+											<?php pll_e( 'Free entry', 'hashmuseum' ) ?>
 										</p>
 									</div>
 
@@ -207,12 +207,12 @@ get_header(); ?>
 						<?php the_excerpt(); ?>
 					</p>
 
-					<a class="ghost_btn black btn" aria-label="<?php _e( 'More about', 'hashmuseum' ) ?> <?php the_title(); ?>" href="<?php the_permalink(); ?>">
+					<a class="ghost_btn black btn" aria-label="<?php pll_e( 'More about', 'hashmuseum' ) ?> <?php the_title(); ?>" href="<?php the_permalink(); ?>">
 						<span class="short_text">
-							<?php _e( 'More info', 'hashmuseum' ) ?>
+							<?php pll_e( 'More info', 'hashmuseum' ) ?>
 						</span>
 						<span class="long_text">
-							<?php _e( 'More about', 'hashmuseum' ) ?>
+							<?php pll_e( 'More about', 'hashmuseum' ) ?>
 							<?php the_title(); ?>
 						</span>
 					</a>

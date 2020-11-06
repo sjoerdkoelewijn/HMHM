@@ -67,5 +67,9 @@ if ( function_exists( 'pll_register_string' ) ) {
     pll_register_string('Cookie Message', 'Analytics', 'Hashmuseum');
     pll_register_string('Cookie Message', 'We anonymize our statistics and we only use this data to make our website better.', 'Hashmuseum');
 
+    pll_register_string('Whats on', 'Free entry', 'Hashmuseum');
+    pll_register_string('Whats on', 'More about', 'Hashmuseum');
+    pll_register_string('Whats on', 'Ends on', 'Hashmuseum');
+    pll_register_string('Whats on', 'Ended on', 'Hashmuseum');
 
 }   
