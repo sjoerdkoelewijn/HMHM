@@ -252,7 +252,7 @@ $id = 'home-hero-' . $block['id']; ?>
 
         <div class="mobile_slider">
 
-            <div data-siema-home-hero-mobile-slider>
+            <div class="mobile_slider_inner" data-siema-home-hero-mobile-slider>
 
                 <?php while( have_rows('slides') ): the_row(); ?>
 

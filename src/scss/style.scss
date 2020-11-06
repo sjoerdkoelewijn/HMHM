@@ -4031,7 +4031,11 @@ border: 0;
         }
 
         @include desktop-s {
-            width:50vw;            
+            width:50vw;   
+            
+            .buttons {
+                padding-bottom:5vh;
+            }
         }
 
         @include phone {
@@ -4326,14 +4330,14 @@ border: 0;
 
         @include desktop-s {
             width:50vw;
-            height:100vh;
+            min-height:clamp(660px, 100vh, 1000px);
         }
 
         .slide {
             position:relative;
 
             @include desktop-s {
-                height:100vh;
+                height:clamp(660px, 100vh, 1000px);
             }
 
             &:before {
@@ -4367,7 +4371,7 @@ border: 0;
                 z-index: 1;
 
                 @include desktop-s {
-                    height:100vh;
+                    height:clamp(660px, 100vh, 1000px);
                 }
             }
 
