@@ -2331,7 +2331,14 @@ html {
                 display:block;
             }
 
+        }
+    }
 
+    .text_wrap.amsterdam.normal_block {
+        border-right:none;
+
+        &:after {
+            display:none;
         }
     }
 
