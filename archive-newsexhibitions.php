@@ -209,7 +209,7 @@ get_header(); ?>
 
 					<a class="ghost_btn black btn" aria-label="<?php pll_e( 'More about', 'hashmuseum' ) ?> <?php the_title(); ?>" href="<?php the_permalink(); ?>">
 						<span class="short_text">
-							<?php pll_e( 'More info', 'hashmuseum' ) ?>
+							<?php pll_e( 'More information', 'hashmuseum' ) ?>
 						</span>
 						<span class="long_text">
 							<?php pll_e( 'More about', 'hashmuseum' ) ?>

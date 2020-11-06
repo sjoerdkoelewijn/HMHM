@@ -38,7 +38,7 @@
             <?php if($free === 'paid') { ?>
 
                 <a class="action_btn black btn" href="<?php sk_get_ticket_url($location) ?>">
-                    <?php _e( 'Get your ticket', 'hashmuseum' ) ?>
+                    <?php pll_e( 'Get your ticket', 'hashmuseum' ) ?>
                 </a>
 
             <?php } ?>
@@ -47,7 +47,7 @@
 
                 <?php echo file_get_contents(get_template_directory() . "/images/svg/calendarIcon.svg"); ?> 
                 <p>
-                    <?php _e( 'Ends on', 'hashmuseum' ) ?>
+                    <?php pll_e( 'Ends on', 'hashmuseum' ) ?>
                     <?php echo $end_date->format('j F Y'); ?>
                 </p>   
             
@@ -90,7 +90,7 @@
 
                 <?php echo file_get_contents(get_template_directory() . "/images/svg/calendarIcon.svg"); ?> 
                 <p>
-                    <?php _e( 'Ended on', 'hashmuseum' ) ?>
+                    <?php pll_e( 'Ended on', 'hashmuseum' ) ?>
                     <?php echo $end_date->format('j F Y'); ?>
                 </p>  
 
@@ -116,7 +116,7 @@
         <div class="free_entry">
             <?php echo file_get_contents(get_template_directory() . "/images/svg/euroIcon.svg"); ?>  
             <p>
-                <?php _e( 'Free entry', 'hashmuseum' ) ?>
+                <?php pll_e( 'Free entry', 'hashmuseum' ) ?>
             </p>
         </div>
 
@@ -126,7 +126,7 @@
 
         <button class="read_more_link" data-read-more-btn>
             <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
-            <?php _e( 'More information', 'hashmuseum' ) ?>
+            <?php pll_e( 'More information', 'hashmuseum' ) ?>
         </button>
         
     </div>    
