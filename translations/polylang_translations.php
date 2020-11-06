@@ -59,7 +59,6 @@ if ( function_exists( 'pll_register_string' ) ) {
 
     pll_register_string('Cookie Message', 'Have a cookie', 'Hashmuseum');
     pll_register_string('Cookie Message', 'We use cookies to store data and enable important site functionality including analytics and language settings. See our <a href="/en/privacy-policy">privacy policy</a> for more information.', 'Hashmuseum');
-    
     pll_register_string('Cookie Message', 'Accept', 'Hashmuseum');
     pll_register_string('Cookie Message', 'Settings', 'Hashmuseum');
     pll_register_string('Cookie Message', 'Cookie settings', 'Hashmuseum');
