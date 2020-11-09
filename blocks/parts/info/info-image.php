@@ -8,11 +8,11 @@
     if( $images ): 
         if( count($images) === 1 ) { ?>
 
-            <?php include(get_template_directory() . '/blocks/parts/global/single-image.php'); ?>
+            <?php include(get_theme_file_path() . '/blocks/parts/global/single-image.php'); ?>
 
         <?php } else { ?>
 
-            <?php include(get_template_directory() . '/blocks/parts/global/slider.php'); ?>
+            <?php include(get_theme_file_path() . '/blocks/parts/global/slider.php'); ?>
 
         <?php } ?>        
         

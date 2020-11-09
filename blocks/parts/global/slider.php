@@ -26,11 +26,11 @@
 
 <button class="slider_button left" data-siema-hero-slider-prev>
     <div class="background_wrap">
-        <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowLeftIcon.svg"); ?>
+        <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowLeftIcon.svg"); ?>
     </div>    
 </button>
 <button class="slider_button right" data-siema-hero-slider-next>
     <div class="background_wrap">
-        <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
+        <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
     </div>
 </button>

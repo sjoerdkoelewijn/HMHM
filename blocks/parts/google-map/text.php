@@ -25,7 +25,7 @@
 
                 <div class="icon">
 
-                    <?php echo file_get_contents(get_template_directory() . "/images/svg/google-map-pin-$counter.svg"); ?>
+                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/google-map-pin-$counter.svg"); ?>
 
                     <?php $counter++; ?>
 
@@ -46,7 +46,7 @@
 
                     <?php if( $linktext ): ?>
                         <div class="link">
-                            <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
+                            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
                             <a class="directions_url" href="<?php echo $url ?>"><?php echo $linktext ?></a>
                         </div>
                     <?php endif; ?>

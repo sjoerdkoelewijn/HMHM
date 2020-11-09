@@ -36,7 +36,7 @@ add_action( 'wp_enqueue_scripts', 'hashmuseum_styles', 99 );
 
 function admin_styles() {
 
-	$filename = get_stylesheet_directory() . '/dist/css/admin.min.css';
+	$filename = get_stylesheet_directory() . '/src/css/admin.min.css';
 	$timestamp = filemtime($filename);
 	wp_enqueue_style('admin-styles', get_template_directory_uri() . '/src/css/admin.min.css', NULL, $timestamp, 'all' );
 
@@ -48,12 +48,14 @@ add_action('admin_enqueue_scripts', 'admin_styles');
 
 function hashmuseum_scripts() {
 
-	$filename = get_stylesheet_directory() . '/dist/js/app.min.js';
+	$filename = get_stylesheet_directory() . '/src/js/app.min.js';
 	$timestamp = filemtime($filename);
 
 	if (!is_admin()) {
 		wp_deregister_script('jquery');
 	}
+
+	wp_enqueue_script('gdpr-cookies', get_template_directory_uri() . '/src/js/gdpr-cookies.js', NULL, $timestamp, FALSE);
 
 	wp_enqueue_script('logo-color-switch', get_template_directory_uri() . '/src/js/libs/background-check.min.js', NULL, $timestamp, FALSE);
 	wp_enqueue_script('slider', get_template_directory_uri() . '/src/js/libs/siema.min.js', NULL, $timestamp, FALSE);

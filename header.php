@@ -4,11 +4,20 @@
 
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0" />
         <title><?php wp_title( '|', true, 'right' ); ?></title>
         <link rel="profile" href="https://gmpg.org/xfn/11" />
+
         <link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>">
-        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <link rel="preconnect" href="http://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="anonymous" >
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+
+        <meta name="google-site-verification" content="aoPLH9IdkVAX4MMq_Vm5VeQs17z4-3vJXizCQbmRo2s" />
+
         <?php wp_head(); ?>
     </head>
 
@@ -17,13 +26,13 @@
     <header>
 
         <a data-logo title="<?php bloginfo( 'name' ); ?>" aria-label="Visit the Homepage" class="header_logo_link large logo" href="/">
-            <?php echo file_get_contents(get_template_directory() . "/images/svg/logo.svg"); ?>
+            <img loading="lazy" src="<?php echo get_theme_file_uri() ?>/images/svg/logo.svg" alt="Logo">
         </a>
 
         <div class="mobile_top_menu">
 
             <a data-logo title="<?php bloginfo( 'name' ); ?>" aria-label="Visit the Homepage" class="header_logo_link small logo" href="/">
-                <?php echo file_get_contents(get_template_directory() . "/images/svg/logo-small.svg"); ?>
+                <img loading="lazy" src="<?php echo get_theme_file_uri() ?>/images/svg/logo-small.svg" alt="Logo">
             </a>
 
             <div class="menu_buttons_wrap">
@@ -32,13 +41,13 @@
                 <?php include('parts/edit-button.php'); ?>
 
                 <button class="language_menu_toggle" data-language-menu-toggle>
-                    <?php echo file_get_contents(get_template_directory() . "/images/svg/weedleaf-small.svg"); ?>
-                    <?php pll_e( 'Select Language', 'hashmuseum' ) // echo pll_current_language('name'); //  ?>
+                    <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/weedleaf-small.svg" alt="Language Menu Icon">
+                    <?php echo pll_current_language('name'); //  ?>
                 </button>
 
                 <button class="main_menu_toggle" data-main-menu-toggle>
                     <?php pll_e( 'menu', 'hashmuseum' ) ?>
-                    <?php echo file_get_contents(get_template_directory() . "/images/svg/hamburgerIcon.svg"); ?>
+                    <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/hamburgerIcon.svg" alt="Menu Icon">
                 </button>            
 
             </div>

@@ -24,7 +24,7 @@
 				<div class="column first">
 					
 					<div class="footer_logo">
-						<?php echo file_get_contents(get_template_directory() . "/images/svg/LogoLarge.svg"); ?>
+						<img loading="lazy" src="<?php echo get_theme_file_uri() ?>/images/svg/LogoLarge.svg" alt="Logo">
 					</div>
 
 
@@ -51,17 +51,17 @@
 						</p>
 
 						<div class="logos">
-							<a href="https://sensiseeds.com">
-								<?php echo file_get_contents(get_template_directory() . "/images/svg/SensiSeedsLogo.svg"); ?>
+							<a title="sensiseeds" href="https://sensiseeds.com">
+								<img loading="lazy" class="sensiseeds" src="<?php echo get_theme_file_uri() ?>/images/svg/SensiSeedsLogo.svg" alt="Logo">
 							</a>
-							<a href="https://www.hempflax.com">	
-								<?php echo file_get_contents(get_template_directory() . "/images/svg/HempFlaxLogo.svg"); ?>
+							<a title="hempflax" href="https://www.hempflax.com">
+								<img loading="lazy" class="hempflax" src="<?php echo get_theme_file_uri() ?>/images/svg/HempFlaxLogo.svg" alt="hempflax Logo">
 							</a>
-							<a href="https://cannabiscollege.com/">	
-								<?php echo file_get_contents(get_template_directory() . "/images/svg/CannabisCollegeLogo.svg"); ?>
+							<a title="cannabiscollege" href="https://cannabiscollege.com/">	
+								<img loading="lazy" class="cannabiscollege" src="<?php echo get_theme_file_uri() ?>/images/svg/CannabisCollegeLogo.svg" alt="cannabiscollege Logo">
 							</a>
-							<a href="https://www.hempstory.nl">	
-								<?php echo file_get_contents(get_template_directory() . "/images/svg/HempstoryLogo.svg"); ?>
+							<a title="hempstory" href="https://www.hempstory.nl">	
+								<img loading="lazy" class="hempstory" src="<?php echo get_theme_file_uri() ?>/images/svg/HempstoryLogo.svg" alt="hempstory Logo">
 							</a>
 						</div>
 					
@@ -78,35 +78,35 @@
 					</h2>
 					
 					<div class="address">
-                        <?php echo file_get_contents(get_template_directory() . "/images/svg/locationIcon.svg"); ?> 
+						<img loading="lazy" src="<?php echo get_theme_file_uri() ?>/images/svg/locationIcon.svg" alt="locationIcon"> 
                         <p>
                             <?php the_field('amsterdam_address', 'option'); ?>
                         </p>
 					</div>
 					
 					<div class="phonenumber">
-                        <?php echo file_get_contents(get_template_directory() . "/images/svg/phoneIcon.svg"); ?> 
+						<img loading="lazy" src="<?php echo get_theme_file_uri() ?>/images/svg/phoneIcon.svg" alt="phoneIcon"> 
                         <p>
 							<?php the_field('amsterdam_phone_number', 'option'); ?>
 						</p>
 					</div>
 
 					<a href="mailto:amsterdam@hashmuseum.com" class="email">
-                        <?php echo file_get_contents(get_template_directory() . "/images/svg/emailIcon.svg"); ?> 
+						<img loading="lazy" src="<?php echo get_theme_file_uri() ?>/images/svg/emailIcon.svg" alt="emailIcon">
 						<p>
 							amsterdam@hashmuseum.com
 						</p>
 					</a>
 
                     <div class="openinghours">
-                        <?php echo file_get_contents(get_template_directory() . "/images/svg/clockIcon.svg"); ?> 
+						<img loading="lazy" src="<?php echo get_theme_file_uri() ?>/images/svg/clockIcon.svg" alt="clockIcon">
                         <p>
                             <?php sk_lang_specific_option('amsterdam_opening_hours'); ?>
                         </p>
 					</div>
 					
 					<a href="/<?php echo pll_current_language(); ?>/amsterdam/" class="moreinfo">
-                        <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?> 
+						<img loading="lazy" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="arrowRightIcon">
                         <p>
 							<?php pll_e( 'More information', 'hashmuseum' ) ?>
                         </p>
@@ -131,35 +131,35 @@
                     </h2>
 
 					<div class="address">
-                        <?php echo file_get_contents(get_template_directory() . "/images/svg/locationIcon.svg"); ?> 
+						<img loading="lazy" src="<?php echo get_theme_file_uri() ?>/images/svg/locationIcon.svg" alt="locationIcon">
 						<p>
 							<?php the_field('barcelona_address', 'option'); ?>
                         </p>
 					</div>
 					
 					<div class="phonenumber">
-                        <?php echo file_get_contents(get_template_directory() . "/images/svg/phoneIcon.svg"); ?> 
+						<img loading="lazy" src="<?php echo get_theme_file_uri() ?>/images/svg/phoneIcon.svg" alt="phoneIcon">
                         <p>
 							<?php the_field('barcelona_phone_number', 'option'); ?>
                         </p>
 					</div>
 
 					<a href="mailto:barcelona@hashmuseum.com" class="email">
-                        <?php echo file_get_contents(get_template_directory() . "/images/svg/emailIcon.svg"); ?> 
+						<img loading="lazy" src="<?php echo get_theme_file_uri() ?>/images/svg/emailIcon.svg" alt="emailIcon">
 						<p>
 							barcelona@hashmuseum.com
 						</p>
 					</a>
 					
                     <div class="openinghours">
-                        <?php echo file_get_contents(get_template_directory() . "/images/svg/clockIcon.svg"); ?> 
+						<img loading="lazy" src="<?php echo get_theme_file_uri() ?>/images/svg/clockIcon.svg" alt="clockIcon">
                         <p>
                             <?php sk_lang_specific_option('barcelona_opening_hours'); ?>
                         </p>
                     </div>
 
 					<a href="/<?php echo pll_current_language(); ?>/barcelona/" class="moreinfo">
-                        <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?> 
+						<img loading="lazy" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="arrowRightIcon">
                         <p>
 							<?php pll_e( 'More information', 'hashmuseum' ) ?>
                         </p>
@@ -222,17 +222,17 @@
 				</p>
 
 				<div class="logos">
-					<a href="https://sensiseeds.com">
-						<?php echo file_get_contents(get_template_directory() . "/images/svg/SensiSeedsLogo.svg"); ?>
+					<a title="sensiseeds" href="https://sensiseeds.com">
+						<img loading="lazy" class="sensiseeds" src="<?php echo get_theme_file_uri() ?>/images/svg/SensiSeedsLogo.svg" alt="Logo">
 					</a>
-					<a href="https://www.hempflax.com">	
-						<?php echo file_get_contents(get_template_directory() . "/images/svg/HempFlaxLogo.svg"); ?>
+					<a title="hempflax" href="https://www.hempflax.com">
+						<img loading="lazy" class="hempflax" src="<?php echo get_theme_file_uri() ?>/images/svg/HempFlaxLogo.svg" alt="hempflax Logo">
 					</a>
-					<a href="https://cannabiscollege.com/">	
-						<?php echo file_get_contents(get_template_directory() . "/images/svg/CannabisCollegeLogo.svg"); ?>
+					<a title="cannabiscollege" href="https://cannabiscollege.com/">	
+						<img loading="lazy" class="cannabiscollege" src="<?php echo get_theme_file_uri() ?>/images/svg/CannabisCollegeLogo.svg" alt="cannabiscollege Logo">
 					</a>
-					<a href="https://www.hempstory.nl">	
-						<?php echo file_get_contents(get_template_directory() . "/images/svg/HempstoryLogo.svg"); ?>
+					<a title="hempstory" href="https://www.hempstory.nl">	
+						<img loading="lazy" class="hempstory" src="<?php echo get_theme_file_uri() ?>/images/svg/HempstoryLogo.svg" alt="hempstory Logo">
 					</a>
 				</div>
 			

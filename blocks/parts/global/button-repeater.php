@@ -35,7 +35,7 @@
             case 'textlink': ?>
 
                 <a href="<?php echo $url; ?>" class="read_more_link" >
-                    <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
+                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
                     <?php echo $anchor; ?>
                 </a>
 
@@ -43,7 +43,7 @@
             default: ?>
                 
                 <a href="<?php echo $url; ?>" class="read_more_link" >
-                    <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
+                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
                     <?php echo $anchor; ?>
                 </a>
 

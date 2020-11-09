@@ -12,7 +12,7 @@ $genericimage = get_field('generic_image');
 
         <div class="mobile_logo">
 
-            <?php echo file_get_contents(get_template_directory() . "/images/svg/LogoLarge.svg"); ?>
+            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/LogoLarge.svg"); ?>
 
         </div>
 
@@ -80,21 +80,21 @@ $genericimage = get_field('generic_image');
             <div class="meta">
 
                 <div class="address">
-                    <?php echo file_get_contents(get_template_directory() . "/images/svg/locationIcon.svg"); ?> 
+                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/locationIcon.svg"); ?> 
                     <p>
                         <?php the_field('amsterdam_address', 'option'); ?>
                     </p>
                 </div>
                 
                 <div class="phonenumber">
-                    <?php echo file_get_contents(get_template_directory() . "/images/svg/phoneIcon.svg"); ?> 
+                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/phoneIcon.svg"); ?> 
                     <p>
                         <?php the_field('amsterdam_phone_number', 'option'); ?>
                     </p>
                 </div>
 
                 <div class="openinghours">
-                    <?php echo file_get_contents(get_template_directory() . "/images/svg/clockIcon.svg"); ?> 
+                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/clockIcon.svg"); ?> 
                     <p>
                         <?php sk_lang_specific_option('amsterdam_opening_hours'); ?>
                     </p>
@@ -147,21 +147,21 @@ $genericimage = get_field('generic_image');
             <div class="meta">
 
                 <div class="address">
-                    <?php echo file_get_contents(get_template_directory() . "/images/svg/locationIcon.svg"); ?> 
+                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/locationIcon.svg"); ?> 
                     <p>
                         <?php the_field('barcelona_address', 'option'); ?>
                     </p>
                 </div>
                 
                 <div class="phonenumber">
-                    <?php echo file_get_contents(get_template_directory() . "/images/svg/phoneIcon.svg"); ?> 
+                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/phoneIcon.svg"); ?> 
                     <p>
                         <?php the_field('barcelona_phone_number', 'option'); ?>
                     </p>
                 </div>
                 
                 <div class="openinghours">
-                    <?php echo file_get_contents(get_template_directory() . "/images/svg/clockIcon.svg"); ?> 
+                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/clockIcon.svg"); ?> 
                     <p>
                         <?php sk_lang_specific_option('barcelona_opening_hours'); ?>
                     </p>

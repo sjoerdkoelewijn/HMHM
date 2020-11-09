@@ -20,7 +20,7 @@ class Social_Menu_Walker extends Walker_Nav_Menu {
 
 		$title = $item->title;
 		$permalink = $item->url;
-		$socialIcon = file_get_contents(get_template_directory() . "/images/svg/$title.svg");
+		$socialIcon = file_get_contents(get_theme_file_path() . "/images/svg/$title.svg");
 
 		$output .= "<div class='" . $title . implode(" ", $item->classes) . "'>";
 		$output .= '<a title="' . $title . '" href="' . $permalink . '">';

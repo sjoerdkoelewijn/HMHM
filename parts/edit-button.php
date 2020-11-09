@@ -3,7 +3,7 @@
     <?php if ( is_single() | is_page() ) { // TODO - Add more conditionals and refactor to switch statement ?> 
 
         <a href="/wp-admin/post.php?post=<?php echo get_the_ID() ?>&action=edit" class="admin_edit_btn" >
-            <?php echo file_get_contents(get_template_directory() . "/images/svg/edit.svg"); ?>
+            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/edit.svg"); ?>
         </a>
 
     <?php } elseif (is_tax() ) { 
@@ -20,7 +20,7 @@
         ?>
 
         <a href="/wp-admin/post.php?post=<?php echo $frontpage->ID ?>&action=edit" class="admin_edit_btn" >
-            <?php echo file_get_contents(get_template_directory() . "/images/svg/edit.svg"); ?>
+            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/edit.svg"); ?>
         </a>
 
     <?php } ?>

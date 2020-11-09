@@ -5,7 +5,7 @@
     <div class="text_wrap_inner">
 
         <a href="/en/collection/" class="back_link">
-            <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowLeftIcon.svg"); ?>
+            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowLeftIcon.svg"); ?>
             <?php pll_e( 'Back to the collection', 'hashmuseum' ) ?>
         </a>
 

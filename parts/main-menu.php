@@ -9,7 +9,7 @@
                     <?php get_search_form(); ?>    
 
                     <button class="main_close" data-main-close aria-label="<?php pll_e( 'Close', 'hashmuseum' ) ?>">
-                        <?php echo file_get_contents(get_template_directory() . "/images/svg/closeIcon.svg"); ?>
+                        <?php echo file_get_contents(get_theme_file_path() . "/images/svg/closeIcon.svg"); ?>
                     </button>
 
                 </div>
@@ -48,7 +48,7 @@
                         </h2>
 
                         <div class="openinghours">
-                            <?php echo file_get_contents(get_template_directory() . "/images/svg/clockIcon.svg"); ?> 
+                            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/clockIcon.svg"); ?> 
                             <p>
                                 <?php sk_lang_specific_option('amsterdam_opening_hours'); ?>
                             </p>
@@ -67,7 +67,7 @@
                         </nav>
 
                         <a class="mobile_more_info_link" href="<?php pll_e( '/en/amsterdam/', 'hashmuseum' ) ?>">
-                            <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
+                            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
                             <?php pll_e( 'More information', 'hashmuseum' ) ?>
                         </a>
 
@@ -82,7 +82,7 @@
                         </h2>
 
                         <div class="openinghours">
-                            <?php echo file_get_contents(get_template_directory() . "/images/svg/clockIcon.svg"); ?> 
+                            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/clockIcon.svg"); ?> 
                             <p>
                                 <?php sk_lang_specific_option('barcelona_opening_hours'); ?>
                             </p>
@@ -101,7 +101,7 @@
                         </nav>
 
                         <a class="mobile_more_info_link" href="<?php pll_e( '/en/barcelona/', 'hashmuseum' ) ?>">
-                            <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
+                            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
                             <?php pll_e( 'More information', 'hashmuseum' ) ?>
                         </a>
 
@@ -134,13 +134,13 @@
                 <div class="mobile_bottom_buttons">
 
                     <button class="mobile_close" data-main-close aria-label="<?php pll_e( 'Close', 'hashmuseum' ) ?>">
-                        <?php echo file_get_contents(get_template_directory() . "/images/svg/closeIcon.svg"); ?>
+                        <?php echo file_get_contents(get_theme_file_path() . "/images/svg/closeIcon.svg"); ?>
                         <?php pll_e( 'Close', 'hashmuseum' ) ?>
                     </button>
                     
                     <button class="mobile_language_menu_toggle" data-language-menu-toggle>
                         <?php pll_e( 'Select Language', 'hashmuseum' ) ?>
-                        <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
+                        <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
                     </button>
 
                 </div>

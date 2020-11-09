@@ -54,7 +54,7 @@ function sk_taxonomy_terms() {
  
         if ( ! empty( $terms ) ) {
             foreach ( $terms as $term ) {
-                $out[] = sprintf( '<a class="taxonomy_link" href="%1$s">'. file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"). '%2$s</a>',
+                $out[] = sprintf( '<a class="taxonomy_link" href="%1$s">'. file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"). '%2$s</a>',
                     esc_url( get_term_link( $term->slug, $taxonomy_slug ) ),
                     esc_html( $term->name )
                 );

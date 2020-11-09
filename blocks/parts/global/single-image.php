@@ -10,7 +10,7 @@ if ($HeroType === 'large_text') {?>
 
         <div class="mobile_logo">
 
-            <?php echo file_get_contents(get_template_directory() . "/images/svg/LogoLarge.svg"); ?>
+            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/LogoLarge.svg"); ?>
 
         </div>
 

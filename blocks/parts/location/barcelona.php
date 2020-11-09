@@ -44,21 +44,21 @@ $bcnimage = get_field('bcn_image');
         <div class="meta">
 
             <div class="address">
-                <?php echo file_get_contents(get_template_directory() . "/images/svg/locationIcon.svg"); ?> 
+                <?php echo file_get_contents(get_theme_file_path() . "/images/svg/locationIcon.svg"); ?> 
                 <p>
                     <?php the_field('barcelona_address', 'option'); ?>
                 </p>
             </div>
             
             <div class="phonenumber">
-                <?php echo file_get_contents(get_template_directory() . "/images/svg/phoneIcon.svg"); ?> 
+                <?php echo file_get_contents(get_theme_file_path() . "/images/svg/phoneIcon.svg"); ?> 
                 <p>
                     <?php the_field('barcelona_phone_number', 'option'); ?>
                 </p>
             </div>
             
             <div class="openinghours">
-                <?php echo file_get_contents(get_template_directory() . "/images/svg/clockIcon.svg"); ?> 
+                <?php echo file_get_contents(get_theme_file_path() . "/images/svg/clockIcon.svg"); ?> 
                 <p>
                     <?php sk_lang_specific_option('barcelona_opening_hours'); ?>
                 </p>
@@ -73,7 +73,7 @@ $bcnimage = get_field('bcn_image');
 <div class="image_wrap barcelona">
 
     <div class="mobile_text">
-        <?php echo file_get_contents(get_template_directory() . "/images/svg/LogoLarge.svg"); ?>
+        <?php echo file_get_contents(get_theme_file_path() . "/images/svg/LogoLarge.svg"); ?>
         <h1>
             <?php pll_e( 'Barcelona', 'hashmuseum' ) ?>
         </h1>

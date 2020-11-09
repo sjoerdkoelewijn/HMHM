@@ -28,7 +28,7 @@
     <div class="button">
 
         <button class="read_more_link" data-read-more-btn>
-            <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
+            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
             <?php _e( 'Read More', 'hashmuseum' ) ?>
         </button>
 

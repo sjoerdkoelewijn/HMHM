@@ -14,7 +14,7 @@
         <?php the_field('description'); ?>
     </div>
 
-    <?php include(get_template_directory() . '/blocks/parts/global/button-repeater.php'); ?> 
+    <?php include(get_theme_file_path() . '/blocks/parts/global/button-repeater.php'); ?> 
 
         <?php $textToggle = get_field('text_toggle');
         $belowBtnHeader = get_field('below_btn_header');

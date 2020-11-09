@@ -11,7 +11,7 @@ $id = 'collection-slider' . $block['id'];
         <div class="header_wrap">
 
             <div class="sepa">
-                <?php echo file_get_contents(get_template_directory() . "/images/svg/weedleaf-large.svg"); ?>
+                <?php echo file_get_contents(get_theme_file_path() . "/images/svg/weedleaf-large.svg"); ?>
             </div>
 
             <h2>
@@ -58,12 +58,12 @@ $id = 'collection-slider' . $block['id'];
 
                 <button class="slider_button left" data-siema-related-post-slider-prev>
                     <div class="background_wrap">
-                        <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowLeftIcon.svg"); ?>
+                        <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowLeftIcon.svg"); ?>
                     </div>    
                 </button>
                 <button class="slider_button right" data-siema-related-post-slider-next>
                     <div class="background_wrap">
-                        <?php echo file_get_contents(get_template_directory() . "/images/svg/arrowRightIcon.svg"); ?>
+                        <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
                     </div>
                 </button>
 
