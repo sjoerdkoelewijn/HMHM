@@ -6,11 +6,11 @@ $id = 'reviews-' . $block['id'];
 
 ?>
 
-    <article id="<?php echo $id; ?>" class="reviews gb_block">
+    <article id="<?php echo $id; ?>" class="reviews gb_block"> 
 
         <div class="text_wrap">
 
-            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/weedleaf-large.svg"); ?>
+            <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/weedleaf-large.svg" alt="Icon">
 
             <h2 class="header">
                 <?php the_field('header'); ?>
@@ -20,7 +20,8 @@ $id = 'reviews-' . $block['id'];
 
                 <div class="rating amsterdam">
 
-                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/tripadvisor.svg"); ?>
+                    <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/tripadvisor.svg" alt="Icon">
+
 
                     Amsterdam
 
@@ -30,7 +31,8 @@ $id = 'reviews-' . $block['id'];
 
                 <div class="rating barcelona">
 
-                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/tripadvisor.svg"); ?>
+                    <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/tripadvisor.svg" alt="Icon">
+
 
                     Barcelona
 
@@ -92,15 +94,17 @@ $id = 'reviews-' . $block['id'];
 
                 <div class="horizontal_slider_btn_wrap">
 
-                    <button class="slider_button left" data-siema-review-slider-prev>
+                    <button aria-label="Previous" class="slider_button left" data-siema-review-slider-prev>
                         <div class="background_wrap">
-                            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowLeftIcon.svg"); ?>
+                            <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
+
                         </div>    
                     </button>
             
-                    <button class="slider_button right" data-siema-review-slider-next>
+                    <button aria-label="Next" class="slider_button right" data-siema-review-slider-next>
                         <div class="background_wrap">
-                            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                            <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
+
                         </div>
                     </button>
                     

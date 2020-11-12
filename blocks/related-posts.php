@@ -17,8 +17,8 @@ $id = 'related-posts' . $block['id'];
 
             <div class="header_wrap">
                 
-                <div class="leaf_wrap">
-                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/weedleaf-large.svg"); ?>
+                <div class="leaf_wrap"> 
+                    <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/weedleaf-large.svg" alt="Icon">
                 </div>            
 
                 <h2 class="header">
@@ -58,7 +58,8 @@ $id = 'related-posts' . $block['id'];
                                 <?php the_excerpt(); ?>
                             </p>
                             <a class="read_more" href="<?php the_permalink(); ?>">
-                                <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                                <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
+
                                 <?php pll_e( 'Read more', 'hashmuseum' ) ?>
                             </a>
 
@@ -99,7 +100,8 @@ $id = 'related-posts' . $block['id'];
                                     <?php the_excerpt(); ?>
                                 </p>
                                 <a class="read_more" href="<?php the_permalink(); ?>">
-                                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                                    <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
+
                                     <?php pll_e( 'Read more', 'hashmuseum' ) ?>
                                 </a>
 
@@ -113,14 +115,16 @@ $id = 'related-posts' . $block['id'];
 
                 </div>
 
-                <button class="slider_button left" data-siema-related-post-slider-prev>
+                <button aria-label="previous" class="slider_button left" data-siema-related-post-slider-prev>
                     <div class="background_wrap">
-                        <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowLeftIcon.svg"); ?>
+                        <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
+
                     </div>    
                 </button>
-                <button class="slider_button right" data-siema-related-post-slider-next>
+                <button aria-label="next" class="slider_button right" data-siema-related-post-slider-next>
                     <div class="background_wrap">
-                        <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                        <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
+
                     </div>
                 </button>
 

@@ -35,7 +35,7 @@ get_header(); ?>
 		
 		?>
 
-		<article class="event">	
+		<article class="event">	 
 
 			<div class="info_wrap">
 
@@ -57,7 +57,8 @@ get_header(); ?>
 								<?php echo $end_date->format('j F Y'); ?>
 							</p>   
 
-							<?php echo file_get_contents(get_theme_file_path() . "/images/svg/calendarIcon.svg"); ?> 
+							<img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/calendarIcon.svg" alt="Icon">
+
 						
 						</div>
 						
@@ -69,7 +70,8 @@ get_header(); ?>
 								<?php echo get_the_date('j F Y'); ?>
 							</p>   
 
-							<?php echo file_get_contents(get_theme_file_path() . "/images/svg/calendarIcon.svg"); ?> 
+							<img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/calendarIcon.svg" alt="Icon">
+
 
 						</div>
 
@@ -81,7 +83,8 @@ get_header(); ?>
 							<p>
 								<?php echo $location; ?>
 							</p>
-							<?php echo file_get_contents(get_theme_file_path() . "/images/svg/pinIcon.svg"); ?>  
+							<img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/pinIcon.svg" alt="Icon">
+  
 						</div>
 
 					<?php } ?>
@@ -100,7 +103,8 @@ get_header(); ?>
 								<p>
 									<?php pll_e( 'Free entry', 'hashmuseum' ) ?>
 								</p>
-								<?php echo file_get_contents(get_theme_file_path() . "/images/svg/euroIcon.svg"); ?>  
+								<img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/euroIcon.svg" alt="Icon">
+ 
 							</div>
 
 						<?php } ?>
@@ -127,7 +131,7 @@ get_header(); ?>
 
 								<div class="date">
 
-									<?php echo file_get_contents(get_theme_file_path() . "/images/svg/calendarIcon.svg"); ?> 
+								<img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/calendarIcon.svg" alt="Icon">
 
 									<p>
 										<?php echo $start_date->format('j F Y'); ?>
@@ -141,7 +145,7 @@ get_header(); ?>
 
 								<div class="date">
 
-									<?php echo file_get_contents(get_theme_file_path() . "/images/svg/calendarIcon.svg"); ?> 
+								<img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/calendarIcon.svg" alt="Icon">
 
 									<p>
 										<?php echo get_the_date('j F Y'); ?>
@@ -154,7 +158,7 @@ get_header(); ?>
 							<?php if( $location ) { ?>
 
 								<div class="location">
-									<?php echo file_get_contents(get_theme_file_path() . "/images/svg/pinIcon.svg"); ?>  
+								<img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/pinIcon.svg" alt="Icon">
 									<p>
 										<?php echo $location; ?>
 									</p>
@@ -173,7 +177,8 @@ get_header(); ?>
 								<?php } else if($free === 'free') { ?>
 
 									<div class="free_entry">
-										<?php echo file_get_contents(get_theme_file_path() . "/images/svg/euroIcon.svg"); ?>  
+										<img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/euroIcon.svg" alt="Icon">
+
 										<p>
 											<?php pll_e( 'Free entry', 'hashmuseum' ) ?>
 										</p>

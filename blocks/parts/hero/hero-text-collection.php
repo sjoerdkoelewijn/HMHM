@@ -5,7 +5,7 @@
     <div class="text_wrap_inner">
 
         <a href="/en/collection/" class="back_link">
-            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowLeftIcon.svg"); ?>
+            <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowLeftIcon.svg" alt="Icon">
             <?php pll_e( 'Back to the collection', 'hashmuseum' ) ?>
         </a>
 
@@ -18,7 +18,7 @@
         </h2>
 
         <div class="description">
-            <?php the_field('description'); ?>
+            <?php the_field('description'); ?> 
         </div>
 
         <?php echo sk_taxonomy_terms(); ?>

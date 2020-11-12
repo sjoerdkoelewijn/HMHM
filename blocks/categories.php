@@ -29,7 +29,7 @@ $id = 'category-overview' . $block['id'];
 
                         <?php   
                             $image_id = get_field('featured_image', $term, false); // 3rd arg set to false to ensure we get unformatted value (ID)
-                            $image = wp_get_attachment_image_src($image_id, 'large'); 
+                            $image = wp_get_attachment_image_src($image_id, 'large');  
                         ?>
 
                         <img loading="lazy" class="image" src="<?php echo $image[0]; ?>" />
@@ -53,7 +53,8 @@ $id = 'category-overview' . $block['id'];
                         </p>
 
                         <a class="read_more_link" href="<?php echo esc_url( get_term_link( $term ) ); ?>">
-                            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                            <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
+
                             <?php pll_e( 'Read more', 'hashmuseum' ) ?>
                         </a>    
 

@@ -14,7 +14,7 @@ $id = 'collection-items-' . $block['id'];
                     
             <?php global $post;
 
-                foreach( $posts as $post ): ?>
+                foreach( $posts as $post ): ?> 
 
                 <?php setup_postdata($post); ?>
 
@@ -33,13 +33,13 @@ $id = 'collection-items-' . $block['id'];
     <div class="collection_items_btn_wrap">
         <button class="slider_button left hidden" data-slide-left-btn>
             <div class="background_wrap">
-                <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowLeftIcon.svg"); ?>
+                <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowLeftIcon.svg" alt="Icon">
             </div>
         </button>
 
         <button class="slider_button right" data-slide-right-btn>
             <div class="background_wrap">
-                <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
             </div>
         </button>
     </div>

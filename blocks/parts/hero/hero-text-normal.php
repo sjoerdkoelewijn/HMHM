@@ -22,13 +22,13 @@
     </h2>
 
     <div class="description">
-        <?php the_field('description'); ?>
+        <?php the_field('description'); ?> 
     </div>
 
     <div class="button">
 
         <button class="read_more_link" data-read-more-btn>
-            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+            <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
             <?php _e( 'Read More', 'hashmuseum' ) ?>
         </button>
 

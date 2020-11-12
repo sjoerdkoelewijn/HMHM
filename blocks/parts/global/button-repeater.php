@@ -32,10 +32,11 @@
 
                 <?php break;
 
-            case 'textlink': ?>
+            case 'textlink': ?> 
 
                 <a href="<?php echo $url; ?>" class="read_more_link" >
-                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                    <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowLeftIcon.svg" alt="Icon">
+
                     <?php echo $anchor; ?>
                 </a>
 
@@ -43,7 +44,8 @@
             default: ?>
                 
                 <a href="<?php echo $url; ?>" class="read_more_link" >
-                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                    <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
+
                     <?php echo $anchor; ?>
                 </a>
 

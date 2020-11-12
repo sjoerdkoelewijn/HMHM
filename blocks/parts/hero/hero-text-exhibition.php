@@ -45,7 +45,7 @@
             
             <div class="date">
 
-                <?php echo file_get_contents(get_theme_file_path() . "/images/svg/calendarIcon.svg"); ?> 
+                <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/calendarIcon.svg" alt="Icon"> 
                 <p>
                     <?php pll_e( 'Ends on', 'hashmuseum' ) ?>
                     <?php echo $end_date->format('j F Y'); ?>
@@ -55,7 +55,7 @@
                 
             <div class="opening_hours">
             
-                <?php echo file_get_contents(get_theme_file_path() . "/images/svg/clockIcon.svg"); ?> 
+                <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/clockIcon.svg" alt="Icon"> 
 
                 <?php if( $opening_hours_toggle === 'same' ) { ?>
 
@@ -88,10 +88,11 @@
 
             <div class="date">
 
-                <?php echo file_get_contents(get_theme_file_path() . "/images/svg/calendarIcon.svg"); ?> 
+                <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/calendarIcon.svg" alt="Icon">
+ 
                 <p>
                     <?php pll_e( 'Ended on', 'hashmuseum' ) ?>
-                    <?php echo $end_date->format('j F Y'); ?>
+                    <?php echo $end_date->format('j F Y'); ?> 
                 </p>  
 
             </div>
@@ -103,7 +104,7 @@
     <?php if( $location ): ?>
 
         <div class="location">
-            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/pinIcon.svg"); ?>  
+            <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/pinIcon.svg" alt="Icon">  
             <p>
                 <?php echo $location; ?>
             </p>
@@ -114,7 +115,7 @@
     <?php if($free === 'free' && $end_date_string > $today ) { ?>
 
         <div class="free_entry">
-            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/euroIcon.svg"); ?>  
+            <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/euroIcon.svg" alt="Icon">  
             <p>
                 <?php pll_e( 'Free entry', 'hashmuseum' ) ?>
             </p>
@@ -125,7 +126,7 @@
     <div class="buttons">
 
         <button class="read_more_link" data-read-more-btn>
-            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+            <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
             <?php pll_e( 'More information', 'hashmuseum' ) ?>
         </button>
         
