@@ -72,7 +72,7 @@ $genericimage = get_field('generic_image');
             </nav>
 
             <h2>
-                <a class="location_link" href="/<?php echo pll_current_language(); ?>/amsterdam/">
+                <a title="<?php pll_e( 'More information', 'hashmuseum' ) ?> Amsterdam" class="location_link" href="/<?php echo pll_current_language(); ?>/amsterdam/">
                     <?php pll_e( 'Amsterdam', 'hashmuseum' ) ?>
                 </a>
             </h2>
@@ -104,11 +104,11 @@ $genericimage = get_field('generic_image');
 
             <div class="buttons">
 
-                <a href="<?php sk_get_ticket_url('amsterdam') ?>" class="btn action_btn black" >
+                <a title="<?php pll_e( 'More information', 'hashmuseum' ) ?> Barcelona" href="<?php sk_get_ticket_url('amsterdam') ?>" class="btn action_btn black" > 
                     <?php pll_e( 'Get your ticket', 'hashmuseum' ) ?>
                 </a>
 
-                <a href="<?php pll_e( '/en/amsterdam/#map', 'hashmuseum' ) ?>" class="btn ghost_btn black" >
+                <a title="<?php pll_e( 'How to get there', 'hashmuseum' ) ?> Amsterdam" href="<?php pll_e( '/en/amsterdam/#map', 'hashmuseum' ) ?>" class="btn ghost_btn black" >
                     <?php pll_e( 'How to get there', 'hashmuseum' ) ?>
                 </a>
 
@@ -139,7 +139,7 @@ $genericimage = get_field('generic_image');
             </nav>
 
             <h2>
-                <a class="location_link" href="/<?php echo pll_current_language(); ?>/barcelona/">
+                <a title="<?php pll_e( 'More information', 'hashmuseum' ) ?> Barcelona" class="location_link" href="/<?php echo pll_current_language(); ?>/barcelona/">
                     <?php pll_e( 'Barcelona', 'hashmuseum' ) ?>
                 </a>
             </h2>
@@ -175,7 +175,7 @@ $genericimage = get_field('generic_image');
                     <?php pll_e( 'Get your ticket', 'hashmuseum' ) ?>
                 </a>
 
-                <a href="<?php pll_e( '/en/barcelona/#map', 'hashmuseum' ) ?>" class="btn ghost_btn black" >
+                <a title="<?php pll_e( 'How to get there', 'hashmuseum' ) ?> Barcelona" href="<?php pll_e( '/en/barcelona/#map', 'hashmuseum' ) ?>" class="btn ghost_btn black" >
                     <?php pll_e( 'How to get there', 'hashmuseum' ) ?>
                 </a>
 

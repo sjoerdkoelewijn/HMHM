@@ -117,7 +117,7 @@ $id = 'home-about' . $block['id'];
                         </p>
                     </div>
                     
-                    <a href="<?php pll_e( '/en/amsterdam/', 'hashmuseum' ) ?>" class="moreinfo">
+                    <a title="<?php pll_e( 'More information', 'hashmuseum' ) ?> Amsterdam" href="<?php pll_e( '/en/amsterdam/', 'hashmuseum' ) ?>" class="moreinfo">
                         <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Language Menu Icon">
                         <p>
                             <?php pll_e( 'More information', 'hashmuseum' ) ?>
@@ -168,7 +168,7 @@ $id = 'home-about' . $block['id'];
                         </p>
                     </div>
 
-                    <a href="<?php pll_e( '/en/barcelona/', 'hashmuseum' ) ?>" class="moreinfo">
+                    <a title="<?php pll_e( 'More information', 'hashmuseum' ) ?> Barcelona" href="<?php pll_e( '/en/barcelona/', 'hashmuseum' ) ?>" class="moreinfo">
                         <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Language Menu Icon">
 
                         <p>
