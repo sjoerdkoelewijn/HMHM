@@ -46,7 +46,6 @@ mainClose.forEach(function(elem) {
 });
 
 
-    
 /******************* Hero Read More Button *************************************/
 
 const ReadMoreBtn = document.querySelector('[data-read-more-btn]');
@@ -61,6 +60,10 @@ if (ReadMoreBtn != null) {
 }
 
 /******************* Hero Slider *************************************/
+
+//https://web.dev/uses-passive-event-listeners/
+document.addEventListener('touchstart', onTouchStart, {passive: true});
+    
 
 const HeroSliderContainer = document.querySelector('[data-siema-hero-slider]');
 
