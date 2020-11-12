@@ -107,12 +107,15 @@ $id = 'home-hero-' . $block['id']; ?>
                         <div id="image_<?php echo $i ?>" class="bg_image <?php if($i === 1) {echo 'active';} ?>">
 
                             <img 
-                            srcset="<?php echo esc_url($image['sizes']['larger_image']); ?> 1920, 
-                                    <?php echo esc_url($image['sizes']['large_image']); ?>  1620w,
-                                    <?php echo esc_url($image['sizes']['medium_image']); ?>  960w,
-                                    <?php echo esc_url($image['sizes']['small_image']); ?>  300w,
-                            src="<?php echo esc_url($image['sizes']['medium']); ?>
-                            loading="lazy" class="image" alt="<?php echo $image['alt']; ?>" />
+                                srcset="<?php echo esc_url($image['sizes']['larger_image']); ?> 1920, 
+                                        <?php echo esc_url($image['sizes']['large_image']); ?>  1620w,
+                                        <?php echo esc_url($image['sizes']['medium_image']); ?>  960w,
+                                        <?php echo esc_url($image['sizes']['small_image']); ?>  300w
+                                src="<?php echo esc_url($image['sizes']['medium']); ?>"
+                                loading="lazy" 
+                                class="image" 
+                                alt="<?php echo $image['alt']; ?>" 
+                            />
 
                         </div>
 
@@ -123,12 +126,15 @@ $id = 'home-hero-' . $block['id']; ?>
                         <div id="image_<?php echo $i ?>" class="bg_image <?php if($i === 1) {echo 'active';} ?>">
 
                             <img 
-                            srcset="<?php echo esc_url($image['sizes']['larger_image']); ?> 1920, 
-                                    <?php echo esc_url($image['sizes']['large_image']); ?>  1620w,
-                                    <?php echo esc_url($image['sizes']['medium_image']); ?>  960w,
-                                    <?php echo esc_url($image['sizes']['small_image']); ?>  300w,
-                            src="<?php echo esc_url($image['sizes']['medium']); ?>
-                            loading="lazy" class="image" alt="<?php echo $image['alt']; ?>" />
+                                srcset="<?php echo esc_url($image['sizes']['larger_image']); ?> 1920, 
+                                        <?php echo esc_url($image['sizes']['large_image']); ?>  1620w,
+                                        <?php echo esc_url($image['sizes']['medium_image']); ?>  960w,
+                                        <?php echo esc_url($image['sizes']['small_image']); ?>  300w
+                                src="<?php echo esc_url($image['sizes']['medium']); ?>"
+                                loading="lazy" 
+                                class="image" 
+                                alt="<?php echo $image['alt']; ?>" 
+                            />
                                 
                         </div>
 
@@ -139,12 +145,15 @@ $id = 'home-hero-' . $block['id']; ?>
                         <div id="image_<?php echo $i ?>" class="bg_image <?php if($i === 1) {echo 'active';} ?>">
 
                             <img 
-                            srcset="<?php echo esc_url($image['sizes']['larger_image']); ?> 1920, 
-                                    <?php echo esc_url($image['sizes']['large_image']); ?>  1620w,
-                                    <?php echo esc_url($image['sizes']['medium_image']); ?>  960w,
-                                    <?php echo esc_url($image['sizes']['small_image']); ?>  300w,
-                            src="<?php echo esc_url($image['sizes']['medium']); ?>
-                            loading="lazy" class="image" alt="<?php echo $image['alt']; ?>" />
+                                srcset="<?php echo esc_url($image['sizes']['larger_image']); ?> 1920, 
+                                        <?php echo esc_url($image['sizes']['large_image']); ?>  1620w,
+                                        <?php echo esc_url($image['sizes']['medium_image']); ?>  960w,
+                                        <?php echo esc_url($image['sizes']['small_image']); ?>  300w
+                                src="<?php echo esc_url($image['sizes']['medium']); ?>"
+                                loading="lazy" 
+                                class="image" 
+                                alt="<?php echo $image['alt']; ?>" 
+                            />
 
                         </div>
                     
