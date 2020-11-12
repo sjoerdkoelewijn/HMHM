@@ -11,7 +11,7 @@ $id = 'collection-slider' . $block['id'];
         <div class="header_wrap">
 
             <div class="sepa">
-                <?php echo file_get_contents(get_theme_file_path() . "/images/svg/weedleaf-large.svg"); ?>
+                <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/weedleaf-large.svg" alt="Icon">
             </div>
 
             <h2>
@@ -38,7 +38,7 @@ $id = 'collection-slider' . $block['id'];
 
                     <?php foreach( $themes as $theme ): ?>
 
-                        <?php include('parts/themes/theme-slide.php'); ?>
+                        <?php include('parts/themes/theme-slide.php'); ?> 
 
                     <?php endforeach; ?>
 
@@ -56,14 +56,14 @@ $id = 'collection-slider' . $block['id'];
 
                 </div>
 
-                <button class="slider_button left" data-siema-related-post-slider-prev>
+                <button aria-label="back" class="slider_button left" data-siema-related-post-slider-prev>
                     <div class="background_wrap">
-                        <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowLeftIcon.svg"); ?>
+                        <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowLeftIcon.svg" alt="Icon">
                     </div>    
                 </button>
-                <button class="slider_button right" data-siema-related-post-slider-next>
+                <button aria-label="next" class="slider_button right" data-siema-related-post-slider-next>
                     <div class="background_wrap">
-                        <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                        <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
                     </div>
                 </button>
 

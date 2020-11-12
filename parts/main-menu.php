@@ -9,7 +9,7 @@
                     <?php get_search_form(); ?>    
 
                     <button class="main_close" data-main-close aria-label="<?php pll_e( 'Close', 'hashmuseum' ) ?>">
-                        <?php echo file_get_contents(get_theme_file_path() . "/images/svg/closeIcon.svg"); ?>
+                        <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/closeIcon.svg" alt="Icon">
                     </button>
 
                 </div>
@@ -48,13 +48,13 @@
                         </h2>
 
                         <div class="openinghours">
-                            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/clockIcon.svg"); ?> 
+                            <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/clockIcon.svg" alt="Icon"> 
                             <p>
                                 <?php sk_lang_specific_option('amsterdam_opening_hours'); ?>
                             </p>
                         </div>
 
-                        <nav class="social amsterdam">
+                        <nav class="social amsterdam"> 
                             <?php
                             wp_nav_menu(array(
                                 'theme_location'  => 'social-menu-ams',
@@ -67,7 +67,7 @@
                         </nav>
 
                         <a class="mobile_more_info_link" href="<?php pll_e( '/en/amsterdam/', 'hashmuseum' ) ?>">
-                            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                            <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
                             <?php pll_e( 'More information', 'hashmuseum' ) ?>
                         </a>
 
@@ -82,7 +82,7 @@
                         </h2>
 
                         <div class="openinghours">
-                            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/clockIcon.svg"); ?> 
+                            <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/clockIcon.svg" alt="Icon"> 
                             <p>
                                 <?php sk_lang_specific_option('barcelona_opening_hours'); ?>
                             </p>
@@ -101,7 +101,7 @@
                         </nav>
 
                         <a class="mobile_more_info_link" href="<?php pll_e( '/en/barcelona/', 'hashmuseum' ) ?>">
-                            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                            <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
                             <?php pll_e( 'More information', 'hashmuseum' ) ?>
                         </a>
 
@@ -134,13 +134,13 @@
                 <div class="mobile_bottom_buttons">
 
                     <button class="mobile_close" data-main-close aria-label="<?php pll_e( 'Close', 'hashmuseum' ) ?>">
-                        <?php echo file_get_contents(get_theme_file_path() . "/images/svg/closeIcon.svg"); ?>
+                        <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/closeIcon.svg" alt="Icon">
                         <?php pll_e( 'Close', 'hashmuseum' ) ?>
                     </button>
                     
                     <button class="mobile_language_menu_toggle" data-language-menu-toggle>
                         <?php pll_e( 'Select Language', 'hashmuseum' ) ?>
-                        <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                        <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
                     </button>
 
                 </div>

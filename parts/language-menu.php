@@ -9,7 +9,7 @@
         </h2>   
         
         <button class="language_close" data-language-close aria-label="<?php echo __( 'Close Menu', 'hashmuseum' ) ?>">
-            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/closeIcon.svg"); ?>
+            <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/closeIcon.svg" alt="Icon">
         </button>
 
         <nav id="language-navigation" class="language_navigation" role="navigation">
@@ -24,6 +24,6 @@
             ?>
         </nav>
 
-    </div>
+    </div> 
 
 </div>

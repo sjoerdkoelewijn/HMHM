@@ -75,7 +75,7 @@ $id = 'home-hero-' . $block['id']; ?>
                 default: ?>
                     
                     <a href="<?php echo $url; ?>" class="read_more_link">
-                        <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                        <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
                         <?php echo $anchor; ?>
                     </a>
 
@@ -174,7 +174,8 @@ $id = 'home-hero-' . $block['id']; ?>
                         </div>
                         
                         <a href="<?php the_sub_field('url'); ?>" class="read_more_link">
-                            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                            <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
+
                             <?php pll_e( 'The Collection', 'hashmuseum' ) ?>
                         </a>
                     </div>
@@ -188,7 +189,7 @@ $id = 'home-hero-' . $block['id']; ?>
                         </p>
                     
                         <h2 class="header">
-                            <?php the_sub_field('header'); ?>
+                            <?php the_sub_field('header'); ?> 
                         </h2>
                         
                         <p class="tagline">
@@ -196,7 +197,8 @@ $id = 'home-hero-' . $block['id']; ?>
                         </p>
 
                         <a href="<?php the_sub_field('url'); ?>" class="read_more_link">
-                            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                            <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
+
                             <?php the_sub_field('cta'); ?>
                         </a>
                     
@@ -231,7 +233,8 @@ $id = 'home-hero-' . $block['id']; ?>
                         </div>
                         
                         <a href="/<?php echo pll_current_language(); ?>/<?php pll_e('cannabis-knowledge'); ?>/" class="read_more_link">
-                            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                            <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
+
                             <?php pll_e( 'Cannabis Knowledge', 'hashmuseum' ) ?>
                         </a>   
                     </div>
@@ -287,7 +290,8 @@ $id = 'home-hero-' . $block['id']; ?>
                                 </div>
                                 
                                 <a href="<?php the_sub_field('url'); ?>" class="read_more_link">
-                                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                                    <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
+
                                     <?php pll_e( 'The Collection', 'hashmuseum' ) ?>
                                 </a>
 
@@ -313,7 +317,8 @@ $id = 'home-hero-' . $block['id']; ?>
                                 </p>
 
                                 <a href="<?php the_sub_field('url'); ?>" class="read_more_link">
-                                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                                    <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
+
                                     <?php the_sub_field('cta'); ?>
                                 </a>
                             
@@ -351,7 +356,8 @@ $id = 'home-hero-' . $block['id']; ?>
                                 </div>
                                 
                                 <a href="<?php the_sub_field('url'); ?>" class="read_more_link">
-                                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                                    <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
+
                                     <?php pll_e( 'Cannabis Knowledge', 'hashmuseum' ) ?>
                                 </a>   
                             
@@ -372,7 +378,8 @@ $id = 'home-hero-' . $block['id']; ?>
                 
                 <button class="slider_button right" data-siema-home-hero-mobile-slider-next>
                     <div class="background_wrap">
-                        <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
+                        <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
+
                     </div>
                 </button>
             </div>

@@ -7,6 +7,7 @@ add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'responsive-embeds' );
 add_post_type_support('page', 'excerpt');
+add_theme_support( 'html5', [ 'script', 'style' ] );
 
 
 /*************************** Add Reusable blocks to menu *********************************/
@@ -55,7 +56,7 @@ function sk_taxonomy_terms() {
         if ( ! empty( $terms ) ) {
             foreach ( $terms as $term ) {
                 $out[] = sprintf( '<a class="taxonomy_link" href="%1$s">'. file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"). '%2$s</a>',
-                    esc_url( get_term_link( $term->slug, $taxonomy_slug ) ),
+                    esc_url( get_term_link( $term->slug, $taxonomy_slug ) ), 
                     esc_html( $term->name )
                 );
             }

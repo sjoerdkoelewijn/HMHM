@@ -33,7 +33,7 @@ $id = 'promo-' . $block['id'];
 
         <div class="text_wrap">
 
-            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/weedleaf-large.svg"); ?>
+            <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/weedleaf-large.svg" alt="Icon">
 
             <h2 class="header">
                 <?php the_field('header'); ?>
@@ -46,7 +46,7 @@ $id = 'promo-' . $block['id'];
             <?php the_field('description'); ?>
             
             <a class="action_btn btn" href="#tickets">
-                <?php pll_e( 'Get your ticket', 'hashmuseum' ) ?>
+                <?php pll_e( 'Get your ticket', 'hashmuseum' ) ?> 
             </a>
 
             <a class="ghost_btn white btn" href="<?php pll_e('/en/plan-your-visit/') ?>">
@@ -64,7 +64,7 @@ $id = 'promo-' . $block['id'];
 
         <div class="text_wrap">
 
-            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/weedleaf-large.svg"); ?>
+            <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/weedleaf-large.svg" alt="Icon">
 
             <h2 class="header">
                 <?php the_field('header'); ?>

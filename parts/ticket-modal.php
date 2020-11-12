@@ -5,11 +5,12 @@
     <div class="modal_inner">
 
         <div class="weedleaf">
-            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/weedleaf.svg"); ?>
+            <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/weedleaf.svg" alt="Icon">
+
         </div>
 
         <button class="close" aria-label="<?php echo __( 'Close modal', 'hashmuseum' ) ?>" data-ticket-modal-close>
-            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/closeIcon.svg"); ?>
+            <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/closeIcon.svg" alt="Icon">
         </button>		
 
         <div class="location_info amsterdam">
@@ -28,21 +29,24 @@
             <div class="meta">
 
                 <div class="address">
-                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/locationIcon.svg"); ?> 
+                    <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/locationIcon.svg" alt="Icon">
+
                     <p>
                         <?php the_field('amsterdam_address', 'option'); ?>
                     </p>
                 </div>
                 
                 <div class="phonenumber">
-                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/phoneIcon.svg"); ?> 
+                    <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/phoneIcon.svg" alt="Icon">
+
                     <p>
                         <?php the_field('amsterdam_phone_number', 'option'); ?>
                     </p>
                 </div>
                 
-                <div class="openinghours">
-                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/clockIcon.svg"); ?> 
+                <div class="openinghours"> 
+                    <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/clockIcon.svg" alt="Icon">
+
                     <p>
                         <?php sk_lang_specific_option('amsterdam_opening_hours'); ?>
                     </p>
@@ -68,21 +72,24 @@
             <div class="meta">
 
                 <div class="address">
-                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/locationIcon.svg"); ?> 
+                    <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/locationIcon.svg" alt="Icon">
+
                     <p>
                         <?php the_field('barcelona_address', 'option'); ?>
                     </p>
                 </div>
                 
                 <div class="phonenumber">
-                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/phoneIcon.svg"); ?> 
+                    <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/phoneIcon.svg" alt="Icon">
+
                     <p>
                         <?php the_field('barcelona_phone_number', 'option'); ?>
                     </p>
                 </div>
                 
                 <div class="openinghours">
-                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/clockIcon.svg"); ?> 
+                    <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/clockIcon.svg" alt="Icon">
+
                     <p>
                         <?php sk_lang_specific_option('barcelona_opening_hours'); ?>
                     </p>

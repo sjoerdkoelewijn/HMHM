@@ -11,10 +11,6 @@
         <link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>">
         <link rel="preconnect" href="http://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="anonymous" >
-        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="//www.google-analytics.com" />
 
         <meta name="google-site-verification" content="aoPLH9IdkVAX4MMq_Vm5VeQs17z4-3vJXizCQbmRo2s" />
 
@@ -40,12 +36,12 @@
                 <!-- Edit button for logged in users -->
                 <?php include('parts/edit-button.php'); ?>
 
-                <button class="language_menu_toggle" data-language-menu-toggle>
-                    <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/weedleaf-small.svg" alt="Language Menu Icon">
+                <button aria-label="edit" class="language_menu_toggle" data-language-menu-toggle>
+                    <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/weedleaf-small.svg" alt="Language Menu Icon">
                     <?php echo pll_current_language('name'); //  ?>
                 </button>
 
-                <button class="main_menu_toggle" data-main-menu-toggle>
+                <button aria-label="Open main menu" class="main_menu_toggle" data-main-menu-toggle>
                     <?php pll_e( 'menu', 'hashmuseum' ) ?>
                     <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/hamburgerIcon.svg" alt="Menu Icon">
                 </button>            

@@ -51,9 +51,9 @@ $id = 'info-two-image' . $block['id'];
         
             <div class="mobile_text">
 
-                <div class="mobile_logo">
+                <div class="mobile_logo"> 
 
-                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/LogoLarge.svg"); ?>
+                    <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/LogoLarge.svg" alt="Icon">
 
                 </div>
 
