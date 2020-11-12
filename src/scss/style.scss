@@ -4695,7 +4695,11 @@ border: 0;
 
     .search_form { 
         display:block;       
-        margin:5vh auto 10vh auto;               
+        margin:5vh auto 10vh auto; 
+        
+        label {
+            display:none;
+        }
 
         input {
             width:70vw;
