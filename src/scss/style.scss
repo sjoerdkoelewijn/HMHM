@@ -1028,7 +1028,11 @@ img.icon {
             .search_form {
                 position: relative;
                 display:flex;
-                width:calc(100% - 90px );   
+                width:calc(100% - 90px );  
+                
+                label {
+                    display:none;
+                }
 
                 @include phone {
                     margin:var(--horizontal);
@@ -4760,6 +4764,10 @@ border: 0;
     .search_form { 
         display:block;       
         margin:20vh auto 10vh auto;
+        
+        label {
+            display:none;
+        }
 
         @include phone {
             margin:var(--vertical) auto;
