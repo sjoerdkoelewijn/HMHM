@@ -29,7 +29,7 @@ $id = 'category-overview' . $block['id'];
 
                         <?php   
                             $image_id = get_field('featured_image', $term, false); // 3rd arg set to false to ensure we get unformatted value (ID)
-                            $image = wp_get_attachment_image_src($image_id, 'large');  
+                            $image = wp_get_attachment_image_src($image_id, 'large_image');  
                         ?>
 
                         <img loading="lazy" class="image" src="<?php echo $image[0]; ?>" />

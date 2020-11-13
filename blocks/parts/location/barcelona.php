@@ -44,23 +44,26 @@ $bcnimage = get_field('bcn_image');
         <div class="meta">
 
             <div class="address">
-                <?php echo file_get_contents(get_theme_file_path() . "/images/svg/locationIcon.svg"); ?> 
+                <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/locationIcon.svg" alt="Icon">
+
                 <p>
                     <?php the_field('barcelona_address', 'option'); ?>
                 </p>
             </div>
             
             <div class="phonenumber">
-                <?php echo file_get_contents(get_theme_file_path() . "/images/svg/phoneIcon.svg"); ?> 
+                <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/phoneIcon.svg" alt="Icon">
+
                 <p>
                     <?php the_field('barcelona_phone_number', 'option'); ?>
                 </p>
             </div>
             
             <div class="openinghours">
-                <?php echo file_get_contents(get_theme_file_path() . "/images/svg/clockIcon.svg"); ?> 
+                <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/clockIcon.svg" alt="Icon">
+
                 <p>
-                    <?php sk_lang_specific_option('barcelona_opening_hours'); ?>
+                    <?php sk_lang_specific_option('barcelona_opening_hours'); ?> 
                 </p>
             </div>
 
@@ -73,7 +76,8 @@ $bcnimage = get_field('bcn_image');
 <div class="image_wrap barcelona">
 
     <div class="mobile_text">
-        <?php echo file_get_contents(get_theme_file_path() . "/images/svg/LogoLarge.svg"); ?>
+        <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/LogoLarge.svg" alt="Icon">
+
         <h1>
             <?php pll_e( 'Barcelona', 'hashmuseum' ) ?>
         </h1>

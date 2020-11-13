@@ -29,7 +29,7 @@ $id = 'collection-overview-hero-' . $block['id'];
         <?php $single_image = get_field('single_image'); ?>
 
         <?php if( !empty( $single_image ) ): ?>
-            <img loading="lazy" class="single_image image" src="<?php echo esc_url($single_image['sizes']['large']); ?>" alt="<?php echo $image['alt']; ?>" />
+            <img loading="lazy" class="single_image image" src="<?php echo esc_url($single_image['sizes']['large_image']); ?>" alt="<?php echo $image['alt']; ?>" />
         <?php endif; ?>
 
 
@@ -82,7 +82,7 @@ $id = 'collection-overview-hero-' . $block['id'];
                     <article class="image_slide">
 
                         <a href="<?php the_permalink(); ?>">
-                            <?php echo get_the_post_thumbnail( $post_id, 'large', array( 'class' => 'single_item_image', 'loading' => 'lazy' ) ); ?>
+                            <?php echo get_the_post_thumbnail( $post_id, 'large_image', array( 'class' => 'single_item_image', 'loading' => 'lazy' ) ); ?>
                         
                             <div class="caption">
                                 <h2><?php the_title(); ?></h2>
@@ -109,7 +109,7 @@ $id = 'collection-overview-hero-' . $block['id'];
                         <article class="image_slide">
 
                             <a href="<?php the_permalink(); ?>">
-                                <?php echo get_the_post_thumbnail( $post_id, 'large', array( 'class' => 'single_item_image', 'loading' => 'lazy' ) ); ?>
+                                <?php echo get_the_post_thumbnail( $post_id, 'large_image', array( 'class' => 'single_item_image', 'loading' => 'lazy' ) ); ?>
                             
                                 <div class="caption">
                                     <h2><?php the_title(); ?></h2>

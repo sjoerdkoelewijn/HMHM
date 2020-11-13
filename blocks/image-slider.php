@@ -17,7 +17,7 @@
 
                 <div class="image_wrap">
                                 
-                    <img class="image" loading="lazy" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo $image['alt']; ?>" />
+                    <img class="image" loading="lazy" src="<?php echo esc_url($image['sizes']['large_image']); ?>" alt="<?php echo $image['alt']; ?>" />
                                        
                 </div>
 

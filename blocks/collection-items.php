@@ -19,7 +19,7 @@ $id = 'collection-items-' . $block['id'];
                 <?php setup_postdata($post); ?>
 
                     <a class="post" href="<?php the_permalink(); ?>">
-                        <?php echo get_the_post_thumbnail( $post_id, 'large', array( 'class' => 'collection_image image', 'loading' => 'lazy' ) ); ?>
+                        <?php echo get_the_post_thumbnail( $post_id, 'large_image', array( 'class' => 'collection_image image', 'loading' => 'lazy' ) ); ?>
                     </a>                     
 
                 <?php endforeach; ?>

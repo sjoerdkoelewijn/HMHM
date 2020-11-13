@@ -25,7 +25,7 @@ $id = 'home-hero-' . $block['id']; ?>
         </div>
 
         <?php $mobileimage = get_field('mobile_image'); ?>
-        <img loading="lazy" class="image mobile_image" src="<?php echo esc_url($mobileimage['sizes']['large']); ?>" alt="<?php echo $mobileimage['alt']; ?>" />
+        <img loading="lazy" class="image mobile_image" src="<?php echo esc_url($mobileimage['sizes']['medium_image']); ?>" alt="<?php echo $mobileimage['alt']; ?>" />
 
         <nav id="home-navigation" class="home_navigation" role="navigation">
             <?php
@@ -111,7 +111,7 @@ $id = 'home-hero-' . $block['id']; ?>
                                         <?php echo esc_url($image['sizes']['large_image']); ?>  1620w,
                                         <?php echo esc_url($image['sizes']['medium_image']); ?>  960w,
                                         <?php echo esc_url($image['sizes']['small_image']); ?>  300w
-                                src="<?php echo esc_url($image['sizes']['medium']); ?>"
+                                src="<?php echo esc_url($image['sizes']['medium_image']); ?>"
                                 loading="lazy" 
                                 class="image" 
                                 alt="<?php echo $image['alt']; ?>" 
@@ -130,7 +130,7 @@ $id = 'home-hero-' . $block['id']; ?>
                                         <?php echo esc_url($image['sizes']['large_image']); ?>  1620w,
                                         <?php echo esc_url($image['sizes']['medium_image']); ?>  960w,
                                         <?php echo esc_url($image['sizes']['small_image']); ?>  300w
-                                src="<?php echo esc_url($image['sizes']['medium']); ?>"
+                                src="<?php echo esc_url($image['sizes']['medium_image']); ?>"
                                 loading="lazy" 
                                 class="image" 
                                 alt="<?php echo $image['alt']; ?>" 
@@ -149,7 +149,7 @@ $id = 'home-hero-' . $block['id']; ?>
                                         <?php echo esc_url($image['sizes']['large_image']); ?>  1620w,
                                         <?php echo esc_url($image['sizes']['medium_image']); ?>  960w,
                                         <?php echo esc_url($image['sizes']['small_image']); ?>  300w
-                                src="<?php echo esc_url($image['sizes']['medium']); ?>"
+                                src="<?php echo esc_url($image['sizes']['medium_image']); ?>"
                                 loading="lazy" 
                                 class="image" 
                                 alt="<?php echo $image['alt']; ?>" 
@@ -324,7 +324,7 @@ $id = 'home-hero-' . $block['id']; ?>
                             </div>
 
                             <?php $image = get_sub_field('image'); ?>
-                            <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo $image['alt']; ?>" />
+                            <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['large_image']); ?>" alt="<?php echo $image['alt']; ?>" />
 
                         <?php elseif( get_row_layout() == 'exhibition' ): ?>
 
@@ -351,7 +351,7 @@ $id = 'home-hero-' . $block['id']; ?>
                             </div>
 
                             <?php $image = get_sub_field('image'); ?>
-                            <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo $image['alt']; ?>" />
+                            <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['large_image']); ?>" alt="<?php echo $image['alt']; ?>" />
 
                         <?php elseif( get_row_layout() == 'knowledge' ): ?>
 
@@ -390,7 +390,7 @@ $id = 'home-hero-' . $block['id']; ?>
                             </div>
 
                             <?php $image = get_sub_field('image'); ?>
-                            <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo $image['alt']; ?>" />
+                            <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['large_image']); ?>" alt="<?php echo $image['alt']; ?>" />
 
                         <?php endif; ?>
 

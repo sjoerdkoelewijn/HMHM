@@ -13,8 +13,8 @@
     <div class="buttons">
         
         <button class="read_more_link" data-read-more-btn>
-            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/arrowRightIcon.svg"); ?>
-            <?php _e( 'Read More', 'hashmuseum' ) ?>
+            <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
+            <?php _e( 'Read More', 'hashmuseum' ) ?> 
         </button>
 
     </div>

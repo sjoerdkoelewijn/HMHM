@@ -4,7 +4,7 @@
 
     <?php   
         $image_id = get_field('featured_image', $theme, false); // 3rd arg set to false to ensure we get unformatted value (ID)
-        $image = wp_get_attachment_image_src($image_id, 'large');
+        $image = wp_get_attachment_image_src($image_id, 'large_image');
         $alt = trim( strip_tags( get_post_meta( $image_id, '_wp_attachment_image_alt', true ) ) )
     ?>
 

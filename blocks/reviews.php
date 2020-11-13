@@ -77,7 +77,7 @@ $id = 'reviews-' . $block['id'];
                                 </p>
                             </div>
                             
-                            <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo $image['alt']; ?>" />
+                            <img loading="lazy" class="image" src="<?php echo esc_url($image['sizes']['large_image']); ?>" alt="<?php echo $image['alt']; ?>" />
                   
                             <?php if($imagecredit): ?>
                                 <p class="image_credit">

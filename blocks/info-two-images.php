@@ -31,7 +31,7 @@ $id = 'info-two-image' . $block['id'];
 
             <div class="image_wrap">
 
-                <img loading="lazy" class="image" src="<?php echo esc_url($imageleft['sizes']['large']); ?>" alt="<?php echo $image['alt']; ?>" />
+                <img loading="lazy" class="image" src="<?php echo esc_url($imageleft['sizes']['large_image']); ?>" alt="<?php echo $image['alt']; ?>" />
 
                 <?php if($imageleft['caption']) { ?>
 
@@ -63,7 +63,7 @@ $id = 'info-two-image' . $block['id'];
 
             </div>
 
-            <img loading="lazy" class="image" src="<?php echo esc_url($mobileimage['sizes']['large']); ?>" alt="<?php echo $mobileimage['alt']; ?>" />
+            <img loading="lazy" class="image" src="<?php echo esc_url($mobileimage['sizes']['medium_image']); ?>" alt="<?php echo $mobileimage['alt']; ?>" />
 
             <?php if($mobileimage['caption']) { ?>
 
@@ -92,7 +92,7 @@ $id = 'info-two-image' . $block['id'];
 
             <div class="image_wrap">
 
-                <img loading="lazy" class="image" src="<?php echo esc_url($imageright['sizes']['large']); ?>" alt="<?php echo $image['alt']; ?>" />
+                <img loading="lazy" class="image" src="<?php echo esc_url($imageright['sizes']['large_image']); ?>" alt="<?php echo $image['alt']; ?>" />
 
                 <?php if($imageright['caption']) { ?>
 
