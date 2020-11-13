@@ -61,13 +61,6 @@ if (ReadMoreBtn != null) {
 
 /******************* Hero Slider *************************************/
 
-//https://web.dev/uses-passive-event-listeners/
-
-if ('ontouchstart' in document.documentElement) {
-    document.addEventListener('touchstart', onTouchStart, {passive: true});
-  }
-    
-
 const HeroSliderContainer = document.querySelector('[data-siema-hero-slider]');
 
 if (HeroSliderContainer != null){
