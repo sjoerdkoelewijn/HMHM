@@ -3259,6 +3259,10 @@ border: 0;
     .related_posts_inner {
         display:flex;
         justify-content: center;
+
+        @include phone {
+            flex-direction: column;
+        }
     }
 
     .post {
@@ -3266,6 +3270,10 @@ border: 0;
 
         @include desktop-s {
             width:50vw;
+        }
+
+        @include phone {
+            width:100vw;
         }
 
         .image_wrap {
