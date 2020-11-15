@@ -1617,14 +1617,10 @@ img.icon {
 .hero {
     display:flex;
     width:100vw;
-    
+    min-height:100vh;
    
     @include phone {
         flex-direction:column-reverse;
-    }
-
-    @include desktop-s {
-        height:100vh;
     }
 
    .breadcrumbs {
