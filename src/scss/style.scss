@@ -624,8 +624,7 @@ img.icon {
         width:70vw;
 
         img {
-            width:220px;
-            height:70px;
+            width:220px;           
             
         }
     }
@@ -1776,7 +1775,7 @@ img.icon {
 
             @include phone {
                 width:100vw;
-                min-height:50vh;
+                //min-height:50vh;
             }
             
         }

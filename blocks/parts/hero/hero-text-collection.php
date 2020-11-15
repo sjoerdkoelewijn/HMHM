@@ -21,7 +21,7 @@
             <?php the_field('description'); ?> 
         </div>
 
-        <?php echo sk_taxonomy_terms(); ?>
+        <?php // echo sk_taxonomy_terms(); ?>
 
     </div>
         
