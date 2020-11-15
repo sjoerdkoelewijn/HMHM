@@ -185,7 +185,7 @@
                         <?php pll_e( 'Explore', 'hashmuseum' ) ?>
 					</h2>
 
-					<nav id="explore-links" class="explore_links" role="navigation">
+					<nav id="explore-links" class="explore_links">
 						<?php
 						wp_nav_menu(array(
 							'theme_location'  => 'explore-menu',
@@ -200,7 +200,7 @@
                         <?php pll_e( 'Legalize', 'hashmuseum' ) ?>
                     </h2>
 
-					<nav id="legal-links" class="legal_links" role="navigation">
+					<nav id="legal-links" class="legal_links">
 						<?php
 						wp_nav_menu(array(
 							'theme_location'  => 'legal-links',

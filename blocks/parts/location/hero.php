@@ -12,7 +12,8 @@ $genericimage = get_field('generic_image');
 
         <div class="mobile_logo">
 
-            <?php echo file_get_contents(get_theme_file_path() . "/images/svg/LogoLarge.svg"); ?>
+            <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/LogoLarge.svg" alt="Icon">
+            
 
         </div>
 
@@ -80,21 +81,21 @@ $genericimage = get_field('generic_image');
             <div class="meta">
 
                 <div class="address">
-                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/locationIcon.svg"); ?> 
+                    <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/locationIcon.svg" alt="Icon"> 
                     <p>
                         <?php the_field('amsterdam_address', 'option'); ?>
                     </p>
                 </div>
                 
                 <div class="phonenumber">
-                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/phoneIcon.svg"); ?> 
+                    <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/phoneIcon.svg" alt="Icon"> 
                     <p>
                         <?php the_field('amsterdam_phone_number', 'option'); ?>
                     </p>
                 </div>
 
                 <div class="openinghours">
-                    <?php echo file_get_contents(get_theme_file_path() . "/images/svg/clockIcon.svg"); ?> 
+                    <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/clockIcon.svg" alt="Icon"> 
                     <p>
                         <?php sk_lang_specific_option('amsterdam_opening_hours'); ?>
                     </p>

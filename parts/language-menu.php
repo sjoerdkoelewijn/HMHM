@@ -12,7 +12,7 @@
             <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/closeIcon.svg" alt="Icon">
         </button>
 
-        <nav id="language-navigation" class="language_navigation" role="navigation">
+        <nav id="language-navigation" class="language_navigation">
             <?php
             
             wp_nav_menu(array(

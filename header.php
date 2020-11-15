@@ -5,7 +5,6 @@
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0" />
-        <title><?php wp_title( '|', true, 'right' ); ?></title>
         <link rel="profile" href="https://gmpg.org/xfn/11" />
 
         <link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>">
@@ -37,7 +36,7 @@
                 <?php include('parts/edit-button.php'); ?>
 
                 <button aria-label="edit" class="language_menu_toggle" data-language-menu-toggle>
-                    <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/weedleaf-small.svg" alt="Language Menu Icon">
+                    <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/weedleaf-small.svg" alt="Language Menu Icon">
                     <?php echo pll_current_language('name'); //  ?>
                 </button>
 

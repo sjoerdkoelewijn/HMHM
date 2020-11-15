@@ -14,8 +14,11 @@ html {
 }
 
 img.icon {
-    object-fit:contain;    
+    object-fit:contain;
+    display: inline-block;    
 }
+
+
 
 .gb_block {
     width:100vw;
@@ -231,9 +234,12 @@ img.icon {
         background-color:rgba($black, 1);
         transition:background .5s ease;
 
+
         .icon {
             margin-left:auto;
             margin-right:auto;
+            width:26px;
+            height:26px;
         }
 
          @include phone {
@@ -310,7 +316,7 @@ img.icon {
 
         &:hover {
             img {                
-                filter:brightness(0) saturate(100%) invert(52%) sepia(56%) saturate(7443%) hue-rotate(6deg) brightness(109%) contrast(101%);
+                filter:$filter-action;
                 transition: fill .5s ease;
                 
             }
@@ -2313,8 +2319,7 @@ img.icon {
 
     }
 
-    .text_wrap.amsterdam {
-        border-right:1px solid $mediumgrey;
+    .text_wrap.amsterdam {        
         position:relative;
 
         &:after {
@@ -2332,6 +2337,7 @@ img.icon {
 
             @include desktop-up {
                 display:block;
+                border-right:1px solid $mediumgrey;
             }
 
         }
@@ -2436,11 +2442,11 @@ img.icon {
             .mobile_logo {               
                 display:none;               
 
-                img {
+                .icon {
                     width:65vw;
-                    margin-left:12.5vw;
-                    margin-bottom:10px;
-
+                    min-height:100px;
+                    display:block;
+                    margin:20vh auto 10px auto;
                     filter:brightness(0) saturate(100%) invert(100%); 
                 }
 
@@ -4105,9 +4111,6 @@ border: 0;
         }
 
 
-
-
-
         .home_navigation {
             margin:var(--vertical) 0;
 
@@ -4122,6 +4125,15 @@ border: 0;
                 margin:10px 0;
                 display:inline-block;
                 font-weight:300;
+
+                &:visited {
+                    color:$white;
+                  }
+                
+                  &:hover {
+                    transition: color .5s ease;
+                    color:$action;
+                  }
             }
         }
 

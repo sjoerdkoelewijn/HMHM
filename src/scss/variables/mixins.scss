@@ -1,3 +1,5 @@
+@import "colors";
+
 @mixin textLink {
     padding:0;
     text-decoration: none;
@@ -7,15 +9,13 @@
     background:none;
     transition:color .5s ease;
 
-    svg {
+    img {
         width:20px;
         height:13px;
-        margin-right:18px;                
-
-        path {
-            fill:$black;
-            transition:fill .5s ease;
-        }
+        margin-right:15px;
+        filter:brightness(0) saturate(100%);
+        transition:filter .5s ease;   
+    
     }
 
     &:hover {
@@ -23,9 +23,9 @@
         transition:color .5s ease;
         cursor: pointer;
 
-        svg path {
-            fill:$action;
-            transition:fill .5s ease;
+        img {
+            filter:$filter-action;
+            transition:filter .5s ease;
         }
     }
 }
