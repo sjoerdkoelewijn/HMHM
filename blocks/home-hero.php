@@ -110,7 +110,7 @@ $id = 'home-hero-' . $block['id']; ?>
                                 srcset="<?php echo esc_url($image['sizes']['larger_image']); ?> 1920, 
                                         <?php echo esc_url($image['sizes']['large_image']); ?>  1620w,
                                         <?php echo esc_url($image['sizes']['medium_image']); ?>  960w,
-                                        <?php echo esc_url($image['sizes']['small_image']); ?>  300w
+                                        <?php echo esc_url($image['sizes']['small_image']); ?>  300w"
                                 src="<?php echo esc_url($image['sizes']['medium_image']); ?>"
                                 loading="lazy" 
                                 class="image" 
@@ -129,7 +129,7 @@ $id = 'home-hero-' . $block['id']; ?>
                                 srcset="<?php echo esc_url($image['sizes']['larger_image']); ?> 1920, 
                                         <?php echo esc_url($image['sizes']['large_image']); ?>  1620w,
                                         <?php echo esc_url($image['sizes']['medium_image']); ?>  960w,
-                                        <?php echo esc_url($image['sizes']['small_image']); ?>  300w
+                                        <?php echo esc_url($image['sizes']['small_image']); ?>  300w"
                                 src="<?php echo esc_url($image['sizes']['medium_image']); ?>"
                                 loading="lazy" 
                                 class="image" 
@@ -148,7 +148,7 @@ $id = 'home-hero-' . $block['id']; ?>
                                 srcset="<?php echo esc_url($image['sizes']['larger_image']); ?> 1920, 
                                         <?php echo esc_url($image['sizes']['large_image']); ?>  1620w,
                                         <?php echo esc_url($image['sizes']['medium_image']); ?>  960w,
-                                        <?php echo esc_url($image['sizes']['small_image']); ?>  300w
+                                        <?php echo esc_url($image['sizes']['small_image']); ?>  300w"
                                 src="<?php echo esc_url($image['sizes']['medium_image']); ?>"
                                 loading="lazy" 
                                 class="image" 
@@ -381,7 +381,7 @@ $id = 'home-hero-' . $block['id']; ?>
 
                                 </div>
                                 
-                                <a href="<?php the_sub_field('url'); ?>" class="read_more_link">
+                                <a href="/<?php echo pll_current_language(); ?>/<?php pll_e('cannabis-knowledge'); ?>/" class="read_more_link">
                                     <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
 
                                     <?php pll_e( 'Cannabis Knowledge', 'hashmuseum' ) ?>

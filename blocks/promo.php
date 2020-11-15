@@ -78,7 +78,7 @@ $id = 'promo-' . $block['id'];
                 <?php the_field('description'); ?>
             </p>
 
-            <a class="action_btn btn" href="#">
+            <a class="action_btn btn" href="#tickets">
                 <?php pll_e( 'Get your ticket', 'hashmuseum' ) ?>
             </a>
 
