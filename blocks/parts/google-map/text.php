@@ -46,7 +46,7 @@
 
                     <?php if( $linktext ): ?>
                         <div class="link">
-                            <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowLeftIcon.svg" alt="Icon">
+                            <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
 
                             <a class="directions_url" href="<?php echo $url ?>"><?php echo $linktext ?></a>
                         </div>

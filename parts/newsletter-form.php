@@ -25,7 +25,7 @@
         <div class="mc-field-group input-group gdpr_check">
             <input type="checkbox" value="1" class="required gdpr" name="group[52897][1]" id="mce-gdpr" required>
             <label for="mce-gdpr">
-                <?php pll_e( 'Yes, I have read and agree to the <a href="/en/privacy-policy/">Privacy Policy</a>.', 'hashmuseum' ) ?>
+                <?php pll_e( 'Yes, I have read and agree to the <a href="/en/privacy-policy">Privacy Policy</a>.', 'hashmuseum' ) ?>
             </label>
 
         </div>

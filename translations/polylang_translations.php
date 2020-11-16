@@ -13,6 +13,7 @@ if ( function_exists( 'pll_register_string' ) ) {
     pll_register_string('Newsletter', 'Email address', 'Hashmuseum');
     pll_register_string('Newsletter', 'mary@jane.com', 'Hashmuseum');
     pll_register_string('Newsletter', 'Yes, I have read and agree to the <a href="/en/privacy-policy">Privacy Policy</a>.', 'Hashmuseum');
+
     pll_register_string('Newsletter', 'Sign me up!', 'Hashmuseum');
     
     pll_register_string('Location Name', 'Amsterdam', 'Hashmuseum');

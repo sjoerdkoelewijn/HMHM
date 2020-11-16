@@ -86,7 +86,7 @@ $id = 'related-posts' . $block['id'];
                         <div class="post">
 
                             <a class="image_wrap" href="<?php the_permalink(); ?>">
-                                <?php the_post_thumbnail( 'large_image',  ); ?>
+                                <?php the_post_thumbnail( 'large_image' ); ?>
                             </a> 
                             
                             <div class="text_wrap">
