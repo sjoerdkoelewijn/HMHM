@@ -84,6 +84,12 @@ $header-font:'Prata', serif;
         --small-p:.9rem;
     }
 
+    @include uhd {
+
+        --small-subtitle:1.2vw;
+
+    }
+
 }
 
 html {

@@ -35,7 +35,7 @@ function cpt_collection() {
 			'slug'                  => pll__( 'collection', 'hashmuseum' ) . '/' . '%collection_themes%',
 			'with_front'            => true,
 			'pages'                 => true,
-			'feeds'                 => true,
+			'feeds'                 => false,
 	);
 	$args = array(
 			'label'                 => __( 'Collection', 'hashmuseum' ),
@@ -168,7 +168,7 @@ add_action( 'init', 'custom_collection_pages', 1 );
 function cpt_cannabisinfo() {
 
 	$labels = array(
-			'name'                  => _x( 'Cannabis Knowledge', 'Post Type General Name', 'hashmuseum' ),
+			'name'                  => pll__( 'Cannabis Knowledge', 'hashmuseum' ),
 			'singular_name'         => _x( 'Cannabis Knowledge', 'Post Type Singular Name', 'hashmuseum' ),
 			'menu_name'             => __( 'Knowledgebase', 'hashmuseum' ),
 			'name_admin_bar'        => __( 'Cannabis Knowledge Item', 'hashmuseum' ),
@@ -216,7 +216,7 @@ function cpt_cannabisinfo() {
 			'show_in_admin_bar'     => true,
 			'show_in_nav_menus'     => true,
 			'can_export'            => true,
-			'has_archive'           => __( 'cannabis-knowledge', 'hashmuseum' ),
+			'has_archive'           => pll__( 'cannabis-knowledge', 'hashmuseum' ),
 			'exclude_from_search'   => false,
 			'publicly_queryable'    => true,
 			'rewrite'               => $rewrite,

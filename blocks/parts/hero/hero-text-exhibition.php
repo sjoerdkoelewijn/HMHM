@@ -2,12 +2,12 @@
 
 <div class="text_wrap expo">
 
-    <?php
-        if ( function_exists('yoast_breadcrumb') ) {
-            yoast_breadcrumb( '<p class="breadcrumbs">','</p>' );
-        }
+    <?php 
+        if(function_exists('sk_breadcrumbs')): 
+            echo sk_breadcrumbs();
+        endif;
     ?>
-
+  
     <h1 class="header">
         <?php echo the_title(); ?>
     </h1>    

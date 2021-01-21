@@ -77,10 +77,8 @@ if (HeroSliderContainer != null){
         loop: true,    
       });
 
-    const HeroSliderPrev = document.querySelector('[data-siema-hero-slider-prev]');
     const HeroSliderNext = document.querySelector('[data-siema-hero-slider-next]');
 
-    HeroSliderPrev.addEventListener('click', () => heroSlider.prev());
     HeroSliderNext.addEventListener('click', () => heroSlider.next());
 
 }

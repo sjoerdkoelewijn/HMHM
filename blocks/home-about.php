@@ -81,11 +81,11 @@ $id = 'home-about' . $block['id'];
                 <div class="tabs_header">
 
                     <button class="tab_title">
-                        <?php echo __( 'Amsterdam', 'hashmuseum' ) ?>
+                        <?php pll_e( 'Amsterdam', 'hashmuseum' ) ?>
                     </button>
 
                     <button class="tab_title">
-                        <?php echo __( 'Barcelona', 'hashmuseum' ) ?>
+                        <?php pll_e( 'Barcelona', 'hashmuseum' ) ?>
                     </button>
 
                 </div>

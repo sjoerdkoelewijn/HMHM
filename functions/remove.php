@@ -9,6 +9,7 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
 remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
 remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+add_filter( 'feed_links_show_comments_feed', '__return_false' );
 
 // remove_filter ('the_excerpt', 'wpautop'); // Changes double line-breaks in the excerpt into HTML paragraphs 
 // remove_filter ('the_content', 'wpautop'); //Changes double line-breaks in the content into HTML paragraphs

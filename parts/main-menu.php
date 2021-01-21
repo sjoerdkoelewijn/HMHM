@@ -114,7 +114,7 @@
                         <?php pll_e( 'Get your ticket', 'hashmuseum' ) ?>
                     </a>
 
-                    <a class="ghost_btn white btn" href="<?php echo __( '/en/plan-your-visit/', 'hashmuseum' ) ?>">
+                    <a class="ghost_btn white btn" href="<?php pll_e( '/en/plan-your-visit/', 'hashmuseum' ) ?>">
                         <?php pll_e( 'Plan your visit', 'hashmuseum' ) ?>
                     </a>
 

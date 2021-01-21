@@ -117,7 +117,7 @@ $id = 'related-posts' . $block['id'];
 
                 <button aria-label="previous" class="slider_button left" data-siema-related-post-slider-prev>
                     <div class="background_wrap">
-                        <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
+                        <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowLeftIcon.svg" alt="Icon">
 
                     </div>    
                 </button>

@@ -8,7 +8,7 @@
             <?php pll_e( 'Select Language', 'hashmuseum' ) ?>
         </h2>   
         
-        <button class="language_close" data-language-close aria-label="<?php echo __( 'Close Menu', 'hashmuseum' ) ?>">
+        <button class="language_close" data-language-close aria-label="<?php pll_e( 'Close Menu', 'hashmuseum' ) ?>">
             <img loading="lazy" class="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/closeIcon.svg" alt="Icon">
         </button>
 

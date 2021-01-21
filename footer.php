@@ -239,7 +239,7 @@
 			</div>
 
 			<p class="copyright_notice">
-				© 1987 - <?php echo date("Y"); ?> <?php pll_e( 'the Hash, Marihuana & Hemp Museum.', 'hashmuseum' ) ?> <?php _e( 'All Rights Reserved.', 'hashmuseum' ) ?>
+				© 1987 - <?php echo date("Y"); ?> <?php pll_e( 'the Hash, Marihuana & Hemp Museum.', 'hashmuseum' ) ?> <?php pll_e( 'All Rights Reserved.', 'hashmuseum' ) ?>
 			</p>
 
 		</article>

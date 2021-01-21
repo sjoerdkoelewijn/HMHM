@@ -27,17 +27,6 @@ $id = 'home-hero-' . $block['id']; ?>
         <?php $mobileimage = get_field('mobile_image'); ?>
         <img loading="lazy" class="image mobile_image" src="<?php echo esc_url($mobileimage['sizes']['medium_image']); ?>" alt="<?php echo $mobileimage['alt']; ?>" />
 
-        <nav id="home-navigation" class="home_navigation" role="navigation">
-            <?php
-            wp_nav_menu(array(
-                'theme_location'  => 'home-navigation',
-                'fallback_cb'     => false,
-                'container'       => false,
-                'items_wrap'      => '<ul id="%1$s">%3$s</ul>',
-            ));
-            ?>
-        </nav>        
-      
         <?php if( have_rows('buttons') ): ?>
 
             <div class="buttons">
@@ -84,7 +73,18 @@ $id = 'home-hero-' . $block['id']; ?>
 
             </div>
 
-        <?php endif; ?>     
+        <?php endif; ?> 
+        
+        <nav id="home-navigation" class="home_navigation" role="navigation">
+            <?php
+            wp_nav_menu(array(
+                'theme_location'  => 'home-navigation',
+                'fallback_cb'     => false,
+                'container'       => false,
+                'items_wrap'      => '<ul id="%1$s">%3$s</ul>',
+            ));
+            ?>
+        </nav>   
 
     </div>
 

@@ -761,9 +761,14 @@ img.icon {
     color:$white;
     text-transform: uppercase;
     font-size:$small-btn;
-    cursor: pointer;  
-
+    cursor: pointer;
+    
     display:none;
+
+    @include desktop-s-up {
+        max-width:200px;
+        max-height:75px; 
+    }
 
     @include desktop-s {
         display:flex;
@@ -948,6 +953,8 @@ img.icon {
     height:var(--mobile-btn-height);
     width:40vw;
 
+    
+
     .icon {
         margin-left:10px;
         margin-top:2px;
@@ -962,6 +969,9 @@ img.icon {
         padding:20px 30px;
         height:auto;
         width:auto;
+
+        max-height: 75px;
+        max-width: 145px;
 
         .icon {
             margin-left:10px;
@@ -1711,8 +1721,8 @@ img.icon {
             display:flex; 
             
             img {
-                margin-top:8px;
-                width:20px;
+                margin-top:-28px;
+                width:18px;
             }
 
             p {
@@ -1727,8 +1737,8 @@ img.icon {
             display:flex;
 
             img {
-                margin-top:8px;
-                width:20px;
+                margin-top:-26px;
+                width:18px;
             }
 
             p {
@@ -1743,8 +1753,8 @@ img.icon {
             display:flex;
 
             img {
-                margin-top:8px;
-                width:20px;
+                margin-top:-26px;
+                width:14px;
             }
 
             p {
@@ -1759,8 +1769,8 @@ img.icon {
             display:flex;
 
             img {
-                margin-top:8px;
-                width:20px;
+                margin-top:-26px;
+                width:13px;
             }
 
             p {
@@ -2292,29 +2302,32 @@ img.icon {
                 }
                 
                 img {
-                    margin:8px 22px 0 0;
-
-                        filter:brightness(100%) saturate(100%);
-                    
+                    filter:brightness(100%) saturate(100%);
                 }
             }
         
             .address {
                 img {
-                    margin:10px 22px 0 6px;
+                    margin:3px 22px 0 6px;
                 }
             }
         
             .phonenumber {
                 img {
-                    margin:10px 18px 0 4px;
+                    margin:3px 18px 0 4px;
+                }
+            }
+
+            .openinghours {
+                img {
+                    margin:2px 19px 0 3px;
                 }
             }
 
         }
 
         .buttons {
-            margin-bottom:var(--vertical);
+            margin:var(--vertical-s) 0 var(--vertical-s) 0;
 
             @include phone {
                 
@@ -2514,6 +2527,7 @@ img.icon {
 
 }
 
+
 @include phone {
 
     .location_info.amsterdam, .location_info.barcelona {
@@ -2584,6 +2598,16 @@ img.icon {
         }
     }
 
+}
+
+.single-visitorinfo {
+    .location_info {
+        .image_wrap.location_hero {
+            .header {
+                font-size:var(--x-large-title);
+            }
+        }
+    }    
 }
 
 /* ------------- Info Block ---------------- */
@@ -4110,7 +4134,7 @@ border: 0;
                 top:0;
                 width:100%;
                 object-fit: cover;
-                min-height:100vh;
+                min-height:100%;
                 z-index:1;              
 
             }
@@ -4642,11 +4666,8 @@ border: 0;
                     font-size:var(--medium-p);
                     margin-bottom:5px;
                 }
-                
-                img {
-                    margin:0 22px 0 0;
                
-                }
+
             }
     
             .address {
@@ -4658,6 +4679,12 @@ border: 0;
             .phonenumber {
                 img {
                     margin:0 18px 0 4px;
+                }
+            }
+
+            .openinghours {
+                img {
+                    margin:2px 18px 0 4px;
                 }
             }
     
@@ -5021,7 +5048,7 @@ border: 0;
                 justify-content:flex-end; 
                 
                 img {
-                    margin-top:8px;
+                    margin-top:-12px;
                     width:20px;
                 }
     
@@ -5039,8 +5066,8 @@ border: 0;
                 justify-content:flex-end;
     
                 img {
-                    margin-top:8px;
-                    width:20px;
+                    margin-top:-10px;
+                    width:15px;
                 }
     
                 p {
@@ -5057,8 +5084,8 @@ border: 0;
                 justify-content:flex-end;
     
                 img {
-                    margin-top:8px;
-                    width:20px;
+                    margin-top:-27px;
+                    width:14px;
                 }
     
                 p {
@@ -5158,7 +5185,7 @@ border: 0;
                     position:relative;
                     
                     img {
-                        margin-top:8px;
+                        margin-top:-10px;
                         width:20px;
                     }
         
@@ -5217,8 +5244,8 @@ border: 0;
                     justify-content:flex-start;
         
                     img {
-                        margin-top:8px;
-                        width:20px;
+                        margin-top:-8px;
+                        width:15px;
                     }
         
                     p {
@@ -5235,8 +5262,8 @@ border: 0;
                     justify-content:flex-start;
         
                     img {
-                        margin-top:8px;
-                        width:20px;
+                        margin-top:-25px;
+                        width:15px;
                     }
         
                     p {
@@ -5264,14 +5291,12 @@ border: 0;
                     }
                 }
                 .long_text {
+                    display:none;
                     
                     @include desktop-up {
                         display:block;
                     }
-
-                    @include desktop-s {
-                        display:none;
-                    }
+           
 
                 }
             }
@@ -5525,7 +5550,7 @@ border: 0;
                     }
                     
                     img {
-                        margin:8px 22px 0 0;
+                        margin:3px 22px 0 0;
                         filter:brightness(0) saturate(100%);
             
                       
@@ -5535,13 +5560,13 @@ border: 0;
                 .address {
 
                     img {
-                        margin:10px 22px 0 6px;
+                        margin:3px 22px 0 6px;
                     }
                 }
             
                 .phonenumber {
                     img {
-                        margin:10px 18px 0 4px;
+                        margin:3px 18px 0 4px;
                     }
                 }
             }
@@ -5701,7 +5726,7 @@ border: 0;
 
     /* ------------- Second Column ---------------- */
 
-    .second {
+    .second, .third {
         width:40%;
 
         img {
@@ -5725,7 +5750,7 @@ border: 0;
             }
             
             img {
-                margin:8px 22px 0 0;
+                margin:2px 22px 0 0;
                 filter:brightness(0) saturate(100%);
               
             }
@@ -5733,13 +5758,13 @@ border: 0;
 
         .address {
             img {
-                margin:10px 22px 0 6px;
+                margin:3px 22px 0 6px;
             }
         }
 
         .phonenumber {
             img {
-                margin:10px 18px 0 4px;
+                margin:3px 18px 0 4px;
             }
         }
 
@@ -5780,7 +5805,7 @@ border: 0;
             
             img {
                 width:18px;
-                margin:9px 20px 0 3px;           
+                margin:0 20px 0 3px;           
                 filter:brightness(0) saturate(100%);
                 transition: filter .5s ease;
                 
@@ -5815,13 +5840,16 @@ border: 0;
             }
         }
 
-        a {
-            font-size:var(--medium-p);
-            text-decoration: none;
-            font-weight:300;
-            margin-bottom:8px;
-            display: inline-block;
+        .menu-item {
+            a {
+                font-size:var(--medium-p);
+                text-decoration: none;
+                font-weight:300;
+                margin-bottom:8px;
+                display: inline-block;
+            }
         }
+        
 
     }
 

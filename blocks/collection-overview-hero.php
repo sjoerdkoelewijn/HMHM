@@ -79,7 +79,7 @@ $id = 'collection-overview-hero-' . $block['id'];
 
                 <?php setup_postdata($post); ?>
 
-                    <article class="image_slide">
+                    <div class="image_slide">
 
                         <a href="<?php the_permalink(); ?>">
                             <?php echo get_the_post_thumbnail( $post_id, 'large_image', array( 'class' => 'single_item_image', 'loading' => 'lazy' ) ); ?>
@@ -90,7 +90,7 @@ $id = 'collection-overview-hero-' . $block['id'];
                             </div>
                         </a>                     
 
-                    </article>                     
+                    </div>                     
 
                 <?php endforeach; ?>
 
@@ -106,7 +106,7 @@ $id = 'collection-overview-hero-' . $block['id'];
 
                     <?php setup_postdata($post); ?>
 
-                        <article class="image_slide">
+                        <div class="image_slide">
 
                             <a href="<?php the_permalink(); ?>">
                                 <?php echo get_the_post_thumbnail( $post_id, 'large_image', array( 'class' => 'single_item_image', 'loading' => 'lazy' ) ); ?>
@@ -120,7 +120,7 @@ $id = 'collection-overview-hero-' . $block['id'];
 
                             </a>                     
 
-                        </article>                     
+                        </div>                     
 
                     <?php endforeach; ?>
 
@@ -128,11 +128,6 @@ $id = 'collection-overview-hero-' . $block['id'];
 
                 </div>
 
-                <button aria-label="previous" class="slider_button left" data-siema-hero-slider-prev>
-                    <div class="background_wrap">
-                        <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowLeftIcon.svg" alt="Icon">
-                    </div>    
-                </button>
                 <button aria-label="next" class="slider_button right" data-siema-hero-slider-next>
                     <div class="background_wrap">
                         <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">

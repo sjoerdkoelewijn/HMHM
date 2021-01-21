@@ -4,6 +4,8 @@
 // create id attribute for specific styling
 $id = 'promo-' . $block['id'];
 
+$buy_tickets = get_field('buy_tickets', get_the_ID()); 
+
 ?>
 
 <?php $imageposition = get_field('image_position'); ?>
@@ -46,12 +48,20 @@ $id = 'promo-' . $block['id'];
             <?php the_field('description'); ?>
             
             <a class="action_btn btn" href="#tickets">
-                <?php pll_e( 'Get your ticket', 'hashmuseum' ) ?> 
+                <?php if( $buy_tickets ) {
+                    echo $buy_tickets;
+                } else { 
+                    pll_e( 'Get your ticket', 'hashmuseum' );
+                } ?> 
             </a>
 
-            <a class="ghost_btn white btn" href="<?php pll_e('/en/plan-your-visit/') ?>">
-                <?php pll_e( 'Plan your visit', 'hashmuseum' ) ?>
-            </a>
+            <?php if ( !is_singular( 'visitorinfo' ) ) { ?>
+
+                <a class="ghost_btn white btn" href="<?php pll_e('/en/plan-your-visit/') ?>">
+                    <?php pll_e( 'Plan your visit', 'hashmuseum' ) ?>
+                </a>
+
+            <?php } ?>
 
         </div>
 
@@ -79,12 +89,20 @@ $id = 'promo-' . $block['id'];
             </p>
 
             <a class="action_btn btn" href="#tickets">
-                <?php pll_e( 'Get your ticket', 'hashmuseum' ) ?>
+                <?php if( $buy_tickets ) {
+                    echo $buy_tickets;
+                } else { 
+                    pll_e( 'Get your ticket', 'hashmuseum' );
+                } ?> 
             </a>
 
-            <a class="ghost_btn white btn" href="<?php pll_e('/en/plan-your-visit/') ?>">
-                <?php pll_e( 'Plan your visit', 'hashmuseum' ) ?>
-            </a>
+            <?php if ( !is_singular( 'visitorinfo' ) ) { ?>
+
+                <a class="ghost_btn white btn" href="<?php pll_e('/en/plan-your-visit/') ?>">
+                    <?php pll_e( 'Plan your visit', 'hashmuseum' ) ?>
+                </a>
+
+            <?php } ?>
 
         </div>
 

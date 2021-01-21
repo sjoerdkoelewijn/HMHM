@@ -52,9 +52,10 @@ get_header(); ?>
 						<div class="date">
 
 							<p>
-								<?php echo $start_date->format('j F Y'); ?>
+								
+								<?php echo $start_date->format('j/m/Y'); ?>
 								-
-								<?php echo $end_date->format('j F Y'); ?>
+								<?php echo $end_date->format('j/m/Y'); ?>
 							</p>   
 
 							<img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/calendarIcon.svg" alt="Icon">
@@ -134,9 +135,9 @@ get_header(); ?>
 								<img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/calendarIcon.svg" alt="Icon">
 
 									<p>
-										<?php echo $start_date->format('j F Y'); ?>
+										<?php echo $start_date->format('j/m/Y'); ?>
 										-
-										<?php echo $end_date->format('j F Y'); ?>
+										<?php echo $end_date->format('j/m/Y'); ?>
 									</p>   
 								
 								</div>
@@ -148,7 +149,7 @@ get_header(); ?>
 								<img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/calendarIcon.svg" alt="Icon">
 
 									<p>
-										<?php echo get_the_date('j F Y'); ?>
+										<?php echo get_the_date('j/m/Y'); ?>
 									</p>   
 
 								</div>
