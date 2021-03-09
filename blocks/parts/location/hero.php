@@ -136,7 +136,7 @@ $amsterdam_address = get_field('amsterdam_address', $current_page_id);
 
             <div class="buttons">
 
-                <a title="<?php pll_e( 'Get your ticket', 'hashmuseum' ) ?> Barcelona" href="<?php sk_get_ticket_url('amsterdam') ?>" class="btn action_btn black" > 
+                <a title="<?php if( $buy_tickets ) { echo $buy_tickets;} else { pll_e( 'Get your ticket', 'hashmuseum' );} ?>" href="<?php sk_get_ticket_url('amsterdam') ?>" class="btn action_btn black" > 
 
                     <?php if( $buy_tickets ) {
                         echo $buy_tickets;
@@ -146,7 +146,7 @@ $amsterdam_address = get_field('amsterdam_address', $current_page_id);
 
                 </a>       
 
-                <a title="<?php pll_e( 'How to get there', 'hashmuseum' ) ?> Barcelona" href="<?php if($amsterdam_location_link){ echo $amsterdam_location_link; } else { pll_e( '/en/amsterdam/#map', 'hashmuseum' ); } ?>" class="btn ghost_btn black" >
+                <a title="<?php if( $how_to_get_there ) { echo $how_to_get_there;} else { pll_e( 'Get your ticket', 'hashmuseum' );} ?> Amsterdam" href="<?php if($amsterdam_location_link){ echo $amsterdam_location_link; } else { pll_e( '/en/amsterdam/#map', 'hashmuseum' ); } ?>" class="btn ghost_btn black" >
                     <?php if( $how_to_get_there ) {
                         echo $how_to_get_there;
                     } else { 
@@ -181,7 +181,7 @@ $amsterdam_address = get_field('amsterdam_address', $current_page_id);
             </nav>
 
             <h2>
-                <a title="<?php pll_e( 'More information', 'hashmuseum' ) ?> Barcelona" class="location_link" href="/<?php echo pll_current_language(); ?>/barcelona/">
+                <a title="<?php if( $barcelona ) { echo $barcelona;} else { pll_e( 'Barcelona', 'hashmuseum' );} ?>" class="location_link" href="/<?php echo pll_current_language(); ?>/barcelona/">
                     <?php if( $barcelona ) {
                         echo $barcelona;
                     } else { 
@@ -223,7 +223,7 @@ $amsterdam_address = get_field('amsterdam_address', $current_page_id);
             
             <div class="buttons">
 
-                <a href="<?php sk_get_ticket_url('barcelona') ?>" class="btn action_btn black" >
+                <a title="<?php if( $buy_tickets ) { echo $buy_tickets;} else { pll_e( 'Get your ticket', 'hashmuseum' );} ?>" href="<?php sk_get_ticket_url('barcelona') ?>" class="btn action_btn black" >
                     <?php if( $buy_tickets ) {
                         echo $buy_tickets;
                     } else { 
@@ -231,7 +231,7 @@ $amsterdam_address = get_field('amsterdam_address', $current_page_id);
                     } ?> 
                 </a>
 
-                <a title="<?php pll_e( 'How to get there', 'hashmuseum' ) ?> Barcelona" href="<?php if($barcelona_location_link){ echo $barcelona_location_link; } else { pll_e( '/en/barcelona/#map', 'hashmuseum' ); } ?>" class="btn ghost_btn black" >
+                <a title="<?php if( $how_to_get_there ) { echo $how_to_get_there;} else { pll_e( 'How to get there', 'hashmuseum' );} ?> Barcelona" href="<?php if($barcelona_location_link){ echo $barcelona_location_link; } else { pll_e( '/en/barcelona/#map', 'hashmuseum' ); } ?>" class="btn ghost_btn black" >
                     <?php if( $how_to_get_there ) {
                         echo $how_to_get_there;
                     } else { 

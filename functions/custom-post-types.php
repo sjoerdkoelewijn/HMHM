@@ -3,7 +3,7 @@
 function cpt_collection() {
 
 	$labels = array(
-			'name'                  => _x( 'The Collection', 'Post Type General Name', 'hashmuseum' ),
+			'name'                  => pll__( 'The Collection', 'Post Type General Name', 'hashmuseum' ),
 			'singular_name'         => _x( 'The Collection', 'Post Type Singular Name', 'hashmuseum' ),
 			'menu_name'             => __( 'The Collection', 'hashmuseum' ),
 			'name_admin_bar'        => __( 'Collection Item', 'hashmuseum' ),
@@ -38,7 +38,7 @@ function cpt_collection() {
 			'feeds'                 => false,
 	);
 	$args = array(
-			'label'                 => __( 'Collection', 'hashmuseum' ),
+			'label'                 => pll__( 'Collection', 'hashmuseum' ),
 			'description'           => __( 'The Hashmuseum Collection', 'hashmuseum' ),
 			'labels'                => $labels,
 			'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', ),
@@ -340,7 +340,7 @@ add_action( 'init', 'custom_cannabisinfo_pages', 1 );
 function cpt_newsexhibitions() {
 
 	$labels = array(
-			'name'                  => _x( 'News & Exhibitions', 'Post Type General Name', 'hashmuseum' ),
+			'name'                  => pll__( 'News & Exhibitions', 'Post Type General Name', 'hashmuseum' ),
 			'singular_name'         => _x( 'News & Exhibitions', 'Post Type Singular Name', 'hashmuseum' ),
 			'menu_name'             => __( 'News & Exhibitions', 'hashmuseum' ),
 			'name_admin_bar'        => __( 'News & Exhibitions Item', 'hashmuseum' ),
@@ -377,7 +377,7 @@ function cpt_newsexhibitions() {
 	);
 
 	$args = array(
-			'label'                 => __( 'News & Exhibitions', 'hashmuseum' ),
+			'label'                 => pll__( 'News & Exhibitions', 'hashmuseum' ),
 			'description'           => __( 'News & Exhibitions', 'hashmuseum' ),
 			'labels'                => $labels,
 			'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', ),

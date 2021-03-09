@@ -129,47 +129,51 @@ if (HorizontalScrollContainer != null){
 
 /******************* Animate & Add Visitor Count *************************************/
 
-const visitorNumber = document.querySelector('[data-visitor-count]');
+const visitorNumbers = document.querySelectorAll('[data-visitor-count]');
 
-if (visitorNumber != null) {
+if (visitorNumbers != null) {
 
-    const startDateCount = visitorNumber.getAttribute('data-visitor-count-date');
+    visitorNumbers.forEach((visitorNumber) => {
 
-    // We start with this amount of visitors
-    let startCount = visitorNumber.getAttribute('data-visitor-start-count');
+        const startDateCount = visitorNumber.getAttribute('data-visitor-count-date');
 
-    // Amount of visitors per day 
-    const dailyVisitors = visitorNumber.getAttribute('data-visitor-per-day');
+        // We start with this amount of visitors
+        let startCount = visitorNumber.getAttribute('data-visitor-start-count');
 
-    // Date that we started counting 
-    const startDate = new Date(startDateCount);
+        // Amount of visitors per day 
+        const dailyVisitors = visitorNumber.getAttribute('data-visitor-per-day');
 
-    // Current date
-    const today = new Date();
+        // Date that we started counting 
+        const startDate = new Date(startDateCount);
 
-    // Calculating difference in days between current date and start date
-    const timeDiff = Math.abs(today.getTime() - startDate.getTime());   
-    const diffDays = Math.ceil(timeDiff /(1000 * 60 * 60 * 24));
+        // Current date
+        const today = new Date();
 
-    // Amount of visitors since startdate
-    const diffVisitor = diffDays * parseInt(dailyVisitors);
-    const visitorAmount = parseInt(startCount) + diffVisitor;
+        // Calculating difference in days between current date and start date
+        const timeDiff = Math.abs(today.getTime() - startDate.getTime());   
+        const diffDays = Math.ceil(timeDiff /(1000 * 60 * 60 * 24));
 
-    if ('IntersectionObserver' in window) {
+        // Amount of visitors since startdate
+        const diffVisitor = diffDays * parseInt(dailyVisitors);
+        const visitorAmount = parseInt(startCount) + diffVisitor;
 
-        observer = new IntersectionObserver((entry, observer) => {
+        if ('IntersectionObserver' in window) {
 
-            animateValue(visitorNumber, startCount, visitorAmount, 1200);
+            observer = new IntersectionObserver((entry, observer) => {
 
-        });
+                animateValue(visitorNumber, startCount, visitorAmount, 1200);
 
-        observer.observe(visitorNumber);
-        
-    } else {
+            });
 
-        animateValue(visitorNumber, startCount, visitorAmount, 1000);
+            observer.observe(visitorNumber);
+            
+        } else {
 
-    }
+            animateValue(visitorNumber, startCount, visitorAmount, 1000);
+
+        }
+
+    });    
 
 }    
 
