@@ -68,7 +68,7 @@ get_header(); ?>
 						<div class="date">
 
 							<p>
-								<?php echo get_the_date('j F Y'); ?>
+								<?php echo get_the_date(); ?>
 							</p>   
 
 							<img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/calendarIcon.svg" alt="Icon">
@@ -149,7 +149,7 @@ get_header(); ?>
 								<img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/calendarIcon.svg" alt="Icon">
 
 									<p>
-										<?php echo get_the_date('j/m/Y'); ?>
+										<?php echo get_the_date(); ?>
 									</p>   
 
 								</div>
