@@ -64,9 +64,7 @@ $id = 'reviews-' . $block['id'];
 
                         <div class="review">
                             
-                            <h2 class="quote">
-                                “<?php echo $quote; ?>”
-                            </h2>
+                            <h2 class="quote"><?php echo $quote; ?></h2>
 
                             <div class="meta">
                                 <p class="name">

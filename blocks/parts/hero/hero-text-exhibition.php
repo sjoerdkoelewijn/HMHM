@@ -26,7 +26,7 @@
         $free = get_field('free_entry');
         $opening_hours_toggle = get_field('opening_hours_toggle'); 
         $exhibition_specific_opening_hours = get_field('exhibition_specific_opening_hours'); 
-
+        $ticket_url = get_field('ticket_url'); 
         
 
     ?>
@@ -37,7 +37,7 @@
 
             <?php if($free === 'paid') { ?>
 
-                <a class="action_btn black btn" href="<?php sk_get_ticket_url($location) ?>">
+                <a class="action_btn black btn" href="<?php echo $ticket_url; ?>">
                     <?php pll_e( 'Get your ticket', 'hashmuseum' ) ?>
                 </a>
 

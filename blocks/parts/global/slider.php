@@ -26,12 +26,12 @@
 
 <button aria-label="previous image" class="slider_button left" data-siema-hero-slider-prev> 
     <div class="background_wrap">
-    <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowLeftIcon.svg" alt="Icon">
-        
+        <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowLeftIcon.svg" alt="Icon">
     </div>    
 </button>
+
 <button aria-label="next image" class="slider_button right" data-siema-hero-slider-next>
     <div class="background_wrap">
-    <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
+        <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/arrowRightIcon.svg" alt="Icon">
     </div>
 </button>

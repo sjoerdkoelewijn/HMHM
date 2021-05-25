@@ -78,11 +78,12 @@ if (HeroSliderContainer != null){
       });
 
     const HeroSliderNext = document.querySelector('[data-siema-hero-slider-next]');
+    const HeroSliderPrev = document.querySelector('[data-siema-hero-slider-prev]');
 
     HeroSliderNext.addEventListener('click', () => heroSlider.next());
-
+    HeroSliderPrev.addEventListener('click', () => heroSlider.prev());
+    
 }
-
 
 /******************* Home Hero Mobile Slider *************************************/
 

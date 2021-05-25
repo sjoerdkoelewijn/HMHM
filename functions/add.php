@@ -141,13 +141,13 @@ function sk_breadcrumbs() {
 	?>
 
 	<p class="breadcrumbs">
-		<a title="<?php pll_e( 'Home', 'hashmuseum' ) ?>" href="<?php home_url('/'); ?>">
+		<a title="<?php pll_e( 'Home', 'hashmuseum' ) ?>" href="/<?php echo $current_language; ?>/">
 			<?php pll_e( 'Home', 'hashmuseum' ) ?>
 		</a>
 
 		<?php echo $delimiter ?>
 
-		<?php if ( is_singular() ) { 
+		<?php if ( is_single() ) { 
             
             $post_type = $post->post_type;
             $post_type_obj = get_post_type_object($post_type);
@@ -177,9 +177,30 @@ function sk_breadcrumbs() {
 			<?php echo $delimiter ?>
 
 			<span class="breadcrumb_last" aria-current="page">
+				<?php echo the_title(); ?>                
+			</span>
+
+        <?php } elseif(is_page())  { 
+            
+            $parentID = wp_get_post_parent_id( $post->ID );
+            $page = get_post($parentID); 
+
+            ?>
+
+            <?php if ($parentID > 0 ) { ?>
+
+                <a title="parent page" href="/<?php echo $current_language . '/' . $page->post_name . '/'; ?>">
+				    <?php echo $page->post_title ?>
+			    </a>
+
+                <?php echo $delimiter ?>
+
+            <?php } ?>
+
+            <span class="breadcrumb_last" aria-current="page">
 				<?php echo the_title(); ?>
 			</span>
-		
+
 		<?php } else { 
             
             $post_type = get_post_type();

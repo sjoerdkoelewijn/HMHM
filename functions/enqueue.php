@@ -25,7 +25,11 @@ function hashmuseum_styles() {
 
 	$filename = get_stylesheet_directory() . '/src/css/style.min.css';
 	$timestamp = filemtime($filename);
-
+	
+	if ( get_the_ID() == 28 ) {
+		wp_enqueue_style('google-fonts-jp', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap', NULL, NULL, 'all' );
+	}
+	
 	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Prata&display=swap', NULL, NULL, 'all' );
 
 	wp_enqueue_style('hashmuseum-styles', get_template_directory_uri() . '/src/css/style.min.css', NULL, $timestamp, 'all' );

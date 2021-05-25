@@ -7,17 +7,22 @@
 @import "./variables/mixins";
 
 
-
 html {
     overflow-x:hidden;
     scroll-behavior: smooth;
+
+    &:lang(jp) {
+        body, h1, h2, h3, h4, h5, h6, p, cite {
+            font-family: 'Noto Sans JP', sans-serif !important;
+        }
+    }
+
 }
 
 img.icon {
     object-fit:contain;
     display: inline-block;    
 }
-
 
 
 .gb_block {
@@ -824,7 +829,7 @@ img.icon {
     
     .language_menu_wrap {
         width:33.33vw;
-        min-height:100vh;
+        height:100vh;
         background:$black;
         color:$white;
         padding:30px;
@@ -832,6 +837,20 @@ img.icon {
         right:0;
         position:fixed;
         z-index:1100;
+        overflow-y:scroll;
+
+        &::-webkit-scrollbar {
+            width:5px;
+            
+          }
+           
+        &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px rgba(163, 163, 163, 0.3);
+          }
+           
+        &::-webkit-scrollbar-thumb {
+            background-color: $action;
+        }
 
         .current-lang {
             a {
@@ -1687,7 +1706,7 @@ img.icon {
         padding:var(--vertical) var(--horizontal) var(--vertical) var(--horizontal);
         margin-top:200px;
         flex-direction: column;
-        display: inline-flex;
+        //display: inline-flex;
         justify-content: center;
 
         @include phone {
@@ -3079,6 +3098,14 @@ img.icon {
                 font-size:var(--medium-title);
                 margin-bottom:60px;
                 line-height:120%;
+                
+                &:before {
+                    content:'“';
+                }
+
+                &:after {
+                    content:'”';                    
+                }
 
                 @include desktop-s {
                     margin-bottom:80px;
@@ -3086,6 +3113,16 @@ img.icon {
 
                 @include phone {
                     margin-bottom:45px;
+                }
+            }
+
+            .quote:lang(jp) {
+                &:before {
+                    display:none;
+                }
+
+                &:after {
+                    display:none;                    
                 }
             }
 
