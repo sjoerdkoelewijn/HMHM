@@ -48,7 +48,7 @@
                 <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/calendarIcon.svg" alt="Icon"> 
                 <p>
                     <?php pll_e( 'Ends on', 'hashmuseum' ) ?>
-                    <?php echo $end_date->format('j F Y'); ?>
+                    <?php echo $end_date->format('j/m/Y'); ?>
                 </p>   
             
             </div>
@@ -92,7 +92,7 @@
  
                 <p>
                     <?php pll_e( 'Ended on', 'hashmuseum' ) ?>
-                    <?php echo $end_date->format('j F Y'); ?> 
+                    <?php echo $end_date->format('j/m/Y'); ?> 
                 </p>  
 
             </div>

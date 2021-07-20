@@ -1,5 +1,5 @@
 
-		<article class="newsletter">
+		<article id="newsletter" class="newsletter">
 
 			<h2 class="subheader">
 				<?php pll_e( 'Stay in touch', 'hashmuseum' ) ?>
