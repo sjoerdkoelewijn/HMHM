@@ -14,8 +14,7 @@ $amsterdam = get_field('amsterdam', $current_page_id);
 $barcelona = get_field('barcelona', $current_page_id); 
 $barcelona_opening_hours = get_field('barcelona_opening_hours', $current_page_id);
 $amsterdam_opening_hours = get_field('amsterdam_opening_hours', $current_page_id); 
-$barcelona_address = get_field('barcelona_address', $current_page_id);
-$amsterdam_address = get_field('amsterdam_address', $current_page_id); 
+
 
 ?>
 
@@ -44,7 +43,9 @@ $amsterdam_address = get_field('amsterdam_address', $current_page_id);
         <?php if($genericimage['caption']) { ?>
 
             <p class="caption">
+
                 <?php echo esc_html($genericimage['caption']); ?></?php>
+
             </p>
 
         <?php } ?> 
@@ -106,9 +107,7 @@ $amsterdam_address = get_field('amsterdam_address', $current_page_id);
                 <div class="address">
                     <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/locationIcon.svg" alt="Icon"> 
                     <p>
-                        <?php if( $amsterdam_address ) {
-                            echo $amsterdam_address;
-                        } ?>
+                        <?php the_field('amsterdam_address', 'option'); ?>
                     </p>
                 </div>
                 
@@ -195,9 +194,7 @@ $amsterdam_address = get_field('amsterdam_address', $current_page_id);
                 <div class="address">
                     <img loading="lazy" class="icon" alt="icon" src="<?php echo get_theme_file_uri() ?>/images/svg/locationIcon.svg" alt="Icon"> 
                     <p>
-                        <?php if( $barcelona_address ) {
-                            echo $barcelona_address;
-                        } ?>
+                        <?php the_field('barcelona_address', 'option'); ?>
                     </p>
                 </div>
                 
