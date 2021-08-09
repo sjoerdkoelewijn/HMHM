@@ -240,6 +240,7 @@
 
 			<p class="copyright_notice">
 				© 1987 - <?php echo date("Y"); ?> <?php pll_e( 'the Hash, Marihuana & Hemp Museum.', 'hashmuseum' ) ?> <?php pll_e( 'All Rights Reserved.', 'hashmuseum' ) ?>
+				<span class="css_check">CSS Status 404</span>		
 			</p>
 
 		</article>

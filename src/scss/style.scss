@@ -5899,6 +5899,10 @@ border: 0;
         @include phone {
             text-align:left;
         }
+        
+        .css_check {
+            display:none;
+        }
 
     }
 
